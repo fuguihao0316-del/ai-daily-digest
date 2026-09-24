@@ -11,7 +11,6 @@ Features:
 
 import json
 import re
-import markdown as md_lib
 from collections import Counter
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
@@ -443,7 +442,7 @@ html[data-lang="zh"] [data-lang-content="en"] { display: none; }
 }
 .item-card:hover { border-color: var(--border-strong); }
 .item-title { font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.5; margin-bottom: 8px; }
-.item-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 14px; line-height: 1.6; }
+.item-desc { font-size: 15px; color: var(--text-soft); margin-bottom: 14px; line-height: 1.75; overflow-wrap: break-word; }
 .item-meta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 .stars { font-size: 13px; color: #e3b341; letter-spacing: 1px; }
 .item-value {
@@ -453,6 +452,35 @@ html[data-lang="zh"] [data-lang-content="en"] { display: none; }
 .item-sources { font-size: 13px; color: var(--text-muted); margin-left: auto; }
 .item-sources a { color: #58a6ff; margin-left: 6px; }
 .item-sources a:first-child { margin-left: 0; }
+
+/* ── Alternates (collapsed by default) ── */
+.alternates { margin: 4px 0 14px; }
+.alternates > summary {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 18px;
+  background: var(--card);
+  border: 1px dashed var(--border-strong);
+  border-radius: 12px;
+  font-size: 14px;
+  color: var(--text-muted);
+  transition: border-color .15s, color .15s;
+}
+.alternates > summary::-webkit-details-marker { display: none; }
+.alternates > summary:hover { border-color: #58a6ff; color: var(--text); }
+.alternates > summary::after {
+  content: "▾";
+  margin-left: auto;
+  font-size: 12px;
+  transition: transform .2s;
+}
+.alternates[open] > summary { border-style: solid; margin-bottom: 12px; }
+.alternates[open] > summary::after { transform: rotate(180deg); }
 
 /* ── Observation box ── */
 .observation {
@@ -507,13 +535,35 @@ html[data-lang="zh"] [data-lang-content="en"] { display: none; }
 
 /* ── Responsive ── */
 @media (max-width: 680px) {
-  .hero h1 { font-size: 28px; }
-  .item-meta { flex-direction: column; align-items: flex-start; }
-  .item-sources { margin-left: 0; }
+  body { -webkit-text-size-adjust: 100%; }
+  .container { padding: 20px 16px calc(72px + env(safe-area-inset-bottom)); }
+
+  /* Hold the sticky header to one row. The date picker and the header nav are
+     desktop affordances: on phones the prev/next buttons at the foot of each
+     day page plus the logo link cover the same ground. */
+  .site-header { padding: 10px 14px; gap: 10px; }
   .site-header .logo { font-size: 15px; }
-  .search-box input { width: 150px; }
-  .search-box input:focus { width: 180px; }
+  .site-header nav { display: none; }
+  #datePicker { display: none; }
+  .header-tools { flex: 1; gap: 8px; justify-content: flex-end; flex-wrap: nowrap; }
+  .search-box { flex: 1; }
+  .search-box input, .search-box input:focus { width: 100%; }
+
+  /* Reading surface */
+  .hero { padding: 32px 0 24px; }
+  .hero h1 { font-size: 26px; }
+  .day-hero h1 { font-size: 22px; }
+  .item-card { padding: 16px; border-radius: 10px; }
+  .item-title { font-size: 17px; line-height: 1.55; }
+  .item-desc { font-size: 16px; line-height: 1.85; }
+  .item-meta { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .item-sources { margin-left: 0; }
+  .category-header h2 { font-size: 17px; }
+  .filter-bar { gap: 6px; margin-bottom: 20px; padding-bottom: 14px; }
   .filter-bar .star-toggle { margin-left: 0; }
+  .observation { padding: 18px; }
+  .alternates > summary { padding: 12px 16px; }
+  #backToTop { right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); }
 }
 """
 
@@ -865,6 +915,17 @@ def bi(zh: str, en: str) -> str:
 
 # ── Markdown parser ─────────────────────────────────────────────────────────────
 
+def is_alternates_heading(name: str, emoji: str) -> bool:
+    """True for the `### 📌 备选` sub-heading that closes out a class.
+
+    summarize.py inserts this heading itself right before item #11, so the
+    wording is ours to guarantee — but accept a few variants anyway."""
+    low = (name or "").lower()
+    return (any(m in (name or "") for m in ("备选", "候选"))
+            or any(m in low for m in ("alternate", "more picks"))
+            or emoji == "📌")
+
+
 def parse_digest(text: str) -> dict:
     lines = text.splitlines()
     categories = []
@@ -872,6 +933,7 @@ def parse_digest(text: str) -> dict:
     in_observation = False
     current_cat = None
     current_item = None
+    in_alternates = False
 
     for line in lines:
         cat_match = re.match(r'^#{2,3}\s+([\U00010000-\U0010ffff☀-⛿✀-➿])\s*(.+)', line)
@@ -891,10 +953,21 @@ def parse_digest(text: str) -> dict:
                     or "take" in low or "observation" in low or "outlook" in low):
                 in_observation = True
                 current_cat = None
+                in_alternates = False
+            elif is_alternates_heading(name, emoji) and current_cat is not None:
+                # Runner-ups of the class above. Kept in a separate list rather
+                # than a category of their own, so trends / search index /
+                # shownotes / audio (which all walk cat["items"]) skip them
+                # with no changes, and only the renderer shows them — collapsed.
+                in_observation = False
+                in_alternates = True
+                current_item = None
             else:
                 in_observation = False
+                in_alternates = False
                 current_cat = {"emoji": emoji, "name": name,
-                               "type": cat_type(name, emoji), "items": []}
+                               "type": cat_type(name, emoji), "items": [],
+                               "alternates": []}
                 categories.append(current_cat)
                 current_item = None
             continue
@@ -918,7 +991,7 @@ def parse_digest(text: str) -> dict:
                 "value": "",
                 "sources": [],
             }
-            current_cat["items"].append(current_item)
+            current_cat["alternates" if in_alternates else "items"].append(current_item)
             continue
 
         if current_item is None:
@@ -1012,13 +1085,28 @@ def build_digest_body(digest: dict, lang: str = "zh") -> str:
         if not cat["items"]:
             continue
         items_html = "".join(build_item_html(i) for i in cat["items"])
+
+        alts_html = ""
+        alternates = cat.get("alternates") or []
+        if alternates:
+            alt_cards = "".join(build_item_html(i) for i in alternates)
+            if lang == "en":
+                alt_label = f"📌 {len(alternates)} more worth a look"
+            else:
+                alt_label = f"📌 备选 {len(alternates)} 条"
+            alts_html = f"""
+          <details class="alternates">
+            <summary>{alt_label}</summary>
+            <div class="alternates-body">{alt_cards}</div>
+          </details>"""
+
         cats_html += f"""
         <div class="category" data-cat="{cat['type']}">
           <div class="category-header">
             <h2>{cat["emoji"]} {cat["name"]}</h2>
             <div class="cat-line"></div>
           </div>
-          {items_html}
+          {items_html}{alts_html}
         </div>"""
 
     empty_msg = "No items match this filter." if lang == "en" else "该筛选条件下没有内容。"
