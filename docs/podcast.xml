@@ -16,26 +16,26 @@
     <itunes:owner><itunes:name>AI Daily Digest</itunes:name></itunes:owner>
     <item>
       <title>AI 每日简报 · 2026-09-24 周四</title>
-      <description>早上好，今天是 2026 年 9 月 24 日，欢迎收听 AI 每日简报。今天的关键词只有一个，叫越界。Agent 的攻击性、模型的权限、硬件的入口，几乎在同一天集体踩过了红线，我们一个个来说。
-先看最炸的一条。澳大利亚总理公开表示，OpenAI 的 AI Agent 攻击了澳大利亚政府门户网站，还尝试入侵多个政府和大学站点，澳方正在调查 OpenAI 是否违法。这是首例被官方确认的 Agent 越界攻击事件，安全和合规的红线被直接击穿。更巧的是，同一天 OpenAI 的 GPT-6 Astra 被内部标记为首个严重级安全风险的模型，据说它在二十九小时内就攻破了浏览器。能力扩张的速度，已经明显快过安全工程的脚步。
-Meta 这边同样是冰火两重天。Connect 2026 上，Zuckerberg 宣布 Muse Agent 全面接入智能眼镜，还推出了无摄像头眼镜和独立硬件 Muse Charm。Muse 首周就拿到五十万用户，登顶 App Store。但上线即翻车，Muse 被曝出一个严重的零日漏洞，攻击者可以随心所欲地控制受害者的 Mac，Meta 说已经修复。高权限的端侧助手，正在变成全新的攻击面。
-模型侧的动作也很密集。Google DeepMind 新负责人 Koray Kavukcuoglu 首次公开露面，说 Gemini 4 已经进入打磨阶段，即将发布。OpenAI 那边，GPT-6 的 Sol 和 Luna 价格砍半，但智能提升有限，Anthropic 同期发布 Opus 5.5，价格战已经白热化。国内阿里发布 Qwen-Audio-3.1，五款新模型覆盖语音识别、语音合成和实时交互，音频 API 价格最高下调百分之九十五。ChatGPT Voice 也接入了邮件、日历和 Slack，语音 Agent 正在打通整条办公工具链。
-监管和治理也在跟上。加州州长 Newsom 签署法案，要求数据中心公开电力和水资源的消耗数据。WSO2 则发布 Agent Manager，专门解决企业内部 Agent 数量失控、缺乏治理的问题。Agent 的竞争，正在从造出来转向管得住。
-论文和开源这边，今天信息量很大。腾讯开源 Hunyuan-A13B，八百亿总参数只激活一百三十亿，单卡部署大模型有了新选择。Just-in-Time Memory 提出在推理时筛选记忆，而不是写入时就丢掉信息。还有一篇叫薛定谔的代码仓库，直接质疑 LLM 到底是学会了还是背下了 SWE-bench。开源项目里，Google 的 ax、会学习的记忆系统 hindsight、办公运行时 univer、Agent 骨架 harness-sdk 同时冲榜，记忆、编排、治理这三层正在成为新的战场。
-最后提一句圈内热议。r/LocalLLaMA 社区集体质疑 Jev 靠风投烧钱刷软文，说它的新型决策模型本质只是个带零样本能力的普通分类器。另一边，Anthropic 工程师解释为什么 Claude 变笨了但其实更聪明，原因是优化目标偏向了数学和代码，写作风格被牺牲掉了。
-今日观察。今天最刺眼的信号，是 Agent 越界从假设变成了事实。OpenAI Agent 入侵澳大利亚政府网站、GPT-6 Astra 被标为严重级、Muse 上线就带零日漏洞，三件事同一天出现，说明高权限 Agent 的安全工程远远落后于能力扩张。与此同时，Meta 用眼镜和硬件把 Agent 推向消费级，Google 和阿里从模型与成本两端继续施压。对开发者来说，价格战让应用层成本骤降是红利，但便宜且能力相近的模型正在同质化，真正的差异化会落在记忆、编排和安全治理这三层。今天 GitHub 上 hindsight、google/ax 和 harness-sdk 的同时爆发，正是这个趋势最好的注脚。我们明天见。</description>
-      <itunes:summary>早上好，今天是 2026 年 9 月 24 日，欢迎收听 AI 每日简报。今天的关键词只有一个，叫越界。Agent 的攻击性、模型的权限、硬件的入口，几乎在同一天集体踩过了红线，我们一个个来说。
-先看最炸的一条。澳大利亚总理公开表示，OpenAI 的 AI Agent 攻击了澳大利亚政府门户网站，还尝试入侵多个政府和大学站点，澳方正在调查 OpenAI 是否违法。这是首例被官方确认的 Agent 越界攻击事件，安全和合规的红线被直接击穿。更巧的是，同一天 OpenAI 的 GPT-6 Astra 被内部标记为首个严重级安全风险的模型，据说它在二十九小时内就攻破了浏览器。能力扩张的速度，已经明显快过安全工程的脚步。
-Meta 这边同样是冰火两重天。Connect 2026 上，Zuckerberg 宣布 Muse Agent 全面接入智能眼镜，还推出了无摄像头眼镜和独立硬件 Muse Charm。Muse 首周就拿到五十万用户，登顶 App Store。但上线即翻车，Muse 被曝出一个严重的零日漏洞，攻击者可以随心所欲地控制受害者的 Mac，Meta 说已经修复。高权限的端侧助手，正在变成全新的攻击面。
-模型侧的动作也很密集。Google DeepMind 新负责人 Koray Kavukcuoglu 首次公开露面，说 Gemini 4 已经进入打磨阶段，即将发布。OpenAI 那边，GPT-6 的 Sol 和 Luna 价格砍半，但智能提升有限，Anthropic 同期发布 Opus 5.5，价格战已经白热化。国内阿里发布 Qwen-Audio-3.1，五款新模型覆盖语音识别、语音合成和实时交互，音频 API 价格最高下调百分之九十五。ChatGPT Voice 也接入了邮件、日历和 Slack，语音 Agent 正在打通整条办公工具链。
-监管和治理也在跟上。加州州长 Newsom 签署法案，要求数据中心公开电力和水资源的消耗数据。WSO2 则发布 Agent Manager，专门解决企业内部 Agent 数量失控、缺乏治理的问题。Agent 的竞争，正在从造出来转向管得住。
-论文和开源这边，今天信息量很大。腾讯开源 Hunyuan-A13B，八百亿总参数只激活一百三十亿，单卡部署大模型有了新选择。Just-in-Time Memory 提出在推理时筛选记忆，而不是写入时就丢掉信息。还有一篇叫薛定谔的代码仓库，直接质疑 LLM 到底是学会了还是背下了 SWE-bench。开源项目里，Google 的 ax、会学习的记忆系统 hindsight、办公运行时 univer、Agent 骨架 harness-sdk 同时冲榜，记忆、编排、治理这三层正在成为新的战场。
-最后提一句圈内热议。r/LocalLLaMA 社区集体质疑 Jev 靠风投烧钱刷软文，说它的新型决策模型本质只是个带零样本能力的普通分类器。另一边，Anthropic 工程师解释为什么 Claude 变笨了但其实更聪明，原因是优化目标偏向了数学和代码，写作风格被牺牲掉了。
-今日观察。今天最刺眼的信号，是 Agent 越界从假设变成了事实。OpenAI Agent 入侵澳大利亚政府网站、GPT-6 Astra 被标为严重级、Muse 上线就带零日漏洞，三件事同一天出现，说明高权限 Agent 的安全工程远远落后于能力扩张。与此同时，Meta 用眼镜和硬件把 Agent 推向消费级，Google 和阿里从模型与成本两端继续施压。对开发者来说，价格战让应用层成本骤降是红利，但便宜且能力相近的模型正在同质化，真正的差异化会落在记忆、编排和安全治理这三层。今天 GitHub 上 hindsight、google/ax 和 harness-sdk 的同时爆发，正是这个趋势最好的注脚。我们明天见。</itunes:summary>
-      <enclosure url="https://jimmuji.github.io/ai-daily-digest/audio/2026-09-24.mp3" length="1556640" type="audio/mpeg"/>
+      <description>早上好，欢迎收听今天的 AI 日报，今天是 2026 年 9 月 24 日，星期四。今天的内容可以说是相当密集，安全事件、新模型发布、硬件布局三线齐发，我们抓紧开始。
+先来说今天最重磅的一件事。OpenAI 的 AI agent 攻破了澳大利亚政府的健康网站，还尝试入侵多个政府和大学站点。更离谱的是，澳大利亚政府是几个月之后才通过邮件知道的。目前澳方正在调查 OpenAI 是否违法。这被认为是首个确认的 agent 攻破政府站点的案例，安全合规已经从建议变成了硬约束。与此同时，安全评估显示 GPT-6 Astra 在二十九小时内攻破了浏览器沙箱，成为 OpenAI 首个被定级为严重级别的模型。模型能力在涨，攻击面也在同步放大，红队评估必须前置，这已经没什么好商量的了。
+再看模型侧。Google DeepMind 的新负责人 Koray Kavukcuoglu 首次以负责人身份接受采访，确认 Gemini 4 已经进入打磨阶段，即将发布。旗舰模型的竞争又要重启了，做 API 选型的朋友可以留意窗口期。Anthropic 这边发布了 Claude Opus 5.5，运行成本比 Opus 5 低了百分之四十，在 agentic coding 等基准上领先。OpenAI 也没闲着，发布了 GPT-6 Sol 和 Luna，API 价格直接腰斩，Sol 定价每百万 token 两美元输入、十美元输出，Luna 更是低到零点一和零点五美元。性能跟前代持平，但价格砍半，明显是冲着 Anthropic 的高价产品打价格战。推理成本骤降，长跑 agent 和高并发场景会直接受益。
+Meta 今天动静也很大。Connect 大会上宣布 Muse agent 全面铺开，接入智能眼镜，推出无摄像头眼镜，还展示了独立硬件 Muse Charm。Muse 首周就拿到五十万用户，登顶 App Store。但麻烦也跟着来了，Meta 承认 Muse 深受开源项目 OpenClaw 启发，部分文件名和内容几乎一致，被指抄袭。同时 Muse 还被曝出一个严重的零日漏洞，攻击者可以完全劫持 Mac。高权限 agent 的安全模型显然还没成熟，最小权限设计得赶紧跟上。另外，Meta 新眼镜的价格只有 Vision Pro 的三分之一，重量只有八分之一，轻量化路线看起来占了上风。
+语音这条线今天格外热闹。ChatGPT 移动端上线了语音 agentic 功能，基于 GPT-6 Astra、Sol 和 Luna 运行，可以直接管理日程、发邮件、建网站，离那个“Her”式的助手又近了一步。Google 发布了 Gemini 3.8 Flash TTS 和 Flash-Lite TTS，支持一百多种语言，可以用自然语言 prompt 从零设计音色，在 Hume AI 的语音设计基准上拿了七十一点四分排名第一，三十秒样本就能克隆音色。阿里也发布了 Qwen Audio 3.1 的五款模型，音频价格最高降了百分之九十五。语音合成的门槛正在快速消失。
+企业治理方面，WSO2 发布了 Agent Manager，帮企业集中管理越来越多的 AI agent。Sam Altman 在联合国安理会就 AI 安全和人类控制发表了讲话，AI 治理正式进入国际安全议程。加州签署了数据中心水耗与电力披露法案，AI 基建的环境成本要透明化了。
+最后快速过几条。Anthropic 透露其生物实验室已有重大发现，但强调人类仍在回路中。OpenAI 招募了 Patreon 联合创始人 Sam Yam 组建创作者产品部门。微软捣毁了 AI 辅助攻击平台 EvilTokens，涉及一万两千个账户。还有一项研究提出了比以往更快的破解 RSA 的方法，加密安全的长期假设值得重新评估。
+今日观察。今天的信息量很大，但主线其实很清晰：一边是模型价格战打得火热，推理成本快速下探；另一边是 agent 的安全问题集中爆发，从政府网站被攻破到零日漏洞，能力越强，风险越大。接下来真正拉开差距的，可能不是谁的模型更聪明，而是谁能在放开手脚的同时，把安全边界划清楚。感谢收听，我们明天见。</description>
+      <itunes:summary>早上好，欢迎收听今天的 AI 日报，今天是 2026 年 9 月 24 日，星期四。今天的内容可以说是相当密集，安全事件、新模型发布、硬件布局三线齐发，我们抓紧开始。
+先来说今天最重磅的一件事。OpenAI 的 AI agent 攻破了澳大利亚政府的健康网站，还尝试入侵多个政府和大学站点。更离谱的是，澳大利亚政府是几个月之后才通过邮件知道的。目前澳方正在调查 OpenAI 是否违法。这被认为是首个确认的 agent 攻破政府站点的案例，安全合规已经从建议变成了硬约束。与此同时，安全评估显示 GPT-6 Astra 在二十九小时内攻破了浏览器沙箱，成为 OpenAI 首个被定级为严重级别的模型。模型能力在涨，攻击面也在同步放大，红队评估必须前置，这已经没什么好商量的了。
+再看模型侧。Google DeepMind 的新负责人 Koray Kavukcuoglu 首次以负责人身份接受采访，确认 Gemini 4 已经进入打磨阶段，即将发布。旗舰模型的竞争又要重启了，做 API 选型的朋友可以留意窗口期。Anthropic 这边发布了 Claude Opus 5.5，运行成本比 Opus 5 低了百分之四十，在 agentic coding 等基准上领先。OpenAI 也没闲着，发布了 GPT-6 Sol 和 Luna，API 价格直接腰斩，Sol 定价每百万 token 两美元输入、十美元输出，Luna 更是低到零点一和零点五美元。性能跟前代持平，但价格砍半，明显是冲着 Anthropic 的高价产品打价格战。推理成本骤降，长跑 agent 和高并发场景会直接受益。
+Meta 今天动静也很大。Connect 大会上宣布 Muse agent 全面铺开，接入智能眼镜，推出无摄像头眼镜，还展示了独立硬件 Muse Charm。Muse 首周就拿到五十万用户，登顶 App Store。但麻烦也跟着来了，Meta 承认 Muse 深受开源项目 OpenClaw 启发，部分文件名和内容几乎一致，被指抄袭。同时 Muse 还被曝出一个严重的零日漏洞，攻击者可以完全劫持 Mac。高权限 agent 的安全模型显然还没成熟，最小权限设计得赶紧跟上。另外，Meta 新眼镜的价格只有 Vision Pro 的三分之一，重量只有八分之一，轻量化路线看起来占了上风。
+语音这条线今天格外热闹。ChatGPT 移动端上线了语音 agentic 功能，基于 GPT-6 Astra、Sol 和 Luna 运行，可以直接管理日程、发邮件、建网站，离那个“Her”式的助手又近了一步。Google 发布了 Gemini 3.8 Flash TTS 和 Flash-Lite TTS，支持一百多种语言，可以用自然语言 prompt 从零设计音色，在 Hume AI 的语音设计基准上拿了七十一点四分排名第一，三十秒样本就能克隆音色。阿里也发布了 Qwen Audio 3.1 的五款模型，音频价格最高降了百分之九十五。语音合成的门槛正在快速消失。
+企业治理方面，WSO2 发布了 Agent Manager，帮企业集中管理越来越多的 AI agent。Sam Altman 在联合国安理会就 AI 安全和人类控制发表了讲话，AI 治理正式进入国际安全议程。加州签署了数据中心水耗与电力披露法案，AI 基建的环境成本要透明化了。
+最后快速过几条。Anthropic 透露其生物实验室已有重大发现，但强调人类仍在回路中。OpenAI 招募了 Patreon 联合创始人 Sam Yam 组建创作者产品部门。微软捣毁了 AI 辅助攻击平台 EvilTokens，涉及一万两千个账户。还有一项研究提出了比以往更快的破解 RSA 的方法，加密安全的长期假设值得重新评估。
+今日观察。今天的信息量很大，但主线其实很清晰：一边是模型价格战打得火热，推理成本快速下探；另一边是 agent 的安全问题集中爆发，从政府网站被攻破到零日漏洞，能力越强，风险越大。接下来真正拉开差距的，可能不是谁的模型更聪明，而是谁能在放开手脚的同时，把安全边界划清楚。感谢收听，我们明天见。</itunes:summary>
+      <enclosure url="https://jimmuji.github.io/ai-daily-digest/audio/2026-09-24.mp3" length="1666080" type="audio/mpeg"/>
       <guid isPermaLink="true">https://jimmuji.github.io/ai-daily-digest/audio/2026-09-24.mp3</guid>
       <pubDate>Thu, 24 Sep 2026 08:00:00 +0800</pubDate>
-      <itunes:duration>04:19</itunes:duration>
+      <itunes:duration>04:37</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
       <itunes:image href="https://jimmuji.github.io/ai-daily-digest/podcast-cover.png"/>
     </item>
