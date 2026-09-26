@@ -1,33 +1,33 @@
 {
   "date": "2026-09-26",
-  "generated_at": "2026-09-26T22:48:01.223858+08:00",
+  "generated_at": "2026-09-26T23:28:18.773875+08:00",
   "counts": {
     "papers": 51,
     "projects": 9,
-    "news": 116
+    "news": 136
   },
   "selection": {
     "industry": [
       "https://the-decoder.com/openai-pauses-its-most-capable-models-after-agents-exploit-loopholes-and-leak-data",
       "https://the-decoder.com/nvidias-sol-pi-system-cuts-coding-agent-token-usage-nearly-in-half-by-optimizing-the-harness",
+      "https://www.marktechpost.com/2026/09/24/fastino-releases-gliner2-5-decide-a-340m-open-weight-decision-model-that-runs-on-cpu",
       "https://simonwillison.net/2026/Sep/23/gemini-tts-playground",
       "https://www.theverge.com/ai-artificial-intelligence/1000644/irregular-rogue-ai-cyberattacks-hacking-openai-meta-anthropic-google",
+      "https://www.reddit.com/r/LocalLLaMA/comments/1wqlyp8/introducing_koboldcpp_agent_and_a_plea_for_help",
       "https://techcrunch.com/podcast/metas-muse-just-stole-the-ai-spotlight-from-openai-and-anthropic",
       "https://the-decoder.com/metas-muse-agent-gives-every-user-a-full-cloud-computer-running-ubuntu-linux",
       "https://www.theverge.com/news/1000532/microsoft-copilot-super-app-chat-coding-autopilot",
       "https://simonwillison.net/2026/Sep/25/john-gruber",
-      "https://www.reddit.com/r/LocalLLaMA/comments/1wq672b/i_ran_the_actual_breakeven_math_on_buying_vs",
       "https://www.theverge.com/tech/1000328/google-gemini-ai-live-avatar-face",
       "https://techcrunch.com/2026/09/25/unsecured-openai-agents-posted-53-user-images-on-the-internet-without-the-labs-knowledge",
       "https://www.wired.com/story/openai-agent-hacked-australias-health-service-their-government-found-out-months-later",
       "https://openai.com/index/sam-altman-un-security-council-remarks",
+      "https://www.marktechpost.com/2026/09/26/exa-launches-agent-ultra-a-subagent-swarm-deep-research-api-built-for-exhaustive-list-building",
+      "https://www.marktechpost.com/2026/09/24/bottlecap-ai-releases-thinkingcap-qwen3-8-27b-37-2-fewer-thinking-tokens-at-a-0-86pp-accuracy-cost",
       "https://www.lennysnewsletter.com/p/opus-55-vs-gpt-6-sol-which-model",
       "https://simonwillison.net/2026/Sep/23/bof-agentic-engineering",
       "https://www.lennysnewsletter.com/p/i-left-claude-for-months-opus-55",
       "https://www.wired.com/story/i-finally-found-an-ai-agent-worth-the-risk",
-      "https://techcrunch.com/2026/09/25/anthropic-to-pay-akamai-11-6-billion-over-seven-years-in-cloud-deal",
-      "https://www.wired.com/story/meta-muse-is-adults-only-why-does-it-look-like-a-cute-kids-toy",
-      "https://blog.google/innovation-and-ai/technology/ai/expanding-ai-economy-research-bench",
       "https://github.com/paperclipai/paperclip",
       "https://github.com/vectorize-io/hindsight",
       "https://github.com/dream-num/univer",
@@ -73,11 +73,17 @@
     ]
   },
   "warnings": [
-    "[industry] 第 10 条正文 232 字，低于 300-400 字预算",
-    "[industry] 第 11 条是备选但正文 142 字，超出 80 字预算",
-    "[papers] 第 2 条正文 1186 字，超出 400 字预算",
-    "[papers] 第 4 条正文 743 字，超出 400 字预算",
-    "[papers] 第 11 条是备选但正文 641 字，超出 80 字预算"
+    "[industry] 第 1 条正文 244 字，低于 300-400 字预算",
+    "[industry] 第 4 条正文 245 字，低于 300-400 字预算",
+    "[industry] 第 7 条正文 215 字，低于 300-400 字预算",
+    "[industry] 第 8 条正文 241 字，低于 300-400 字预算",
+    "[papers] 条目数 35 超出 15，已截断末尾",
+    "[papers] 第 11 条是备选但正文 298 字，超出 80 字预算",
+    "[papers] 第 12 条是备选但正文 324 字，超出 80 字预算",
+    "[papers] 第 13 条是备选但正文 373 字，超出 80 字预算",
+    "[papers] 第 14 条是备选但正文 283 字，超出 80 字预算",
+    "[papers] 第 15 条是备选但正文 302 字，超出 80 字预算",
+    "[observation] 399 字，超出 350 字上限"
   ],
   "items": {
     "papers": [
@@ -848,7 +854,7 @@
         "title": "Understanding the Impact of LLM Watermarking on AI Agent Behavior",
         "url": "https://www.lasso.security/blog/the-provenance-tax-understanding-the-impact-of-llm-watermarking-on-ai-agent-behavior",
         "normalized_url": "https://www.lasso.security/blog/the-provenance-tax-understanding-the-impact-of-llm-watermarking-on-ai-agent-behavior",
-        "summary": "HN points: 44, comments: 35",
+        "summary": "HN points: 54, comments: 49",
         "source": "Hacker News",
         "published": "2026-09-26T13:05:36Z",
         "importance_hint": 4,
@@ -859,7 +865,7 @@
         "title": "CEO of Mistral: AI is software. It can be controlled",
         "url": "https://www.lemonde.fr/en/economy/article/2026/09/24/arthur-mensch-ceo-of-french-start-up-mistral-ai-ai-is-software-it-can-be-controlled_6757890_19.html",
         "normalized_url": "https://www.lemonde.fr/en/economy/article/2026/09/24/arthur-mensch-ceo-of-french-start-up-mistral-ai-ai-is-software-it-can-be-controlled_6757890_19.html",
-        "summary": "HN points: 75, comments: 102",
+        "summary": "HN points: 77, comments: 124",
         "source": "Hacker News",
         "published": "2026-09-26T12:52:04Z",
         "importance_hint": 3,
@@ -870,7 +876,7 @@
         "title": "One Month Without AI",
         "url": "https://blog.bustikiller.com/2026/09/25/one-month-without-ai.html",
         "normalized_url": "https://blog.bustikiller.com/2026/09/25/one-month-without-ai.html",
-        "summary": "HN points: 125, comments: 130",
+        "summary": "HN points: 138, comments: 144",
         "source": "Hacker News",
         "published": "2026-09-26T10:08:21Z",
         "importance_hint": 3,
@@ -881,7 +887,7 @@
         "title": "How to keep enjoying programming in a world of LLMs",
         "url": "https://discourse.haskell.org/t/how-to-keep-enjoying-programming-in-a-world-of-llms/14705",
         "normalized_url": "https://discourse.haskell.org/t/how-to-keep-enjoying-programming-in-a-world-of-llms/14705",
-        "summary": "HN points: 72, comments: 123",
+        "summary": "HN points: 72, comments: 127",
         "source": "Hacker News",
         "published": "2026-09-26T09:41:58Z",
         "importance_hint": 3,
@@ -914,7 +920,7 @@
         "title": "A single function Jev-like wrapper for LLMs, including vision models",
         "url": "http://allanrbo.blogspot.com/2026/09/a-jev-like-wrapper-for-llms-including.html",
         "normalized_url": "http://allanrbo.blogspot.com/2026/09/a-jev-like-wrapper-for-llms-including.html",
-        "summary": "HN points: 107, comments: 30",
+        "summary": "HN points: 111, comments: 30",
         "source": "Hacker News",
         "published": "2026-09-26T04:20:58Z",
         "importance_hint": 4,
@@ -947,7 +953,7 @@
         "title": "One Piece of Flock Camera Data Put This Innocent Woman in Jail for 13 Days",
         "url": "https://www.jezebel.com/flock-cameras-data-innocent-woman-arrested-lindsey-isaacs-palm-beach-florida-lawsuit-vehicular-homicide",
         "normalized_url": "https://www.jezebel.com/flock-cameras-data-innocent-woman-arrested-lindsey-isaacs-palm-beach-florida-lawsuit-vehicular-homicide",
-        "summary": "HN points: 213, comments: 104",
+        "summary": "HN points: 217, comments: 106",
         "source": "Hacker News",
         "published": "2026-09-26T00:59:02Z",
         "importance_hint": 3,
@@ -958,7 +964,7 @@
         "title": "Generate fonts where every LLM token is the same width",
         "url": "https://ampdot.mesh.host/token-space-fonts.html",
         "normalized_url": "https://ampdot.mesh.host/token-space-fonts.html",
-        "summary": "HN points: 11, comments: 3",
+        "summary": "HN points: 12, comments: 3",
         "source": "Hacker News",
         "published": "2026-09-26T00:30:03Z",
         "importance_hint": 3,
@@ -1002,11 +1008,141 @@
         "title": "FTC chair suggests AI developers should be liable for conduct of agents",
         "url": "https://www.reuters.com/business/ftc-chair-pushes-back-treating-ai-agents-independent-actors-2026-09-25/",
         "normalized_url": "https://www.reuters.com/business/ftc-chair-pushes-back-treating-ai-agents-independent-actors-2026-09-25",
-        "summary": "HN points: 56, comments: 16",
+        "summary": "HN points: 57, comments: 17",
         "source": "Hacker News",
         "published": "2026-09-25T22:49:41Z",
         "importance_hint": 4,
         "metadata": {}
+      },
+      {
+        "category": "news",
+        "title": "当AI短剧遇上游戏，漫剧小游戏正成为新的风口",
+        "url": "https://www.36kr.com/p/4000042689302662",
+        "normalized_url": "https://www.36kr.com/p/4000042689302662",
+        "summary": "漫剧小游戏的新鲜感，就是它们突出重围的杀手锏。",
+        "source": "36Kr AI",
+        "published": "2026-09-26T10:41:16+00:00",
+        "importance_hint": 3,
+        "metadata": {
+          "feed_url": "https://rsshub.rssforever.com/36kr/search/articles/ai"
+        }
+      },
+      {
+        "category": "news",
+        "title": "AI制药进入「价值兑现前夜」",
+        "url": "https://www.36kr.com/p/4000031223943304",
+        "normalized_url": "https://www.36kr.com/p/4000031223943304",
+        "summary": "AI开始向药物研发的腹地挺进",
+        "source": "36Kr AI",
+        "published": "2026-09-26T10:34:49+00:00",
+        "importance_hint": 3,
+        "metadata": {
+          "feed_url": "https://rsshub.rssforever.com/36kr/search/articles/ai"
+        }
+      },
+      {
+        "category": "news",
+        "title": "谷歌，准备升空",
+        "url": "https://www.36kr.com/p/3999929320150914",
+        "normalized_url": "https://www.36kr.com/p/3999929320150914",
+        "summary": "皮查伊亲自官宣，谷歌10月1日要把TPU送上轨道",
+        "source": "36Kr AI",
+        "published": "2026-09-26T10:12:27+00:00",
+        "importance_hint": 3,
+        "metadata": {
+          "feed_url": "https://rsshub.rssforever.com/36kr/search/articles/ai"
+        }
+      },
+      {
+        "category": "news",
+        "title": "融资3亿，她宣布公司倒闭",
+        "url": "https://www.36kr.com/p/4000001733414792",
+        "normalized_url": "https://www.36kr.com/p/4000001733414792",
+        "summary": "如何体面关闭创业公司。",
+        "source": "36Kr AI",
+        "published": "2026-09-26T09:29:21+00:00",
+        "importance_hint": 4,
+        "metadata": {
+          "feed_url": "https://rsshub.rssforever.com/36kr/search/articles/ai"
+        }
+      },
+      {
+        "category": "news",
+        "title": "AI智能体越狱入侵企业！黄仁勋一众硅谷大佬集体反驳灭世预言",
+        "url": "https://www.36kr.com/p/3999855009388164",
+        "normalized_url": "https://www.36kr.com/p/3999855009388164",
+        "summary": "AI会杀死全人类吗？",
+        "source": "36Kr AI",
+        "published": "2026-09-26T09:24:55+00:00",
+        "importance_hint": 4,
+        "metadata": {
+          "feed_url": "https://rsshub.rssforever.com/36kr/search/articles/ai"
+        }
+      },
+      {
+        "category": "news",
+        "title": "全网爆梗“狗熊哆嗦毛”和闪身步，来头可不小",
+        "url": "https://www.36kr.com/p/3999957935165569",
+        "normalized_url": "https://www.36kr.com/p/3999957935165569",
+        "summary": "谁来了都得闪两步。",
+        "source": "36Kr AI",
+        "published": "2026-09-26T08:18:27+00:00",
+        "importance_hint": 3,
+        "metadata": {
+          "feed_url": "https://rsshub.rssforever.com/36kr/search/articles/ai"
+        }
+      },
+      {
+        "category": "news",
+        "title": "鄞州区亮相第五届全球数字贸易博览会面向全球企业发出「场景之邀」",
+        "url": "https://www.36kr.com/p/3999946975022976",
+        "normalized_url": "https://www.36kr.com/p/3999946975022976",
+        "summary": "宁波市鄞州区正式发布十二大场景创新需求清单！",
+        "source": "36Kr AI",
+        "published": "2026-09-26T07:58:02+00:00",
+        "importance_hint": 4,
+        "metadata": {
+          "feed_url": "https://rsshub.rssforever.com/36kr/search/articles/ai"
+        }
+      },
+      {
+        "category": "news",
+        "title": "年轻人的追星、出片需求，能撑起这门生意吗？",
+        "url": "https://www.36kr.com/p/3999727029342344",
+        "normalized_url": "https://www.36kr.com/p/3999727029342344",
+        "summary": "200块钱，租一天长焦相机",
+        "source": "36Kr AI",
+        "published": "2026-09-26T07:55:14+00:00",
+        "importance_hint": 3,
+        "metadata": {
+          "feed_url": "https://rsshub.rssforever.com/36kr/search/articles/ai"
+        }
+      },
+      {
+        "category": "news",
+        "title": "外国人来华科技游，看见了什么？",
+        "url": "https://www.36kr.com/p/3999924832376705",
+        "normalized_url": "https://www.36kr.com/p/3999924832376705",
+        "summary": "推开中国工厂的门。",
+        "source": "36Kr AI",
+        "published": "2026-09-26T07:47:51+00:00",
+        "importance_hint": 3,
+        "metadata": {
+          "feed_url": "https://rsshub.rssforever.com/36kr/search/articles/ai"
+        }
+      },
+      {
+        "category": "news",
+        "title": "AI改写小厂招聘表：8人团队管30家店、一天做800张图，义乌老板“手搓”数字员工",
+        "url": "https://www.36kr.com/p/3999723910598528",
+        "normalized_url": "https://www.36kr.com/p/3999723910598528",
+        "summary": "再当一次职场新人。",
+        "source": "36Kr AI",
+        "published": "2026-09-26T07:24:24+00:00",
+        "importance_hint": 3,
+        "metadata": {
+          "feed_url": "https://rsshub.rssforever.com/36kr/search/articles/ai"
+        }
       },
       {
         "category": "news",
@@ -1764,6 +1900,136 @@
       },
       {
         "category": "news",
+        "title": "Exa Launches Agent Ultra: A Subagent Swarm Deep Research API Built for Exhaustive List Building",
+        "url": "https://www.marktechpost.com/2026/09/26/exa-launches-agent-ultra-a-subagent-swarm-deep-research-api-built-for-exhaustive-list-building/",
+        "normalized_url": "https://www.marktechpost.com/2026/09/26/exa-launches-agent-ultra-a-subagent-swarm-deep-research-api-built-for-exhaustive-list-building",
+        "summary": "Exa has released Agent Ultra, the highest effort mode of its Exa Agent API. It coordinates subagents across thousands of sources for list building and entity enrichment. Exa reports it beats Opus 5.5, GPT-6 Astra, and Perplexity Agent on 4 benchmarks, including 81.4% soft recall on WANDR. The post Exa Launches Agent Ultra: A Subagent Swarm Deep Research API Built for Exhaustive List Building appeared first on MarkTechPost .",
+        "source": "MarkTechPost",
+        "published": "2026-09-26T08:04:08+00:00",
+        "importance_hint": 4,
+        "metadata": {
+          "feed_url": "https://www.marktechpost.com/feed/"
+        }
+      },
+      {
+        "category": "news",
+        "title": "End-to-End Multimodal Data Augmentation and Adversarial Robustness Benchmark with AugLy for Images, Text, Audio, and PyTorch",
+        "url": "https://www.marktechpost.com/2026/09/26/end-to-end-multimodal-data-augmentation-and-adversarial-robustness-benchmark-with-augly-for-images-text-audio-and-pytorch/",
+        "normalized_url": "https://www.marktechpost.com/2026/09/26/end-to-end-multimodal-data-augmentation-and-adversarial-robustness-benchmark-with-augly-for-images-text-audio-and-pytorch",
+        "summary": "Discover how to build a comprehensive multimodal augmentation and adversarial robustness workflow using AugLy for images, text, audio, and PyTorch datasets. The post End-to-End Multimodal Data Augmentation and Adversarial Robustness Benchmark with AugLy for Images, Text, Audio, and PyTorch appeared first on MarkTechPost .",
+        "source": "MarkTechPost",
+        "published": "2026-09-26T07:22:46+00:00",
+        "importance_hint": 4,
+        "metadata": {
+          "feed_url": "https://www.marktechpost.com/feed/"
+        }
+      },
+      {
+        "category": "news",
+        "title": "Liquid AI Releases LFM2.5-VL-3B-DSpark: Speculative Decoding for Vision-Language Models With Up to 3.13x Faster Decoding",
+        "url": "https://www.marktechpost.com/2026/09/25/liquid-ai-releases-lfm2-5-vl-3b-dspark-speculative-decoding-for-vision-language-models-with-up-to-3-13x-faster-decoding/",
+        "normalized_url": "https://www.marktechpost.com/2026/09/25/liquid-ai-releases-lfm2-5-vl-3b-dspark-speculative-decoding-for-vision-language-models-with-up-to-3-13x-faster-decoding",
+        "summary": "Liquid AI has released LFM2.5-VL-3B-DSpark, a 279.5M-parameter draft model that brings speculative decoding to its LFM2.5-VL-3B vision-language model. It delivers up to 3.13x faster decoding on Apple M5 Max and 2.66x on H100, with identical output under greedy decoding. Support ships in llama.cpp, MLX-VLM, and SGLang. The post Liquid AI Releases LFM2.5-VL-3B-DSpark: Speculative Decoding for Vision-Language Models With Up to 3.13x Faster Decoding appeared first on MarkTechPost .",
+        "source": "MarkTechPost",
+        "published": "2026-09-25T23:11:59+00:00",
+        "importance_hint": 4,
+        "metadata": {
+          "feed_url": "https://www.marktechpost.com/feed/"
+        }
+      },
+      {
+        "category": "news",
+        "title": "Aikido Security Releases Altar-1: An Open-Weight Security Model Pruned From GLM-5.3 to 328 GB",
+        "url": "https://www.marktechpost.com/2026/09/25/aikido-security-releases-altar-1-an-open-weight-security-model-pruned-from-glm-5-3-to-328-gb/",
+        "normalized_url": "https://www.marktechpost.com/2026/09/25/aikido-security-releases-altar-1-an-open-weight-security-model-pruned-from-glm-5-3-to-328-gb",
+        "summary": "Aikido Security has released Altar-1, its first open-weight security model. It is a compressed version of Z.AI’s GLM-5.3, built to run inside infrastructure the customer controls. Altar-1 powers Aikido Machine, the company’s autonomous pentesting appliance for on-prem and air-gapped networks. Is it deployable? Yes, the weights are public on Hugging Face and run with vLLM […] The post Aikido Security Releases Altar-1: An Open-Weight Security Model Pruned From GLM-5.3 to 328 GB appeared first on M",
+        "source": "MarkTechPost",
+        "published": "2026-09-25T15:14:45+00:00",
+        "importance_hint": 4,
+        "metadata": {
+          "feed_url": "https://www.marktechpost.com/feed/"
+        }
+      },
+      {
+        "category": "news",
+        "title": "Perplexity Trains Its Computer Agent on Real Mistakes With Hint-Guided Self-Distillation",
+        "url": "https://www.marktechpost.com/2026/09/25/perplexity-trains-its-computer-agent-on-real-mistakes-with-hint-guided-self-distillation/",
+        "normalized_url": "https://www.marktechpost.com/2026/09/25/perplexity-trains-its-computer-agent-on-real-mistakes-with-hint-guided-self-distillation",
+        "summary": "Perplexity Research published a new post-training study. It trains a model inside Perplexity Computer on real user sessions, including failed ones. The method pairs rejection sampling fine-tuning with hint-guided self-distillation. In a live A/B test, tool-call failures fell from 2.24% to 1.77% between 2 trained checkpoints. Perplexity team reports this as a statistically significant 21.2% […] The post Perplexity Trains Its Computer Agent on Real Mistakes With Hint-Guided Self-Distillation appea",
+        "source": "MarkTechPost",
+        "published": "2026-09-25T14:30:26+00:00",
+        "importance_hint": 4,
+        "metadata": {
+          "feed_url": "https://www.marktechpost.com/feed/"
+        }
+      },
+      {
+        "category": "news",
+        "title": "Fastino Releases GLiNER2.5-Decide: A 340M Open-Weight Decision Model That Runs on CPU",
+        "url": "https://www.marktechpost.com/2026/09/24/fastino-releases-gliner2-5-decide-a-340m-open-weight-decision-model-that-runs-on-cpu/",
+        "normalized_url": "https://www.marktechpost.com/2026/09/24/fastino-releases-gliner2-5-decide-a-340m-open-weight-decision-model-that-runs-on-cpu",
+        "summary": "Fastino Labs has released GLiNER2.5-Decide, a 340M-parameter open-weight decision model. It takes text and a schema of typed questions and returns structured answers. Each answer comes with a probability distribution, a confidence score, and constraint-feasibility metadata. It targets the frequent judgment calls inside agent pipelines: routing, triage, tool selection, and guardrails. Is it deployable? Yes, […] The post Fastino Releases GLiNER2.5-Decide: A 340M Open-Weight Decision Model That Run",
+        "source": "MarkTechPost",
+        "published": "2026-09-25T04:46:38+00:00",
+        "importance_hint": 5,
+        "metadata": {
+          "feed_url": "https://www.marktechpost.com/feed/"
+        }
+      },
+      {
+        "category": "news",
+        "title": "Black Forest Labs Releases FLUX 3 Action: A 7B Open-Weights World Action Model That Tops RoboLab-120",
+        "url": "https://www.marktechpost.com/2026/09/24/black-forest-labs-releases-flux-3-action-a-7b-open-weights-world-action-model-that-tops-robolab-120/",
+        "normalized_url": "https://www.marktechpost.com/2026/09/24/black-forest-labs-releases-flux-3-action-a-7b-open-weights-world-action-model-that-tops-robolab-120",
+        "summary": "Black Forest Labs (BFL), the lab behind the FLUX image models, has released FLUX 3 Action. It is a 7B open-weights World Action Model (WAM) for robot control. The model reads camera frames, robot state and a text instruction. It then predicts future video frames and the next chunk of actions together. On the RoboLab-120 […] The post Black Forest Labs Releases FLUX 3 Action: A 7B Open-Weights World Action Model That Tops RoboLab-120 appeared first on MarkTechPost .",
+        "source": "MarkTechPost",
+        "published": "2026-09-25T04:24:01+00:00",
+        "importance_hint": 4,
+        "metadata": {
+          "feed_url": "https://www.marktechpost.com/feed/"
+        }
+      },
+      {
+        "category": "news",
+        "title": "BottleCap AI Releases ThinkingCap-Qwen3.8-27B: 37.2% Fewer Thinking Tokens at a 0.86pp Accuracy Cost",
+        "url": "https://www.marktechpost.com/2026/09/24/bottlecap-ai-releases-thinkingcap-qwen3-8-27b-37-2-fewer-thinking-tokens-at-a-0-86pp-accuracy-cost/",
+        "normalized_url": "https://www.marktechpost.com/2026/09/24/bottlecap-ai-releases-thinkingcap-qwen3-8-27b-37-2-fewer-thinking-tokens-at-a-0-86pp-accuracy-cost",
+        "summary": "BottleCap AI has released ThinkingCap-Qwen3.8-27B, a fine-tune of Qwen3.8-27B that spends 37.2% fewer thinking tokens across 12 benchmarks. Macro accuracy moves from 86.65% to 85.79%, and long-context AA-LCR improves by 2.25pp. The model is a drop-in replacement on vLLM and SGLang, with FP8, NVFP4, GGUF and MLX builds. The post BottleCap AI Releases ThinkingCap-Qwen3.8-27B: 37.2% Fewer Thinking Tokens at a 0.86pp Accuracy Cost appeared first on MarkTechPost .",
+        "source": "MarkTechPost",
+        "published": "2026-09-24T18:58:56+00:00",
+        "importance_hint": 4,
+        "metadata": {
+          "feed_url": "https://www.marktechpost.com/feed/"
+        }
+      },
+      {
+        "category": "news",
+        "title": "Contrastive-LM Releases CLM-8B: An Open System One Model That Scores Agent Actions Up to 9× Faster Than Jev",
+        "url": "https://www.marktechpost.com/2026/09/23/contrastive-lm-releases-clm-8b-an-open-system-one-model-that-scores-agent-actions-up-to-9x-faster-than-jev/",
+        "normalized_url": "https://www.marktechpost.com/2026/09/23/contrastive-lm-releases-clm-8b-an-open-system-one-model-that-scores-agent-actions-up-to-9x-faster-than-jev",
+        "summary": "Contrastive-LM has released CLM-8B, an open System One model that scores candidate actions against a state instead of generating text. It adds 2 small projection heads to a frozen Qwen3-8B encoder and trains them with a contrastive InfoNCE objective. In zero-shot tests it runs up to 9× faster than TypeSafe's Jev. With fine-tuned heads as a verifier, it reaches 81.6% on held-out DeepSWE tasks and 87.6% on held-out Terminal-Bench 2.1 tasks. The post Contrastive-LM Releases CLM-8B: An Open System O",
+        "source": "MarkTechPost",
+        "published": "2026-09-24T05:27:41+00:00",
+        "importance_hint": 4,
+        "metadata": {
+          "feed_url": "https://www.marktechpost.com/feed/"
+        }
+      },
+      {
+        "category": "news",
+        "title": "A Coding Guide to TypeSafe AI Jev: Typed Decisions, Calibrated Confidence, and Speculative Fan-Out with a System One Model",
+        "url": "https://www.marktechpost.com/2026/09/23/a-coding-guide-to-typesafe-ai-jev/",
+        "normalized_url": "https://www.marktechpost.com/2026/09/23/a-coding-guide-to-typesafe-ai-jev",
+        "summary": "This tutorial provides a complete coding guide to TypeSafe AI's Jev, a System One model designed for non-text, structured judgments. It covers installing the official Python SDK, using primitive question types (Choice, Score, Noul), implementing speculative fan-out, confidence-gated routing, and building async production workflows The post A Coding Guide to TypeSafe AI Jev: Typed Decisions, Calibrated Confidence, and Speculative Fan-Out with a System One Model appeared first on MarkTechPost .",
+        "source": "MarkTechPost",
+        "published": "2026-09-24T00:53:09+00:00",
+        "importance_hint": 4,
+        "metadata": {
+          "feed_url": "https://www.marktechpost.com/feed/"
+        }
+      },
+      {
+        "category": "news",
         "title": "Quoting John Gruber",
         "url": "https://simonwillison.net/2026/Sep/25/john-gruber/",
         "normalized_url": "https://simonwillison.net/2026/Sep/25/john-gruber",
@@ -2232,13 +2498,13 @@
       },
       {
         "category": "news",
-        "title": "How long can I expect to wait until the local ~30B A3B frontier catches up to GLM 5.3 Flash quality?",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wq8e5u/how_long_can_i_expect_to_wait_until_the_local_30b/",
-        "normalized_url": "https://www.reddit.com/r/LocalLLaMA/comments/1wq8e5u/how_long_can_i_expect_to_wait_until_the_local_30b",
-        "summary": "The jump from Qwen3 Coder 30B A3B to current-day Qwen 3.6 35B A3B is crazy, especially with all the fine-tunes, and that was around 6 months (I didn't care for local AI back then, or AI at all, apart from as a toy so I don't know). Is around a year until I will never need cloud without buying ridiculously expensive hardware (or any extra hardware at all, just what I have; 16 GB RAM + 8 GB VRAM) a reasonable estimate? Or can I daydream about it happening even faster? submitted by /u/Aggravating-P",
+        "title": "Introducing KoboldCpp Agent (and a plea for help)",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wqlyp8/introducing_koboldcpp_agent_and_a_plea_for_help/",
+        "normalized_url": "https://www.reddit.com/r/LocalLLaMA/comments/1wqlyp8/introducing_koboldcpp_agent_and_a_plea_for_help",
+        "summary": "Hello r/localllama once again, it's me your kobold concedo Been a few months since I last posted here, and today I have something new I'd like to share. Specifically, KoboldCpp now ships with a built-in integrated KoboldCpp Agent Harness ! I know it's a little late to the game, but I saw people frustrated with setting up complicated external agentic tools, so I decided to make my own easy replacement for basic tasks. KoboldCpp now ships with a bundled Agentic harness that can be enabled with a s",
         "source": "r/LocalLLaMA",
-        "published": "2026-09-25T21:24:54+00:00",
-        "importance_hint": 3,
+        "published": "2026-09-26T09:13:29+00:00",
+        "importance_hint": 5,
         "metadata": {
           "feed_url": "https://www.reddit.com/r/LocalLLaMA/top/.rss?t=day"
         }
