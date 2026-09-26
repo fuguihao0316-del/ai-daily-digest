@@ -31,6 +31,7 @@ def _raw_payload(date_str, today, data):
         "generated_at": today.isoformat(),
         "counts": {key: len(value) for key, value in data.items()},
         "selection": LAST_REPORT.get("selection", {}),
+        "pool": LAST_REPORT.get("pool", {}),
         "warnings": LAST_REPORT.get("warnings", []),
         "items": {
             key: [{**item, "summary": (item.get("summary") or "")[:500]} for item in value]

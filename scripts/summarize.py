@@ -109,7 +109,8 @@ SYSTEM_PROMPT_CLASS = """你是 AI 领域的资深编辑，面向 AI 从业者�
 SYSTEM_PROMPT_OBSERVATION = """你是 AI 领域的资深编辑。请为今天的简报写一段「今日观察」。
 
 要求：
-1. 3-4 句话，总长 350 字以内。
+1. 3-4 句话，**总长不得超过 350 字**。这是硬预算：写完自己数一遍字数，
+   宁可压缩措辞、少写一句，也不要超出。
 2. 要有观点和判断，点出今天最值得关注的趋势或信号，不要逐条复述内容。
 3. 可以把几件事串起来看，指出它们共同指向什么、有什么值得警惕或期待。
 4. 只依据给出的事实，不得编造。不要写「值得关注」「意义重大」这类空话。
@@ -174,7 +175,8 @@ def format_candidates(blocks):
 def _class_user_prompt(cls, block_text, date_str, total, positives, projects):
     alternates = total - positives
     rules = [
-        f"1. 共 {total} 条，按重要性从高到低排列。**条数不足是最严重的错误。**",
+        f"1. 共 {total} 条，按重要性从高到低排列。**条数必须恰好 {total} 条，"
+        f"多写和少写都不合格。**",
         f"2. 第 1-{positives} 条写完整正文，每条 300-400 字。",
     ]
     if alternates:
@@ -183,9 +185,10 @@ def _class_user_prompt(cls, block_text, date_str, total, positives, projects):
             "只陈述事实，不展开分析，但星级要保留真实值，不因为是备选就降级。"
         )
     rules.append(
-        f"{len(rules) + 1}. 必须产出恰好 {total} 条。候选是按重要度预筛过的，"
-        "即使某条你觉得平庸，也把它排在后面照写——"
-        "**不要为了回避平庸候选而少写条数**，那会被直接判为不合格并重写。"
+        f"{len(rules) + 1}. 必须产出恰好 {total} 条。候选清单是**挑选范围**，"
+        f"不是必须全部写完的清单——**超出 {total} 条的部分会被直接截掉，"
+        f"多写和少写一样不合格**。候选已按重要度预筛，即使某条你觉得平庸，"
+        f"也把它排在后面照写，**不要为了回避平庸候选而少写条数**。"
     )
     n = len(rules)
     if cls["key"] == "industry" and len(projects) >= 2:
@@ -541,7 +544,8 @@ def _validate_class(items, total, positives):
             elif len(body) > LONG_BODY:
                 warnings.append(f"第 {n} 条正文 {len(body)} 字，超出 400 字预算")
         elif len(body) > ALTERNATE_BODY:
-            warnings.append(f"第 {n} 条是备选但正文 {len(body)} 字，超出 80 字预算")
+            warnings.append(f"第 {n} 条是备选但正文 {len(body)} 字，"
+                            f"超出 {ALTERNATE_BODY} 字预算")
 
     if short > MAX_SHORT_BODIES:
         problems.append(f"有 {short} 条正选正文过短，判定为系统性截断")
