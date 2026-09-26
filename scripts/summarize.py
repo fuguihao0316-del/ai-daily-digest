@@ -40,6 +40,7 @@ MEAGRE_BODY = 250         # conforming but under the 300-400 budget
 LONG_BODY = 500
 ALTERNATE_BODY = 140
 MAX_SHORT_BODIES = 2      # 3+ amputated bodies is systematic, not a thin item
+RESOLVE_FAIL_LIMIT = 0.30  # share of items whose 来源 cannot be traced to the pool
 
 MAX_TOKENS = 8192         # DeepSeek's ceiling — per-class calls never approach it
 REQUEST_TIMEOUT = 300
@@ -304,12 +305,23 @@ def _parse_stars(raw):
 
 
 def _finalize(items, candidates):
-    """Rewrite 来源 from the pool and normalize star lines. Returns warnings."""
+    """Rewrite 来源 from the pool, drop what cannot be verified, normalize stars.
+
+    Returns (warnings, unresolved), where `unresolved` counts the items whose
+    source line could not be traced back to the candidate pool. The caller turns
+    that count into the contract-failure decision — see RESOLVE_FAIL_LIMIT.
+    """
     warnings = []
+    unresolved = 0
     for item in items:
         cand = _resolve(item, candidates)
         if cand is None:
-            warnings.append(f"来源无法在候选池中定位：{item['title'][:30]}")
+            unresolved += 1
+            warnings.append(f"来源无法在候选池中定位，已删除来源行：{item['title'][:30]}")
+            # The URL is the one field _resolve exists to verify, so the model's
+            # own copy of it is exactly what must not be trusted here. Shipping
+            # the item with no link beats shipping a link we could not confirm.
+            item["source_line"] = ""
         else:
             item["source_line"] = f"- 来源：[{cand['source']}]({cand['url']})"
 
@@ -321,7 +333,7 @@ def _finalize(items, candidates):
 
         if item.get("deprecated"):
             warnings.append(f"模型输出了已废弃的「核心价值」行：{item['title'][:30]}")
-    return warnings
+    return warnings, unresolved
 
 
 def _validate_class(items, total, positives):
@@ -466,9 +478,21 @@ def _run_class(cls, blocks, date_str, model, base_url, api_key):
             continue
 
         items, warnings = _split_items(text)
-        warnings += _finalize(items, candidates)
+        finalize_warnings, unresolved = _finalize(items, candidates)
+        warnings += finalize_warnings
         problems, body_warnings = _validate_class(items, total, positives)
         warnings += body_warnings
+
+        # Graded, deliberately. A handful of unverifiable links is survivable —
+        # those items ship without a 来源 line rather than with a link nobody
+        # checked. But once a third of them fail, the model has stopped copying
+        # URLs out of the candidate list, and every unverified link in the class
+        # is suspect: that is a contract failure and takes the retry/raise path.
+        if items and unresolved / len(items) >= RESOLVE_FAIL_LIMIT:
+            problems.append(
+                f"{unresolved}/{len(items)} 条来源无法在候选池中定位"
+                f"（{unresolved / len(items):.0%}，达到 {RESOLVE_FAIL_LIMIT:.0%} 阈值）"
+            )
 
         if not problems:
             return items, candidates, warnings, meta, positives

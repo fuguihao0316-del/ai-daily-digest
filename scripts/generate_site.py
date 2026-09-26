@@ -1544,8 +1544,39 @@ def build_podcast_xml(audio_dates_desc: list[str], parsed_by_date: dict,
 
 # ── Creator helper (小宇宙 manual-upload assistant) ───────────────────────────────
 
+SHOWNOTE_GIST_CHARS = 80      # per-item one-liner budget
+SHOWNOTE_GIST_STRIP = "，、；： "  # trailing punctuation to drop before an ellipsis
+
+
+def _gist(body: str, limit: int = SHOWNOTE_GIST_CHARS) -> str:
+    """The first sentence of a body, hard-cut at `limit` if it has none.
+
+    Deterministic by construction — no model call, no summarisation — so the
+    same digest always yields the same show notes. The cut is the fallback for
+    bodies whose opening sentence runs long (the model writes 300-400 char
+    paragraphs, and not every one opens with a short declarative clause).
+    """
+    text = (body or "").strip()
+    if not text:
+        return ""
+    cut = text.find("。")
+    if 0 <= cut < limit:
+        return text[:cut + 1]
+    return text[:limit].rstrip(SHOWNOTE_GIST_STRIP) + "…"
+
+
 def build_shownotes(digest: dict, date_str: str) -> str:
-    """Plain-text episode description, ready to paste into 小宇宙 Show Notes."""
+    """Plain-text episode description, ready to paste into 小宇宙 Show Notes.
+
+    An index of the day, not the articles themselves: bodies are one line each,
+    because a reader deciding whether to hit play does not need 400 characters
+    per story — and because duplicating them would put ~10,000 characters into a
+    field a human pastes by hand. The full text lives on the website, which the
+    footer links to.
+
+    Alternates are included, unlike everywhere else in this module: they are
+    already written as one-liners, which is exactly what this list is for.
+    """
     lines = [
         f"AI 每日简报 · {date_str} {weekday_of(date_str)}",
         "",
@@ -1553,12 +1584,13 @@ def build_shownotes(digest: dict, date_str: str) -> str:
         "",
     ]
     for cat in digest.get("categories", []):
-        if not cat["items"]:
+        items = cat["items"] + cat.get("alternates", [])
+        if not items:
             continue
         lines.append(f"{cat['emoji']} {cat['name']}".strip())
-        for it in cat["items"]:
-            desc = f"：{it['desc']}" if it["desc"] else ""
-            lines.append(f"· {it['title']}{desc}")
+        for it in items:
+            gist = _gist(it["desc"])
+            lines.append(f"· {it['title']}{'：' + gist if gist else ''}")
             if it["sources"]:
                 lines.append("  来源：" + " / ".join(s["url"] for s in it["sources"]))
         lines.append("")
