@@ -23,9 +23,15 @@ from generate_site import parse_digest
 from sources import SUMMARY_MAX_CHARS, normalize_title, normalize_url, select_candidates
 
 
-ITEMS_PER_CLASS = 15
+ITEMS_PER_CLASS = 15      # the target the model is asked for
 POSITIVE_COUNT = 10
 ALTERNATE_COUNT = ITEMS_PER_CLASS - POSITIVE_COUNT
+MIN_ITEMS = 10            # soft floor. The model does not reliably reach 15 — it kept
+                          # stopping at 9-10 papers rather than dipping below its own
+                          # quality bar. At >=10 we still ship: the positives are the
+                          # first POSITIVE_COUNT items and the alternates shrink to
+                          # whatever is left. Below MIN_ITEMS the brief was ignored.
+                          # The split is computed by code, never by the model.
 ALTERNATES_HEADING = "### 📌 备选"
 OBSERVATION_HEADING = "### 今日观察"
 
@@ -35,8 +41,12 @@ MAX_TITLE_CHARS = 80
 # got split across two lines is silently amputated by parse_digest while the
 # document still *looks* structurally perfect (measured: 268-301 chars lost per
 # body, no structural trace), so length is the only thing that detects it.
-SHORT_BODY = 100          # an amputated body lands at ~70-100; below here, not a style choice
+SHORT_BODY = 200          # an amputated body lands at ~70-100, but the model also just
+                          # writes short ones — a 53-char positive shipped on 2026-09-26.
+                          # 200 catches both without pretending to judge style.
 MEAGRE_BODY = 250         # conforming but under the 300-400 budget
+MIN_AVG_BODY = 250        # mean positive body below this is systematic under-writing,
+                          # and catches it even when every body clears SHORT_BODY
 LONG_BODY = 500
 ALTERNATE_BODY = 140
 MAX_SHORT_BODIES = 2      # 3+ amputated bodies is systematic, not a thin item
@@ -45,7 +55,7 @@ RESOLVE_FAIL_LIMIT = 0.30  # share of items whose 来源 cannot be traced to the
 MAX_TOKENS = 8192         # DeepSeek's ceiling — per-class calls never approach it
 REQUEST_TIMEOUT = 300
 MAX_ATTEMPTS = 3          # transport errors
-FORMAT_ATTEMPTS = 2       # one retry when the model breaks the format
+FORMAT_ATTEMPTS = 3       # two retries — the count rule needs the extra shot
 
 # Filled by summarize() and read by main.py. A module-level ledger rather than
 # a third return value, because main.py unpacks exactly two.
@@ -90,19 +100,24 @@ CLASSES = [
         "name": "AI 行业动态",
         "heading": "## 🗞 AI 行业动态",
         "blocks": [("候选：行业新闻", "news"), ("候选：开源项目", "projects")],
-        "focus": """优先选择：重大模型/产品发布、产业动向（融资、并购、监管、人事）、
-技术圈正在热议的话题或知名研究者/创始人的明确观点。
-丢弃：无实质内容的观点文与预测文、炒作标题、以及重复报道（同一件事只保留信息最全的一条）。""",
+        "focus": """分档处理候选（条数优先，只丢真正不合格的）：
+A. 优先选择：重大模型/产品发布、产业动向（融资、并购、监管、人事）、
+   技术圈正在热议的话题或知名研究者/创始人的明确观点。
+B. 有点内容但价值一般的：**不要丢弃**，排在 A 档之后。
+C. 只有这些才真正丢弃：无实质内容的观点文与预测文、纯炒作标题，
+   以及同一件事的重复报道（只保留信息最全的一条）。""",
     },
     {
         "key": "papers",
         "name": "学术论文研究动态",
         "heading": "## 📄 学术论文研究动态",
         "blocks": [("候选：学术论文", "papers")],
-        "focus": """优先选择：有明确方法、结论或基准的论文，尤其是提出新架构、新任务定义、
-新评测基准，或刷新了现有 SOTA 的工作。
-候选清单已被 HuggingFace 社区热度排序，可以参考这个顺序，但请按你自己的判断重排。
-丢弃：纯综述、纯立场、结论含糊或增量过小的论文。""",
+        "focus": """分档处理候选论文（条数优先，只丢真正不合格的）：
+A. 优先选择：有明确方法、结论或基准的论文，尤其是提出新架构、新任务定义、
+   新评测基准，或刷新了现有 SOTA 的工作。
+B. 增量小、创新有限但仍可陈述的：**不要丢弃**，排在 A 档之后，落到备选位。
+C. 只有这些才真正丢弃：纯综述、纯立场文、结论含糊到无法陈述的。
+候选清单已被 HuggingFace 社区热度排序，可以参考这个顺序，但请按你自己的判断重排。""",
     },
 ]
 
@@ -137,7 +152,7 @@ def format_candidates(blocks):
 def _class_user_prompt(cls, block_text, date_str, total, positives, projects):
     alternates = total - positives
     rules = [
-        f"1. 共 {total} 条，按重要性从高到低排列。",
+        f"1. 共 {total} 条，按重要性从高到低排列。**条数不足是最严重的错误。**",
         f"2. 第 1-{positives} 条写完整正文，每条 300-400 字。",
     ]
     if alternates:
@@ -145,6 +160,11 @@ def _class_user_prompt(cls, block_text, date_str, total, positives, projects):
             f"3. 第 {positives + 1}-{total} 条是备选，只写 1-2 句（约 80 字），"
             "只陈述事实，不展开分析，但星级要保留真实值，不因为是备选就降级。"
         )
+    rules.append(
+        f"{len(rules) + 1}. 必须产出恰好 {total} 条。候选是按重要度预筛过的，"
+        "即使某条你觉得平庸，也把它排在后面照写——"
+        "**不要为了回避平庸候选而少写条数**，那会被直接判为不合格并重写。"
+    )
     n = len(rules)
     if cls["key"] == "industry" and len(projects) >= 2:
         rules.append(
@@ -164,10 +184,16 @@ def _class_user_prompt(cls, block_text, date_str, total, positives, projects):
 {chr(10).join(rules)}"""
 
 
-def _retry_suffix(problems, total, positives):
+def _retry_suffix(problems, total, positives, produced=None):
     alternates = total - positives
     detail = "；".join(problems)
-    return f"""你上一次的输出不合格：{detail}
+    # Name the shortfall explicitly. "共 15 条" alone did not move the model:
+    # it went 9 -> 10 items across two attempts on 2026-09-26.
+    deficit = ""
+    if produced is not None and produced < total:
+        deficit = (f"\n\n你上一次只写了 {produced} 条，**还差 {total - produced} 条**。"
+                   f"这次必须写满 {total} 条。")
+    return f"""你上一次的输出不合格：{detail}{deficit}
 
 请重新完整输出一次，严格遵守格式，不要输出任何标题行、代码块或解释：
 每条恰好三行——`- **标题**：正文`（标题与正文必须同一行，正文不得换行）、
@@ -341,8 +367,8 @@ def _validate_class(items, total, positives):
     problems = []
     warnings = []
 
-    if len(items) != total:
-        problems.append(f"条目数为 {len(items)}，应为 {total}")
+    if len(items) < MIN_ITEMS:
+        problems.append(f"条目数为 {len(items)}，少于下限 {MIN_ITEMS}")
 
     short = 0
     for n, item in enumerate(items, 1):
@@ -363,6 +389,14 @@ def _validate_class(items, total, positives):
 
     if short > MAX_SHORT_BODIES:
         problems.append(f"有 {short} 条正选正文过短，判定为系统性截断")
+
+    # A mean check, on top of the per-body one: every body can clear SHORT_BODY
+    # while the class as a whole is still written to half the budget.
+    pos_bodies = [len(i["body"]) for i in items[:positives] if i["body"]]
+    if pos_bodies:
+        avg = sum(pos_bodies) / len(pos_bodies)
+        if avg < MIN_AVG_BODY:
+            problems.append(f"正选正文平均 {avg:.0f} 字，低于 {MIN_AVG_BODY} 字预算")
 
     return problems, warnings
 
@@ -461,11 +495,13 @@ def _run_class(cls, blocks, date_str, model, base_url, api_key):
     ]
 
     last_problems = ["未知错误"]
+    produced = None
     for attempt in range(1, FORMAT_ATTEMPTS + 1):
         messages = base_messages
         if attempt > 1:
             messages = base_messages + [
-                {"role": "user", "content": _retry_suffix(last_problems, total, positives)}
+                {"role": "user", "content": _retry_suffix(
+                    last_problems, total, positives, produced=produced)}
             ]
 
         text, meta = _chat(messages, model, base_url, api_key)
@@ -478,9 +514,17 @@ def _run_class(cls, blocks, date_str, model, base_url, api_key):
             continue
 
         items, warnings = _split_items(text)
+        if len(items) > ITEMS_PER_CLASS:
+            warnings.append(f"条目数 {len(items)} 超出 {ITEMS_PER_CLASS}，已截断末尾")
+            items = items[:ITEMS_PER_CLASS]
+        produced = len(items)
+        # The split is computed here, never taken from the model, and never taken
+        # from `positives` either — that one still describes what the *prompt*
+        # asked for, and base_messages was built from it outside this loop.
+        actual_positives = min(POSITIVE_COUNT, len(items))
         finalize_warnings, unresolved = _finalize(items, candidates)
         warnings += finalize_warnings
-        problems, body_warnings = _validate_class(items, total, positives)
+        problems, body_warnings = _validate_class(items, total, actual_positives)
         warnings += body_warnings
 
         # Graded, deliberately. A handful of unverifiable links is survivable —
@@ -495,7 +539,7 @@ def _run_class(cls, blocks, date_str, model, base_url, api_key):
             )
 
         if not problems:
-            return items, candidates, warnings, meta, positives
+            return items, candidates, warnings, meta, actual_positives
 
         last_problems = problems
         print(f"  [{cls['key']}] 不合格：{'；'.join(problems)}")
