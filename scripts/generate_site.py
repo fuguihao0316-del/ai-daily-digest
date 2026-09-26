@@ -1049,8 +1049,8 @@ def build_item_html(item: dict) -> str:
 
     return f"""
     <div class="item-card" data-stars="{item['star_count']}">
-      <div class="item-title">{item["title"]}</div>
-      {"<div class='item-desc'>" + item["desc"] + "</div>" if item["desc"] else ""}
+      <div class="item-title">{attr_escape(item["title"])}</div>
+      {"<div class='item-desc'>" + attr_escape(item["desc"]) + "</div>" if item["desc"] else ""}
       <div class="item-meta">
         {stars_html}
         {value_html}
@@ -1291,7 +1291,9 @@ def compute_trends(parsed_by_date: dict, dates: list[str], window: int = 7, top:
             continue
         for cat in digest["categories"]:
             for item in cat["items"]:
-                text = f"{item['title']} {item['desc']}"
+                # Titles only. Bodies are ~400 chars of prose now, and the
+                # proper nouns inside them would swamp the trend list.
+                text = item["title"]
                 found = set()
                 for m in _VER_RE.findall(text):
                     t = _strip_stoptokens(m.strip())
@@ -1435,7 +1437,10 @@ def build_search_index(parsed_by_date: dict, parsed_by_date_en: dict | None = No
                 entry = {
                     "date": date_str,
                     "title": item["title"],
-                    "desc": item["desc"],
+                    # Match field only — search results render date/cat/title,
+                    # never desc. The full body would add ~5MB to an index the
+                    # phone downloads whole on first search.
+                    "desc": item["desc"][:160],
                     "cat": cat["name"],
                     "stars": item["star_count"],
                 }

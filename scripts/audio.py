@@ -72,22 +72,31 @@ def _weekday(date_str: str) -> str:
         return ""
 
 
+# The narrator targets 600-1000 characters. Reading every item aloud would now
+# be ~8000 (bodies are 400 chars each) — a 20-minute episode — so the fallback
+# reads the headline picks only, trimmed.
+FALLBACK_ITEMS_PER_CAT = 2
+FALLBACK_DESC_CHARS = 150
+FALLBACK_OBSERVATION_CHARS = 300
+
+
 def _fallback_script(zh_markdown: str, date_str: str) -> str:
     """Deterministic spoken script built from the parsed digest (no LLM)."""
     digest = parse_digest(zh_markdown)
     parts = [f"AI 每日简报，{_weekday(date_str)}，{date_str}。以下是今天的重点。"]
     for cat in digest["categories"]:
-        items = cat["items"]
+        # cat["items"] is the headline picks; alternates are deliberately skipped.
+        items = cat["items"][:FALLBACK_ITEMS_PER_CAT]
         if not items:
             continue
         parts.append(f"{cat['name']}。")
         for it in items:
             line = it["title"]
             if it["desc"]:
-                line += "。" + it["desc"]
+                line += "。" + it["desc"][:FALLBACK_DESC_CHARS]
             parts.append(line.rstrip("。") + "。")
     if digest["observation"]:
-        parts.append("今日观察。" + digest["observation"])
+        parts.append("今日观察。" + digest["observation"][:FALLBACK_OBSERVATION_CHARS])
     parts.append("以上就是今天的 AI 简报，我们明天见。")
     return "\n".join(parts)
 

@@ -12,9 +12,31 @@ from pathlib import Path
 import requests
 
 from sources import fetch_all
-from summarize import summarize
+from summarize import summarize, LAST_REPORT
 from generate_site import generate_site
 from audio import generate_audio, prune_old_audio
+
+
+def _raw_payload(date_str, today, data):
+    """The committed daily trace: counts, the LLM's selection, its warnings.
+
+    The 500-char summary projection is taken from `data` here, at each write
+    site, rather than passed in as a snapshot captured earlier. This file is
+    written twice (before and after step 3); deriving `items` fresh means a
+    future summarizer that mutated `data` in place could not leave step 3.5
+    writing stale entries.
+    """
+    return {
+        "date": date_str,
+        "generated_at": today.isoformat(),
+        "counts": {key: len(value) for key, value in data.items()},
+        "selection": LAST_REPORT.get("selection", {}),
+        "warnings": LAST_REPORT.get("warnings", []),
+        "items": {
+            key: [{**item, "summary": (item.get("summary") or "")[:500]} for item in value]
+            for key, value in data.items()
+        },
+    }
 
 
 def send_to_buttondown(subject: str, markdown: str) -> None:
@@ -63,25 +85,33 @@ def main():
         print("No items fetched. Exiting.")
         sys.exit(0)
 
-    # Step 2: Save raw fetched data for traceability
+    # Step 2: Save raw fetched data for traceability.
+    # The pipeline now fetches up to 1500 chars per summary so the model has
+    # enough material for a 400-char write-up, but the committed fixture keeps
+    # the historical 500-char shape: these files run 130-150KB/day, nothing
+    # reads them back, and growing them 3x buys nothing.
     data_dir = Path(__file__).parent.parent / "data"
     data_dir.mkdir(exist_ok=True)
     raw_file = data_dir / f"{date_str}.raw.json"
-    raw_payload = {
-        "date": date_str,
-        "generated_at": today.isoformat(),
-        "counts": {key: len(value) for key, value in data.items()},
-        "items": data,
-    }
     raw_file.write_text(
-        json.dumps(raw_payload, ensure_ascii=False, indent=2),
+        json.dumps(_raw_payload(date_str, today, data),
+                   ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
     print(f"\n[Step 2] Saved raw data to {raw_file}")
 
-    # Step 3: AI summarization (bilingual)
+    # Step 3: AI summarization
     print("\n[Step 3] Generating AI summary...")
     markdown, markdown_en = summarize(data, date_str)
+
+    # Step 3.5: rewrite the raw trace with the summarizer's selection + warning
+    # ledger. Written separately from step 2 so a run that dies in step 3 still
+    # leaves the raw data behind — which is exactly when it is worth having.
+    raw_file.write_text(
+        json.dumps(_raw_payload(date_str, today, data),
+                   ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
 
     # Step 4: Save daily markdown (zh + en)
     output_dir = Path(__file__).parent.parent / "daily"

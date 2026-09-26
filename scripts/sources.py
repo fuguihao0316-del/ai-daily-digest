@@ -29,6 +29,12 @@ HIGH_SIGNAL_KEYWORDS = [
 
 TRACKING_PARAMS = {"utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"}
 
+# Source text is the raw material for a ~400-character write-up, and the old
+# 500-char cap left the model with too little to work from — it filled the gap
+# by inventing. main.py projects this back down to 500 before committing
+# data/*.raw.json, so raising it costs nothing in repo size.
+SUMMARY_MAX_CHARS = 1500
+
 
 def clean_text(value, max_chars=500):
     """Strip HTML and whitespace noise from source summaries."""
@@ -77,7 +83,7 @@ def estimate_importance(category, title, summary, source):
 
 
 def make_item(category, title, url, summary, source, published=None, metadata=None):
-    cleaned_summary = clean_text(summary)
+    cleaned_summary = clean_text(summary, max_chars=SUMMARY_MAX_CHARS)
     return {
         "category": category,
         "title": clean_text(title, max_chars=220),
@@ -129,6 +135,193 @@ def dedupe_items(items):
             previous["importance_hint"] = max(previous["importance_hint"], item["importance_hint"])
 
     return list(seen.values())
+
+
+# ── Candidate pre-selection ─────────────────────────────────────────────────────
+# Runs before the LLM. A normal day's raw pool is ~190 items (39 papers, ~154
+# news/projects) and each summary is now up to 1500 chars, so the whole firehose
+# cannot go into one prompt. This trims each class down to a deterministic
+# 25-item pool that the model picks its 15 from — and the 5 alternates come from
+# the same pool. Pure offline logic: no network, no clock beyond `now`.
+
+CANDIDATES_PER_CLASS = 25
+PROJECT_SLOTS = 5          # reserved inside the industry pool (>=2 must survive into the final 15)
+HF_QUOTA = 20              # papers: HuggingFace's own community ranking gets the lion's share
+ARXIV_QUOTA = 5            # arXiv is the uncurated safety net
+MAX_PER_SOURCE = 3         # no single feed may dominate the pool
+MAX_PER_SOURCE_LOW = 1     # community feeds: content-free summaries, mostly chatter
+LOW_SUBSTANCE_SOURCES = {"Hacker News", "r/LocalLLaMA"}
+MIN_SUMMARY_CHARS = 120    # below this there is not enough material for a 400-char body
+
+
+def base_source(item):
+    """The feed an item originally came from.
+
+    dedupe_items joins duplicates as "HuggingFace Papers, arXiv", so every
+    source-based decision has to look at the first name only.
+    """
+    return (item.get("source") or "").split(",")[0].strip()
+
+
+def _published_ts(item):
+    raw = item.get("published")
+    if not raw:
+        return 0.0
+    try:
+        return datetime.fromisoformat(str(raw).replace("Z", "+00:00")).timestamp()
+    except ValueError:
+        return 0.0
+
+
+def _recency_bucket(item, now_ts):
+    ts = _published_ts(item)
+    if not ts:
+        return 3
+    age_hours = (now_ts - ts) / 3600
+    if age_hours < 24:
+        return 0
+    if age_hours < 48:
+        return 1
+    if age_hours < 72:
+        return 2
+    return 3
+
+
+def _keyword_hits(item):
+    text = f"{item.get('title', '')} {item.get('summary', '')}".lower()
+    return sum(1 for kw in HIGH_SIGNAL_KEYWORDS if kw in text)
+
+
+def _stars_today(item):
+    """Today's star gain, as scraped off github.com/trending."""
+    raw = str((item.get("metadata") or {}).get("stars_today") or "").replace(",", "").strip()
+    return int(raw) if raw.isdigit() else 0
+
+
+def _lifetime_stars(item):
+    raw = (item.get("metadata") or {}).get("stars") or 0
+    try:
+        return int(raw)
+    except (TypeError, ValueError):
+        return 0
+
+
+def rank_papers(papers, limit=CANDIDATES_PER_CLASS):
+    """HuggingFace's daily list is already a community-upvote ranking, and its
+    order survives dedupe (dict insertion order), so keep it verbatim.
+
+    Recency is worthless as a paper signal here: the 09-24 pool legitimately
+    contains a 34-day-old paper that HF still ranked. arXiv gets a small ranked
+    quota instead, as a safety net for papers HF's top list missed.
+    """
+    hf, arxiv, other = [], [], []
+    for item in papers:
+        src = base_source(item)
+        if src == "HuggingFace Papers":
+            hf.append(item)
+        elif src == "arXiv":
+            arxiv.append(item)
+        else:
+            other.append(item)
+
+    arxiv.sort(key=lambda i: (
+        -i.get("importance_hint", 3),
+        -_published_ts(i),
+        normalize_title(i.get("title")),
+    ))
+
+    # The two max() calls make the quotas self-healing: on a day arXiv returns
+    # nothing (09-20/21/22 in the fixtures), HF fills the whole pool instead.
+    n_hf = min(len(hf), max(HF_QUOTA, limit - min(len(arxiv), ARXIV_QUOTA)))
+    n_ax = min(len(arxiv), max(ARXIV_QUOTA, limit - n_hf))
+
+    picked = hf[:n_hf] + arxiv[:n_ax]
+    for item in other + hf[n_hf:] + arxiv[n_ax:]:
+        if len(picked) >= limit:
+            break
+        picked.append(item)
+    return picked[:limit]
+
+
+def _news_key(item, now_ts):
+    """importance_hint alone is nearly useless — 62 of 143 news items on 09-24
+    tie at 4 — so it is only the first of six tie-breakers. The last two make
+    the ordering total, which is what keeps the pool reproducible.
+    """
+    return (
+        -item.get("importance_hint", 3),
+        -_keyword_hits(item),
+        -(min(len(item.get("summary") or ""), 400) // 100),
+        _recency_bucket(item, now_ts),
+        base_source(item),
+        normalize_title(item.get("title")),
+    )
+
+
+def _project_key(item):
+    today = _stars_today(item)
+    return (
+        0 if today else 1,   # trending-page items (today's stars) outrank OSSInsight's
+        -today,
+        -_lifetime_stars(item),   # only ever compared between two lifetime-count items
+        -item.get("importance_hint", 3),
+        normalize_title(item.get("title")),
+    )
+
+
+def rank_news(news, need, now_ts):
+    """Fill `need` slots in three passes, so a thin day still fills the pool:
+
+    1. enough material for a 400-char body + per-source cap
+    2. substance floor released, cap still on
+    3. cap released
+    """
+    ordered = sorted(news, key=lambda i: _news_key(i, now_ts))
+    picked = []
+    seen = set()
+
+    for floor, capped in ((MIN_SUMMARY_CHARS, True), (0, True), (0, False)):
+        counts = {}
+        for item in picked:
+            src = base_source(item)
+            counts[src] = counts.get(src, 0) + 1
+
+        for item in ordered:
+            if len(picked) >= need:
+                return picked
+            key = item.get("normalized_url") or normalize_title(item.get("title"))
+            if key in seen:
+                continue
+            if len(item.get("summary") or "") < floor:
+                continue
+            src = base_source(item)
+            if capped:
+                cap = MAX_PER_SOURCE_LOW if src in LOW_SUBSTANCE_SOURCES else MAX_PER_SOURCE
+                if counts.get(src, 0) >= cap:
+                    continue
+            seen.add(key)
+            counts[src] = counts.get(src, 0) + 1
+            picked.append(item)
+
+    return picked[:need]
+
+
+def select_candidates(data, limit=CANDIDATES_PER_CLASS, now=None):
+    """The deterministic pre-filter: the LLM sees these pools, not the firehose.
+
+    `now` drives the recency buckets and is supplied by the caller (summarize.py
+    derives it from the digest date) rather than read off the wall clock, so the
+    same raw JSON always yields the same pool.
+    """
+    now_ts = (now or datetime.now(timezone.utc)).timestamp()
+
+    projects = sorted(data.get("projects") or [], key=_project_key)[:PROJECT_SLOTS]
+    news = rank_news(data.get("news") or [], limit - len(projects), now_ts)
+
+    return {
+        "industry": {"news": news, "projects": projects},
+        "papers": rank_papers(data.get("papers") or [], limit),
+    }
 
 
 def fetch_huggingface_papers():
