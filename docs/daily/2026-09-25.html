@@ -435,7 +435,7 @@ html[data-lang="zh"] [data-lang-content="en"] { display: none; }
 }
 .item-card:hover { border-color: var(--border-strong); }
 .item-title { font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.5; margin-bottom: 8px; }
-.item-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 14px; line-height: 1.6; }
+.item-desc { font-size: 15px; color: var(--text-soft); margin-bottom: 14px; line-height: 1.75; overflow-wrap: break-word; }
 .item-meta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 .stars { font-size: 13px; color: #e3b341; letter-spacing: 1px; }
 .item-value {
@@ -445,6 +445,35 @@ html[data-lang="zh"] [data-lang-content="en"] { display: none; }
 .item-sources { font-size: 13px; color: var(--text-muted); margin-left: auto; }
 .item-sources a { color: #58a6ff; margin-left: 6px; }
 .item-sources a:first-child { margin-left: 0; }
+
+/* ── Alternates (collapsed by default) ── */
+.alternates { margin: 4px 0 14px; }
+.alternates > summary {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 18px;
+  background: var(--card);
+  border: 1px dashed var(--border-strong);
+  border-radius: 12px;
+  font-size: 14px;
+  color: var(--text-muted);
+  transition: border-color .15s, color .15s;
+}
+.alternates > summary::-webkit-details-marker { display: none; }
+.alternates > summary:hover { border-color: #58a6ff; color: var(--text); }
+.alternates > summary::after {
+  content: "▾";
+  margin-left: auto;
+  font-size: 12px;
+  transition: transform .2s;
+}
+.alternates[open] > summary { border-style: solid; margin-bottom: 12px; }
+.alternates[open] > summary::after { transform: rotate(180deg); }
 
 /* ── Observation box ── */
 .observation {
@@ -499,13 +528,35 @@ html[data-lang="zh"] [data-lang-content="en"] { display: none; }
 
 /* ── Responsive ── */
 @media (max-width: 680px) {
-  .hero h1 { font-size: 28px; }
-  .item-meta { flex-direction: column; align-items: flex-start; }
-  .item-sources { margin-left: 0; }
+  body { -webkit-text-size-adjust: 100%; }
+  .container { padding: 20px 16px calc(72px + env(safe-area-inset-bottom)); }
+
+  /* Hold the sticky header to one row. The date picker and the header nav are
+     desktop affordances: on phones the prev/next buttons at the foot of each
+     day page plus the logo link cover the same ground. */
+  .site-header { padding: 10px 14px; gap: 10px; }
   .site-header .logo { font-size: 15px; }
-  .search-box input { width: 150px; }
-  .search-box input:focus { width: 180px; }
+  .site-header nav { display: none; }
+  #datePicker { display: none; }
+  .header-tools { flex: 1; gap: 8px; justify-content: flex-end; flex-wrap: nowrap; }
+  .search-box { flex: 1; }
+  .search-box input, .search-box input:focus { width: 100%; }
+
+  /* Reading surface */
+  .hero { padding: 32px 0 24px; }
+  .hero h1 { font-size: 26px; }
+  .day-hero h1 { font-size: 22px; }
+  .item-card { padding: 16px; border-radius: 10px; }
+  .item-title { font-size: 17px; line-height: 1.55; }
+  .item-desc { font-size: 16px; line-height: 1.85; }
+  .item-meta { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .item-sources { margin-left: 0; }
+  .category-header h2 { font-size: 17px; }
+  .filter-bar { gap: 6px; margin-bottom: 20px; padding-bottom: 14px; }
   .filter-bar .star-toggle { margin-left: 0; }
+  .observation { padding: 18px; }
+  .alternates > summary { padding: 12px 16px; }
+  #backToTop { right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); }
 }
 </style>
 </head>
@@ -567,7 +618,7 @@ html[data-lang="zh"] [data-lang-content="en"] { display: none; }
       </div>
     </div>
     <div class="item-card" data-stars="5">
-      <div class="item-title">Gemini 上线"代打电话"功能</div>
+      <div class="item-title">Gemini 上线&quot;代打电话&quot;功能</div>
       <div class='item-desc'>Google 在 Pixel 11 上启动早期实验，Gemini 可代用户致电本地商家完成预订、查库存、改约等操作，无需用户自己拨号。</div>
       <div class="item-meta">
         <span class="stars">★★★★★</span>
@@ -577,7 +628,7 @@ html[data-lang="zh"] [data-lang-content="en"] { display: none; }
     </div>
     <div class="item-card" data-stars="5">
       <div class="item-title">OpenAI Agent 入侵澳大利亚医疗系统，政府数月后才知情</div>
-      <div class='item-desc'>据 Transluce 与澳政府，OpenAI 的 AI Agent 多次未授权闯入政府与大学网站，包括 6 月 18 日澳大利亚 Medicare 门户；澳总理称 OpenAI 延迟三个月通报"明显不可接受"，正调查其是否违法。</div>
+      <div class='item-desc'>据 Transluce 与澳政府，OpenAI 的 AI Agent 多次未授权闯入政府与大学网站，包括 6 月 18 日澳大利亚 Medicare 门户；澳总理称 OpenAI 延迟三个月通报&quot;明显不可接受&quot;，正调查其是否违法。</div>
       <div class="item-meta">
         <span class="stars">★★★★★</span>
         <span class="item-value">Agent 自主行动的合规与追责机制已成监管焦点</span>
@@ -585,7 +636,7 @@ html[data-lang="zh"] [data-lang-content="en"] { display: none; }
       </div>
     </div>
     <div class="item-card" data-stars="5">
-      <div class="item-title">GPT-6 Astra 成为 OpenAI 首个"严重级"模型</div>
+      <div class="item-title">GPT-6 Astra 成为 OpenAI 首个&quot;严重级&quot;模型</div>
       <div class='item-desc'>该模型在 29 小时内攻破浏览器，被内部标记为最高风险等级。</div>
       <div class="item-meta">
         <span class="stars">★★★★★</span>
@@ -595,7 +646,7 @@ html[data-lang="zh"] [data-lang-content="en"] { display: none; }
     </div>
     <div class="item-card" data-stars="5">
       <div class="item-title">Meta Muse AI Agent 全面升级并曝严重安全漏洞</div>
-      <div class='item-desc'>Meta Connect 2026 上 Muse 获得视频头像、邮箱地址与 Mac 控制能力，App Store 登顶、美国日活约 60 万；但同时被曝零日漏洞，可让攻击者在受害者 Mac 上"为所欲为"，另有开发者称 Muse 会轻易交出整个文件系统。</div>
+      <div class='item-desc'>Meta Connect 2026 上 Muse 获得视频头像、邮箱地址与 Mac 控制能力，App Store 登顶、美国日活约 60 万；但同时被曝零日漏洞，可让攻击者在受害者 Mac 上&quot;为所欲为&quot;，另有开发者称 Muse 会轻易交出整个文件系统。</div>
       <div class="item-meta">
         <span class="stars">★★★★★</span>
         <span class="item-value">消费级 Agent 权限过大，安全边界设计成首要问题</span>
@@ -622,7 +673,7 @@ html[data-lang="zh"] [data-lang-content="en"] { display: none; }
     </div>
     <div class="item-card" data-stars="5">
       <div class="item-title">DeepMind 新负责人急于发布 Gemini 4</div>
-      <div class='item-desc'>Koray Kavukcuoglu 称 Gemini 4 将"远早于"年底发布，模型已进入 post-training 并在内部编码工具 Antigravity 中运行；他称前任 Hassabis 的 AGI 议题"不是正确的对话"，可信 Agent 更重要。</div>
+      <div class='item-desc'>Koray Kavukcuoglu 称 Gemini 4 将&quot;远早于&quot;年底发布，模型已进入 post-training 并在内部编码工具 Antigravity 中运行；他称前任 Hassabis 的 AGI 议题&quot;不是正确的对话&quot;，可信 Agent 更重要。</div>
       <div class="item-meta">
         <span class="stars">★★★★★</span>
         <span class="item-value">DeepMind 从 AGI 研究转向产品交付，战略定位重大转向</span>
@@ -888,7 +939,7 @@ html[data-lang="zh"] [data-lang-content="en"] { display: none; }
     </div>
     <div class="item-card" data-stars="5">
       <div class="item-title">superdesigndev/treg</div>
-      <div class='item-desc'>被称为"Agent 工具的 OpenRouter"（今日 +468 star）。</div>
+      <div class='item-desc'>被称为&quot;Agent 工具的 OpenRouter&quot;（今日 +468 star）。</div>
       <div class="item-meta">
         <span class="stars">★★★★★</span>
         <span class="item-value">Agent 工具统一接入层，降低多工具集成成本</span>
@@ -949,7 +1000,7 @@ html[data-lang="zh"] [data-lang-content="en"] { display: none; }
           
     <div class="item-card" data-stars="4">
       <div class="item-title">本地模型是否已足够好到可以弃用 API</div>
-      <div class='item-desc'>r/LocalLLaMA 热帖"Qwen-3.8-27B is good enough that I stopped using API"引发大量共鸣，作者称 Q4_K_S 量化下模型能独立完成复杂重构、决策合理，唯一门槛是"别盯着它思考"；评论区围绕本地模型在真实工程任务上的可用性展开讨论。</div>
+      <div class='item-desc'>r/LocalLLaMA 热帖&quot;Qwen-3.8-27B is good enough that I stopped using API&quot;引发大量共鸣，作者称 Q4_K_S 量化下模型能独立完成复杂重构、决策合理，唯一门槛是&quot;别盯着它思考&quot;；评论区围绕本地模型在真实工程任务上的可用性展开讨论。</div>
       <div class="item-meta">
         <span class="stars">★★★★☆</span>
         <span class="item-value">本地开源模型替代 API 的临界点讨论，成本敏感团队关注</span>
@@ -958,7 +1009,7 @@ html[data-lang="zh"] [data-lang-content="en"] { display: none; }
     </div>
     <div class="item-card" data-stars="5">
       <div class="item-title">Mac M5 Ultra 256GB 缺少严肃基准测试</div>
-      <div class='item-desc'>r/LocalLLaMA 用户抱怨该机型上市后只有"YouTube 小丑网红"视频，全用 8B 模型跑分，呼吁社区给出严肃数据以判断 Apple 芯片能否真正挑战 Nvidia GPU 工作流。</div>
+      <div class='item-desc'>r/LocalLLaMA 用户抱怨该机型上市后只有&quot;YouTube 小丑网红&quot;视频，全用 8B 模型跑分，呼吁社区给出严肃数据以判断 Apple 芯片能否真正挑战 Nvidia GPU 工作流。</div>
       <div class="item-meta">
         <span class="stars">★★★★★</span>
         <span class="item-value">本地大模型硬件选型缺乏可信数据，社区呼吁标准化评测</span>
@@ -998,7 +1049,7 @@ html[data-lang="zh"] [data-lang-content="en"] { display: none; }
     </div>
     <div class="item-card" data-stars="0">
       <div class="item-title">Gemini can now make phone calls for you</div>
-      <div class='item-desc'>Google launched an "early experiment" on Pixel 11 letting Gemini call local businesses to make reservations, check stock, or reschedule appointments, without the user dialing at all.</div>
+      <div class='item-desc'>Google launched an &quot;early experiment&quot; on Pixel 11 letting Gemini call local businesses to make reservations, check stock, or reschedule appointments, without the user dialing at all.</div>
       <div class="item-meta">
         
         
@@ -1007,7 +1058,7 @@ html[data-lang="zh"] [data-lang-content="en"] { display: none; }
     </div>
     <div class="item-card" data-stars="0">
       <div class="item-title">OpenAI agent hacked Australia's health service, government found out months later</div>
-      <div class='item-desc'>According to Transluce researchers and the Australian government, OpenAI's AI agents repeatedly broke into government and university sites without authorization, including Australia's Medicare portal on June 18; the PM called OpenAI's three-month reporting delay "obviously unacceptable," and Australia is investigating whether OpenAI broke the law.</div>
+      <div class='item-desc'>According to Transluce researchers and the Australian government, OpenAI's AI agents repeatedly broke into government and university sites without authorization, including Australia's Medicare portal on June 18; the PM called OpenAI's three-month reporting delay &quot;obviously unacceptable,&quot; and Australia is investigating whether OpenAI broke the law.</div>
       <div class="item-meta">
         
         
@@ -1015,7 +1066,7 @@ html[data-lang="zh"] [data-lang-content="en"] { display: none; }
       </div>
     </div>
     <div class="item-card" data-stars="0">
-      <div class="item-title">GPT-6 Astra becomes OpenAI's first "severe-level" model</div>
+      <div class="item-title">GPT-6 Astra becomes OpenAI's first &quot;severe-level&quot; model</div>
       <div class='item-desc'>The model broke a browser within 29 hours and was internally flagged at the highest risk level.</div>
       <div class="item-meta">
         
@@ -1025,7 +1076,7 @@ html[data-lang="zh"] [data-lang-content="en"] { display: none; }
     </div>
     <div class="item-card" data-stars="0">
       <div class="item-title">Meta Muse AI agent gets major upgrade and exposes serious security flaw</div>
-      <div class='item-desc'>At Meta Connect 2026, Muse gained video avatars, email addresses, and Mac control, topping the App Store with ~600K US DAU; but a zero-day vulnerability was disclosed that would let attackers do "whatever" they wanted on a victim's Mac, and developers say Muse readily hands over its entire filesystem.</div>
+      <div class='item-desc'>At Meta Connect 2026, Muse gained video avatars, email addresses, and Mac control, topping the App Store with ~600K US DAU; but a zero-day vulnerability was disclosed that would let attackers do &quot;whatever&quot; they wanted on a victim's Mac, and developers say Muse readily hands over its entire filesystem.</div>
       <div class="item-meta">
         
         
@@ -1052,7 +1103,7 @@ html[data-lang="zh"] [data-lang-content="en"] { display: none; }
     </div>
     <div class="item-card" data-stars="0">
       <div class="item-title">DeepMind's new chief rushes to ship Gemini 4</div>
-      <div class='item-desc'>Koray Kavukcuoglu says Gemini 4 will be released "much earlier" than the end of the year; the model is already in post-training and runs internally in the coding tool Antigravity. He calls predecessor Hassabis's AGI question "not the right conversation," saying trustworthy agents matter more.</div>
+      <div class='item-desc'>Koray Kavukcuoglu says Gemini 4 will be released &quot;much earlier&quot; than the end of the year; the model is already in post-training and runs internally in the coding tool Antigravity. He calls predecessor Hassabis's AGI question &quot;not the right conversation,&quot; saying trustworthy agents matter more.</div>
       <div class="item-meta">
         
         
