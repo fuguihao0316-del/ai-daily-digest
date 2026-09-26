@@ -35,7 +35,17 @@ MIN_ITEMS = 10            # soft floor. The model does not reliably reach 15 —
 ALTERNATES_HEADING = "### 📌 备选"
 OBSERVATION_HEADING = "### 今日观察"
 
-MAX_TITLE_CHARS = 80
+MAX_TITLE_CHARS = 200     # Guard distinguishing an item line from a body
+                          # continuation. It was 80, which real titles exceed
+                          # routinely: measured over the 2026-09-24/26 pools,
+                          # 12/35 and 8/35 paper titles are over 80 (longest 119)
+                          # and industry reaches 141. A line-start item rejected
+                          # by this bound is appended to the *previous* item's
+                          # body and overwrites its 重要性/来源 — the same silent
+                          # amputation as gluing, with nothing to detect it.
+                          # Prompt rule 5 bans `**` inside a body, so the bound
+                          # only has to be wide enough to never reject a real
+                          # title; it is not a precision instrument.
 
 # Body-length guard rails. The lower bound is the load-bearing one: a body that
 # got split across two lines is silently amputated by parse_digest while the
@@ -51,6 +61,14 @@ LONG_BODY = 500
 ALTERNATE_BODY = 140
 MAX_SHORT_BODIES = 2      # 3+ amputated bodies is systematic, not a thin item
 RESOLVE_FAIL_LIMIT = 0.30  # share of items whose 来源 cannot be traced to the pool
+OBSERVATION_MAX_CHARS = 350  # warned about, never enforced. The cap was 300 and the
+                          # model wrote 353 on 2026-09-26 without anything downstream
+                          # breaking (the page renders it whole, and the podcast reads
+                          # an LLM rewrite, not this text), so the number is a style
+                          # budget, not a limit — and the honest move is to state the
+                          # budget we actually want. Watch for drift past 380: if it
+                          # settles there, the contract needs re-cutting, not the
+                          # parser. Don't widen it pre-emptively.
 
 MAX_TOKENS = 8192         # DeepSeek's ceiling — per-class calls never approach it
 REQUEST_TIMEOUT = 300
@@ -73,12 +91,16 @@ SYSTEM_PROMPT_CLASS = """你是 AI 领域的资深编辑，面向 AI 从业者�
 - **中文标题**：正文，标题与正文必须在同一行，正文无论多长都不得换行
   - 重要性：★★★★☆ / 5
   - 来源：[来源名](URL)
-4. 正文内部不得出现换行，不得以 - 或数字加点开头，不得使用 ** 加粗或任何 Markdown 标记。
-5. 元数据只有「重要性」和「来源」两行，不要输出「核心价值」或其他任何字段。
-6. 只从候选清单里挑选条目。URL 必须逐字复制候选清单中的 URL，不得改写、拼接或编造。
-7. 不得编造数字、日期、机构、引语或事实。候选清单里没有的信息一律不写。
-8. 全文用中文，专有名词（模型名、公司名、产品名、论文名）保留英文原文。
-9. 不要输出英文版本，不要输出 ===ENGLISH=== 或任何分隔符。
+4. **每条必须独占一行，条目之间必须有换行符。** 写完一条的「来源」行之后必须换行，
+   下一条目的「- **」必须出现在新一行的行首（第 0 列，前面不能有任何字符，
+   包括空格和缩进）。**绝对禁止**把下一条的「- **标题**：正文」接在上一条正文的
+   末尾凑成同一行——同一行里出现两个「- **」会被判为格式错误并整块重写。
+5. 正文内部不得出现换行，不得以 - 或数字加点开头，不得使用 ** 加粗或任何 Markdown 标记。
+6. 元数据只有「重要性」和「来源」两行，不要输出「核心价值」或其他任何字段。
+7. 只从候选清单里挑选条目。URL 必须逐字复制候选清单中的 URL，不得改写、拼接或编造。
+8. 不得编造数字、日期、机构、引语或事实。候选清单里没有的信息一律不写。
+9. 全文用中文，专有名词（模型名、公司名、产品名、论文名）保留英文原文。
+10. 不要输出英文版本，不要输出 ===ENGLISH=== 或任何分隔符。
 
 【正文写法】正文不是摘要的复述，而是要讲清楚三件事：发生了什么、关键细节（具体数字、
 机构名、时间）、以及它对读者意味着什么。要有信息密度，不要写「值得关注」「意义重大」
@@ -87,7 +109,7 @@ SYSTEM_PROMPT_CLASS = """你是 AI 领域的资深编辑，面向 AI 从业者�
 SYSTEM_PROMPT_OBSERVATION = """你是 AI 领域的资深编辑。请为今天的简报写一段「今日观察」。
 
 要求：
-1. 3-4 句话，总长 300 字以内。
+1. 3-4 句话，总长 350 字以内。
 2. 要有观点和判断，点出今天最值得关注的趋势或信号，不要逐条复述内容。
 3. 可以把几件事串起来看，指出它们共同指向什么、有什么值得警惕或期待。
 4. 只依据给出的事实，不得编造。不要写「值得关注」「意义重大」这类空话。
@@ -198,6 +220,8 @@ def _retry_suffix(problems, total, positives, produced=None):
 请重新完整输出一次，严格遵守格式，不要输出任何标题行、代码块或解释：
 每条恰好三行——`- **标题**：正文`（标题与正文必须同一行，正文不得换行）、
 `  - 重要性：★★★★☆ / 5`、`  - 来源：[来源名](URL)`（URL 逐字复制候选清单）。
+**每条独占一行**：写完一条必须换行，下一条的 `- **` 必须在新一行行首，
+不要接在上一条正文末尾。
 共 {total} 条：前 {positives} 条正文 300-400 字，后 {alternates} 条只写 1-2 句。"""
 
 
@@ -207,6 +231,9 @@ _FENCE_RE = re.compile(r"^\s*```[A-Za-z0-9_+-]*\s*$")
 _HEADING_RE = re.compile(r"^#{1,6}\s")
 _ITEM_RE = re.compile(r"^-\s+\*\*(.+?)\*\*\s*[：:]?\s*(.*)$")
 _META_RE = re.compile(r"^[\-\*]\s+(重要性|核心价值|来源)\s*[：:]")
+# Zero-width split point in front of every `- **`, i.e. every place an item can
+# begin. Requires the dash: inline bold (`正文含 **加粗** 字样`) must not split.
+_GLUE_RE = re.compile(r"(?=-\s*\*\*)")
 _URL_RE = re.compile(r"\[[^\]]*\]\((https?://[^)\s]+)\)|(https?://\S+)")
 _ASCII_WORD = re.compile(r"[A-Za-z0-9]")
 _CJK_END = "。，、；：！？）》」』…—"
@@ -235,12 +262,53 @@ def _join_body(body, continuation):
     return body + continuation
 
 
+def _split_glued(line):
+    """Split one physical line into the several items the model glued onto it.
+
+    Returns a list of (title, body) pairs, or None when the line holds fewer
+    than two items or they do not all parse — `None` means "leave this line
+    alone".
+
+    Measured on 2026-09-26: the model answered with
+    `- **A**：bodyA。- **B**：bodyB。- **C**：bodyC。` all on one line. Because
+    an item only starts on a line that *begins* with `- **`, B and C were
+    folded into A's body and shipped as one 1,236-character item — long, not
+    short, so every existing guard stayed quiet. Papers went out with 11 items
+    where the model had written 15.
+
+    Splitting on the `- **` boundary is sound because prompt rule 5 forbids
+    Markdown inside a body, so a real body cannot contain one. It is still a
+    fallback, not the defence: the prompt bans gluing outright, and
+    `_verify_split_items` re-checks everything recovered this way.
+
+    Bailing out (`None`) on a malformed segment is deliberate. A body that is
+    suspiciously long is only a warning; amputating a good body on a bad guess
+    would be silent damage.
+    """
+    segments = [s for s in _GLUE_RE.split(line) if s.strip()]
+    if len(segments) < 2:
+        return None
+
+    parsed = []
+    for segment in segments:
+        match = _ITEM_RE.match(segment)
+        if not match or len(match.group(1)) > MAX_TITLE_CHARS:
+            return None
+        parsed.append((match.group(1).strip().strip("[]").strip(),
+                       match.group(2).strip()))
+    return parsed
+
+
 def _split_items(text):
     """Parse the model's answer into item blocks.
 
     Returns (items, warnings). Anything that is not an item, metadata, or a
     continuation line is dropped with a warning — notably echoed headings,
     which the parser would otherwise turn into a phantom one-item category.
+
+    Items carry two extra keys the callers rely on: `split_out` marks the ones
+    recovered from a glued line (see _split_glued), and `resolved`/`resolved_by`
+    are filled in by _finalize.
     """
     items = []
     warnings = []
@@ -261,15 +329,44 @@ def _split_items(text):
         # what keeps them apart.
         match = _ITEM_RE.match(line)
         if match and len(match.group(1)) <= MAX_TITLE_CHARS:
-            current = {
-                "title": match.group(1).strip().strip("[]").strip(),
-                "body": match.group(2).strip(),
-                "stars": "",
-                "source_line": "",
-                "deprecated": False,
-            }
-            items.append(current)
+            parsed = _split_glued(line)
+            if parsed is None:
+                if len(_GLUE_RE.split(line)) > 2:
+                    warnings.append(
+                        f"一行内出现多个 - ** 但无法拆分成合法条目，保留为单条："
+                        f"{stripped[:40]}")
+                parsed = [(match.group(1).strip().strip("[]").strip(),
+                           match.group(2).strip())]
+            else:
+                warnings.append(
+                    f"模型把 {len(parsed)} 条写在了同一行，已按行内 - ** 拆分："
+                    f"{parsed[0][0][:24]}")
+
+            # Only the first item on a glued line becomes `current`: the
+            # metadata block that follows belongs to it. Measured on the
+            # 2026-09-26 glued line, whose 来源 URL was the *first* item's.
+            current = None
+            for position, (title, body) in enumerate(parsed):
+                item = {
+                    "title": title,
+                    "body": body,
+                    "stars": "",
+                    "source_line": "",
+                    "deprecated": False,
+                    "split_out": position > 0,
+                }
+                items.append(item)
+                if position == 0:
+                    current = item
             continue
+
+        if match:
+            # Starts like an item but the title blew past the bound, so it will
+            # be folded into the previous body below. Say so: that fold is
+            # otherwise indistinguishable from a long body.
+            warnings.append(
+                f"行首条目标题 {len(match.group(1))} 字，超过 {MAX_TITLE_CHARS} 字上限，"
+                f"已并入上一条正文：{match.group(1)[:30]}")
 
         if current is None:
             warnings.append(f"丢弃开场白：{stripped[:40]}")
@@ -301,23 +398,27 @@ def _extract_url(line):
 def _resolve(item, candidates):
     """Work out which pool entry the model actually meant.
 
+    Returns (candidate, matched_by) where matched_by is "url", "title" or None.
     Exact URL first, then exact title. No fuzzy matching: industry headlines are
     rewritten into Chinese, so a similarity match would happily point at the
     wrong story — a broken link is the lesser evil.
+
+    Which anchor matched matters to `_verify_split_items`: for an item recovered
+    from a glued line, a title hit and a URL hit prove very different things.
     """
     url = _extract_url(item.get("source_line"))
     if url:
         key = normalize_url(url)
         for cand in candidates:
             if key and normalize_url(cand["url"]) == key:
-                return cand
+                return cand, "url"
 
     title = normalize_title(item.get("title"))
     if title:
         for cand in candidates:
             if normalize_title(cand["title"]) == title:
-                return cand
-    return None
+                return cand, "title"
+    return None, None
 
 
 def _parse_stars(raw):
@@ -340,14 +441,24 @@ def _finalize(items, candidates):
     warnings = []
     unresolved = 0
     for item in items:
-        cand = _resolve(item, candidates)
+        cand, matched_by = _resolve(item, candidates)
+        item["resolved"] = cand is not None
+        item["resolved_by"] = matched_by
         if cand is None:
-            unresolved += 1
-            warnings.append(f"来源无法在候选池中定位，已删除来源行：{item['title'][:30]}")
             # The URL is the one field _resolve exists to verify, so the model's
             # own copy of it is exactly what must not be trusted here. Shipping
             # the item with no link beats shipping a link we could not confirm.
             item["source_line"] = ""
+            if item.get("split_out"):
+                # A split-out item has no 来源 of its own by construction, so
+                # this is not the "model stopped copying URLs" signal that
+                # RESOLVE_FAIL_LIMIT exists to catch, and counting it would let
+                # gluing trip the graded-failure path. _verify_split_items owns
+                # this case.
+                pass
+            else:
+                unresolved += 1
+                warnings.append(f"来源无法在候选池中定位，已删除来源行：{item['title'][:30]}")
         else:
             item["source_line"] = f"- 来源：[{cand['source']}]({cand['url']})"
 
@@ -360,6 +471,51 @@ def _finalize(items, candidates):
         if item.get("deprecated"):
             warnings.append(f"模型输出了已废弃的「核心价值」行：{item['title'][:30]}")
     return warnings, unresolved
+
+
+def _verify_split_items(items, key):
+    """Check the items that exist only because we split a glued line.
+
+    A glued line carries exactly one metadata block and it belongs to the item
+    that starts the line (measured on 2026-09-26), so a recovered item has no
+    来源 of its own. Those are the only items in the class this module produced
+    rather than read, so each is verified against the pool by whichever anchor
+    actually holds for its class:
+
+    - papers: titles are copied out of arXiv/HuggingFace verbatim, so an exact
+      title hit is proof the item is real — and `_finalize` has already rebuilt
+      its 来源 line from the entry it matched, which is the only way a split-out
+      paper gets a link back. No hit means an item boundary was invented:
+      problem -> retry -> raise.
+    - industry: headlines are rewritten into Chinese, so a title proves nothing
+      and only the URL counts. A recovered industry item never carries one (the
+      URL belongs to the line's first item), so it can never be verified — it
+      degrades to no 来源 line rather than failing the day. If industry gluing
+      turns up several days running, the prompt contract is what needs
+      revisiting, not this function.
+
+    Returns (problems, warnings).
+    """
+    problems = []
+    warnings = []
+    for number, item in enumerate(items, 1):
+        if not item.get("split_out"):
+            continue
+        label = item["title"][:26]
+
+        if key == "papers":
+            if not item.get("resolved"):
+                problems.append(
+                    f"第 {number} 条从粘连行拆出，标题无法在论文候选池中精确匹配：{label}")
+            continue
+
+        if item.get("resolved_by") == "url":
+            continue
+        how = "无来源行" if not item["source_line"] else "仅标题匹配"
+        warnings.append(
+            f"第 {number} 条从粘连行拆出且来源无法验证（{how}），已降级删除来源行：{label}")
+        item["source_line"] = ""
+    return problems, warnings
 
 
 def _validate_class(items, total, positives):
@@ -526,6 +682,12 @@ def _run_class(cls, blocks, date_str, model, base_url, api_key):
         warnings += finalize_warnings
         problems, body_warnings = _validate_class(items, total, actual_positives)
         warnings += body_warnings
+        # Runs after _validate_class so a split that shortened the class is
+        # already reflected in the counts, and after _finalize because it reads
+        # the resolution _finalize recorded.
+        split_problems, split_warnings = _verify_split_items(items, cls["key"])
+        problems += split_problems
+        warnings += split_warnings
 
         # Graded, deliberately. A handful of unverifiable links is survivable —
         # those items ship without a 来源 line rather than with a link nobody
@@ -570,7 +732,14 @@ def _run_observation(chosen, date_str, model, base_url, api_key):
     if meta.get("finish_reason") == "length" or not text.strip():
         raise RuntimeError("今日观察生成失败（截断或空响应）")
 
-    return re.sub(r"\s+", " ", _strip_markdown(text)).strip()
+    observation = re.sub(r"\s+", " ", _strip_markdown(text)).strip()
+    # Warned, never enforced: the cap is a style budget, and a day must not go
+    # unpublished over an 18% overshoot. The warning exists so drift is visible
+    # in raw.json rather than only in the prose.
+    if len(observation) > OBSERVATION_MAX_CHARS:
+        LAST_REPORT["warnings"].append(
+            f"[observation] {len(observation)} 字，超出 {OBSERVATION_MAX_CHARS} 字上限")
+    return observation
 
 
 def _strip_markdown(text):

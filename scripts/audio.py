@@ -77,7 +77,9 @@ def _weekday(date_str: str) -> str:
 # reads the headline picks only, trimmed.
 FALLBACK_ITEMS_PER_CAT = 2
 FALLBACK_DESC_CHARS = 150
-FALLBACK_OBSERVATION_CHARS = 300
+FALLBACK_OBSERVATION_CHARS = 350  # tracks summarize.OBSERVATION_MAX_CHARS; a hard cut
+                                  # below it would clip the closing sentence mid-clause
+                                  # on the days the LLM script is unavailable
 
 
 def _fallback_script(zh_markdown: str, date_str: str) -> str:
