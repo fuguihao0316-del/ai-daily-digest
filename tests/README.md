@@ -21,7 +21,7 @@ python tests/test_glue.py
 
 ---
 
-## Tests（5 个）
+## Tests（6 个）
 
 可重复跑、无副作用、与当前工作区内容无关。改完 `scripts/` 跑这一组。
 
@@ -32,8 +32,9 @@ python tests/test_glue.py
 | `test_glue.py` | 拿 09-26 **真实粘连产物**验证行内拆分：恢复 15 条、4 条 `split_out`、标题精确回池、分级门限不被粘连误伤、坏粘连整行不动 | git `f246ecf6` |
 | `test_preselect.py` | 预选确定性：论文池上限 `PAPER_CANDIDATES`、`news+projects == 25`、单源配额、实质内容下限、项目按今日 star 取前 5、HF 顺序保持、同输入字节一致 | git `f246ecf6`（6 天 raw.json）|
 | `test_summarize_e2e.py` | `summarize()` 全链路，`_chat` 是唯一 HTTP 边界故被打桩：提示词构造、拆分、来源定位、组装、解析器自检、重试循环、账本。无网络、无 API key | `samples/` + git `f246ecf6` |
+| `check_prompts.py` | 渲染提示词与告警文案（抓漏 f 前缀的 `{total}`、数字没跟着改），并断言备选契约：提示词写明 120 上限、该上限 `== ALTERNATE_BODY`、重试后缀带同一上限。非零退出 | 无夹具，直接 import `summarize` |
 
-## Diagnostics（11 个）
+## Diagnostics（10 个）
 
 只读诊断，不改仓库状态。**这些是历史脚本**：阈值、条数、rev 都写死在当时那次事件上。
 **诊断新问题时请基于当前 rev 重写一份**，不要去放宽这里的夹具或参数 —— 夹具有意钉死，
@@ -48,7 +49,6 @@ python tests/test_glue.py
 | `split_glued.py` | 把粘连正文按 `- **` 拆开，还原真实长度分布 | 已钉 `f246ecf6`；可覆盖：`[REV] [DATE]` |
 | `diag_seg.py` | 逐段拆 09-26 论文段的粘连行，看每段能否 `_ITEM_RE` 命中、标题是否超 `MAX_TITLE_CHARS` | 钉 `f246ecf6` |
 | `diag_titles.py` | 真实候选池标题长度分布（定 `MAX_TITLE_CHARS` 的依据），以及模型实际写出的标题长度 | 钉 `f246ecf6`（两个 raw.json + daily 全钉）|
-| `check_prompts.py` | 渲染提示词与告警文案，抓「漏 f 前缀导致 `{total}` 原样发给模型」或数字没跟着改 | 无夹具，直接 import `summarize` |
 | `dump_schema.py` | 打印 raw.json 的结构骨架（键/类型/大小），不 dump 内容 | `python tests/dump_schema.py [PATH]`，默认 `data/2026-09-26.raw.json` |
 | `measure_shownotes.py` | show notes 长度：新格式样例 vs 历史各期 | `samples/` + **`daily/*.md`** —— 会随 `daily/` 内容变化而漂移 |
 | `verify_commit_msg.py` | 一次性：检查某条 commit message 过 PowerShell 后没被搞坏（探针字符串写死） | 读 `git log -1` |

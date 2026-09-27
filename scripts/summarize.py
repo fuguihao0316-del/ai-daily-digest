@@ -3,8 +3,9 @@ AI summarization - supports DeepSeek / OpenAI / any OpenAI-compatible API.
 
 Output contract (see samples/digest-format-example.md): exactly two classes,
 15 items each, sorted by importance. Items 1-10 carry a <=400-character Chinese
-body; items 11-15 are one-liners folded behind a `### 📌 备选` heading that
-this module inserts itself — the model never decides who is an alternate.
+body; items 11-15 are single-fact one-liners under 80 characters (120 hard
+ceiling), folded behind a `### 📌 备选` heading that this module inserts
+itself — the model never decides who is an alternate.
 
 Chinese only. The digest used to be produced bilingually in a *single* call
 deliminated by `===ENGLISH===`; that is gone, and so is the failure mode it
@@ -58,7 +59,9 @@ MEAGRE_BODY = 250         # conforming but under the 300-400 budget
 MIN_AVG_BODY = 250        # mean positive body below this is systematic under-writing,
                           # and catches it even when every body clears SHORT_BODY
 LONG_BODY = 500
-ALTERNATE_BODY = 140
+ALTERNATE_BODY = 120      # the prompt's own ceiling for an alternate. It was 140,
+                          # which left 121-140 violating the contract without any
+                          # warning at all — the check must match what it checks.
 MAX_SHORT_BODIES = 2      # 3+ amputated bodies is systematic, not a thin item
 RESOLVE_FAIL_LIMIT = 0.30  # share of items whose 来源 cannot be traced to the pool
 OBSERVATION_MAX_CHARS = 350  # warned about, never enforced. The cap was 300 and the
@@ -181,8 +184,10 @@ def _class_user_prompt(cls, block_text, date_str, total, positives, projects):
     ]
     if alternates:
         rules.append(
-            f"3. 第 {positives + 1}-{total} 条是备选，只写 1-2 句（约 80 字），"
-            "只陈述事实，不展开分析，但星级要保留真实值，不因为是备选就降级。"
+            f"3. 第 {positives + 1}-{total} 条是备选，只写 1 个简短的信息点，"
+            "总长控制在 80 字以内，最多不超过 120 字。不要写完整的长句，"
+            "用短句陈述核心事实和结论即可。这是硬预算：写完自己数一遍，"
+            "宁可少说一层意思，也不要超出。星级保留真实值。"
         )
     rules.append(
         f"{len(rules) + 1}. 必须产出恰好 {total} 条。候选清单是**挑选范围**，"
@@ -225,7 +230,8 @@ def _retry_suffix(problems, total, positives, produced=None):
 `  - 重要性：★★★★☆ / 5`、`  - 来源：[来源名](URL)`（URL 逐字复制候选清单）。
 **每条独占一行**：写完一条必须换行，下一条的 `- **` 必须在新一行行首，
 不要接在上一条正文末尾。
-共 {total} 条：前 {positives} 条正文 300-400 字，后 {alternates} 条只写 1-2 句。"""
+共 {total} 条：前 {positives} 条正文 300-400 字，
+后 {alternates} 条每条只写 1 个简短信息点，总长 80 字以内、最多 120 字。"""
 
 
 # ── Model output → item blocks ──────────────────────────────────────────────────
@@ -538,7 +544,8 @@ def _validate_class(items, total, positives):
         if n <= positives:
             if len(body) < SHORT_BODY:
                 short += 1
-                warnings.append(f"第 {n} 条正文仅 {len(body)} 字，疑似换行被吞：{item['title'][:24]}")
+                warnings.append(f"第 {n} 条正文仅 {len(body)} 字，低于 {SHORT_BODY} 字下限"
+                                f"（可能是换行被吞，也可能确实写短了）：{item['title'][:24]}")
             elif len(body) < MEAGRE_BODY:
                 warnings.append(f"第 {n} 条正文 {len(body)} 字，低于 300-400 字预算")
             elif len(body) > LONG_BODY:

@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Render the edited prompts and warning text, to catch a missed f-prefix
-(which would ship a literal `{total}` to the model) or a stale number."""
+(which would ship a literal `{total}` to the model) or a stale number — then
+assert the alternate-length contract still holds. Non-zero exit on failure."""
+import re
 import sys
 
 sys.stdout.reconfigure(encoding="utf-8")
@@ -37,3 +39,29 @@ for label, text in (("_class_user_prompt", prompt),
     literal = [tok for tok in ("{total}", "{positives}", "{cls", "{alternates}")
                if tok in text]
     print(f"  {label}: 残留未插值占位符 = {literal or '无'}")
+
+# ── 契约断言 ────────────────────────────────────────────────────────────────────
+# The e2e stubs pin the model's *historical* output (321-343-char alternates), so
+# they pass whatever the prompt says — they cannot guard this contract. These
+# checks are what ties the prompt's stated ceiling to ALTERNATE_BODY.
+print("\n=== 契约断言 ===")
+FAILS = []
+
+
+def check(cond, label):
+    print(f"  {'ok  ' if cond else 'FAIL'} {label}")
+    if not cond:
+        FAILS.append(label)
+
+
+check("最多不超过 120 字" in prompt, "备选规则写明「最多不超过 120 字」")
+ceiling = re.search(r"最多不超过 (\d+) 字", prompt)
+check(ceiling is not None and int(ceiling.group(1)) == S.ALTERNATE_BODY,
+      f"提示词上限 == ALTERNATE_BODY（{S.ALTERNATE_BODY}）")
+check(f"最多 {S.ALTERNATE_BODY} 字" in S._retry_suffix([], 15, 10),
+      "重试后缀带同一上限（改一处漏一处就红）")
+
+if FAILS:
+    print(f"\n{len(FAILS)} 条契约断言失败")
+    sys.exit(1)
+print("\nCONTRACT CHECKS PASSED")
