@@ -903,7 +903,7 @@ def cat_type(name: str, emoji: str) -> str:
     return "other"
 
 
-CAT_LABELS = [("all", "全部"), ("news", "新闻"), ("paper", "论文"), ("project", "项目"), ("buzz", "热议")]
+CAT_LABELS = [("all", "全部"), ("news", "行业动态"), ("paper", "论文"), ("project", "项目"), ("buzz", "热议")]
 CAT_LABELS_EN = [("all", "All"), ("news", "News"), ("paper", "Papers"), ("project", "Projects"), ("buzz", "Buzz")]
 
 
