@@ -21,7 +21,13 @@ from xml.sax.saxutils import escape as _xml_escape
 WEEKDAYS = ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
 WEEKDAYS_EN = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 REPO_URL = "https://github.com/Jimmuji/ai-daily-digest"
-SITE_URL = "https://jimmuji.github.io/ai-daily-digest/"
+# The fork's own Pages URL. It was jimmuji.github.io (the upstream repo's site)
+# until 2026-09-28, which made the published feed advertise the *upstream* host:
+# podcast.xml's enclosure/cover URLs, its self link, and the creator page's
+# "完整图文与往期" all pointed at a site this repo does not control. The 404.html
+# redirect has always been owner-agnostic (`/ai-daily-digest/...`), so only this
+# constant had to move.
+SITE_URL = "https://fuguihao0316-del.github.io/ai-daily-digest/"
 XIAOYUZHOU_URL = "https://www.xiaoyuzhoufm.com/podcast/6a325e149357568efe4741ef"
 
 
