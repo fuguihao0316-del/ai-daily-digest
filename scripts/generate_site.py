@@ -20,7 +20,11 @@ from xml.sax.saxutils import escape as _xml_escape
 
 WEEKDAYS = ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
 WEEKDAYS_EN = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-REPO_URL = "https://github.com/Jimmuji/ai-daily-digest"
+# The fork's own repo. It was Jimmuji/ai-daily-digest (upstream) until 2026-09-28.
+# Same reasoning as SITE_URL below: this repo only ever publishes to its own Pages,
+# so the header link should not send readers to a repo this one does not control.
+# The badge is attribution-neutral otherwise — it just says "GitHub".
+REPO_URL = "https://github.com/fuguihao0316-del/ai-daily-digest"
 # The fork's own Pages URL. It was jimmuji.github.io (the upstream repo's site)
 # until 2026-09-28, which made the published feed advertise the *upstream* host:
 # podcast.xml's enclosure/cover URLs, its self link, and the creator page's
