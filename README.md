@@ -6,16 +6,12 @@
 
 全自动采集 · AI 智能筛选与总结 · 中英双语 · 重要性评分 · 语音播报 · 每日定时发布
 
-### 👉 [**在线阅读：jimmuji.github.io/ai-daily-digest**](https://jimmuji.github.io/ai-daily-digest/) 👈
+### 👉 [**在线阅读：fuguihao0316-del.github.io/ai-daily-digest**](https://fuguihao0316-del.github.io/ai-daily-digest/) 👈
 
-[![Visit Site](https://img.shields.io/badge/🌐_在线网站-访问-2ea043?style=for-the-badge)](https://jimmuji.github.io/ai-daily-digest/)
+[![Visit Site](https://img.shields.io/badge/🌐_在线网站-访问-2ea043?style=for-the-badge)](https://fuguihao0316-del.github.io/ai-daily-digest/)
 [![Podcast](https://img.shields.io/badge/🎧_在小宇宙收听-播客-9333ea?style=for-the-badge)](https://www.xiaoyuzhoufm.com/podcast/6a325e149357568efe4741ef)
 
-[![Daily Digest](https://github.com/Jimmuji/ai-daily-digest/actions/workflows/daily.yml/badge.svg)](https://github.com/Jimmuji/ai-daily-digest/actions/workflows/daily.yml)
-![GitHub last commit](https://img.shields.io/github/last-commit/Jimmuji/ai-daily-digest)
-![GitHub stars](https://img.shields.io/github/stars/Jimmuji/ai-daily-digest?style=social)
-
-[**🌐 在线网站**](https://jimmuji.github.io/ai-daily-digest/) · [**🎧 播客订阅**](https://www.xiaoyuzhoufm.com/podcast/6a325e149357568efe4741ef) · [**📖 日报存档**](daily/) · [**⚙️ 快速部署**](#-快速开始) · [**💡 设计理念**](#-为什么做这个)
+[**🌐 在线网站**](https://fuguihao0316-del.github.io/ai-daily-digest/) · [**🎧 播客订阅**](https://www.xiaoyuzhoufm.com/podcast/6a325e149357568efe4741ef) · [**📖 日报存档**](daily/) · [**⚙️ 快速部署**](#-快速开始) · [**💡 设计理念**](#-为什么做这个)
 
 </div>
 
@@ -67,7 +63,7 @@ AI 领域每天产出大量信息——新论文、新模型、新产品、新�
 
 ## 🌟 网站与收听
 
-不只是 Markdown 存档，[在线站点](https://jimmuji.github.io/ai-daily-digest/) 还提供：
+不只是 Markdown 存档，[在线站点](https://fuguihao0316-del.github.io/ai-daily-digest/) 还提供：
 
 - **🌐 中英双语**：一键切换中文 / English，正文与界面同步切换（旧日报无英文时自动回退中文）。
 - **🎧 语音播报**：每期由 AI 改写成口播稿并合成 MP3，网页内置播放器，支持锁屏 / 车机控制（MediaSession）。
@@ -241,6 +237,8 @@ schedule:
 ## 📄 License
 
 MIT License - 随便用，注明出处即可。
+
+本项目 fork 自 [Jimmuji/ai-daily-digest](https://github.com/Jimmuji/ai-daily-digest)，版权归原作者所有。
 
 ---
 
