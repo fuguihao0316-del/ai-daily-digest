@@ -144,13 +144,18 @@ def dedupe_items(items):
 # 25-item pool that the model picks its 15 from — and the 5 alternates come from
 # the same pool. Pure offline logic: no network, no clock beyond `now`.
 
-CANDIDATES_PER_CLASS = 25  # industry pool only: 20 news + 5 projects
+CANDIDATES_PER_CLASS = 25  # industry pool only: 22 news + 3 projects
 PAPER_CANDIDATES = 35      # papers get a deeper pool than industry. With only 25 to
                            # choose from, the model kept judging the tail "增量过小"
                            # and stopped at 9-10 items instead of the 15 it was asked
                            # for (2026-09-26 first cloud run). More headroom means it
                            # can reach the target without having to dip below its bar.
-PROJECT_SLOTS = 5          # reserved inside the industry pool (>=2 must survive into the final 15)
+PROJECT_SLOTS = 3          # reserved inside the industry pool (>=2 must survive into the final 15).
+                           # Was 5, which is exactly ALTERNATE_COUNT — and nothing in the industry
+                           # focus calls projects important, so the model ranks them last and all 5
+                           # fell into the 5 alternates. 09-28 ended with a fold that was 5/5 repos.
+                           # 3 keeps the pool majority news, which is the point of this class, and
+                           # makes "alternates 100% projects" structurally impossible.
 HF_QUOTA = 30              # papers: HuggingFace's own community ranking gets the lion's share
 ARXIV_QUOTA = 5            # arXiv is the uncurated safety net
 MAX_PER_SOURCE = 3         # no single feed may dominate the pool

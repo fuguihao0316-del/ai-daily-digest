@@ -30,7 +30,7 @@ python tests/test_glue.py
 | `test_fg.py` | F1 索引式 show notes（`_gist` 截断/省略号/边界）+ G3 分级来源定位（`_finalize` 记账、30% 门限的 `_run_class` 行为） | `samples/digest-format-example.md` |
 | `test_format.py` | 拆分往返（逐字节）+ 硬换行回流（宽 120/60/40）+ 对抗性模型输出（回声标题、模型自带备选标题、代码围栏、过时字段、行内加粗、超长标题、粘连）+ 星级解析 + 组装与解析器自检 + HTML 转义 + 音频兜底稿长度 | `samples/`（+ `_chat` 打桩） |
 | `test_glue.py` | 拿 09-26 **真实粘连产物**验证行内拆分：恢复 15 条、4 条 `split_out`、标题精确回池、分级门限不被粘连误伤、坏粘连整行不动 | git `f246ecf6` |
-| `test_preselect.py` | 预选确定性：论文池上限 `PAPER_CANDIDATES`、`news+projects == 25`、单源配额、实质内容下限、项目按今日 star 取前 5、HF 顺序保持、同输入字节一致 | git `f246ecf6`（6 天 raw.json）|
+| `test_preselect.py` | 预选确定性：论文池上限 `PAPER_CANDIDATES`、`news+projects == 25`、单源配额、实质内容下限、项目按今日 star 取前 `PROJECT_SLOTS`、HF 顺序保持、同输入字节一致 | git `f246ecf6`（6 天 raw.json）|
 | `test_summarize_e2e.py` | `summarize()` 全链路，`_chat` 是唯一 HTTP 边界故被打桩：提示词构造、拆分、来源定位、组装、解析器自检、重试循环、账本。无网络、无 API key | `samples/` + git `f246ecf6` |
 | `check_prompts.py` | 渲染提示词与告警文案（抓漏 f 前缀的 `{total}`、数字没跟着改），并断言备选契约：提示词写明 120 上限、该上限 `== ALTERNATE_BODY`、重试后缀带同一上限。非零退出 | 无夹具，直接 import `summarize` |
 

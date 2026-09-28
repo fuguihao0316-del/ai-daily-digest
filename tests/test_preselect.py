@@ -59,7 +59,8 @@ for day in DAYS:
           f"{day}: papers pool {len(papers)} > {PAPER_CANDIDATES}")
     check(len(papers) == min(PAPER_CANDIDATES, len(data["papers"])),
           f"{day}: papers pool {len(papers)} != min({PAPER_CANDIDATES}, {len(data['papers'])})")
-    check(len(projects) == 5, f"{day}: projects pool {len(projects)} != 5")
+    check(len(projects) == sources.PROJECT_SLOTS,
+          f"{day}: projects pool {len(projects)} != {sources.PROJECT_SLOTS}")
     check(len(news) + len(projects) == 25, f"{day}: industry pool {len(news)+len(projects)} != 25")
 
     # per-source cap
@@ -73,10 +74,12 @@ for day in DAYS:
     check(shortest >= MIN_SUMMARY_CHARS,
           f"{day}: shortest news summary {shortest} < {MIN_SUMMARY_CHARS}")
 
-    # projects are the top-5 by today's stars
-    by_stars = sorted((sources._stars_today(i) for i in data["projects"]), reverse=True)[:5]
+    # projects are the top-N by today's stars
+    by_stars = sorted((sources._stars_today(i) for i in data["projects"]),
+                      reverse=True)[:sources.PROJECT_SLOTS]
     got = sorted((sources._stars_today(i) for i in projects), reverse=True)
-    check(got == by_stars, f"{day}: project slots not the top-5 by stars_today ({got} vs {by_stars})")
+    check(got == by_stars,
+          f"{day}: project slots not the top-{sources.PROJECT_SLOTS} by stars_today ({got} vs {by_stars})")
 
     # determinism: same input -> byte-identical pool
     again = select_candidates(data, now=now)

@@ -19,7 +19,8 @@ sys.path.insert(0, "scripts")
 
 import summarize as S  # noqa: E402
 from generate_site import parse_digest  # noqa: E402
-from sources import select_candidates, PAPER_CANDIDATES  # noqa: E402
+from sources import (select_candidates, PAPER_CANDIDATES,  # noqa: E402
+                     CANDIDATES_PER_CLASS, PROJECT_SLOTS)
 
 REAL_CHAT = S._chat
 
@@ -188,7 +189,8 @@ check(len(digest["observation"]) > 50, "observation too short")
 check(md.count("### 📌 备选") == 2, f"{md.count('### 📌 备选')} alternates headings, want 2")
 # The 09-24 fixture holds 30 HF + 5 arXiv papers, which is exactly the new
 # PAPER_CANDIDATES — so this pins the deepened pool, not just its shape.
-check(S.LAST_REPORT["pool"] == {"industry_news": 20, "industry_projects": 5,
+check(S.LAST_REPORT["pool"] == {"industry_news": CANDIDATES_PER_CLASS - PROJECT_SLOTS,
+                                "industry_projects": PROJECT_SLOTS,
                                 "papers": PAPER_CANDIDATES},
       f"pool {S.LAST_REPORT['pool']}")
 check(S.LAST_REPORT["selection"]["industry"] and S.LAST_REPORT["selection"]["papers"],
