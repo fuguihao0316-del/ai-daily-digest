@@ -239,11 +239,3 @@ schedule:
 MIT License - 随便用，注明出处即可。
 
 本项目 fork 自 [Jimmuji/ai-daily-digest](https://github.com/Jimmuji/ai-daily-digest)，版权归原作者所有。
-
----
-
-<div align="center">
-
-**如果觉得有用，欢迎 ⭐ Star 支持一下！**
-
-</div>
