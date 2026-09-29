@@ -534,6 +534,15 @@ def _validate_class(items, total, positives):
 
     if len(items) < MIN_ITEMS:
         problems.append(f"条目数为 {len(items)}，少于下限 {MIN_ITEMS}")
+    elif len(items) < total:
+        # The shipped-short band: MIN_ITEMS <= len(items) < total. Deliberately
+        # not a retry — MIN_ITEMS exists to let a thin day through. But until now
+        # it left no trace at all: _check_document derives its `expected` from
+        # what the model actually produced, so a 14/15 day parses as structurally
+        # perfect on every check we run. Recorded so the 2026-09/10 observation
+        # window can tell "occasional" from "routine" out of the artifacts alone.
+        warnings.append(f"条目数 {len(items)}，少于目标 {total}"
+                        f"（正选 {positives} + 备选 {len(items) - positives}）")
 
     short = 0
     for n, item in enumerate(items, 1):

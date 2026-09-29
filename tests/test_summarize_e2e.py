@@ -248,6 +248,12 @@ split = [(len(c["items"]), len(c["alternates"]))
 check(split == [(10, 2), (10, 2)], f"12-item split {split}, want [(10, 2), (10, 2)]")
 check(md.count("### 📌 备选") == 2, f"{md.count('### 📌 备选')} alternates headings, want 2")
 check(len(S.LAST_REPORT["calls"]) == 3, f"{len(S.LAST_REPORT['calls'])} calls, want 3 (no retry)")
+# Shipping short is allowed, but it must not be silent: `expected` in
+# _check_document is derived from what the model produced, so a 12/15 day would
+# otherwise parse as perfect and leave the shortfall in no artifact at all.
+check(sum("少于目标" in w for w in S.LAST_REPORT["warnings"]) == 2,
+      f"the 12-item shortfall was not recorded per class: "
+      f"{[w for w in S.LAST_REPORT['warnings'] if '条目数' in w]}")
 print(f"  ok: shipped short, {len(md)} chars, {len(S.LAST_REPORT['warnings'])} warnings")
 
 # ── the retry says how many are missing (the run-7 fix) ─────────────────────
