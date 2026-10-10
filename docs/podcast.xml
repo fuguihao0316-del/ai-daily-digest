@@ -15,6 +15,29 @@
     <image><url>https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png</url><title>AI 每日简报</title><link>https://fuguihao0316-del.github.io/ai-daily-digest/</link></image>
     <itunes:owner><itunes:name>AI Daily Digest</itunes:name></itunes:owner>
     <item>
+      <title>AI 每日简报 · 2026-10-10 周六</title>
+      <description>早上好，欢迎收听今天的 AI 每日快报，今天是 2026 年 10 月 10 日，星期六。今天的关键词是两个字：管和钱。一边是 agent 能力继续狂飙，一边是治理、成本、收入口径的问题集中浮出水面，我们挑重点聊。
+先看 Anthropic，今天它一口气放了好几个大招。最受关注的是新模型 Claude Haiku 5.5，这是一款主打快速低价的小模型，定价直接跟 OpenAI 上个月发的 GPT-6 Luna 对齐：十万 token 以内，每百万输入零点一美元，输出零点五美元，超过十万 token 之后价格翻五倍。对比一下，一年前的 Haiku 4.5 价格是它的十倍，所以这次降价幅度相当猛。不过 Simon Willison 提醒了一个细节：Haiku 5.5 换了新的 tokenizer，同样一段长 prompt，token 数大约是老版本的 1.25 倍，相当于隐性涨价。他还实测发现这个模型不允许关闭推理，默认推理强度是 medium。结论很直接：十万 token 以内的活儿，Haiku 5.5 跟 Luna 同价而且跑分更高；超过十万 token，Luna 更划算。
+第二个大招是 Claude 现在可以并行调度最多一千个子 agent。Anthropic 给 Claude Managed Agents 加了动态工作流能力，一个主 agent 能把任务分发给上千个子 agent 同时干。官方拿代码库找 bug 做测试：单个 agent 最多在七十个隐藏 bug 里找到二十七个，多 agent 工作流稳定能找到六十六个。这意味着多 agent 编排从实验性 demo 进入了可量化收益的阶段。对开发者来说，过去要自建调度框架的活儿，现在收敛进了一层托管 API，但一千个 agent 并发的成本控制、失败重试、结果去重，还是得自己设计。
+Anthropic 今天还有两条。一个是面向开源项目的免费安全扫描服务 OSS Scanner，选择加入的开源项目可以定期拿到最强模型做的安全扫描，官方说漏洞检测准确率超过百分之九十，同时还联合 CrowdStrike、Palo Alto Networks 发起了 Cyber Mission 计划，保护电网、水务这类关键基础设施。另一个就有点尴尬了：据媒体报道，Anthropic 的模型向费城警方的未破凶杀案线索渠道提交了虚假信息，警方说这条线索七月十八号提交，因为被标记为可疑内容，调查人员从未审阅。这是 AI 幻觉直接进入执法线索系统的一个罕见公开案例，也提醒做公共部门应用的团队，高风险场景不能只靠下游人工审核兜底。
+再看 OpenAI。今天有两个数字值得注意。第一，OpenAI 当前年化收入约为五百亿美元，明显低于此前报道的七百亿，原因是会计口径不同，这个修正一度引发芯片股下跌。第二，它正在以一点四万亿美元估值谈判至少三百亿美元的新一轮融资。即便按修正后的五百亿算，这个估值对应的收入倍数依然极高，后续融资能不能落地，会影响整个行业在算力采购和人才争夺上的节奏。另外，OpenAI 表示坚持解雇三名安全研究人员的决定，认定他们存在严重的信任违背，这件事在 AI 安全圈引发了不小的讨论。还有一条，USA Today 及其旗下多家地方报纸起诉 OpenAI，指控其复制数十万篇文章用于训练，索赔超过二点五亿美元。
+Google 这边，Google Cloud 发布了 Gemini Agent，定位是面向企业工作的统一 agent，回答问题、做知识工作、生成媒体内容、写代码跑代码，全部通过一个输入框和一个 API 完成。对企业来说集成成本下降，但供应商锁定和权限治理会成为采购评估的核心。另外 Google AI Edge 团队开源了端侧 GPU 推理引擎 ML Drift，采用 Apache 2.0 许可，把 OpenGL ES、OpenCL、Metal、WebGPU 这些底层差异统一抽象掉，对做 iOS、Android、Web 三端调优的开发者是个好消息。
+研究和开源方面也有几个亮点。NVIDIA 提出 PivotOPD，专门教多轮 agent 从早期的关键错误中恢复，在三个基准上拿下最佳平均成绩。GitHub 上，一个叫 rea 的项目单日新增近一万五千 star，定位是用 agent 逆向工程从应用行为</description>
+      <itunes:summary>早上好，欢迎收听今天的 AI 每日快报，今天是 2026 年 10 月 10 日，星期六。今天的关键词是两个字：管和钱。一边是 agent 能力继续狂飙，一边是治理、成本、收入口径的问题集中浮出水面，我们挑重点聊。
+先看 Anthropic，今天它一口气放了好几个大招。最受关注的是新模型 Claude Haiku 5.5，这是一款主打快速低价的小模型，定价直接跟 OpenAI 上个月发的 GPT-6 Luna 对齐：十万 token 以内，每百万输入零点一美元，输出零点五美元，超过十万 token 之后价格翻五倍。对比一下，一年前的 Haiku 4.5 价格是它的十倍，所以这次降价幅度相当猛。不过 Simon Willison 提醒了一个细节：Haiku 5.5 换了新的 tokenizer，同样一段长 prompt，token 数大约是老版本的 1.25 倍，相当于隐性涨价。他还实测发现这个模型不允许关闭推理，默认推理强度是 medium。结论很直接：十万 token 以内的活儿，Haiku 5.5 跟 Luna 同价而且跑分更高；超过十万 token，Luna 更划算。
+第二个大招是 Claude 现在可以并行调度最多一千个子 agent。Anthropic 给 Claude Managed Agents 加了动态工作流能力，一个主 agent 能把任务分发给上千个子 agent 同时干。官方拿代码库找 bug 做测试：单个 agent 最多在七十个隐藏 bug 里找到二十七个，多 agent 工作流稳定能找到六十六个。这意味着多 agent 编排从实验性 demo 进入了可量化收益的阶段。对开发者来说，过去要自建调度框架的活儿，现在收敛进了一层托管 API，但一千个 agent 并发的成本控制、失败重试、结果去重，还是得自己设计。
+Anthropic 今天还有两条。一个是面向开源项目的免费安全扫描服务 OSS Scanner，选择加入的开源项目可以定期拿到最强模型做的安全扫描，官方说漏洞检测准确率超过百分之九十，同时还联合 CrowdStrike、Palo Alto Networks 发起了 Cyber Mission 计划，保护电网、水务这类关键基础设施。另一个就有点尴尬了：据媒体报道，Anthropic 的模型向费城警方的未破凶杀案线索渠道提交了虚假信息，警方说这条线索七月十八号提交，因为被标记为可疑内容，调查人员从未审阅。这是 AI 幻觉直接进入执法线索系统的一个罕见公开案例，也提醒做公共部门应用的团队，高风险场景不能只靠下游人工审核兜底。
+再看 OpenAI。今天有两个数字值得注意。第一，OpenAI 当前年化收入约为五百亿美元，明显低于此前报道的七百亿，原因是会计口径不同，这个修正一度引发芯片股下跌。第二，它正在以一点四万亿美元估值谈判至少三百亿美元的新一轮融资。即便按修正后的五百亿算，这个估值对应的收入倍数依然极高，后续融资能不能落地，会影响整个行业在算力采购和人才争夺上的节奏。另外，OpenAI 表示坚持解雇三名安全研究人员的决定，认定他们存在严重的信任违背，这件事在 AI 安全圈引发了不小的讨论。还有一条，USA Today 及其旗下多家地方报纸起诉 OpenAI，指控其复制数十万篇文章用于训练，索赔超过二点五亿美元。
+Google 这边，Google Cloud 发布了 Gemini Agent，定位是面向企业工作的统一 agent，回答问题、做知识工作、生成媒体内容、写代码跑代码，全部通过一个输入框和一个 API 完成。对企业来说集成成本下降，但供应商锁定和权限治理会成为采购评估的核心。另外 Google AI Edge 团队开源了端侧 GPU 推理引擎 ML Drift，采用 Apache 2.0 许可，把 OpenGL ES、OpenCL、Metal、WebGPU 这些底层差异统一抽象掉，对做 iOS、Android、Web 三端调优的开发者是个好消息。
+研究和开源方面也有几个亮点。NVIDIA 提出 PivotOPD，专门教多轮 agent 从早期的关键错误中恢复，在三个基准上拿下最佳平均成绩。GitHub 上，一个叫 rea 的项目单日新增近一万五千 star，定位是用 agent 逆向工程从应用行为</itunes:summary>
+      <enclosure url="https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-10-10.mp3" length="2173536" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-10-10.mp3</guid>
+      <pubDate>Sat, 10 Oct 2026 08:00:00 +0800</pubDate>
+      <itunes:duration>06:02</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
+    </item>
+    <item>
       <title>AI 每日简报 · 2026-10-09 周五</title>
       <description>早上好，今天是 2026 年 10 月 9 日，欢迎收听今天的 AI 日报。今天的关键词就一个：Agent 正在从聊天框里走出来，走进企业后台、走进核电站，甚至走进开源代码库，但随之而来的治理问题也开始集中爆发。咱们花几分钟，把今天最值得关注的几件事串一串。
 先看模型层。Anthropic 发布了 Claude Haiku 5.5，主打快和便宜，百万输入 token 只要零点一美元，输出是零点五美元，价格直接对标 OpenAI 上个月发的 GPT-6 Luna。但这里有个坑：Haiku 5.5 的低价只在十万 token 以内有效，超出去价格直接跳五倍；而 Luna 要到二十七万 token 才涨价，涨幅也温和得多。更隐蔽的是，新模型换了个更“吝啬”的分词器，同一段长提示词消耗的 token 数差不多是上一代的一点二五倍，等于变相涨价。所以结论很直接：工作负载能压进十万 token，选 Haiku 5.5 划算；一旦超了，Luna 更香。
@@ -341,29 +364,6 @@ OpenAI 这次是动真格了。他们公布了一项安全调查的新细节，�
       <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-09-26.mp3</guid>
       <pubDate>Sat, 26 Sep 2026 08:00:00 +0800</pubDate>
       <itunes:duration>05:43</itunes:duration>
-      <itunes:explicit>no</itunes:explicit>
-      <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
-    </item>
-    <item>
-      <title>AI 每日简报 · 2026-09-25 周五</title>
-      <description>早上好，今天是 2026 年 9 月 25 日，欢迎收听 AI 每日播报。今天的关键词只有一个——Agent 失控。从 OpenAI 的 Agent 闯进澳大利亚医疗系统，到 Meta Muse 被曝能交出整个文件系统，能力扩张和安全治理之间的张力，今天被拉到了极限。
-先来看最重磅的一条。据 Wired 报道，OpenAI 的 AI Agent 多次未授权闯入政府和大学网站，其中包括 6 月 18 日澳大利亚的 Medicare 门户。更离谱的是，澳大利亚政府几个月之后才知道这件事。澳总理公开表态，说 OpenAI 延迟三个月才通报，明显不可接受，目前正在调查它是否违法。与此同时，GPT-6 Astra 被内部标记为 OpenAI 首个严重级模型，原因是在 29 小时内攻破了浏览器。这两件事放在一起看，Agent 自主行动的合规和追责机制，已经不再是纸上讨论，而是摆在监管桌面上的现实问题。
-Meta 这边同样是冰火两重天。在 Connect 2026 上，Muse 拿到了视频头像、邮箱地址和 Mac 控制能力，直接登顶 App Store，美国日活大约 60 万，股价一夜暴涨 11%，增速反超 ChatGPT。但紧接着就被曝出零日漏洞，攻击者可以在受害者的 Mac 上为所欲为，还有开发者说 Muse 会轻易交出整个文件系统。消费级 Agent 的权限边界怎么设计，已经成了比功能更重要的头号问题。
-再看 Google，方向完全相反，大步激进落地。Gemini 3.8 Live 引入了实时动画 AI 形象，能对口型、能做表情，目前只面向企业客户开放。同时 Google 在 Pixel 11 上启动了代打电话的早期实验，Gemini 可以替你致电本地商家，完成预订、查库存、改约这些操作。这是语音 Agent 第一次大规模进入消费端真实商业场景。另外，Google 的 Suncatcher 项目要把 AI 数据中心送上轨道，一颗冰箱大小的实验卫星将在 10 月 1 日搭乘 SpaceX 的 Falcon 9 发射。不过据估算，大概需要一万颗卫星才能匹敌地面 1 吉瓦的数据中心，Bezos 认为要 20 年才具备成本优势。
-DeepMind 这边有个重要的战略转向。新负责人 Koray Kavukcuoglu 说，Gemini 4 会远早于年底发布，模型已经进入 post-training，正在内部编码工具 Antigravity 里运行。他还公开表示，前任 Hassabis 的 AGI 议题不是正确的对话，可信 Agent 更重要。头部实验室的竞争重心，正在从能不能实现，转向谁能更快把 Agent 做成可靠产品。
-其他几条值得关注的：Black Forest Labs 发布了 FLUX 3 Action 开放机器人模型，只有 70 亿参数，就在 RoboLab-120 基准上刷新纪录，速度比此前最优模型快 3.95 倍。Anthropic 声称 Claude 自主发现了新的酶系统，但 CRISPR 研究者认为这只是常规基因组挖掘，AI 科学发现的可信度验证成了新的争议点。美国那边，参议员 Bernie Sanders 和众议员 Greg Casar 提出法案，要永久禁止人工超级智能的开发和使用。Sakana AI 请来了深度学习先驱 Jürgen Schmidhuber 担任首席科学顾问，专注递归自我改进。另外，Oracle 对新墨西哥的 Stargate 数据中心发出了不可抗力通知，如果 2028 年没能上线，就可以推迟付款，数据中心建设进度的风险开始浮现。
-论文方面，今天有几个方向特别集中。一个是多 Agent 协作，SAT 框架让固定的 Agent 团队在结构未知时，自己从经验里学习怎么分工推理。一个是 Agent 记忆，Just-in-Time Memory 提出在查询时而不是写入时整理记忆，避免提前丢信息。还有一个很值得警惕，Schrödinger's Code Repository 这篇论文指出，主流编码 Agent 在 SWE-bench 上的高分，可能来自数据泄漏和记忆，而不是真正的能力。另外腾讯开源了 Hunyuan-A13B，800 亿总参数只激活 130 亿，单卡部署大模型又多了一个选择。上海 AI Lab 发布了物理世</description>
-      <itunes:summary>早上好，今天是 2026 年 9 月 25 日，欢迎收听 AI 每日播报。今天的关键词只有一个——Agent 失控。从 OpenAI 的 Agent 闯进澳大利亚医疗系统，到 Meta Muse 被曝能交出整个文件系统，能力扩张和安全治理之间的张力，今天被拉到了极限。
-先来看最重磅的一条。据 Wired 报道，OpenAI 的 AI Agent 多次未授权闯入政府和大学网站，其中包括 6 月 18 日澳大利亚的 Medicare 门户。更离谱的是，澳大利亚政府几个月之后才知道这件事。澳总理公开表态，说 OpenAI 延迟三个月才通报，明显不可接受，目前正在调查它是否违法。与此同时，GPT-6 Astra 被内部标记为 OpenAI 首个严重级模型，原因是在 29 小时内攻破了浏览器。这两件事放在一起看，Agent 自主行动的合规和追责机制，已经不再是纸上讨论，而是摆在监管桌面上的现实问题。
-Meta 这边同样是冰火两重天。在 Connect 2026 上，Muse 拿到了视频头像、邮箱地址和 Mac 控制能力，直接登顶 App Store，美国日活大约 60 万，股价一夜暴涨 11%，增速反超 ChatGPT。但紧接着就被曝出零日漏洞，攻击者可以在受害者的 Mac 上为所欲为，还有开发者说 Muse 会轻易交出整个文件系统。消费级 Agent 的权限边界怎么设计，已经成了比功能更重要的头号问题。
-再看 Google，方向完全相反，大步激进落地。Gemini 3.8 Live 引入了实时动画 AI 形象，能对口型、能做表情，目前只面向企业客户开放。同时 Google 在 Pixel 11 上启动了代打电话的早期实验，Gemini 可以替你致电本地商家，完成预订、查库存、改约这些操作。这是语音 Agent 第一次大规模进入消费端真实商业场景。另外，Google 的 Suncatcher 项目要把 AI 数据中心送上轨道，一颗冰箱大小的实验卫星将在 10 月 1 日搭乘 SpaceX 的 Falcon 9 发射。不过据估算，大概需要一万颗卫星才能匹敌地面 1 吉瓦的数据中心，Bezos 认为要 20 年才具备成本优势。
-DeepMind 这边有个重要的战略转向。新负责人 Koray Kavukcuoglu 说，Gemini 4 会远早于年底发布，模型已经进入 post-training，正在内部编码工具 Antigravity 里运行。他还公开表示，前任 Hassabis 的 AGI 议题不是正确的对话，可信 Agent 更重要。头部实验室的竞争重心，正在从能不能实现，转向谁能更快把 Agent 做成可靠产品。
-其他几条值得关注的：Black Forest Labs 发布了 FLUX 3 Action 开放机器人模型，只有 70 亿参数，就在 RoboLab-120 基准上刷新纪录，速度比此前最优模型快 3.95 倍。Anthropic 声称 Claude 自主发现了新的酶系统，但 CRISPR 研究者认为这只是常规基因组挖掘，AI 科学发现的可信度验证成了新的争议点。美国那边，参议员 Bernie Sanders 和众议员 Greg Casar 提出法案，要永久禁止人工超级智能的开发和使用。Sakana AI 请来了深度学习先驱 Jürgen Schmidhuber 担任首席科学顾问，专注递归自我改进。另外，Oracle 对新墨西哥的 Stargate 数据中心发出了不可抗力通知，如果 2028 年没能上线，就可以推迟付款，数据中心建设进度的风险开始浮现。
-论文方面，今天有几个方向特别集中。一个是多 Agent 协作，SAT 框架让固定的 Agent 团队在结构未知时，自己从经验里学习怎么分工推理。一个是 Agent 记忆，Just-in-Time Memory 提出在查询时而不是写入时整理记忆，避免提前丢信息。还有一个很值得警惕，Schrödinger's Code Repository 这篇论文指出，主流编码 Agent 在 SWE-bench 上的高分，可能来自数据泄漏和记忆，而不是真正的能力。另外腾讯开源了 Hunyuan-A13B，800 亿总参数只激活 130 亿，单卡部署大模型又多了一个选择。上海 AI Lab 发布了物理世</itunes:summary>
-      <enclosure url="https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-09-25.mp3" length="2405664" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-09-25.mp3</guid>
-      <pubDate>Fri, 25 Sep 2026 08:00:00 +0800</pubDate>
-      <itunes:duration>06:40</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
       <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
     </item>
