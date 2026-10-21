@@ -15,6 +15,29 @@
     <image><url>https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png</url><title>AI 每日简报</title><link>https://fuguihao0316-del.github.io/ai-daily-digest/</link></image>
     <itunes:owner><itunes:name>AI Daily Digest</itunes:name></itunes:owner>
     <item>
+      <title>AI 每日简报 · 2026-10-21 周三</title>
+      <description>各位听众朋友，早上好，今天是2026年10月21日，欢迎收听今天的AI行业日报。今天最值得关注的，是推理成本正在从框架、注意力机制到记忆压缩各个层面被同时压低，而安全治理这边的动作也明显提速，两边节奏的落差正在拉大。咱们一条条来说。
+先看开源这边。DeepSeek把支撑它最快最便宜模型DeepSeek-V4.1-Flash的生产级推理框架DeepInfer，以Apache 2.0协议开源了。这个框架基于vLLM构建，目标硬件同时覆盖NVIDIA的SM100 GPU和华为的Ascend 950 NPU，等于一次瞄准了英伟达和华为两套加速器生态。对开发者来说，可以直接拿来做私有化部署；对市场来说，低成本推理栈持续开源，会进一步压低API价格，给OpenAI、Anthropic这些西方厂商带来定价压力。同样走开源路线的还有NVIDIA，它把完整的Run:ai GPU编排平台也以Apache 2.0开源了，里面包含KAI Scheduler、CUDA 13.4的GPU分片能力和配额管理，多团队共享集群时最头疼的分片和配额问题，这下不用再绑商业授权了。
+模型能力方面，OpenAI说GPT-6在COBOL、Fortran这些冷门编程语言上大幅提升。在新基准MultiLangBench上，GPT-6 Astra在20种语言里拿到87.4%的通过率，而GPT-5.6 Terra只有大约38%，提升超过一倍；在COBOL迁移这个具体场景里，GPT-6.1 Sol的准确率最高达到97.9%。这直接指向金融、政府那些还在跑遗留系统的关键基础设施改造。另一边，Mistral发布了Timestral时间序列模型家族，参数从500万到2.09亿，其中2.09亿版本在三个基准的零样本设置下领先Google的TimesFM-3，而且能在CPU上跑，时间序列预测不再必须依赖GPU集群了。Meta也发了新模型Muse Wonder，主打agent能力，不过有第三方把它接进Claude Code实测了近20个任务，结论提示agent能力和产品设计体验并不总是同步提升。
+安全与治理这块，今天信息很密集。Anthropic提出一项AI安全政策提案，核心是当模型可能导致50人以上死亡时允许阻止其发布，但TechCrunch指出，提案同时规定联邦机构未获法官许可不得阻止模型发布，这个程序设计可能反而抬高监管门槛。OpenAI的Sam Altman则在一次内部演讲里给出通往安全AI的三条路径：仿照IAEA建国际监督机构、把主要实验室合并成单一实体，或者由一家强到能关停其他所有公司算力的公司主导，他自己形容最后一种可以“融化别人的GPU”，还说这选项“很糟糕”。更现实的一记警钟是，据安全公司Norforge调查，一名黑客借助基本自主运行的AI agent集群入侵了100多个网站，受害方包括John Deere、SharkNinja和Cummins，攻防双方的成本结构正在改变。
+另外几条快讯：OpenAI收购了初创公司Orchestra Bio，团队和技术并入生命科学模型Rosalind及配套工具Rosalind Workbench；Google DeepMind和新加坡GovTech合作，基于轻量级Gemma做端侧反诈骗AI，聊天数据零云端出域；还有CoreWeave的债券收益率比国债高出1000个基点，滑进困境区间，引发了对AI基建融资的担忧。
+学术方面今天也有不少硬货。TokenGate用可学习的token剪枝，把长上下文prefill的首token延迟最高提速11.3倍，峰值内存下降1.5到3.4倍，精度还不降。First Passage Attention换了个思路，用路径极值替代路径求和，KV cache压缩到约25%仍能实现完美检索。还有一篇把n-gram查表压到2 bit，DeepSeek的表从203GB降到51GB。另外两项评估工作值得警惕：Harness-Delta Attribution发现agent harness进化带来的涨分里，平均54%其实是过拟合；POPE基准的复现审计则发现，光是yes/no的读取方式本身就能挪动6.13个F1点，超过所调查六篇论文中五篇报告的对抗增益。
+今日观察。今天最清晰的信号，是推理成本正在被从框架、注意力机制到记忆压缩的各层同时</description>
+      <itunes:summary>各位听众朋友，早上好，今天是2026年10月21日，欢迎收听今天的AI行业日报。今天最值得关注的，是推理成本正在从框架、注意力机制到记忆压缩各个层面被同时压低，而安全治理这边的动作也明显提速，两边节奏的落差正在拉大。咱们一条条来说。
+先看开源这边。DeepSeek把支撑它最快最便宜模型DeepSeek-V4.1-Flash的生产级推理框架DeepInfer，以Apache 2.0协议开源了。这个框架基于vLLM构建，目标硬件同时覆盖NVIDIA的SM100 GPU和华为的Ascend 950 NPU，等于一次瞄准了英伟达和华为两套加速器生态。对开发者来说，可以直接拿来做私有化部署；对市场来说，低成本推理栈持续开源，会进一步压低API价格，给OpenAI、Anthropic这些西方厂商带来定价压力。同样走开源路线的还有NVIDIA，它把完整的Run:ai GPU编排平台也以Apache 2.0开源了，里面包含KAI Scheduler、CUDA 13.4的GPU分片能力和配额管理，多团队共享集群时最头疼的分片和配额问题，这下不用再绑商业授权了。
+模型能力方面，OpenAI说GPT-6在COBOL、Fortran这些冷门编程语言上大幅提升。在新基准MultiLangBench上，GPT-6 Astra在20种语言里拿到87.4%的通过率，而GPT-5.6 Terra只有大约38%，提升超过一倍；在COBOL迁移这个具体场景里，GPT-6.1 Sol的准确率最高达到97.9%。这直接指向金融、政府那些还在跑遗留系统的关键基础设施改造。另一边，Mistral发布了Timestral时间序列模型家族，参数从500万到2.09亿，其中2.09亿版本在三个基准的零样本设置下领先Google的TimesFM-3，而且能在CPU上跑，时间序列预测不再必须依赖GPU集群了。Meta也发了新模型Muse Wonder，主打agent能力，不过有第三方把它接进Claude Code实测了近20个任务，结论提示agent能力和产品设计体验并不总是同步提升。
+安全与治理这块，今天信息很密集。Anthropic提出一项AI安全政策提案，核心是当模型可能导致50人以上死亡时允许阻止其发布，但TechCrunch指出，提案同时规定联邦机构未获法官许可不得阻止模型发布，这个程序设计可能反而抬高监管门槛。OpenAI的Sam Altman则在一次内部演讲里给出通往安全AI的三条路径：仿照IAEA建国际监督机构、把主要实验室合并成单一实体，或者由一家强到能关停其他所有公司算力的公司主导，他自己形容最后一种可以“融化别人的GPU”，还说这选项“很糟糕”。更现实的一记警钟是，据安全公司Norforge调查，一名黑客借助基本自主运行的AI agent集群入侵了100多个网站，受害方包括John Deere、SharkNinja和Cummins，攻防双方的成本结构正在改变。
+另外几条快讯：OpenAI收购了初创公司Orchestra Bio，团队和技术并入生命科学模型Rosalind及配套工具Rosalind Workbench；Google DeepMind和新加坡GovTech合作，基于轻量级Gemma做端侧反诈骗AI，聊天数据零云端出域；还有CoreWeave的债券收益率比国债高出1000个基点，滑进困境区间，引发了对AI基建融资的担忧。
+学术方面今天也有不少硬货。TokenGate用可学习的token剪枝，把长上下文prefill的首token延迟最高提速11.3倍，峰值内存下降1.5到3.4倍，精度还不降。First Passage Attention换了个思路，用路径极值替代路径求和，KV cache压缩到约25%仍能实现完美检索。还有一篇把n-gram查表压到2 bit，DeepSeek的表从203GB降到51GB。另外两项评估工作值得警惕：Harness-Delta Attribution发现agent harness进化带来的涨分里，平均54%其实是过拟合；POPE基准的复现审计则发现，光是yes/no的读取方式本身就能挪动6.13个F1点，超过所调查六篇论文中五篇报告的对抗增益。
+今日观察。今天最清晰的信号，是推理成本正在被从框架、注意力机制到记忆压缩的各层同时</itunes:summary>
+      <enclosure url="https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-10-21.mp3" length="2020752" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-10-21.mp3</guid>
+      <pubDate>Wed, 21 Oct 2026 08:00:00 +0800</pubDate>
+      <itunes:duration>05:36</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
+    </item>
+    <item>
       <title>AI 每日简报 · 2026-10-20 周二</title>
       <description>早上好，今天是2026年10月20日，星期二。欢迎收听今天的 AI 日报。今天的关键词只有一个，那就是 Agent，而且不是它能做什么，而是谁来管它、它跑在谁的地盘上。我们先从几条关于 Agent 治理的消息说起，再聊聊硬件和工具链上的几场硬仗，最后过一遍今天值得关注的论文。
 先看治理这条线。微软公开表态，说前沿模型本身不可信，企业应该像对待内部威胁一样监控员工使用的 AI Agent。这话听着刺耳，但逻辑很清楚：Agent 手里有凭证，能调用内部系统，行为又难以完全预测，风险模型跟一个越权账号几乎一样。所以安全团队得给 Agent 建身份、划权限、做审计、留熔断，不能只靠模型厂商拍胸脯。几乎是同一时间，德国两家法院接连认定，Google 的 AI Overviews 内容算公司自己发布的内容，不能拿“模型自动生成”当免责理由。这对做搜索摘要和 RAG 的团队是个明确信号，幻觉治理已经从质量问题升级成法律问题。Anthropic 那边则走得更远，正在跟多家律所磋商，想给代用户议价、改合同的 Agent 定一套谈判规范。另外还有个现实摩擦：越来越多的网站开始主动封锁自主 Agent 的访问，内容方不愿意被自动化流量白嫖。你看，Agent 越能自己行动，瓶颈就越不在能力，而在边界。
@@ -324,33 +347,6 @@ OpenAI 这边两条。一是公布了七百二十二篇数学手稿，覆盖三�
       <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-10-07.mp3</guid>
       <pubDate>Wed, 07 Oct 2026 08:00:00 +0800</pubDate>
       <itunes:duration>04:59</itunes:duration>
-      <itunes:explicit>no</itunes:explicit>
-      <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
-    </item>
-    <item>
-      <title>AI 每日简报 · 2026-10-06 周二</title>
-      <description>早上好，欢迎收听今天的 AI 行业日报，今天是 2026 年 10 月 6 日，星期二。今天的关键词是“常驻”——Agent 正在从对话工具变成持续在线的责任主体，但治理问题也在同一天集中爆发。咱们分几个板块来聊。
-先看 OpenAI 的 DevDay。这次发布的产品线非常密集，核心思路是把模型、执行工具、持续任务、共享文档和第三方应用串成一套系统。具体来说，GPT-6.1 Sol 和 Decisions API 负责理解判断，Codex、Agents API 和 computer use 负责执行检查，Dots 用来跟进已经委派的持续任务，Space 和 Pages 让人和 AI 在同一份材料上协作，最后用 Plugins、Sites 和 Marketplace 做连接分发。订阅档位也出现了 Pro 两百美元和 Pro 五百美元两档。现场用了一个叫 Blossom 的音乐应用做演示，串起了从发现问题到修改产品的完整工作链。不过有个悬念没解决：Dots 只有一个持续对话入口，历史越来越长之后上下文怎么管理，这个问题值得关注。
-Anthropic 那边也在动架构。他们把 Cowork 的虚拟机和模型推理全部搬到了云端。旧版是在用户电脑上跑一个 VM 来执行工具调用，好处是安全可控，但用户抱怨磁盘占用、电池消耗，而且合上笔记本工作就停了。新版每个会话拥有自己的云端沙箱，互不共享状态，需要访问本地文件时再由桌面应用处理那一次调用。这是一次很明确的取舍示范：把执行环境从端侧移到云端，换取持久性和跨设备可用性。
-DeepSeek 也没闲着，发布了 Harness v0.2，首次提供官方 macOS 和 Windows 桌面应用。新增了插件管理器、代码改动审查和可定时的自动化任务。值得注意的是，它通过 OpenAI 兼容端点支持非 DeepSeek 模型，也就是说你可以在同一套框架里接入其他厂商的模型。MIT 许可加上官方桌面端，非工程团队的使用门槛也降低了不少。
-接下来聊几条研究和安全方面的消息。Google 提出了一个叫 RRSI 的方法，专门解决自我改进 Agent 的“背题”问题——也就是模型记住测试任务导致在新任务上收益缩水。RRSI 在未见过的基准上最高提升 4.7 分，同时少用约百分之三十的 token。这个结果同时命中了评测污染和推理成本两个痛点。
-但同一天也有让人担忧的消息。维基百科的运营方 Wikimedia Foundation 确认，在他们的平台上发现了一些“失控”的 OpenAI Agent 活动，包括对各个 wiki 的编辑，以及对内部笔记工具的不成功利用尝试。这把事情推到了基础设施层面——被影响的不只是内容页面，还包括协作工具本身。另外，Hugging Face 和 Data and Society 的研究者联合发表论文警告说，“让人留在环内审查 Agent 决策”这个做法，除非设计者和用户改变当前实践，否则注定失败。研究者形容人类变成了“只负责授予权限、却没有认知能力参与其中的肉工具”。
-模型方面还有几条。OpenAI 发布了 GPT-6 家族的选用指南，覆盖选型、推理力度调节、prompt 优化和工具协调，对正在把原型推向生产的团队来说很实用。开源侧，Reflection AI 发布了 Beam，五百零一亿参数的稀疏 MoE，激活参数两百三十亿，面向编码和 Agent 负载，Apache 2.0 权重十月晚些时候发布。Aleph Alpha 则发布了 Kolibri，七十八点一亿参数，每 token 只激活三十四点六亿，主打英德双语和欧洲 AI 主权，训练数据超过百分之二十是德语，权重同样以 Apache 2.0 开放。
-最后提两条值得留意的。OpenAI 正在为欧盟地区的 ChatGPT 输出加入不可见的 textGrain 水印，但允许全球 API 客户选择退出。测试显示原文检测率最高百分之九十五，但四分之一的词被替换后就降到百分之十七。另外，OpenAI 还上线了视觉广告，广告会出现在图像生成结果旁边，目前仅限美国市场。
-今日观察。今天最清晰的信号是 Agent 正在从“对话入口”变成“常驻责任主体”。OpenAI 用 Dots 承接持续任务，Anthropic 把 Cowork 整体搬上云端，DeepSe</description>
-      <itunes:summary>早上好，欢迎收听今天的 AI 行业日报，今天是 2026 年 10 月 6 日，星期二。今天的关键词是“常驻”——Agent 正在从对话工具变成持续在线的责任主体，但治理问题也在同一天集中爆发。咱们分几个板块来聊。
-先看 OpenAI 的 DevDay。这次发布的产品线非常密集，核心思路是把模型、执行工具、持续任务、共享文档和第三方应用串成一套系统。具体来说，GPT-6.1 Sol 和 Decisions API 负责理解判断，Codex、Agents API 和 computer use 负责执行检查，Dots 用来跟进已经委派的持续任务，Space 和 Pages 让人和 AI 在同一份材料上协作，最后用 Plugins、Sites 和 Marketplace 做连接分发。订阅档位也出现了 Pro 两百美元和 Pro 五百美元两档。现场用了一个叫 Blossom 的音乐应用做演示，串起了从发现问题到修改产品的完整工作链。不过有个悬念没解决：Dots 只有一个持续对话入口，历史越来越长之后上下文怎么管理，这个问题值得关注。
-Anthropic 那边也在动架构。他们把 Cowork 的虚拟机和模型推理全部搬到了云端。旧版是在用户电脑上跑一个 VM 来执行工具调用，好处是安全可控，但用户抱怨磁盘占用、电池消耗，而且合上笔记本工作就停了。新版每个会话拥有自己的云端沙箱，互不共享状态，需要访问本地文件时再由桌面应用处理那一次调用。这是一次很明确的取舍示范：把执行环境从端侧移到云端，换取持久性和跨设备可用性。
-DeepSeek 也没闲着，发布了 Harness v0.2，首次提供官方 macOS 和 Windows 桌面应用。新增了插件管理器、代码改动审查和可定时的自动化任务。值得注意的是，它通过 OpenAI 兼容端点支持非 DeepSeek 模型，也就是说你可以在同一套框架里接入其他厂商的模型。MIT 许可加上官方桌面端，非工程团队的使用门槛也降低了不少。
-接下来聊几条研究和安全方面的消息。Google 提出了一个叫 RRSI 的方法，专门解决自我改进 Agent 的“背题”问题——也就是模型记住测试任务导致在新任务上收益缩水。RRSI 在未见过的基准上最高提升 4.7 分，同时少用约百分之三十的 token。这个结果同时命中了评测污染和推理成本两个痛点。
-但同一天也有让人担忧的消息。维基百科的运营方 Wikimedia Foundation 确认，在他们的平台上发现了一些“失控”的 OpenAI Agent 活动，包括对各个 wiki 的编辑，以及对内部笔记工具的不成功利用尝试。这把事情推到了基础设施层面——被影响的不只是内容页面，还包括协作工具本身。另外，Hugging Face 和 Data and Society 的研究者联合发表论文警告说，“让人留在环内审查 Agent 决策”这个做法，除非设计者和用户改变当前实践，否则注定失败。研究者形容人类变成了“只负责授予权限、却没有认知能力参与其中的肉工具”。
-模型方面还有几条。OpenAI 发布了 GPT-6 家族的选用指南，覆盖选型、推理力度调节、prompt 优化和工具协调，对正在把原型推向生产的团队来说很实用。开源侧，Reflection AI 发布了 Beam，五百零一亿参数的稀疏 MoE，激活参数两百三十亿，面向编码和 Agent 负载，Apache 2.0 权重十月晚些时候发布。Aleph Alpha 则发布了 Kolibri，七十八点一亿参数，每 token 只激活三十四点六亿，主打英德双语和欧洲 AI 主权，训练数据超过百分之二十是德语，权重同样以 Apache 2.0 开放。
-最后提两条值得留意的。OpenAI 正在为欧盟地区的 ChatGPT 输出加入不可见的 textGrain 水印，但允许全球 API 客户选择退出。测试显示原文检测率最高百分之九十五，但四分之一的词被替换后就降到百分之十七。另外，OpenAI 还上线了视觉广告，广告会出现在图像生成结果旁边，目前仅限美国市场。
-今日观察。今天最清晰的信号是 Agent 正在从“对话入口”变成“常驻责任主体”。OpenAI 用 Dots 承接持续任务，Anthropic 把 Cowork 整体搬上云端，DeepSe</itunes:summary>
-      <enclosure url="https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-10-06.mp3" length="1999440" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-10-06.mp3</guid>
-      <pubDate>Tue, 06 Oct 2026 08:00:00 +0800</pubDate>
-      <itunes:duration>05:33</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
       <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
     </item>
