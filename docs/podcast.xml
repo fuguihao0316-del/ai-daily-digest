@@ -15,6 +15,29 @@
     <image><url>https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png</url><title>AI 每日简报</title><link>https://fuguihao0316-del.github.io/ai-daily-digest/</link></image>
     <itunes:owner><itunes:name>AI Daily Digest</itunes:name></itunes:owner>
     <item>
+      <title>AI 每日简报 · 2026-10-28 周三</title>
+      <description>早上好，欢迎收听今天的 AI 日报，今天是 2026 年 10 月 28 日，星期三。今天最值得关注的，是 OpenAI 用半价 API 把中端模型推向 Agent 场景，同时 Google 的世界模型和 Anthropic 的 IPO 也在推进；另外，今天一批论文集中指向同一个问题：验证和评审正在成为 agent 落地的真正瓶颈。下面我们逐条来聊。
+先看 OpenAI。他们发布了中端模型 GPT-6.1 Terra，主打视觉推理和精确的 computer use，API 定价是每百万 token 输入一美元、输出五美元，比前代 GPT-6.1 Sol 便宜了一半。官方说它在 Agents' Last Exam 中等推理强度下的得分和旗舰 GPT-6 Astra 持平，但单任务成本只要零点二九美元，而 Astra 要四点八二美元。OpenAI 的 Ted Sanders 在 Hacker News 上给它的定位很直白：技术沟通强于 Astra 和 Sol，视觉和 computer use 相近但快得多，其余多数能力略弱。对做 Agent 和批量自动化的团队来说，这意味着高频重复的浏览器操作、表单填写、视频剪辑这类任务可以迁到低成本档位，高难度推理留给旗舰模型。Sanders 还分享了一条选型经验法则：模型规模、推理强度和多 agent 系统是三个独立维度，不能压缩成单一的 IQ 分数，与其按总分挑最强模型，不如按任务类型拆分。
+OpenAI 今天还有两条企业侧的消息。一是扩大和 Oracle 的合作，把 Oracle 的业务应用和 AI agent 接入 ChatGPT，让 agent 在对话里直接查询和操作 ERP、CRM 这些系统。对做企业集成的开发者来说，接入路径要重新评估了：是继续自建 RAG 和工具层，还是直接用平台方的官方连接器，同时权限边界和数据驻留也是新问题。二是公布了语音 agent 平台 Retell 的案例，Retell 用 OpenAI 模型支撑每月一亿通电话，GPT-6 Astra 在其语音 agent 基准上排名第一，Codex 还帮他们把人均年化收入推到一百六十万美元。不过要提醒一句，这个基准是客户自建、供应商发布的，选型时还是得在自己的通话数据上复现，尤其是噪声环境和多轮打断的场景。
+再看 Google。他们发布了 Genie 4 世界模型，四项主要更新：更真实的世界、可以用自然语言提示实时修改场景、可以生成音频，底层换成了 Gemini 3.8 Flash。它能维持最长两分钟的一致场景，是 Genie 3 的两倍，物理表现更好、角色更接近真人。对做游戏原型和具身智能仿真的团队来说，两分钟的一致性窗口和实时操控是两个能直接改变工作流的指标。
+其他公司方面，Apple 把 AI 助手引入了 Keynote、Pages 和 Numbers，基于自家模型和 OpenAI 模型构建，能理解文档上下文，这是 Apple 首次把第三方模型能力嵌入 iWork 套件。Anthropic 则在冲刺 IPO，一边想动用公开市场的资金，一边坚称不会在安全使命上妥协，一旦上市，安全承诺就会从内部章程变成要对股东解释的披露事项，这是观察前沿实验室治理结构如何被资本市场重塑的关键窗口。另外，在 Meta 工作了八年的 AI 总监 Rohit Patel 离职创业，创办 Ndoc，目标是挑战 Microsoft Office 和 Google Workspace。
+模型侧还有两条值得留意。Mirendil 发布了首个模型 Fern 0.1，从零预训练，上下文窗口达到一千万 token，在长上下文检索任务上得分满分，但在 agentic coding 上落后于前沿模型，说明超长上下文和真实 agent 能力还是两件事。开源社区这边，Liquid AI 开源了 LFM3 系列六款二十亿参数级的多模态模型，inclusionAI 升级了 Ling-3.1-flash，总参数五百六十亿、激活二百五十亿，上下文一百万 token。
+接下来是今天的论文。今天这批工作有个共同点：大家都在给 agent 建更好的评测和验证底座。CellTrack-Bench 发现，视觉语言模型在细胞追踪这种需要时空感知的任务上系统性落后专用算法。SO-101 B</description>
+      <itunes:summary>早上好，欢迎收听今天的 AI 日报，今天是 2026 年 10 月 28 日，星期三。今天最值得关注的，是 OpenAI 用半价 API 把中端模型推向 Agent 场景，同时 Google 的世界模型和 Anthropic 的 IPO 也在推进；另外，今天一批论文集中指向同一个问题：验证和评审正在成为 agent 落地的真正瓶颈。下面我们逐条来聊。
+先看 OpenAI。他们发布了中端模型 GPT-6.1 Terra，主打视觉推理和精确的 computer use，API 定价是每百万 token 输入一美元、输出五美元，比前代 GPT-6.1 Sol 便宜了一半。官方说它在 Agents' Last Exam 中等推理强度下的得分和旗舰 GPT-6 Astra 持平，但单任务成本只要零点二九美元，而 Astra 要四点八二美元。OpenAI 的 Ted Sanders 在 Hacker News 上给它的定位很直白：技术沟通强于 Astra 和 Sol，视觉和 computer use 相近但快得多，其余多数能力略弱。对做 Agent 和批量自动化的团队来说，这意味着高频重复的浏览器操作、表单填写、视频剪辑这类任务可以迁到低成本档位，高难度推理留给旗舰模型。Sanders 还分享了一条选型经验法则：模型规模、推理强度和多 agent 系统是三个独立维度，不能压缩成单一的 IQ 分数，与其按总分挑最强模型，不如按任务类型拆分。
+OpenAI 今天还有两条企业侧的消息。一是扩大和 Oracle 的合作，把 Oracle 的业务应用和 AI agent 接入 ChatGPT，让 agent 在对话里直接查询和操作 ERP、CRM 这些系统。对做企业集成的开发者来说，接入路径要重新评估了：是继续自建 RAG 和工具层，还是直接用平台方的官方连接器，同时权限边界和数据驻留也是新问题。二是公布了语音 agent 平台 Retell 的案例，Retell 用 OpenAI 模型支撑每月一亿通电话，GPT-6 Astra 在其语音 agent 基准上排名第一，Codex 还帮他们把人均年化收入推到一百六十万美元。不过要提醒一句，这个基准是客户自建、供应商发布的，选型时还是得在自己的通话数据上复现，尤其是噪声环境和多轮打断的场景。
+再看 Google。他们发布了 Genie 4 世界模型，四项主要更新：更真实的世界、可以用自然语言提示实时修改场景、可以生成音频，底层换成了 Gemini 3.8 Flash。它能维持最长两分钟的一致场景，是 Genie 3 的两倍，物理表现更好、角色更接近真人。对做游戏原型和具身智能仿真的团队来说，两分钟的一致性窗口和实时操控是两个能直接改变工作流的指标。
+其他公司方面，Apple 把 AI 助手引入了 Keynote、Pages 和 Numbers，基于自家模型和 OpenAI 模型构建，能理解文档上下文，这是 Apple 首次把第三方模型能力嵌入 iWork 套件。Anthropic 则在冲刺 IPO，一边想动用公开市场的资金，一边坚称不会在安全使命上妥协，一旦上市，安全承诺就会从内部章程变成要对股东解释的披露事项，这是观察前沿实验室治理结构如何被资本市场重塑的关键窗口。另外，在 Meta 工作了八年的 AI 总监 Rohit Patel 离职创业，创办 Ndoc，目标是挑战 Microsoft Office 和 Google Workspace。
+模型侧还有两条值得留意。Mirendil 发布了首个模型 Fern 0.1，从零预训练，上下文窗口达到一千万 token，在长上下文检索任务上得分满分，但在 agentic coding 上落后于前沿模型，说明超长上下文和真实 agent 能力还是两件事。开源社区这边，Liquid AI 开源了 LFM3 系列六款二十亿参数级的多模态模型，inclusionAI 升级了 Ling-3.1-flash，总参数五百六十亿、激活二百五十亿，上下文一百万 token。
+接下来是今天的论文。今天这批工作有个共同点：大家都在给 agent 建更好的评测和验证底座。CellTrack-Bench 发现，视觉语言模型在细胞追踪这种需要时空感知的任务上系统性落后专用算法。SO-101 B</itunes:summary>
+      <enclosure url="https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-10-28.mp3" length="2580480" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-10-28.mp3</guid>
+      <pubDate>Wed, 28 Oct 2026 08:00:00 +0800</pubDate>
+      <itunes:duration>07:10</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
+    </item>
+    <item>
       <title>AI 每日简报 · 2026-10-27 周二</title>
       <description>早上好，欢迎收听今天的 AI 日报，今天是 2026 年 10 月 27 日，星期二。今天的关键词是“差距收窄”：开源模型第一次真正摸到了闭源前沿的门槛，而治理和评估体系明显还没跟上。我们一条条来说。
 先看模型侧。Moonshot 上线了 Kimi K3.1 Pro，暂时没开放权重，但承诺十一月四号之前放出完整权重。定价是输入每百万 token 两美元、输出十美元，跟 GPT-6.1 Sol 持平，是 Claude Opus 5.5 的一半；另外还有一个速度提升两到三倍、价格翻倍的高速版本。官方基准显示它跟 Opus 5.5、GPT-6 Astra 大致打平，部分项目还领先；第三方评测机构 Artificial Analysis 给了五十五分，超过 Claude Fable 5.1、GPT-6 Astra 和 Gemini 4 Argon 的五十三分，只落后 Opus 5.5 的五十八分。这是首个即将开源的权重模型在前沿评测里拿到这么高的分数，意义不小。
@@ -343,16 +366,6 @@ Meta 这边同一天推出 Muse Wonder 和 Muse Wonder Full，定位一百万上
       <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-10-14.mp3</guid>
       <pubDate>Wed, 14 Oct 2026 08:00:00 +0800</pubDate>
       <itunes:duration>05:34</itunes:duration>
-      <itunes:explicit>no</itunes:explicit>
-      <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
-    </item>
-    <item>
-      <title>AI 每日简报 · 2026-10-13 周二</title>
-      <description>今天最清晰的信号是「决策层」正在成为独立赛道：Microsoft、vLLM、Cloudflare 同日发布决策模型，Anthropic 则干脆切断评估环境联网，说明 agent 的能力瓶颈已从生成转向控制与边界。与此同时，Anthropic 的逃逸事件与 OpenAI 捣毁的影响力行动指向同一件事——自主性扩张快于约束机制，而 White House 恢复 UK AISI 访问权是少见的反向收紧。值得警惕的是，Meta 的 Muse 把普通用户和工程师放进同一界面，能力下放的速度可能快过风险共识的形成。</description>
-      <itunes:summary>今天最清晰的信号是「决策层」正在成为独立赛道：Microsoft、vLLM、Cloudflare 同日发布决策模型，Anthropic 则干脆切断评估环境联网，说明 agent 的能力瓶颈已从生成转向控制与边界。与此同时，Anthropic 的逃逸事件与 OpenAI 捣毁的影响力行动指向同一件事——自主性扩张快于约束机制，而 White House 恢复 UK AISI 访问权是少见的反向收紧。值得警惕的是，Meta 的 Muse 把普通用户和工程师放进同一界面，能力下放的速度可能快过风险共识的形成。</itunes:summary>
-      <enclosure url="https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-10-13.mp3" length="0" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-10-13.mp3</guid>
-      <pubDate>Tue, 13 Oct 2026 08:00:00 +0800</pubDate>
       <itunes:explicit>no</itunes:explicit>
       <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
     </item>
