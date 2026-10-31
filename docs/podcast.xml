@@ -15,6 +15,33 @@
     <image><url>https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png</url><title>AI 每日简报</title><link>https://fuguihao0316-del.github.io/ai-daily-digest/</link></image>
     <itunes:owner><itunes:name>AI Daily Digest</itunes:name></itunes:owner>
     <item>
+      <title>AI 每日简报 · 2026-10-31 周六</title>
+      <description>各位听众早上好，今天是2026年10月31日，欢迎收听今天的AI行业日报。今天的内容相当密集，一句话概括看点：头部厂商的竞争正从模型能力本身，转向生态规则、计费结构和成本控制，而几篇研究也在提醒我们，能力越强，人的判断反而越容易被悄悄替代。我们一条条来聊。
+先看OpenAI，今天几乎是刷屏式发布。第一件，是更新了Model Spec，也就是模型行为准则，围绕五项核心价值重新组织，其中特别强调了对人类意图的忠实和可纠正性。简单说，就是要求GPT系列模型主动利用对话历史去推断用户真正想要什么，并且把自己做的假设说出来，而不是机械地照字面执行。这对开发者意味着，过去依赖模型照字面执行的旧工作流可能会出现行为漂移，系统提示词和产品逻辑需要重新对齐；但反过来，能推断意图也为多轮任务型Agent打下了更好的基础。
+第二件，OpenAI公布了前沿模型失准的检测方法，核心叫分层监控，就是在不同层级部署检测手段，让响应团队能在事件升级之前介入。这个思路的价值在于，把事后审计前移成运行中拦截，监控不再只是日志系统，而要具备触发干预的能力。
+第三件和钱有关。继Anthropic本月早些时候给Max和Team订阅用户开放API额度之后，OpenAI上线了几乎一样的方案：月付一百、两百、五百美元档位的订阅用户，可以获得等额、带有效期的API credits。对高频调用API的开发者来说，等于订阅费直接变成调用额度，不用重复付费。另外，OpenAI还宣布付费套餐用量上限整体翻倍，覆盖Pro一百到Pro五百各档位，之前计划削减Pro两百配额的做法在用户反对后被撤回。这两件事放在一起看，说明订阅定价已经成为模型厂商竞争的敏感前线。
+再看行业规则层面。OpenAI、Google、Microsoft和Anthropic四家共同表态，采纳一项新的出版商AI抓取退出标准。关键设计是一个共享的policy token信号，出版商只需设置一次训练偏好，就能跨多家AI公司生效，不用逐家单独配置。这解决了过去robots.txt式退出机制碎片化的问题。虽然这个token是否具备法律约束力还不清楚，但四家主要厂商同时表态，已经让它具备了事实上的行业基线地位。
+接下来是一条挺让人警醒的研究。Anthropic做了一个实验，给五十名专家配备一个AI Agent，而这个Agent的偏好是抛硬币随机决定的。结果呢，在需要判断的场合，专家跟随Agent观点的比例最高达到百分之八十六，而且大多数人相信这些结论出自自己的判断。这意味着，当Agent用自信的语气给建议时，人类的监督可能退化成形式上的确认。对把Agent用于分析、评审、决策支持的团队来说，需要引入盲评、对照或者强制记录理由这样的机制。
+基础设施方面，Google宣布搭载AI芯片的卫星成功启动星载TPU，机上运行的Gemma 4模型按提示生成了一首关于身处太空的俳句，然后把结果传回了地球。这是Project Suncatcher相关工作的首次在轨推理验证。意义不在于诗本身，而在于验证了TPU在太空环境下的启动和推理链路可用，为把算力部署到轨道、减少对地面回传带宽的依赖提供了实证。
+工具和模型方面还有几条。Microsoft Research和UC Berkeley联合发布了开源插件TokenEconomizer，从历史会话中学习，在不改动Agent本身的前提下降低编码任务的token消耗，在SWE-Bench上成本降幅在百分之十八到三十一之间，属于即插即用的成本优化层。NVIDIA开源了Nemotron 3.5 Transcribe，这是一个总规模三百亿、激活参数约四十三亿的MoE语音模型，支持四十种语言转写，还带说话人标签和词级时间戳，英文平均词错率百分之四点七一。另外，MarkTechPost对比了Anthropic、OpenAI、Cloudflare和Google四家的源码安全漏洞猎手Agent，发现它们用的是同一套循环：先发现、再证伪、后修补，说明安全Agent的方法论正在收敛，差异更多落在工程细节和生态整合上。
+最后快速过一下学术侧。有几条值得记住：一是统一训练的工作，把预训练、SFT和RL收进同一个基于似然的算法框架；二是Soft-MTP，指出标准多token预测存在梯度缺陷，用一行代码改动就能修复；三是一项审计发现，公共模</description>
+      <itunes:summary>各位听众早上好，今天是2026年10月31日，欢迎收听今天的AI行业日报。今天的内容相当密集，一句话概括看点：头部厂商的竞争正从模型能力本身，转向生态规则、计费结构和成本控制，而几篇研究也在提醒我们，能力越强，人的判断反而越容易被悄悄替代。我们一条条来聊。
+先看OpenAI，今天几乎是刷屏式发布。第一件，是更新了Model Spec，也就是模型行为准则，围绕五项核心价值重新组织，其中特别强调了对人类意图的忠实和可纠正性。简单说，就是要求GPT系列模型主动利用对话历史去推断用户真正想要什么，并且把自己做的假设说出来，而不是机械地照字面执行。这对开发者意味着，过去依赖模型照字面执行的旧工作流可能会出现行为漂移，系统提示词和产品逻辑需要重新对齐；但反过来，能推断意图也为多轮任务型Agent打下了更好的基础。
+第二件，OpenAI公布了前沿模型失准的检测方法，核心叫分层监控，就是在不同层级部署检测手段，让响应团队能在事件升级之前介入。这个思路的价值在于，把事后审计前移成运行中拦截，监控不再只是日志系统，而要具备触发干预的能力。
+第三件和钱有关。继Anthropic本月早些时候给Max和Team订阅用户开放API额度之后，OpenAI上线了几乎一样的方案：月付一百、两百、五百美元档位的订阅用户，可以获得等额、带有效期的API credits。对高频调用API的开发者来说，等于订阅费直接变成调用额度，不用重复付费。另外，OpenAI还宣布付费套餐用量上限整体翻倍，覆盖Pro一百到Pro五百各档位，之前计划削减Pro两百配额的做法在用户反对后被撤回。这两件事放在一起看，说明订阅定价已经成为模型厂商竞争的敏感前线。
+再看行业规则层面。OpenAI、Google、Microsoft和Anthropic四家共同表态，采纳一项新的出版商AI抓取退出标准。关键设计是一个共享的policy token信号，出版商只需设置一次训练偏好，就能跨多家AI公司生效，不用逐家单独配置。这解决了过去robots.txt式退出机制碎片化的问题。虽然这个token是否具备法律约束力还不清楚，但四家主要厂商同时表态，已经让它具备了事实上的行业基线地位。
+接下来是一条挺让人警醒的研究。Anthropic做了一个实验，给五十名专家配备一个AI Agent，而这个Agent的偏好是抛硬币随机决定的。结果呢，在需要判断的场合，专家跟随Agent观点的比例最高达到百分之八十六，而且大多数人相信这些结论出自自己的判断。这意味着，当Agent用自信的语气给建议时，人类的监督可能退化成形式上的确认。对把Agent用于分析、评审、决策支持的团队来说，需要引入盲评、对照或者强制记录理由这样的机制。
+基础设施方面，Google宣布搭载AI芯片的卫星成功启动星载TPU，机上运行的Gemma 4模型按提示生成了一首关于身处太空的俳句，然后把结果传回了地球。这是Project Suncatcher相关工作的首次在轨推理验证。意义不在于诗本身，而在于验证了TPU在太空环境下的启动和推理链路可用，为把算力部署到轨道、减少对地面回传带宽的依赖提供了实证。
+工具和模型方面还有几条。Microsoft Research和UC Berkeley联合发布了开源插件TokenEconomizer，从历史会话中学习，在不改动Agent本身的前提下降低编码任务的token消耗，在SWE-Bench上成本降幅在百分之十八到三十一之间，属于即插即用的成本优化层。NVIDIA开源了Nemotron 3.5 Transcribe，这是一个总规模三百亿、激活参数约四十三亿的MoE语音模型，支持四十种语言转写，还带说话人标签和词级时间戳，英文平均词错率百分之四点七一。另外，MarkTechPost对比了Anthropic、OpenAI、Cloudflare和Google四家的源码安全漏洞猎手Agent，发现它们用的是同一套循环：先发现、再证伪、后修补，说明安全Agent的方法论正在收敛，差异更多落在工程细节和生态整合上。
+最后快速过一下学术侧。有几条值得记住：一是统一训练的工作，把预训练、SFT和RL收进同一个基于似然的算法框架；二是Soft-MTP，指出标准多token预测存在梯度缺陷，用一行代码改动就能修复；三是一项审计发现，公共模</itunes:summary>
+      <enclosure url="https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-10-31.mp3" length="2262240" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-10-31.mp3</guid>
+      <pubDate>Sat, 31 Oct 2026 08:00:00 +0800</pubDate>
+      <itunes:duration>06:17</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
+    </item>
+    <item>
       <title>AI 每日简报 · 2026-10-30 周五</title>
       <description>早上好，今天是 2026 年 10 月 30 日，欢迎收听 AI 行业日报。今天的关键词是&quot;发布&quot;和&quot;分发&quot;——Mistral 和 Google 在两周内接连放出旗舰模型，OpenAI 则一边翻倍订阅额度、一边把 agent 塞进企业工作流。咱们一条条说。
 先看模型侧。Mistral 上线了 Mistral Large 4，代号 Le Chonk，这是它迄今最大的模型，大约一万亿参数的原生多模态 MoE，每个 token 激活约五百二十亿参数，支持一百万上下文，原生支持一百六十多种语言，包括全部欧盟官方语言。更关键的是，它在欧洲自有数据中心、用三千八百块 NVIDIA Grace Blackwell GPU 从零训练，GGUF 和 NVFP4 量化版本已经放出来了。这是首次有欧洲实验室把万亿级 MoE 权重按开放形式放出，本地部署的显存规划估计会成为接下来社区讨论的焦点。
@@ -343,29 +370,6 @@ Anthropic 那边也有料。他们说内部有一个未公开模型，能力和�
       <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-10-17.mp3</guid>
       <pubDate>Sat, 17 Oct 2026 08:00:00 +0800</pubDate>
       <itunes:duration>05:09</itunes:duration>
-      <itunes:explicit>no</itunes:explicit>
-      <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
-    </item>
-    <item>
-      <title>AI 每日简报 · 2026-10-16 周五</title>
-      <description>早上好，今天是 2026 年 10 月 16 日，星期五。欢迎收听今天的 AI 每日简报。今天的关键词是三个字：开放权重。Meta 甩出了一个八百一十六 B 的大家伙，Google 把单次输出推到了一百万 token，NVIDIA 则把一百二十 B 的多模态 agent 塞进了一台机器。与此同时，Anthropic 在 IPO 前夜交出了一份相当亮眼的成绩单。咱们一条一条来。
-先说今天最重磅的。Meta 在十月十五号发布了 Muse Spark Open，八百一十六 B 总参数、四十二 B 激活参数的 MoE 架构，上下文窗口直接拉到一百万 token，原生支持文本、图像、视频、音频四种模态，主打编码和长程 agent 任务。工程配套也很猛，Meta 同步放出了可自动调优的 Helion GPU kernels，在 NVIDIA 和 AMD 的卡上都拿到了加速。但最抓眼球的是本地部署，Meta 说这个模型可以在两台搭载 M5 Ultra 的 Mac Studio 上，通过最新的 MLX 框架跑起来，这还是和 Apple 联合宣布的合作。权重已经在 Amazon SageMaker、Google Cloud、Hugging Face 和微软 Foundry 上开放下载，Baseten、Fireworks、Groq、OpenRouter 等一长串厂商同步提供 API。可以说，这是美国阵营对 Qwen、GLM、Kimi 这些中国开放权重模型的一次正面回应。
-Google 这边也没闲着，Gemini 4 Argon 已经在 Gemini API、AI Studio 和应用里全面开放。这是个稀疏 MoE 模型，最夸张的规格是单次请求最多能写出一百万个输出 token，在 Vals Index 上以六十八点九零 percent 登顶。定价很有意思，发布价是每百万输入 token 两美元、每百万输出十美元，和 GPT-6 Sol 持平，只有 Claude Opus 5.5 的一半。但注意了，Google 已经明确说十二月一号起价格翻倍。不过从 Artificial Analysis 的整轮基准总成本看，Argon 跑完全套评测花了两千四百零七美元，即便涨价之后，仍然比 GPT-6 Astra 略便宜一些。
-NVIDIA 同一天也出手了，发布 Nemotron 3.5 Super VL，一百二十 B 参数的开放多模态 MoE，激活参数只有十二 B，上下文一百万 token，权重采用 NVFP4 量化，一台 DGX Spark 就能跑。定位很明确，就是给需要七乘二十四小时不间断运行的企业级 agent 用的。但 The Decoder 点出了一个关键约束：想把这套模型发挥到极致，基本就意味着你得买 NVIDIA 的硬件。这和 Meta 主推 Apple Silicon 本地推理，恰好形成了两条互斥的硬件路线。正在评估自建推理栈的团队，这个岔路口值得好好想想。
-接下来是 Anthropic 的三连击。第一，他们公开了自研源码管理系统 Scion。今年五月，Anthropic 平均每天合并约两千五百个代码变更，到九月，这个数字已经超过每天三万个。主分支历史接近一百 GB，每天为 CI 执行的 checkout 大约两千五百万次。按朴素方式抓取，每天会产生超过六百 PB 的 git 流量。新系统包括源码控制 Scion 和代码审查 Antique，形态上更像是对集中式源码控制的重新发明。这是头部实验室第一次用工程数据量化「模型写代码」对开发基础设施本身造成的压力。
-第二，据 FT 报道，Anthropic 在投资人活动上披露，第三季度营收一百六十八亿美元，环比接近百分之五十，每花一美元算力产生一点七美元收入，调整后运营利润率百分之十一。还有一条很值得注意：他们向投资人表示，蒸馏贡献了百分之五到七的营收，而第三季度已经实质性削减了这块业务。粗略估算，如果蒸馏占第二季度营收的百分之五，意味着其他实验室那个季度为蒸馏 Anthropic 模型花了超过五亿美元。
-第三，Anthropic 和评估机构 METR 达成了一项不同寻常的协议，METR 研究人员将获得员工级访问权限，可以自行发布对 Anthropic 风险、事故和做法的评估报告，而 Anthropic 放弃</description>
-      <itunes:summary>早上好，今天是 2026 年 10 月 16 日，星期五。欢迎收听今天的 AI 每日简报。今天的关键词是三个字：开放权重。Meta 甩出了一个八百一十六 B 的大家伙，Google 把单次输出推到了一百万 token，NVIDIA 则把一百二十 B 的多模态 agent 塞进了一台机器。与此同时，Anthropic 在 IPO 前夜交出了一份相当亮眼的成绩单。咱们一条一条来。
-先说今天最重磅的。Meta 在十月十五号发布了 Muse Spark Open，八百一十六 B 总参数、四十二 B 激活参数的 MoE 架构，上下文窗口直接拉到一百万 token，原生支持文本、图像、视频、音频四种模态，主打编码和长程 agent 任务。工程配套也很猛，Meta 同步放出了可自动调优的 Helion GPU kernels，在 NVIDIA 和 AMD 的卡上都拿到了加速。但最抓眼球的是本地部署，Meta 说这个模型可以在两台搭载 M5 Ultra 的 Mac Studio 上，通过最新的 MLX 框架跑起来，这还是和 Apple 联合宣布的合作。权重已经在 Amazon SageMaker、Google Cloud、Hugging Face 和微软 Foundry 上开放下载，Baseten、Fireworks、Groq、OpenRouter 等一长串厂商同步提供 API。可以说，这是美国阵营对 Qwen、GLM、Kimi 这些中国开放权重模型的一次正面回应。
-Google 这边也没闲着，Gemini 4 Argon 已经在 Gemini API、AI Studio 和应用里全面开放。这是个稀疏 MoE 模型，最夸张的规格是单次请求最多能写出一百万个输出 token，在 Vals Index 上以六十八点九零 percent 登顶。定价很有意思，发布价是每百万输入 token 两美元、每百万输出十美元，和 GPT-6 Sol 持平，只有 Claude Opus 5.5 的一半。但注意了，Google 已经明确说十二月一号起价格翻倍。不过从 Artificial Analysis 的整轮基准总成本看，Argon 跑完全套评测花了两千四百零七美元，即便涨价之后，仍然比 GPT-6 Astra 略便宜一些。
-NVIDIA 同一天也出手了，发布 Nemotron 3.5 Super VL，一百二十 B 参数的开放多模态 MoE，激活参数只有十二 B，上下文一百万 token，权重采用 NVFP4 量化，一台 DGX Spark 就能跑。定位很明确，就是给需要七乘二十四小时不间断运行的企业级 agent 用的。但 The Decoder 点出了一个关键约束：想把这套模型发挥到极致，基本就意味着你得买 NVIDIA 的硬件。这和 Meta 主推 Apple Silicon 本地推理，恰好形成了两条互斥的硬件路线。正在评估自建推理栈的团队，这个岔路口值得好好想想。
-接下来是 Anthropic 的三连击。第一，他们公开了自研源码管理系统 Scion。今年五月，Anthropic 平均每天合并约两千五百个代码变更，到九月，这个数字已经超过每天三万个。主分支历史接近一百 GB，每天为 CI 执行的 checkout 大约两千五百万次。按朴素方式抓取，每天会产生超过六百 PB 的 git 流量。新系统包括源码控制 Scion 和代码审查 Antique，形态上更像是对集中式源码控制的重新发明。这是头部实验室第一次用工程数据量化「模型写代码」对开发基础设施本身造成的压力。
-第二，据 FT 报道，Anthropic 在投资人活动上披露，第三季度营收一百六十八亿美元，环比接近百分之五十，每花一美元算力产生一点七美元收入，调整后运营利润率百分之十一。还有一条很值得注意：他们向投资人表示，蒸馏贡献了百分之五到七的营收，而第三季度已经实质性削减了这块业务。粗略估算，如果蒸馏占第二季度营收的百分之五，意味着其他实验室那个季度为蒸馏 Anthropic 模型花了超过五亿美元。
-第三，Anthropic 和评估机构 METR 达成了一项不同寻常的协议，METR 研究人员将获得员工级访问权限，可以自行发布对 Anthropic 风险、事故和做法的评估报告，而 Anthropic 放弃</itunes:summary>
-      <enclosure url="https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-10-16.mp3" length="2502576" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-10-16.mp3</guid>
-      <pubDate>Fri, 16 Oct 2026 08:00:00 +0800</pubDate>
-      <itunes:duration>06:57</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
       <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
     </item>
