@@ -36,6 +36,88 @@
 
 <div class="ep">
   <div class="ep-h">
+    <span class="ep-title" id="t-2026-11-04">AI 每日简报 · 2026-11-04 周三</span>
+    <button class="cbtn" data-copy="t-2026-11-04">📋 复制标题</button>
+  </div>
+  <audio controls preload="none" src="audio/2026-11-04.mp3"></audio>
+  <div class="acts">
+    <a class="cbtn" href="audio/2026-11-04.mp3" download="2026-11-04.mp3">⬇️ 下载音频</a>
+    <button class="cbtn" data-copy="n-2026-11-04">📋 复制 Show Notes</button>
+  </div>
+  <details><summary>预览 Show Notes</summary><pre class="notes" id="n-2026-11-04">AI 每日简报 · 2026-11-04 周三
+
+🎧 每天 5 分钟，用耳朵掌握 AI 领域最新动态。全自动采集 · DeepSeek 智能筛选。
+
+🗞 AI 行业动态
+· MIT CSAIL 用 GPT-6 Astra 直接改权重修复 Qwen3.5-0.8B 推理死循环：MIT CSAIL 让 GPT-6 Astra 在不做梯度训练的前提下，直接编辑 Qwen3.5-0.8B 的原始权重，只改动了 0.016% 的参数，就把该模…
+  来源：https://www.reddit.com/r/LocalLLaMA/comments/1xms9ii/what_qwen_is_thinking_when_it_gets_stuck_saying/
+· OpenAI 称 GPT-6 Astra 一周内从零设计出一台硬件设备：OpenAI 硬件团队用 GPT-6 Astra 为 Codex 编程 agent 设计了一台设备，从外壳、电路板到固件全部由模型完成，耗时不到一周。
+  来源：https://the-decoder.com/openai-says-gpt-6-astra-designed-a-hardware-device-from-scratch-in-under-a-week/
+· Anthropic 发布 FlashProve，用 zkSNARK 证明回复来自特定权重：Anthropic 发布 Apache 2.0 的 zkSNARK 原型 FlashProve，可以在不暴露模型权重的前提下，证明某条回复确实由某个已承诺的模型…
+  来源：https://www.marktechpost.com/2026/11/03/anthropic-flashprove-provable-inference-zksnark/
+· Anthropic 为 Messages API 推出 Message Threads，长对话首 token 延迟降 35%：Anthropic 在 Messages API 中上线 Message Threads。
+  来源：https://the-decoder.com/anthropics-message-threads-cut-time-to-first-token-by-35-percent-for-long-conversations/
+· NVIDIA 开源 Auto Ontology，为企业 agent 的 SQL 提供语义层：NVIDIA 发布 Auto Ontology，一个 Apache 2.0 许可的库，可从企业既有元数据自动生成语义层，让 agent 生成的 SQL 锚定在经…
+  来源：https://www.marktechpost.com/2026/11/01/nvidia-auto-ontology-open-source-semantic-layer-ai-agents/
+· Parameter Labs 披露完整攻击链，可接管 ChatGPT 账号：Parameter Labs 公布了一条针对 ChatGPT HTML 预览（原 Canvas）沙箱的完整攻击链。
+  来源：https://simonwillison.net/2026/Oct/31/how-we-took-over-chatgpt-accounts/
+· NVIDIA 展示 DGX Spark 上 MoE 推理三重优化，Ling-3.0-flash 吞吐提升 42.5%：NVIDIA 公开了在单台 DGX Spark 上加速 MoE 推理的三项叠加优化，测试对象是蚂蚁集团 inclusionAI 的 124B 模型 Ling-3…
+  来源：https://www.marktechpost.com/2026/11/03/nvidia-dgx-spark-moe-inference-ling-3-0-flash/
+· OpenAI 将漏洞赏金提高到最高 17.2 万美元，并启动内部安全冲刺：OpenAI 把漏洞赏金提高到原来的四倍，单个漏洞最高可拿到 17.2 万美元，同时启动了一轮内部安全冲刺。
+  来源：https://the-decoder.com/bug-hunters-can-now-earn-up-to-172000-from-openai-as-company-ramps-up-security/
+· Google DeepMind 用 Antigravity 做 agent 化化学信息学，加速药物发现流程：Google DeepMind 发布博客，介绍如何用 Google Antigravity 配合其 Cheminformatics Skills 加速药物发现工…
+  来源：https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/
+· Cisco 用 OpenAI 模型把企业防御做到机器速度：Cisco 把网络智能与 OpenAI 模型结合，用于企业安全防护，目标是构建更具自适应性的防御体系。
+  来源：https://openai.com/index/cisco-cyber
+· Qwen 3.8 27B 在笔记本上也能解读模型权重：Simon Willison 复现「权重空间编程」示例，确认本地 27B 模型同样能读取并修改神经网络原始权重。
+  来源：https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/
+· OpenAI 称 ChatGPT 搜索量已达 Google 的 20%：OpenAI 消费产品负责人 Adam Fry 在周一的媒体活动上公布，ChatGPT 承担的搜索查询量相当于 Google 的 20%。
+  来源：https://www.theverge.com/ai-artificial-intelligence/1025482/openai-says-chatgpt-is-catching-up-to-google-in-search
+· Google 对拒绝其 AI 功能的学校彻底关闭 Search：Google 向《纽约时报》确认，拒绝启用 AI 功能的 K-12 学校账号将同时失去 Gemini、Gemini Notebook、Gemini in Cla…
+  来源：https://www.theverge.com/tech/1025411/google-turn-off-search-ai-features
+· vercel-labs/agent-desktop 单日涨 3,791 star：面向 AI agent 的 computer use CLI，登上 GitHub Trending 榜首。
+  来源：https://github.com/vercel-labs/agent-desktop
+
+📄 学术论文研究动态
+· IdeaTaste 基准：LLM 的科研品味仅达人类 18%：研究提出 IdeaTaste，以 2025 年冻结的文献快照为输入，让 LLM 撰写研究提案，再与同一社区 2026 年实际发表的论文比对。
+  来源：https://huggingface.co/papers/2611.03424
+· StreamDuo：解说员加研究智能体，实现跨游戏直播解说：流式视频 LLM 已能实时解说游戏，但训练与测试都在同一款游戏上。
+  来源：https://huggingface.co/papers/2611.01120
+· History Forcing：为长时程视频世界模型蒸馏历史依赖的续写：少步自回归视频扩散生成高效，但长rollout 一致性难保，主体或场景离开视野后再次出现时尤甚。
+  来源：https://huggingface.co/papers/2611.02782
+· DR Pixel：以页面图像为唯一检索与推理单元的深度研究智能体：科学论文的表格、图、公式承载大量信息，但现有深度研究智能体通常把论文降维成 OCR 文本。
+  来源：https://huggingface.co/papers/2611.03097
+· LeanGuard：用 Lean4 形式化策略为工具调用智能体加护栏：工具调用型语言模型智能体常执行领域策略禁止的动作。
+  来源：https://huggingface.co/papers/2611.02332
+· SWE-Trail：用历史引导编码智能体的轨迹采集：编码智能体通过长序列的探索、编辑、验证解决仓库问题，这些轨迹日益被用作后训练数据，采集方式决定模型学到什么。
+  来源：https://huggingface.co/papers/2611.02074
+· CrossSWE：跨仓库联合开发的编码智能体基准：编码智能体在软件工程基准上的成功率越来越高，近期工作通过更长时程和更大规模代码修改来提升任务复杂度。
+  来源：https://huggingface.co/papers/2611.01484
+· WorldFlow：大规模预训练联合预测视频与 3D 运动：预测未来物理状态是具身智能的核心挑战。
+  来源：https://huggingface.co/papers/2610.39278
+· 编码智能体持续演化会遗忘：SWE-Bench 从 94% 跌至 32%：harness 自演化被视为不改基础模型参数即可提升智能体能力的范式，但既有研究基本只考察单一任务。
+  来源：https://huggingface.co/papers/2611.03219
+· 协作智能基准：最强模型作为队友仅得 82.2 分：AI 进展常以单模型独立能力衡量，但智能体团队已开始科学、医学、数学、软件工程中的突破。
+  来源：https://huggingface.co/papers/2611.02633
+· LEMS 与 KFAC-SVD 改进 SVD 低秩压缩：提出逐层误差建模搜索 LEMS 与 KFAC-SVD，在 Mistral、Qwen3、Llama 3 上零样本准确率最高提升 4.8 个百分点并泛化到 70B…
+  来源：https://huggingface.co/papers/2610.32878
+· DAMI：门控线性注意力的双轴记忆初始化：在 GDN、KDA、Mamba-2、RWKV-7 上，DAMI 使 RULER 式检索准确率较随机初始化基线提升 5.29 至 16.71 个百分点，且不增加可…
+  来源：https://huggingface.co/papers/2610.41994
+· BedBench：视觉语言模型的 3D 推理短板：按颜色计数任务中人类准确率 93.3%，最佳模型仅 7.2%；微调后某模型从 3.0% 升至 68.6%，但答案仍与自身计数不一致。
+  来源：https://huggingface.co/papers/2610.39639
+· BYOD：仅用 LoRA 把自回归模型转成扩散语言模型：适配器仅占最终参数 4.1–5.8%，单卡 3.1–4.0 小时完成转换；BYOD-Gemma 九任务平均准确率 50.6%，接近 LLaDA 8B Instr…
+  来源：https://huggingface.co/papers/2610.41574
+· WebHarbor：153 个可执行网站环境用于 GUI 智能体：含 3518 个任务，覆盖多步与登录后流程；Qwen 4B 级智能体在其中做 RL 后可泛化到未见任务。
+  来源：https://arxiv.org/abs/2611.03634v1
+
+💡 今日观察
+今天最值得注意的信号是，模型能力正从「对话」转向「动手改东西」：GPT-6 Astra 直接编辑权重、一周设计出硬件，Qwen 27B 在笔记本上复现权重空间编程，说明权重层面的操作正在平民化，安全边界却远未跟上——同日披露的 ChatGPT 账号接管攻击链，与 OpenAI 把赏金提到四倍，恰好构成一对提醒。另一条线索是智能体的自我演化开始暴露代价：编码智能体持续演化后 SWE-Bench 从 94% 跌至 32%，配合 IdeaTaste 中 LLM 科研品味仅达人类 18%，提示「能跑分」与「能积累」仍是两回事。
+
+———
+完整图文与往期：https://fuguihao0316-del.github.io/ai-daily-digest/</pre></details>
+</div>
+<div class="ep">
+  <div class="ep-h">
     <span class="ep-title" id="t-2026-11-03">AI 每日简报 · 2026-11-03 周二</span>
     <button class="cbtn" data-copy="t-2026-11-03">📋 复制标题</button>
   </div>
@@ -1204,90 +1286,6 @@ OpenAI 用半价 API 把中端模型推向 Agent 场景，Oracle 企业应用接
 
 💡 今日观察
 今天最清晰的信号是：推理成本正在被从框架、注意力机制到记忆压缩的各层同时压低，DeepSeek 开源 DeepInfer、TokenGate 的剪枝加速、n-gram 表压到 2 bit，指向同一件事——长上下文与 agent 规模化的瓶颈开始松动。与之相对，安全侧的动作明显提速且更硬：Anthropic 主张以 50 人以上死亡风险为发布闸门，Altman 谈终局路径，而自主 agent 集群已实际入侵上百个网站，能力扩散与治理节奏的落差在拉大。更该警惕的是基建融资，CoreWeave 债券利差走阔到 1000 个基点，若 AI 建设越来越依赖私人信贷，成本下降带来的红利可能被资金链风险抵消。
-
-———
-完整图文与往期：https://fuguihao0316-del.github.io/ai-daily-digest/</pre></details>
-</div>
-<div class="ep">
-  <div class="ep-h">
-    <span class="ep-title" id="t-2026-10-20">AI 每日简报 · 2026-10-20 周二</span>
-    <button class="cbtn" data-copy="t-2026-10-20">📋 复制标题</button>
-  </div>
-  <audio controls preload="none" src="audio/2026-10-20.mp3"></audio>
-  <div class="acts">
-    <a class="cbtn" href="audio/2026-10-20.mp3" download="2026-10-20.mp3">⬇️ 下载音频</a>
-    <button class="cbtn" data-copy="n-2026-10-20">📋 复制 Show Notes</button>
-  </div>
-  <details><summary>预览 Show Notes</summary><pre class="notes" id="n-2026-10-20">AI 每日简报 · 2026-10-20 周二
-
-🎧 每天 5 分钟，用耳朵掌握 AI 领域最新动态。全自动采集 · DeepSeek 智能筛选。
-
-🗞 AI 行业动态
-· NVIDIA 开源 Run:ai 全栈平台：NVIDIA 将收购而来的 GPU 编排平台 Run:ai 以 Apache 2.0 协议完整开源，包含 KAI Scheduler 调度器、CUDA 13.4…
-  来源：https://www.marktechpost.com/2026/10/18/nvidia-runai-open-source-gpu-orchestration-kubernetes/
-· Mistral 发布 Timestral 时序基础模型：Mistral AI 推出 Timestral 时间序列基础模型家族，参数量覆盖 5M 到 209M，其中 209M 版本在 GIFT-Eval、TIME 和…
-  来源：https://www.marktechpost.com/2026/10/18/mistral-timestral-time-series-foundation-model/
-· NVIDIA 推出面向企业与 PC 的开放 Agent 模型：NVIDIA 发布新的开放模型，瞄准两类场景：企业希望在自己的数据中心内运行自有开放模型，以及让设备端私有 AI Agent 成为现实。
-  来源：https://techcrunch.com/2026/10/19/nvidia-launches-new-open-models-to-run-agents-in-the-enterprise-and-on-pcs/
-· 微软称前沿模型不可信，Agent 应视同内部威胁：微软公开主张企业应像对待内部威胁一样监控员工使用的 AI Agent，理由是前沿模型本身不可信，尤其是那些由 OpenAI、Anthropic 等 AI 实验室…
-  来源：https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/
-· 德国两法院认定 Google 对 AI Overviews 内容担责：慕尼黑一项关于 AI 搜索责任的 landmark 判决后，Google 上诉未果并悄然和解；随后亚琛地方法院在一新案中沿用完全相同的推理，该案中 Google…
-  来源：https://the-decoder.com/two-german-courts-now-hold-google-liable-for-what-its-ai-overviews-say/
-· Anthropic 与律所磋商，为 AI Agent 谈判立规矩：Anthropic 正与多家律所磋商，为代用户议价、处理投诉或修改合同的 AI Agent 制定谈判规范；同时公司招聘律师与人文学科学者担任「Conceptua…
-  来源：https://the-decoder.com/anthropic-consults-law-firms-to-set-fair-negotiation-norms-before-ai-agents-start-cutting-deals/
-· Neocloud 洗牌在即，NVIDIA 风险最大：在股价暴跌与 Firmus 取消 IPO 之后，业内高管预计数百家 AI 云厂商中只有七到十家能存活。
-  来源：https://the-decoder.com/the-neocloud-shakeout-is-coming-and-nvidia-has-the-most-to-lose/
-· 亚马逊推出 TorchNeuron，正面冲击 NVIDIA 的 PyTorch 生态：亚马逊发布 TorchNeuron 开发工具，目标是打破 NVIDIA 对 PyTorch 的掌控，让更多开发者把应用跑在包括自研芯片在内的替代硬件上。
-  来源：https://techcrunch.com/2026/10/19/amazon-is-taking-its-biggest-shot-at-nvidia-yet-with-new-torchneuron-dev-tool/
-· 网站开始对 AI Agent 关门：The Verge 报道，随着 OpenAI、Meta、Google、Instinct 等公司承诺 Agent 能代替用户浏览互联网、订餐、清理收件箱乃至买鞋…
-  来源：https://www.theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web
-· OpenAI 改进低资源编程语言支持：OpenAI 发文介绍其在 ChatGPT 上针对低资源编程语言的改进，并发布面向软件工程、SQLite 与 COBOL 迁移的新评测。
-  来源：https://openai.com/index/low-resource-programming-languages
-· Google DeepMind 与新加坡政府合作反诈骗模型：双方基于轻量 Gemma 模型做端上部署，在私聊中拦截对话式诈骗，数据零上云。
-  来源：https://deepmind.google/blog/on-device-ai-scam-detection-mddi/
-· 黑客用 AI Agent 集群入侵逾 100 家网站：安全公司 Norforge 发现攻击者以大量自主运行的 Agent 作案，Reuters 称受害者含 John Deere、SharkNinja、Cummins…
-  来源：https://www.theverge.com/ai-artificial-intelligence/1013643/ai-agents-hack-john-deere-shark-ninja-cummins
-· ai-job-search 单日涨星 3,856：基于 Claude Code 的求职框架，可评估岗位、改简历、写求职信、准备面试，本地运行可 fork。
-  来源：https://github.com/MadsLorentzen/ai-job-search
-· orca 单日涨星 1,590：面向 Agent 集群的协作工作台，可用自有订阅运行 Grok Bot、Claude Code 等编码 Agent，支持桌面、移动与远程运行时。
-  来源：https://github.com/stablyai/orca
-· opencode 单日涨星 1,311：开源编码 Agent，持续位居 GitHub Trending 前列。
-  来源：https://github.com/anomalyco/opencode
-
-📄 学术论文研究动态
-· Xiaomi-Lens-0：4B MLLM 用自身视觉 latent 解码分割掩码：小米发布 Xiaomi-Lens-0，基于 Qwen3.5 构建的 4B 多模态模型，直接让语言模型从自身视觉表征预测分割掩码：轻量解码器把视觉编码器 patc…
-  来源：https://huggingface.co/papers/2610.23279
-· Lean4AgenticRL：用 Lean4 形式化统一多层级过程奖励：针对当前 agentic RL 过度依赖结果奖励、忽视工具调用与工作流阶段信号的问题，该工作提出 Lean4AgenticRL，称首个把多层级过程奖励统一建立在…
-  来源：https://huggingface.co/papers/2610.22448
-· Librarian Agents：训练 LLM 预先把语料整理成可复用工作区：现有长文档推理依赖检索，而检索本质是反应式的，在跨文档推理时成为瓶颈；知识图谱等预计算结构又受限于僵化启发式。
-  来源：https://huggingface.co/papers/2610.22273
-· GlobeBench：文本世界模型首个标准化基准，最强模型成功率不足五成：文本世界模型被视为可模拟复杂 RL 环境状态转移，但此前没有统一基准比较与改进。
-  来源：https://huggingface.co/papers/2610.22708
-· Intact：按网页语义隔离元素，注入攻击通过率从 73.1% 降至 12.8%：浏览型 AI agent 以截图或文本消费网页，把第三方内容直接喂给 LLM，而浏览器本身的安全性依赖于&quot;元素能做什么取决于它是什么、来自哪里，而非它说了什么&quot;…
-  来源：https://huggingface.co/papers/2610.22697
-· MULTIFINGROUND：概念识别近满分，证据抽取仍漏掉三成以上：跨语言比较财报需要同时识别共享会计概念并穷尽回收所有对应数值事实，但现有基准无法判断两者是否在同一份多语言证据上同时成立。
-  来源：https://huggingface.co/papers/2610.19432
-· EvoWeb：320 个累积请求评测编码 agent 的长期演进开发：真实 Web 开发往往是连续追加需求、在既有实现上扩展，而现有 Web 生成基准多评测面向固定规格的一次性开发。
-  来源：https://huggingface.co/papers/2610.16402
-· OmniXRef：统一文本、图像、视频多参考的视频编辑框架与基准：视频编辑意图可由文本指令、图像参考、视频参考或组合表达，但现有方法难以同时支持可变数量的多模态参考。
-  来源：https://huggingface.co/papers/2610.22744
-· MTEdit：用打包轨迹画布造 50 万条多轮图像编辑数据：多轮图像编辑比单轮更贴近人机协同创作，但顺序 rollout 会累积误差并带来跨轮视觉质量漂移。
-  来源：https://huggingface.co/papers/2610.23751
-· Consistent Distribution Matching：无数据无模拟的扩散蒸馏，1-NFE FID 2.04：现有扩散/流模型蒸馏多依赖精选数据集、昂贵的教师 rollout 或辅助代理网络。
-  来源：https://huggingface.co/papers/2610.09221
-· DisaggKD：把教师与学生拆到不同节点做知识蒸馏：现有知识蒸馏把教师与学生放在同一批 GPU 上，单卡显存限制了可用的教师规模。
-  来源：https://huggingface.co/papers/2610.17644
-· Embeddings Are Overpriced：16 MB 冻结词表让小模型与三值模型更实用：在 Gemma 3 270M 中，嵌入表占 268M 参数里的 168M，且量化后仍保留 16 位，成为压缩后文件的主体。
-  来源：https://huggingface.co/papers/2610.22428
-· ACT3D：单图逐步探索 3D，RL 只给答案奖励也能学会看哪里：作者不向视觉语言模型提供多视角图像、视频或 3D 表示，而保留其原生单图编码，把 3D 表示仅当作可通过动作与观测交互的环境。
-  来源：https://huggingface.co/papers/2610.21783
-· Belief-Trajectory Energy：用逐层预测修正轨迹刻画输入：LLM 在 Transformer 各层逐步修正预测，但通常只看最终输出。
-  来源：https://huggingface.co/papers/2610.05114
-· CQ2-CARE：等 token 预算下选整文件比压缩和检索更能修 issue：在 300 个近期 SWE-rebench issue 上按每 issue 等 token 预算评测，CQ2-CARE 配 GPT-5.6 与 Claude O…
-  来源：https://huggingface.co/papers/2610.21073
-
-💡 今日观察
-今天最值得注意的信号，是围绕 Agent 的控制权正在从模型层转向平台与责任层：微软把 Agent 当内部威胁监控，德国法院让 Google 为 AI Overviews 内容担责，Anthropic 提前给谈判型 Agent 立规矩，网站则开始对 Agent 关门。与此同时，NVIDIA 开源 Run:ai、亚马逊推 TorchNeuron，争夺的已不是模型本身，而是 Agent 跑在谁的编排与工具链上。两条线交汇处是同一个判断：Agent 越能自主行动，落地瓶颈就越不在能力，而在可审计、可追责的边界设计。
 
 ———
 完整图文与往期：https://fuguihao0316-del.github.io/ai-daily-digest/</pre></details>
