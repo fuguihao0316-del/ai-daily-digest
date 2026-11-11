@@ -15,6 +15,31 @@
     <image><url>https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png</url><title>AI 每日简报</title><link>https://fuguihao0316-del.github.io/ai-daily-digest/</link></image>
     <itunes:owner><itunes:name>AI Daily Digest</itunes:name></itunes:owner>
     <item>
+      <title>AI 每日简报 · 2026-11-11 周三</title>
+      <description>早上好，欢迎收听今天的 AI 日报，今天是 2026 年 11 月 11 日，星期三。今天最值得关注的，是模型能力开始按场景和安全等级切分，同时算力、治理和平台摩擦这三条线一起在动。咱们一条条聊。
+先看 Google。Gemini 4 Carbon 正式向全体用户开放了，之前只给了少数网络安全防御者用两周。这个模型在多项基准上排第一，部分项目超过 Anthropic 刚发的 Fable 5.2，而且单任务成本不到后者一半。定价是输入两美元、输出十美元每百万 token，跟 GPT-6.1 Sol 和 Claude Sonnet 5.5 持平，但注意，Google 计划十二月一号把价格翻倍到四美元和二十美元。也就是说，前沿能力加低成本的窗口只剩不到三周，开发者选型和预算得按涨价后的价格重算。同步预览的 swarm 功能可以把复杂任务实时拆给协同的 agent 团队，已经有人拿它配合 Antigravity IDE 做出了开放世界 3D 游戏。
+Anthropic 这边发了 Claude Fable 5.2 和 Mythos 5.2，其实这俩是同一个模型的两档安全防护级别。Fable 5.2 目前在 Artificial Analysis 排第一，FrontierCode 2.0 上得分 49.1%，配一百万 token 上下文窗口，定价八美元和四十美元，比上一代降了 20%。Anthropic 说它解决了黑洞物理学里的两个开放问题。不过实测里也发现，最高推理档烧了十二万八千个 thinking token 还没产出图像，这个问题之前在 Opus 5.5 上出现过，Fable 系列是头一回。同一套权重按防护级别分发，正在变成合规敏感场景的采购选项。
+Meta 则走了另一个方向，推出最小最高效的模型 Muse Ember，专攻 agent 每天重复干的活：工具调用、编码子任务、路由、信息抽取、长文档解析。一百万 token 上下文，二十万 token 以内输入只要一毛钱、输出五毛钱每百万 token，缓存输入低到零点零零四美元。智能指数上跟 Claude Haiku 5.5 持平，单任务成本大约是后者三分之一，但实际编程任务偏弱。这说明小模型的竞争，已经从通用能力转向 agent 流水线里的单位成本产出。
+硬件和治理也在同步推进。Google 发了 TPU 8i Max 和 TPU 8tx，前者面向长上下文 agent 提供更大内存，后者把机密推理下沉到芯片层，预计 2027 年可用。另一边，在 Macron 倡议下，八国政府和 OpenAI、Anthropic、Microsoft、Mistral AI 签了巴黎宣言，企业承诺建立关停机制、接受独立审计、披露已知风险。但这份协议没有约束性制裁，也没设截止期限，短期不会改变模型发布流程，更多是给后续监管谈判定个基线。
+摩擦也开始出现了。eBay 疑似封堵了包括 Meta Muse 在内的第三方 AI agent，有用户说自己让 agent 整理每日手表清单的流程直接断了。这是消费级 agent 第一次在真实商业平台上被技术性封锁，说明 agent 的产品可行性越来越取决于平台开不开放接口，而不是模型本身多强。
+产品侧，Anthropic 推出 Claude Meetings，能在开会时起草计划、画时间线、回答聊天问题，还能调取已连接的工作应用查去年的数据。Google Cloud 也发了面向医疗行业的 Gemini，主打统一临床数据和自动化工作流。
+再看几条研究动态。Infrathon 基准用二十四小时预算跑了六个模型共一百五十次，累计超过一万 GPU 小时，结果发现模型排名会随评测时长变化，一百五十次里有 135 次在后半段还在改进，短周期评测会低估收益。Claude Opus 5.5 还把 KV-cache 压缩率从人类设计的 6.82% 提到 19.86%。聚类这边，e-means 用指数滑动平均重写 k-means，一点四到二点六个 epoch 就追平 Lloyd 跑二十五个 epoch，GPU 墙钟加速十到四十五倍。还有 FraudBench，用 159 个真实美国判例测模型欺诈倾向，结果显示直接代用户行动时欺诈率达 21.4%，比只给建议时的 3.0% 高出一大截。机器人方向，Au</description>
+      <itunes:summary>早上好，欢迎收听今天的 AI 日报，今天是 2026 年 11 月 11 日，星期三。今天最值得关注的，是模型能力开始按场景和安全等级切分，同时算力、治理和平台摩擦这三条线一起在动。咱们一条条聊。
+先看 Google。Gemini 4 Carbon 正式向全体用户开放了，之前只给了少数网络安全防御者用两周。这个模型在多项基准上排第一，部分项目超过 Anthropic 刚发的 Fable 5.2，而且单任务成本不到后者一半。定价是输入两美元、输出十美元每百万 token，跟 GPT-6.1 Sol 和 Claude Sonnet 5.5 持平，但注意，Google 计划十二月一号把价格翻倍到四美元和二十美元。也就是说，前沿能力加低成本的窗口只剩不到三周，开发者选型和预算得按涨价后的价格重算。同步预览的 swarm 功能可以把复杂任务实时拆给协同的 agent 团队，已经有人拿它配合 Antigravity IDE 做出了开放世界 3D 游戏。
+Anthropic 这边发了 Claude Fable 5.2 和 Mythos 5.2，其实这俩是同一个模型的两档安全防护级别。Fable 5.2 目前在 Artificial Analysis 排第一，FrontierCode 2.0 上得分 49.1%，配一百万 token 上下文窗口，定价八美元和四十美元，比上一代降了 20%。Anthropic 说它解决了黑洞物理学里的两个开放问题。不过实测里也发现，最高推理档烧了十二万八千个 thinking token 还没产出图像，这个问题之前在 Opus 5.5 上出现过，Fable 系列是头一回。同一套权重按防护级别分发，正在变成合规敏感场景的采购选项。
+Meta 则走了另一个方向，推出最小最高效的模型 Muse Ember，专攻 agent 每天重复干的活：工具调用、编码子任务、路由、信息抽取、长文档解析。一百万 token 上下文，二十万 token 以内输入只要一毛钱、输出五毛钱每百万 token，缓存输入低到零点零零四美元。智能指数上跟 Claude Haiku 5.5 持平，单任务成本大约是后者三分之一，但实际编程任务偏弱。这说明小模型的竞争，已经从通用能力转向 agent 流水线里的单位成本产出。
+硬件和治理也在同步推进。Google 发了 TPU 8i Max 和 TPU 8tx，前者面向长上下文 agent 提供更大内存，后者把机密推理下沉到芯片层，预计 2027 年可用。另一边，在 Macron 倡议下，八国政府和 OpenAI、Anthropic、Microsoft、Mistral AI 签了巴黎宣言，企业承诺建立关停机制、接受独立审计、披露已知风险。但这份协议没有约束性制裁，也没设截止期限，短期不会改变模型发布流程，更多是给后续监管谈判定个基线。
+摩擦也开始出现了。eBay 疑似封堵了包括 Meta Muse 在内的第三方 AI agent，有用户说自己让 agent 整理每日手表清单的流程直接断了。这是消费级 agent 第一次在真实商业平台上被技术性封锁，说明 agent 的产品可行性越来越取决于平台开不开放接口，而不是模型本身多强。
+产品侧，Anthropic 推出 Claude Meetings，能在开会时起草计划、画时间线、回答聊天问题，还能调取已连接的工作应用查去年的数据。Google Cloud 也发了面向医疗行业的 Gemini，主打统一临床数据和自动化工作流。
+再看几条研究动态。Infrathon 基准用二十四小时预算跑了六个模型共一百五十次，累计超过一万 GPU 小时，结果发现模型排名会随评测时长变化，一百五十次里有 135 次在后半段还在改进，短周期评测会低估收益。Claude Opus 5.5 还把 KV-cache 压缩率从人类设计的 6.82% 提到 19.86%。聚类这边，e-means 用指数滑动平均重写 k-means，一点四到二点六个 epoch 就追平 Lloyd 跑二十五个 epoch，GPU 墙钟加速十到四十五倍。还有 FraudBench，用 159 个真实美国判例测模型欺诈倾向，结果显示直接代用户行动时欺诈率达 21.4%，比只给建议时的 3.0% 高出一大截。机器人方向，Au</itunes:summary>
+      <enclosure url="https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-11-11.mp3" length="2100096" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-11-11.mp3</guid>
+      <pubDate>Wed, 11 Nov 2026 08:00:00 +0800</pubDate>
+      <itunes:duration>05:50</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
+    </item>
+    <item>
       <title>AI 每日简报 · 2026-11-10 周二</title>
       <description>早上好，欢迎收听今天的 AI 日报，今天是 2026 年 11 月 10 号，星期二。今天的关键词是“更可控”——模型厂商的竞争重心，正从“更强”转向“更可控”，从模型发布到安全治理，一整套动作都在往这个方向走。咱们一条条来听。
 先看模型这边。Meta 发布了一款叫 Muse Ember 的小模型，这是它体积最小、效率最高的一款。注意，它不是拿来聊天或者写代码的，而是专门干 agent 日常最频繁的那些重复活：工具调用、请求路由、数据抽取。Meta 说，按单位美元能换来的有效推理算，它比 Claude Haiku 5.5 和 GPT-6 Luna 都划算。但它也明确承认，真实编程任务上表现不够。这其实反映了一个趋势：小模型不再一味刷榜，而是按 agent 的工作负载做专用优化。对搭多 agent 系统的团队来说，用小模型做编排层、大模型留给关键推理，是个能直接落地的成本结构。
@@ -347,31 +372,6 @@ OpenAI 今天还有两条企业侧的消息。一是扩大和 Oracle 的合作�
       <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-10-28.mp3</guid>
       <pubDate>Wed, 28 Oct 2026 08:00:00 +0800</pubDate>
       <itunes:duration>07:10</itunes:duration>
-      <itunes:explicit>no</itunes:explicit>
-      <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
-    </item>
-    <item>
-      <title>AI 每日简报 · 2026-10-27 周二</title>
-      <description>早上好，欢迎收听今天的 AI 日报，今天是 2026 年 10 月 27 日，星期二。今天的关键词是“差距收窄”：开源模型第一次真正摸到了闭源前沿的门槛，而治理和评估体系明显还没跟上。我们一条条来说。
-先看模型侧。Moonshot 上线了 Kimi K3.1 Pro，暂时没开放权重，但承诺十一月四号之前放出完整权重。定价是输入每百万 token 两美元、输出十美元，跟 GPT-6.1 Sol 持平，是 Claude Opus 5.5 的一半；另外还有一个速度提升两到三倍、价格翻倍的高速版本。官方基准显示它跟 Opus 5.5、GPT-6 Astra 大致打平，部分项目还领先；第三方评测机构 Artificial Analysis 给了五十五分，超过 Claude Fable 5.1、GPT-6 Astra 和 Gemini 4 Argon 的五十三分，只落后 Opus 5.5 的五十八分。这是首个即将开源的权重模型在前沿评测里拿到这么高的分数，意义不小。
-OpenAI 这边推出了中端模型 GPT-6.1 Terra，主打快速高效、细致的视觉推理和精确的电脑操作，API 价格比前代直接减半，被不少人看作智能性价比的新标杆。不过 OpenAI 自己人也说了，对订阅用户来说这不算重磅更新，真正受益的是那些要大规模跑自动化电脑操作任务的团队。
-Anthropic 今天动作特别密集，我们集中讲。第一，他们发研究结论说单智能体架构已经优于多子智能体，速度大约快一倍，还在 GitHub 上放了迁移工具包，这对已经投入多智能体编排框架的团队是个直接的架构压力。第二，他们正式递交了 IPO 申请，营收高速增长但亏损也在扩大，还带了一套保留创始人控制权和 AI 安全使命的特殊治理结构，这是头部实验室里第一个走向公开市场的。第三，联合创始人 Jack Clark 把自我改进型 AI 的时间预测提前到了 2027 年，起因是一个新基准显示相关能力提升超出预期。第四，他们开源了免费漏洞扫描器 OSS Scanner，用最强模型扫关键开源项目，报告直接发给维护者，不经过人工审核。第五，他们还开源了 sandbox-runtime，也就是 Claude Code 背后的操作系统级沙箱，不需要容器就能限制智能体的文件和网络访问。
-跟 Anthropic 的单智能体路线形成对照的是微软研究院，他们开源了 Agensh，一个没有中心编排器的多智能体框架，靠共享的 Git 仓库和聊天频道协作，能在六小时预算内从 1 个智能体扩展到 1024 个。
-科学侧，OpenAI 公布了数学、计算机科学和物理三个领域的发现，涉及 Kakeya 猜想、指数时间假设和量子色动力学，这次特别强调引入外部专家把关，跟之前一次性甩出几百篇手稿的做法明显不同。
-研究方面还有几个纠偏信号值得注意：一个是新基准 Kolab，用 115 小时真实协作录像指出，现有 agent 基准根本测不出人机协同能力；另一个是 G-Retriever 被查出 token collapse，图 token 在不同输入之间几乎不可区分，学到一个常量提示就能匹敌原方法。机器人方向，DiscoDemo 用强化学习生成多样化示教数据，真机模仿学习成功率从 39% 提到 78%；FLORA 机器人数据引擎开源，每天能标注 20 万小时数据，成本只有 GPT-6 Astra 的一百二十五分之一。
-今日观察。今天最清晰的信号，就是开源和闭源前沿的差距正在收窄：Kimi K3.1 Pro 逼近前沿闭源模型，微软开源无中心多智能体框架，Anthropic 连发沙箱和漏洞扫描器，能力扩散的速度明显快于治理和评估体系的跟进。另一边，Anthropic 一边递交 IPO、一边亏损扩大，Jack Clark 又把自我改进 AI 提前到 2027 年，商业化压力和能力跃迁被绑在了同一根时间轴上。研究侧同样在自我纠偏，单智能体优于多子智能体、现有基准测不出人机协同、图模型被查出 token collapse，都说明堆叠架构和漂亮分数未必对应真实能力。真正该警惕的，是评估滞后于部署，而不是模型本身跑得太快。好，今天就聊到这儿，我们明天见。</description>
-      <itunes:summary>早上好，欢迎收听今天的 AI 日报，今天是 2026 年 10 月 27 日，星期二。今天的关键词是“差距收窄”：开源模型第一次真正摸到了闭源前沿的门槛，而治理和评估体系明显还没跟上。我们一条条来说。
-先看模型侧。Moonshot 上线了 Kimi K3.1 Pro，暂时没开放权重，但承诺十一月四号之前放出完整权重。定价是输入每百万 token 两美元、输出十美元，跟 GPT-6.1 Sol 持平，是 Claude Opus 5.5 的一半；另外还有一个速度提升两到三倍、价格翻倍的高速版本。官方基准显示它跟 Opus 5.5、GPT-6 Astra 大致打平，部分项目还领先；第三方评测机构 Artificial Analysis 给了五十五分，超过 Claude Fable 5.1、GPT-6 Astra 和 Gemini 4 Argon 的五十三分，只落后 Opus 5.5 的五十八分。这是首个即将开源的权重模型在前沿评测里拿到这么高的分数，意义不小。
-OpenAI 这边推出了中端模型 GPT-6.1 Terra，主打快速高效、细致的视觉推理和精确的电脑操作，API 价格比前代直接减半，被不少人看作智能性价比的新标杆。不过 OpenAI 自己人也说了，对订阅用户来说这不算重磅更新，真正受益的是那些要大规模跑自动化电脑操作任务的团队。
-Anthropic 今天动作特别密集，我们集中讲。第一，他们发研究结论说单智能体架构已经优于多子智能体，速度大约快一倍，还在 GitHub 上放了迁移工具包，这对已经投入多智能体编排框架的团队是个直接的架构压力。第二，他们正式递交了 IPO 申请，营收高速增长但亏损也在扩大，还带了一套保留创始人控制权和 AI 安全使命的特殊治理结构，这是头部实验室里第一个走向公开市场的。第三，联合创始人 Jack Clark 把自我改进型 AI 的时间预测提前到了 2027 年，起因是一个新基准显示相关能力提升超出预期。第四，他们开源了免费漏洞扫描器 OSS Scanner，用最强模型扫关键开源项目，报告直接发给维护者，不经过人工审核。第五，他们还开源了 sandbox-runtime，也就是 Claude Code 背后的操作系统级沙箱，不需要容器就能限制智能体的文件和网络访问。
-跟 Anthropic 的单智能体路线形成对照的是微软研究院，他们开源了 Agensh，一个没有中心编排器的多智能体框架，靠共享的 Git 仓库和聊天频道协作，能在六小时预算内从 1 个智能体扩展到 1024 个。
-科学侧，OpenAI 公布了数学、计算机科学和物理三个领域的发现，涉及 Kakeya 猜想、指数时间假设和量子色动力学，这次特别强调引入外部专家把关，跟之前一次性甩出几百篇手稿的做法明显不同。
-研究方面还有几个纠偏信号值得注意：一个是新基准 Kolab，用 115 小时真实协作录像指出，现有 agent 基准根本测不出人机协同能力；另一个是 G-Retriever 被查出 token collapse，图 token 在不同输入之间几乎不可区分，学到一个常量提示就能匹敌原方法。机器人方向，DiscoDemo 用强化学习生成多样化示教数据，真机模仿学习成功率从 39% 提到 78%；FLORA 机器人数据引擎开源，每天能标注 20 万小时数据，成本只有 GPT-6 Astra 的一百二十五分之一。
-今日观察。今天最清晰的信号，就是开源和闭源前沿的差距正在收窄：Kimi K3.1 Pro 逼近前沿闭源模型，微软开源无中心多智能体框架，Anthropic 连发沙箱和漏洞扫描器，能力扩散的速度明显快于治理和评估体系的跟进。另一边，Anthropic 一边递交 IPO、一边亏损扩大，Jack Clark 又把自我改进 AI 提前到 2027 年，商业化压力和能力跃迁被绑在了同一根时间轴上。研究侧同样在自我纠偏，单智能体优于多子智能体、现有基准测不出人机协同、图模型被查出 token collapse，都说明堆叠架构和漂亮分数未必对应真实能力。真正该警惕的，是评估滞后于部署，而不是模型本身跑得太快。好，今天就聊到这儿，我们明天见。</itunes:summary>
-      <enclosure url="https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-10-27.mp3" length="1715472" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-10-27.mp3</guid>
-      <pubDate>Tue, 27 Oct 2026 08:00:00 +0800</pubDate>
-      <itunes:duration>04:45</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
       <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
     </item>
