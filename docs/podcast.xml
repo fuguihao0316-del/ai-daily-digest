@@ -15,6 +15,31 @@
     <image><url>https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png</url><title>AI 每日简报</title><link>https://fuguihao0316-del.github.io/ai-daily-digest/</link></image>
     <itunes:owner><itunes:name>AI Daily Digest</itunes:name></itunes:owner>
     <item>
+      <title>AI 每日简报 · 2026-11-12 周四</title>
+      <description>早上好，欢迎收听今天的 AI 行业日报，今天是 2026 年 11 月 12 日，星期四。今天信息量很大，一句话概括看点：模型厂商开始按“安全等级”和“部署形态”把能力切成不同产品，而 agent 真正走进现实世界之后，摩擦和短板也集中暴露出来。咱们分几条线来说。
+先看 Anthropic。昨天他们启动 IPO 路演，联合创始人 Tom Brown 第一次公开了多芯片战略的细节：Claude 的训练和推理，现在同时跑在 AWS Trainium、Google TPU、NVIDIA GPU 和 AMD GPU 四个芯片家族上。最让人意外的是接入 AMD 的过程，他们让内部模型 Mythos 自己去尝试，三天就完成了移植，几乎没人工干预，Claude 几乎百分之百的 kernel 都是模型自己移植或编写的。而过去引入一个新芯片平台，要几十名工程师干好几个月。这件事的含义很直接：模型厂商正在把“用自家模型优化异构硬件”变成压低成本、削弱 CUDA 依赖的常规手段。
+同一天，Anthropic 还发布了 Claude Fable 5.2 和 Claude Mythos 5.2，其实是同一个模型，只是安全防护级别不同。Fable 5.2 在 FrontierCode 2.0 上得分 49.1%，定价是每百万 token 输入 8 美元、输出 40 美元，配 100 万 token 上下文。这个价格是同日 Meta 新模型的 80 倍。双版本策略的意思是，客户可以按风险场景选防护强度，不用在能力和合规之间二选一，安全分级本身开始变成采购维度。
+说到 Meta，他们推出了最小、最高效的模型 Muse Ember，主打 agent 全天重复干的活：工具调用、编码子任务、路由、抽取、长文档解析，支持最多 100 万输入 token。短 prompt 定价每百万输入 0.10 美元、输出 0.50 美元，超过 200k 之后涨到 0.30 和 1.50。在 Intelligence Index 上和 Claude Haiku 5.5 持平，但每任务成本大约是它的三分之一。对小模型选型的人来说，缓存输入 0.004 美元加上百万上下文，是这轮低价竞争的新基准。
+Google 这边动作也不少。DeepMind 发布了 Gemini Decisions API 和 Gemini Decision 1，正式加入决策模型赛道，支持是非题、多选和评分量表，覆盖文本、图像、音频、视频和 PDF，单次最多能评估 1000 个封闭式问题，返回只要 150 到 250 毫秒，成本约为 Gemini 3.5 Flash-Lite 的五分之一。另外，Gemini 4 Carbon 今天向全体用户开放，发布价是每百万输入 2 美元、输出 10 美元，但 12 月 1 日要翻倍到 4 和 20 美元，也就是说，涨价前的窗口期不到三周。还有一个挺震撼的：AlphaProof Code 四周完成了 Signal 加密核心的形式化验证，通常这类工作以年计，AI agent 写了超过六百万行证明代码，只有大约百分之一需要人工复核。DeepMind 还发布了 AlphaGenome 2，能按细胞类型预测变异效应，通过 API 向非商业研究开放。
+硬件和机器人这条线，NVIDIA 发布了开源自动驾驶模型 Alpamayo 2 Edge，输入是 6 路摄像头加近期运动信息，用强化学习循环训练，优化版本在 AGX Thor 这类边缘硬件上比 PyTorch 快十倍以上。这意味着开源栈开始在车端算力约束下真正可用了。
+然后是 agent 撞上现实世界的几条摩擦。eBay 疑似封堵了包括 Meta Muse 在内的第三方 AI agent 浏览平台，有用户说连续几周让 Muse 整理每日手表在售摘要，现在流程被打断了。这和 ChatGPT 同期推出已验证 Business Agent 形成对照：一边封堵，一边开放官方通道。做 agent 产品的团队要留意，抓取式浏览的商业可持续性正在下降。
+学术方面今天有几个值得记住的结论。一篇叫 Deletion Tuning 的论文发现，只把不到 0.05% 的权重置零，就能在三种后训练范式下媲美全量微调，灾难性遗忘还明显减轻。具身智能评测 Embodied Fi</description>
+      <itunes:summary>早上好，欢迎收听今天的 AI 行业日报，今天是 2026 年 11 月 12 日，星期四。今天信息量很大，一句话概括看点：模型厂商开始按“安全等级”和“部署形态”把能力切成不同产品，而 agent 真正走进现实世界之后，摩擦和短板也集中暴露出来。咱们分几条线来说。
+先看 Anthropic。昨天他们启动 IPO 路演，联合创始人 Tom Brown 第一次公开了多芯片战略的细节：Claude 的训练和推理，现在同时跑在 AWS Trainium、Google TPU、NVIDIA GPU 和 AMD GPU 四个芯片家族上。最让人意外的是接入 AMD 的过程，他们让内部模型 Mythos 自己去尝试，三天就完成了移植，几乎没人工干预，Claude 几乎百分之百的 kernel 都是模型自己移植或编写的。而过去引入一个新芯片平台，要几十名工程师干好几个月。这件事的含义很直接：模型厂商正在把“用自家模型优化异构硬件”变成压低成本、削弱 CUDA 依赖的常规手段。
+同一天，Anthropic 还发布了 Claude Fable 5.2 和 Claude Mythos 5.2，其实是同一个模型，只是安全防护级别不同。Fable 5.2 在 FrontierCode 2.0 上得分 49.1%，定价是每百万 token 输入 8 美元、输出 40 美元，配 100 万 token 上下文。这个价格是同日 Meta 新模型的 80 倍。双版本策略的意思是，客户可以按风险场景选防护强度，不用在能力和合规之间二选一，安全分级本身开始变成采购维度。
+说到 Meta，他们推出了最小、最高效的模型 Muse Ember，主打 agent 全天重复干的活：工具调用、编码子任务、路由、抽取、长文档解析，支持最多 100 万输入 token。短 prompt 定价每百万输入 0.10 美元、输出 0.50 美元，超过 200k 之后涨到 0.30 和 1.50。在 Intelligence Index 上和 Claude Haiku 5.5 持平，但每任务成本大约是它的三分之一。对小模型选型的人来说，缓存输入 0.004 美元加上百万上下文，是这轮低价竞争的新基准。
+Google 这边动作也不少。DeepMind 发布了 Gemini Decisions API 和 Gemini Decision 1，正式加入决策模型赛道，支持是非题、多选和评分量表，覆盖文本、图像、音频、视频和 PDF，单次最多能评估 1000 个封闭式问题，返回只要 150 到 250 毫秒，成本约为 Gemini 3.5 Flash-Lite 的五分之一。另外，Gemini 4 Carbon 今天向全体用户开放，发布价是每百万输入 2 美元、输出 10 美元，但 12 月 1 日要翻倍到 4 和 20 美元，也就是说，涨价前的窗口期不到三周。还有一个挺震撼的：AlphaProof Code 四周完成了 Signal 加密核心的形式化验证，通常这类工作以年计，AI agent 写了超过六百万行证明代码，只有大约百分之一需要人工复核。DeepMind 还发布了 AlphaGenome 2，能按细胞类型预测变异效应，通过 API 向非商业研究开放。
+硬件和机器人这条线，NVIDIA 发布了开源自动驾驶模型 Alpamayo 2 Edge，输入是 6 路摄像头加近期运动信息，用强化学习循环训练，优化版本在 AGX Thor 这类边缘硬件上比 PyTorch 快十倍以上。这意味着开源栈开始在车端算力约束下真正可用了。
+然后是 agent 撞上现实世界的几条摩擦。eBay 疑似封堵了包括 Meta Muse 在内的第三方 AI agent 浏览平台，有用户说连续几周让 Muse 整理每日手表在售摘要，现在流程被打断了。这和 ChatGPT 同期推出已验证 Business Agent 形成对照：一边封堵，一边开放官方通道。做 agent 产品的团队要留意，抓取式浏览的商业可持续性正在下降。
+学术方面今天有几个值得记住的结论。一篇叫 Deletion Tuning 的论文发现，只把不到 0.05% 的权重置零，就能在三种后训练范式下媲美全量微调，灾难性遗忘还明显减轻。具身智能评测 Embodied Fi</itunes:summary>
+      <enclosure url="https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-11-12.mp3" length="2096352" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-11-12.mp3</guid>
+      <pubDate>Thu, 12 Nov 2026 08:00:00 +0800</pubDate>
+      <itunes:duration>05:49</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
+    </item>
+    <item>
       <title>AI 每日简报 · 2026-11-11 周三</title>
       <description>早上好，欢迎收听今天的 AI 日报，今天是 2026 年 11 月 11 日，星期三。今天最值得关注的，是模型能力开始按场景和安全等级切分，同时算力、治理和平台摩擦这三条线一起在动。咱们一条条聊。
 先看 Google。Gemini 4 Carbon 正式向全体用户开放了，之前只给了少数网络安全防御者用两周。这个模型在多项基准上排第一，部分项目超过 Anthropic 刚发的 Fable 5.2，而且单任务成本不到后者一半。定价是输入两美元、输出十美元每百万 token，跟 GPT-6.1 Sol 和 Claude Sonnet 5.5 持平，但注意，Google 计划十二月一号把价格翻倍到四美元和二十美元。也就是说，前沿能力加低成本的窗口只剩不到三周，开发者选型和预算得按涨价后的价格重算。同步预览的 swarm 功能可以把复杂任务实时拆给协同的 agent 团队，已经有人拿它配合 Antigravity IDE 做出了开放世界 3D 游戏。
@@ -349,29 +374,6 @@ OpenAI 今天动作最多。先是发布了一套前沿模型失准检测方法�
       <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-10-29.mp3</guid>
       <pubDate>Thu, 29 Oct 2026 08:00:00 +0800</pubDate>
       <itunes:duration>05:40</itunes:duration>
-      <itunes:explicit>no</itunes:explicit>
-      <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
-    </item>
-    <item>
-      <title>AI 每日简报 · 2026-10-28 周三</title>
-      <description>早上好，欢迎收听今天的 AI 日报，今天是 2026 年 10 月 28 日，星期三。今天最值得关注的，是 OpenAI 用半价 API 把中端模型推向 Agent 场景，同时 Google 的世界模型和 Anthropic 的 IPO 也在推进；另外，今天一批论文集中指向同一个问题：验证和评审正在成为 agent 落地的真正瓶颈。下面我们逐条来聊。
-先看 OpenAI。他们发布了中端模型 GPT-6.1 Terra，主打视觉推理和精确的 computer use，API 定价是每百万 token 输入一美元、输出五美元，比前代 GPT-6.1 Sol 便宜了一半。官方说它在 Agents' Last Exam 中等推理强度下的得分和旗舰 GPT-6 Astra 持平，但单任务成本只要零点二九美元，而 Astra 要四点八二美元。OpenAI 的 Ted Sanders 在 Hacker News 上给它的定位很直白：技术沟通强于 Astra 和 Sol，视觉和 computer use 相近但快得多，其余多数能力略弱。对做 Agent 和批量自动化的团队来说，这意味着高频重复的浏览器操作、表单填写、视频剪辑这类任务可以迁到低成本档位，高难度推理留给旗舰模型。Sanders 还分享了一条选型经验法则：模型规模、推理强度和多 agent 系统是三个独立维度，不能压缩成单一的 IQ 分数，与其按总分挑最强模型，不如按任务类型拆分。
-OpenAI 今天还有两条企业侧的消息。一是扩大和 Oracle 的合作，把 Oracle 的业务应用和 AI agent 接入 ChatGPT，让 agent 在对话里直接查询和操作 ERP、CRM 这些系统。对做企业集成的开发者来说，接入路径要重新评估了：是继续自建 RAG 和工具层，还是直接用平台方的官方连接器，同时权限边界和数据驻留也是新问题。二是公布了语音 agent 平台 Retell 的案例，Retell 用 OpenAI 模型支撑每月一亿通电话，GPT-6 Astra 在其语音 agent 基准上排名第一，Codex 还帮他们把人均年化收入推到一百六十万美元。不过要提醒一句，这个基准是客户自建、供应商发布的，选型时还是得在自己的通话数据上复现，尤其是噪声环境和多轮打断的场景。
-再看 Google。他们发布了 Genie 4 世界模型，四项主要更新：更真实的世界、可以用自然语言提示实时修改场景、可以生成音频，底层换成了 Gemini 3.8 Flash。它能维持最长两分钟的一致场景，是 Genie 3 的两倍，物理表现更好、角色更接近真人。对做游戏原型和具身智能仿真的团队来说，两分钟的一致性窗口和实时操控是两个能直接改变工作流的指标。
-其他公司方面，Apple 把 AI 助手引入了 Keynote、Pages 和 Numbers，基于自家模型和 OpenAI 模型构建，能理解文档上下文，这是 Apple 首次把第三方模型能力嵌入 iWork 套件。Anthropic 则在冲刺 IPO，一边想动用公开市场的资金，一边坚称不会在安全使命上妥协，一旦上市，安全承诺就会从内部章程变成要对股东解释的披露事项，这是观察前沿实验室治理结构如何被资本市场重塑的关键窗口。另外，在 Meta 工作了八年的 AI 总监 Rohit Patel 离职创业，创办 Ndoc，目标是挑战 Microsoft Office 和 Google Workspace。
-模型侧还有两条值得留意。Mirendil 发布了首个模型 Fern 0.1，从零预训练，上下文窗口达到一千万 token，在长上下文检索任务上得分满分，但在 agentic coding 上落后于前沿模型，说明超长上下文和真实 agent 能力还是两件事。开源社区这边，Liquid AI 开源了 LFM3 系列六款二十亿参数级的多模态模型，inclusionAI 升级了 Ling-3.1-flash，总参数五百六十亿、激活二百五十亿，上下文一百万 token。
-接下来是今天的论文。今天这批工作有个共同点：大家都在给 agent 建更好的评测和验证底座。CellTrack-Bench 发现，视觉语言模型在细胞追踪这种需要时空感知的任务上系统性落后专用算法。SO-101 B</description>
-      <itunes:summary>早上好，欢迎收听今天的 AI 日报，今天是 2026 年 10 月 28 日，星期三。今天最值得关注的，是 OpenAI 用半价 API 把中端模型推向 Agent 场景，同时 Google 的世界模型和 Anthropic 的 IPO 也在推进；另外，今天一批论文集中指向同一个问题：验证和评审正在成为 agent 落地的真正瓶颈。下面我们逐条来聊。
-先看 OpenAI。他们发布了中端模型 GPT-6.1 Terra，主打视觉推理和精确的 computer use，API 定价是每百万 token 输入一美元、输出五美元，比前代 GPT-6.1 Sol 便宜了一半。官方说它在 Agents' Last Exam 中等推理强度下的得分和旗舰 GPT-6 Astra 持平，但单任务成本只要零点二九美元，而 Astra 要四点八二美元。OpenAI 的 Ted Sanders 在 Hacker News 上给它的定位很直白：技术沟通强于 Astra 和 Sol，视觉和 computer use 相近但快得多，其余多数能力略弱。对做 Agent 和批量自动化的团队来说，这意味着高频重复的浏览器操作、表单填写、视频剪辑这类任务可以迁到低成本档位，高难度推理留给旗舰模型。Sanders 还分享了一条选型经验法则：模型规模、推理强度和多 agent 系统是三个独立维度，不能压缩成单一的 IQ 分数，与其按总分挑最强模型，不如按任务类型拆分。
-OpenAI 今天还有两条企业侧的消息。一是扩大和 Oracle 的合作，把 Oracle 的业务应用和 AI agent 接入 ChatGPT，让 agent 在对话里直接查询和操作 ERP、CRM 这些系统。对做企业集成的开发者来说，接入路径要重新评估了：是继续自建 RAG 和工具层，还是直接用平台方的官方连接器，同时权限边界和数据驻留也是新问题。二是公布了语音 agent 平台 Retell 的案例，Retell 用 OpenAI 模型支撑每月一亿通电话，GPT-6 Astra 在其语音 agent 基准上排名第一，Codex 还帮他们把人均年化收入推到一百六十万美元。不过要提醒一句，这个基准是客户自建、供应商发布的，选型时还是得在自己的通话数据上复现，尤其是噪声环境和多轮打断的场景。
-再看 Google。他们发布了 Genie 4 世界模型，四项主要更新：更真实的世界、可以用自然语言提示实时修改场景、可以生成音频，底层换成了 Gemini 3.8 Flash。它能维持最长两分钟的一致场景，是 Genie 3 的两倍，物理表现更好、角色更接近真人。对做游戏原型和具身智能仿真的团队来说，两分钟的一致性窗口和实时操控是两个能直接改变工作流的指标。
-其他公司方面，Apple 把 AI 助手引入了 Keynote、Pages 和 Numbers，基于自家模型和 OpenAI 模型构建，能理解文档上下文，这是 Apple 首次把第三方模型能力嵌入 iWork 套件。Anthropic 则在冲刺 IPO，一边想动用公开市场的资金，一边坚称不会在安全使命上妥协，一旦上市，安全承诺就会从内部章程变成要对股东解释的披露事项，这是观察前沿实验室治理结构如何被资本市场重塑的关键窗口。另外，在 Meta 工作了八年的 AI 总监 Rohit Patel 离职创业，创办 Ndoc，目标是挑战 Microsoft Office 和 Google Workspace。
-模型侧还有两条值得留意。Mirendil 发布了首个模型 Fern 0.1，从零预训练，上下文窗口达到一千万 token，在长上下文检索任务上得分满分，但在 agentic coding 上落后于前沿模型，说明超长上下文和真实 agent 能力还是两件事。开源社区这边，Liquid AI 开源了 LFM3 系列六款二十亿参数级的多模态模型，inclusionAI 升级了 Ling-3.1-flash，总参数五百六十亿、激活二百五十亿，上下文一百万 token。
-接下来是今天的论文。今天这批工作有个共同点：大家都在给 agent 建更好的评测和验证底座。CellTrack-Bench 发现，视觉语言模型在细胞追踪这种需要时空感知的任务上系统性落后专用算法。SO-101 B</itunes:summary>
-      <enclosure url="https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-10-28.mp3" length="2580480" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-10-28.mp3</guid>
-      <pubDate>Wed, 28 Oct 2026 08:00:00 +0800</pubDate>
-      <itunes:duration>07:10</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
       <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
     </item>
