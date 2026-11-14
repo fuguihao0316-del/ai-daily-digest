@@ -15,6 +15,29 @@
     <image><url>https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png</url><title>AI 每日简报</title><link>https://fuguihao0316-del.github.io/ai-daily-digest/</link></image>
     <itunes:owner><itunes:name>AI Daily Digest</itunes:name></itunes:owner>
     <item>
+      <title>AI 每日简报 · 2026-11-14 周六</title>
+      <description>早上好，欢迎收听今天的 AI 日报，今天是 2026 年 11 月 14 日，星期六。今天最值得关注的，是 agent 正在从演示走向真正的交易和生产场景，同时算力和供应链的政治化也在加速。咱们一条条来聊。
+先看 Anthropic。它在 IPO 路演视频里第一次系统披露了算力策略，联合创始人 Tom Brown 说，Claude 的训练和推理已经同时跑在 AWS Trainium、Google TPU、NVIDIA GPU 和 AMD GPU 这四个芯片家族上。要知道，多芯片押注早期被普遍认为不划算，因为每类芯片都得配独立的软件栈，成本很高。但 Anthropic 说他们已经积累多年经验。最具体的例子是今年第一次接入 AMD GPU，过去引入新平台要几十名工程师干好几个月，这次靠内部系统 Mythos，只用了三天就让 Claude 在 AMD 上跑起来，几乎没人工干预，Claude 自己移植或编写了近百分之百的 kernel。对做推理部署和自建集群的团队来说，多芯片异构调度正在从研究课题变成可复用的工程能力。
+另一条算力相关的消息挺炸的。前 OpenAI 研究员 Will DePue 声称，在 DeepSeek、Moonshot AI、MiniMax 和蚂蚁集团的六个中国模型里，检测到了 NVIDIA 最新 Blackwell GPU 的指纹。他的方法是从已发布的模型权重里直接读芯片特征签名，不靠供应链记录，这比之前的间接推断更进一步。他估计这五次训练运行的硬件成本超过五亿美元。如果这个结论被独立验证，出口管制的执行难题就从物流层面推到了模型权重层面，公开发布的模型文件本身可能成为合规审查的证据。用这些模型做二次训练或商用的团队，要留意后续监管口径的变化。
+模型方面，Google 发布了 Gemini 4 Hydrogen，定位是 Gemini 4 家族里成本最低的成员，支持一百万 token 上下文和四档思考等级，定价是每百万输入 token 一块五美元、输出七块五。不过要注意，同家族的 Carbon 和 Argon 现在还是两块和十块，但十二月一号会翻倍到四块和二十块，到那时 Hydrogen 才真正体现出大约七五折的折扣。现在它其实只比高端同门便宜两成半，却仍比 Claude Haiku 5.5 和 GPT-6 Luna 贵大约十五倍。这个模型已经在搜索、Gemini 应用和各订阅层级上线，适合需要长上下文和多步工具调用的 agent 工作负载做成本测算。
+说到 agent，OpenAI 推出了 ChatGPT Wallet，让 ChatGPT Work、Codex 和 dots 里的 agent 在用户批准下完成购买，沿用现有的信用卡保护机制。首先面向美国十八岁以上、用符合条件的美国运通、大通、万事达和 Visa 卡的 Pro 订阅用户滚动开放。这意味着 agent 的能力边界从生成内容推进到了执行交易，审批环节成了风控核心。对开发者来说，agent 产品开始要处理支付授权、额度和争议处理这些金融级工程问题；对商家来说，流量入口可能部分转移到对话界面里。
+Google 这边还上线了 Gemini Decisions API，由新模型 Gemini Decision 1 驱动，做快速、经过校准的多模态决策。它和 Jev、OpenAI 的决策模型属于同一品类，支持是或否、多选和评分量表三类问题，定价和 GPT-6 Luna 决策模型一致，每百万输入十美分、输出免费。差异在模态覆盖，Gemini Decision 1 覆盖文本、图像、音频、视频和 PDF。实测里它对是或否问题返回的是概率值，比如判断视频里有没有机器人，给出零点九二的置信度。对需要批量做内容审核、路由或质量打分的系统，这能极低成本地替代通用大模型调用。
+还有一条人事震动。据 TechCrunch 报道，黄仁勋离开 NVIDIA 后，创始人和风投普遍预期 AI 创业公司会面对更小的支票和更低的估值。黄仁勋任内 NVIDIA 向 AI 初创投了数百亿美元，这种以芯片厂商为核心的资金循环很大程度上支撑了一级市场定价。华尔街日报说，他的离任更可能源于公司高风险的商业实践，NVIDIA 曾为云厂商的芯片采购提供数十亿美元财务担保，包括一项计划中的两千五百亿美元 OpenAI </description>
+      <itunes:summary>早上好，欢迎收听今天的 AI 日报，今天是 2026 年 11 月 14 日，星期六。今天最值得关注的，是 agent 正在从演示走向真正的交易和生产场景，同时算力和供应链的政治化也在加速。咱们一条条来聊。
+先看 Anthropic。它在 IPO 路演视频里第一次系统披露了算力策略，联合创始人 Tom Brown 说，Claude 的训练和推理已经同时跑在 AWS Trainium、Google TPU、NVIDIA GPU 和 AMD GPU 这四个芯片家族上。要知道，多芯片押注早期被普遍认为不划算，因为每类芯片都得配独立的软件栈，成本很高。但 Anthropic 说他们已经积累多年经验。最具体的例子是今年第一次接入 AMD GPU，过去引入新平台要几十名工程师干好几个月，这次靠内部系统 Mythos，只用了三天就让 Claude 在 AMD 上跑起来，几乎没人工干预，Claude 自己移植或编写了近百分之百的 kernel。对做推理部署和自建集群的团队来说，多芯片异构调度正在从研究课题变成可复用的工程能力。
+另一条算力相关的消息挺炸的。前 OpenAI 研究员 Will DePue 声称，在 DeepSeek、Moonshot AI、MiniMax 和蚂蚁集团的六个中国模型里，检测到了 NVIDIA 最新 Blackwell GPU 的指纹。他的方法是从已发布的模型权重里直接读芯片特征签名，不靠供应链记录，这比之前的间接推断更进一步。他估计这五次训练运行的硬件成本超过五亿美元。如果这个结论被独立验证，出口管制的执行难题就从物流层面推到了模型权重层面，公开发布的模型文件本身可能成为合规审查的证据。用这些模型做二次训练或商用的团队，要留意后续监管口径的变化。
+模型方面，Google 发布了 Gemini 4 Hydrogen，定位是 Gemini 4 家族里成本最低的成员，支持一百万 token 上下文和四档思考等级，定价是每百万输入 token 一块五美元、输出七块五。不过要注意，同家族的 Carbon 和 Argon 现在还是两块和十块，但十二月一号会翻倍到四块和二十块，到那时 Hydrogen 才真正体现出大约七五折的折扣。现在它其实只比高端同门便宜两成半，却仍比 Claude Haiku 5.5 和 GPT-6 Luna 贵大约十五倍。这个模型已经在搜索、Gemini 应用和各订阅层级上线，适合需要长上下文和多步工具调用的 agent 工作负载做成本测算。
+说到 agent，OpenAI 推出了 ChatGPT Wallet，让 ChatGPT Work、Codex 和 dots 里的 agent 在用户批准下完成购买，沿用现有的信用卡保护机制。首先面向美国十八岁以上、用符合条件的美国运通、大通、万事达和 Visa 卡的 Pro 订阅用户滚动开放。这意味着 agent 的能力边界从生成内容推进到了执行交易，审批环节成了风控核心。对开发者来说，agent 产品开始要处理支付授权、额度和争议处理这些金融级工程问题；对商家来说，流量入口可能部分转移到对话界面里。
+Google 这边还上线了 Gemini Decisions API，由新模型 Gemini Decision 1 驱动，做快速、经过校准的多模态决策。它和 Jev、OpenAI 的决策模型属于同一品类，支持是或否、多选和评分量表三类问题，定价和 GPT-6 Luna 决策模型一致，每百万输入十美分、输出免费。差异在模态覆盖，Gemini Decision 1 覆盖文本、图像、音频、视频和 PDF。实测里它对是或否问题返回的是概率值，比如判断视频里有没有机器人，给出零点九二的置信度。对需要批量做内容审核、路由或质量打分的系统，这能极低成本地替代通用大模型调用。
+还有一条人事震动。据 TechCrunch 报道，黄仁勋离开 NVIDIA 后，创始人和风投普遍预期 AI 创业公司会面对更小的支票和更低的估值。黄仁勋任内 NVIDIA 向 AI 初创投了数百亿美元，这种以芯片厂商为核心的资金循环很大程度上支撑了一级市场定价。华尔街日报说，他的离任更可能源于公司高风险的商业实践，NVIDIA 曾为云厂商的芯片采购提供数十亿美元财务担保，包括一项计划中的两千五百亿美元 OpenAI </itunes:summary>
+      <enclosure url="https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-11-14.mp3" length="2792304" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-11-14.mp3</guid>
+      <pubDate>Sat, 14 Nov 2026 08:00:00 +0800</pubDate>
+      <itunes:duration>07:45</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
+    </item>
+    <item>
       <title>AI 每日简报 · 2026-11-13 周五</title>
       <description>早上好，欢迎收听今天的 AI 日报，今天是 2026 年 11 月 13 日。今天的关键词是“小模型逆袭”和“验证收紧”，一边是更小更便宜的模型不断刷新性价比，另一边是评测和合规开始给能力叙事踩刹车。咱们一条条聊。
 先看模型这边。Meta 发布了 Muse Ember，定位是对标 Claude Haiku 和 GPT-6 Luna 的轻量模型，主打工具调用、编码子任务、信息抽取和长文档解析这类智能体全天重复干的活。价格很有杀伤力，短提示词下输入每百万 token 只要 0.10 美元，输出 0.50 美元，跟 Luna 和 Haiku 5.5 持平；而同一天发布的 Claude Fable 5.2 是 8 美元和 40 美元，整整贵了 80 倍。不过长提示词场景价格分层更复杂，超过 20 万 token 之后 Ember 会涨到 0.30 和 1.50 美元。这里也提醒一句，推理 token 让单 token 比价越来越没意义，看单任务成本才更靠谱。
@@ -353,31 +376,6 @@ Anthropic 今天两条产品向的消息。一个是 FlashProve，用 zkSNARK �
       <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-10-31.mp3</guid>
       <pubDate>Sat, 31 Oct 2026 08:00:00 +0800</pubDate>
       <itunes:duration>06:17</itunes:duration>
-      <itunes:explicit>no</itunes:explicit>
-      <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
-    </item>
-    <item>
-      <title>AI 每日简报 · 2026-10-30 周五</title>
-      <description>早上好，今天是 2026 年 10 月 30 日，欢迎收听 AI 行业日报。今天的关键词是&quot;发布&quot;和&quot;分发&quot;——Mistral 和 Google 在两周内接连放出旗舰模型，OpenAI 则一边翻倍订阅额度、一边把 agent 塞进企业工作流。咱们一条条说。
-先看模型侧。Mistral 上线了 Mistral Large 4，代号 Le Chonk，这是它迄今最大的模型，大约一万亿参数的原生多模态 MoE，每个 token 激活约五百二十亿参数，支持一百万上下文，原生支持一百六十多种语言，包括全部欧盟官方语言。更关键的是，它在欧洲自有数据中心、用三千八百块 NVIDIA Grace Blackwell GPU 从零训练，GGUF 和 NVFP4 量化版本已经放出来了。这是首次有欧洲实验室把万亿级 MoE 权重按开放形式放出，本地部署的显存规划估计会成为接下来社区讨论的焦点。
-Google 这边，距 Gemini 4 Argon 才两周，DeepMind 又推出 Gemini 4 Carbon，主打编码、agentic 任务和网络安全，在 Artificial Analysis 智能指数上以五十九分登顶，定价是每百万 token 输入两美元、输出十美元。因为安全能力敏感，初期只向经过审核的安全专家开放。两周连发两个前沿版本，节奏明显是在压制 Anthropic 和 OpenAI；而按能力分级、限制访问，可能也会成为前沿模型发布的常态。
-OpenAI 今天动作最多。先是发布了一套前沿模型失准检测方法，用分层监控在事件升级前发现模型的失准和未授权 agent 行为，把安全监控从离线评测推进到部署期运行时。然后是生态：Google 在 Android Studio 里推出 Bring Your Own Agent，支持包括 Claude Agent 和 Codex 在内的四十多个编码 agent，配套终端工具据说让 agent 完成 UI 任务快百分之七十七，token 消耗最多降到三分之一。OpenAI 则和 ServiceNow 扩大合作，模型和 agent 进企业工单与业务流程，ServiceNow 的工作流也接进 ChatGPT 和 Codex，这是实打实的双向集成。
-对开发者更直接的是钱的事：OpenAI 把各付费档位的用量上限整体翻倍，原计划对 Pro 200 的配额下调在用户反对后撤回；同时上线了和 Anthropic 几乎相同的权益，一百、两百、五百美元档的订阅用户可以获得等额、会过期的 API 额度。两家同时把订阅和 API 消费打通，等于把订阅费变成了可迁移的筹码。
-其他几条快速带过。NVIDIA 开源了语音模型 Nemotron 3.5 Transcribe，三十 B 总参数的 MoE，激活四点三 B，支持四十种语言转写，还带说话人标签和词级时间戳。Google DeepMind 发布实时世界模型 Genie 4 的研究预览，新增原生音频、实时对话和文本操控。Anthropic 已递交 S-1，计划登陆纳斯达克，这是前沿模型公司首次以公开招股书披露业务结构。
-学术方面，今天最值得留意的是评测端暴露的落差。PersonaCUABench 固定七十四个任务、只改变提问者，结果九个基座模型、三千多次运行里，平均任务完成率相对原始请求下降百分之三十六；即使任务完成，用户给出最高满意度的比例也只有百分之六十二点七。另外 RealCLI 显示，最佳配置的平均分只有四十九点二，协作分峰值三十七点六，说明只看任务完成率会高估 agent 的可用性。还有几篇挺有意思：PreView 不重训主模型就能提升 GUI grounding；LongZero 完全不依赖外部数据做长上下文推理的强化学习；CausGround 把交互经验蒸馏成可复用的因果知识，在 VirtualHome 上把成功率从百分之二十四点九提到五十三点三。
-今日观察。今天最清晰的信号是，模型能力的竞争正在让位于分发与承载能力的竞争。OpenAI 一边翻倍用量、发放等额 API 额度，一边把 agent 接进 ServiceNow；Mistral 和 Google 两周连发旗舰，迭代节奏已经快过用户的消化速度。但评测端的数字提醒我们，能力增长并没有同步转化为真实可用性。更值得警惕</description>
-      <itunes:summary>早上好，今天是 2026 年 10 月 30 日，欢迎收听 AI 行业日报。今天的关键词是&quot;发布&quot;和&quot;分发&quot;——Mistral 和 Google 在两周内接连放出旗舰模型，OpenAI 则一边翻倍订阅额度、一边把 agent 塞进企业工作流。咱们一条条说。
-先看模型侧。Mistral 上线了 Mistral Large 4，代号 Le Chonk，这是它迄今最大的模型，大约一万亿参数的原生多模态 MoE，每个 token 激活约五百二十亿参数，支持一百万上下文，原生支持一百六十多种语言，包括全部欧盟官方语言。更关键的是，它在欧洲自有数据中心、用三千八百块 NVIDIA Grace Blackwell GPU 从零训练，GGUF 和 NVFP4 量化版本已经放出来了。这是首次有欧洲实验室把万亿级 MoE 权重按开放形式放出，本地部署的显存规划估计会成为接下来社区讨论的焦点。
-Google 这边，距 Gemini 4 Argon 才两周，DeepMind 又推出 Gemini 4 Carbon，主打编码、agentic 任务和网络安全，在 Artificial Analysis 智能指数上以五十九分登顶，定价是每百万 token 输入两美元、输出十美元。因为安全能力敏感，初期只向经过审核的安全专家开放。两周连发两个前沿版本，节奏明显是在压制 Anthropic 和 OpenAI；而按能力分级、限制访问，可能也会成为前沿模型发布的常态。
-OpenAI 今天动作最多。先是发布了一套前沿模型失准检测方法，用分层监控在事件升级前发现模型的失准和未授权 agent 行为，把安全监控从离线评测推进到部署期运行时。然后是生态：Google 在 Android Studio 里推出 Bring Your Own Agent，支持包括 Claude Agent 和 Codex 在内的四十多个编码 agent，配套终端工具据说让 agent 完成 UI 任务快百分之七十七，token 消耗最多降到三分之一。OpenAI 则和 ServiceNow 扩大合作，模型和 agent 进企业工单与业务流程，ServiceNow 的工作流也接进 ChatGPT 和 Codex，这是实打实的双向集成。
-对开发者更直接的是钱的事：OpenAI 把各付费档位的用量上限整体翻倍，原计划对 Pro 200 的配额下调在用户反对后撤回；同时上线了和 Anthropic 几乎相同的权益，一百、两百、五百美元档的订阅用户可以获得等额、会过期的 API 额度。两家同时把订阅和 API 消费打通，等于把订阅费变成了可迁移的筹码。
-其他几条快速带过。NVIDIA 开源了语音模型 Nemotron 3.5 Transcribe，三十 B 总参数的 MoE，激活四点三 B，支持四十种语言转写，还带说话人标签和词级时间戳。Google DeepMind 发布实时世界模型 Genie 4 的研究预览，新增原生音频、实时对话和文本操控。Anthropic 已递交 S-1，计划登陆纳斯达克，这是前沿模型公司首次以公开招股书披露业务结构。
-学术方面，今天最值得留意的是评测端暴露的落差。PersonaCUABench 固定七十四个任务、只改变提问者，结果九个基座模型、三千多次运行里，平均任务完成率相对原始请求下降百分之三十六；即使任务完成，用户给出最高满意度的比例也只有百分之六十二点七。另外 RealCLI 显示，最佳配置的平均分只有四十九点二，协作分峰值三十七点六，说明只看任务完成率会高估 agent 的可用性。还有几篇挺有意思：PreView 不重训主模型就能提升 GUI grounding；LongZero 完全不依赖外部数据做长上下文推理的强化学习；CausGround 把交互经验蒸馏成可复用的因果知识，在 VirtualHome 上把成功率从百分之二十四点九提到五十三点三。
-今日观察。今天最清晰的信号是，模型能力的竞争正在让位于分发与承载能力的竞争。OpenAI 一边翻倍用量、发放等额 API 额度，一边把 agent 接进 ServiceNow；Mistral 和 Google 两周连发旗舰，迭代节奏已经快过用户的消化速度。但评测端的数字提醒我们，能力增长并没有同步转化为真实可用性。更值得警惕</itunes:summary>
-      <enclosure url="https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-10-30.mp3" length="1774512" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-10-30.mp3</guid>
-      <pubDate>Fri, 30 Oct 2026 08:00:00 +0800</pubDate>
-      <itunes:duration>04:55</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
       <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
     </item>
