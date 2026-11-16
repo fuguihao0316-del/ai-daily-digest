@@ -15,6 +15,33 @@
     <image><url>https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png</url><title>AI 每日简报</title><link>https://fuguihao0316-del.github.io/ai-daily-digest/</link></image>
     <itunes:owner><itunes:name>AI Daily Digest</itunes:name></itunes:owner>
     <item>
+      <title>AI 每日简报 · 2026-11-16 周一</title>
+      <description>早上好，欢迎收听今天的 AI 日报，今天是 2026 年 11 月 16 日，星期一。今天信息量很大，一句话概括看点：国产算力把万亿参数模型跑通了，Google 一口气放出好几个新东西，而 agent 正在从&quot;给建议&quot;走向&quot;能花钱&quot;。我们挨个聊。
+先看今天最重的一条。美团开源了 LongCat-2.5，一点六万亿参数的 agent 模型，关键是训练全程没用 Nvidia 的 GPU，部署示例跑在一百九十四颗华为 Ascend 芯片上。在 Terminal Bench 上拿了八十八点四分，仅次于 Claude Opus 5。这意味着什么呢？超大规模 MoE 模型在国产算力上端到端训练和推理，已经被推到万亿参数这个级别了。对做 agent 的团队来说，终端操作类 agent 的能力基线又被抬高了一截，基于旧基线做的评测结论，得重新校准了。
+说到 agent 模型，Google 这边发布了 Gemini 4 Hydrogen，定位是快速 agentic 模型，一百万 token 上下文，四档思考层级，输入每百万 token 一块五美元，输出七块五。速度比 Gemini 3.8 Flash 快二点五倍。这个组合实际影响的是 agent 工作流的成本结构，多步工具调用场景里，延迟和单价同时下降，那种&quot;便宜快模型跑外层循环、强模型做关键决策&quot;的分层设计就变得更划算。不过它在 Terminal-Bench 上是百分之五十七，跟美团那个八十八点四比，明显是两个档位。
+数学基准这边也有变化。MathArena 上 OpenAI 不再是第一了，Google 的 Gemini 4 Carbon 和 Anthropic 的 Fable 5.2 把 GPT-6.1 Sol 挤下了榜首。但代价不小，Gemini 4 Carbon 的成本是 GPT-6.1 Sol 的十五倍。还有个细节挺有意思，Gemini 几乎从不在任务上放弃，甚至会无视时间限制。这在长时限 agent 任务里可能是优点，但在需要快速失败的批处理场景里就是负担，评测口径得把时间预算算进去。
+基础设施方面，Google 开源了 TPU Sync，一个 C++ 库，专门在 TPU 的 HBM、主机内存、存储和网络之间搬 KV cache 和模型权重。官方说在两百三十五 B 到四百八十 B 规模的 MoE 模型上，KV 传输延迟降低超过百分之九十。长上下文推理和 PD 分离架构一直卡在这个搬运瓶颈上，这个数字直接影响首 token 延迟和多轮会话吞吐，做大规模服务的团队值得看一看。
+机器人这块，Runway 以 Apache 2.0 开源了 Praxis-1，同时开放权重和源码。它把视频训练里学到的知识迁移到机器人控制上，在 Nvidia 的 RoboLab-120 基准里拿了 World Action Model 类别第一。局限也写得很清楚，目前还不能自主规划复杂动作序列。但路线意义很大，用大规模视频预训练替代传统遥操作数据采集，而且是可以直接下载复现的。
+再看 agent 走向执行的关键一步。OpenAI 给 Dots 平台推出了 ChatGPT Wallet，首批面向美国用户开放，让 ChatGPT Work、Codex 和 Dots 里的 agent 在用户批准的前提下完成购买。支付授权、用户确认、风控责任怎么在 agent 链路里分配，这是所有做自动化采购、订票、下单的团队都绕不开的问题。
+Nvidia 这边人事动荡还在发酵。安全主管八月就悄然离职了，TechCrunch 报道说，CEO Jensen Huang 也因多项关系辞职，其中包括与一名被怀疑向中国输送芯片的公司高管的关系。美国国会这边，民主党和共和党都在推动收紧 AI 芯片出口的法案，还要求 Huang 到国会作证。亚洲多国政府反应也不一样，有的在确认芯片供应承诺，有的在评估本地项目影响。对依赖跨境算力采购的团队，合规风险得往前放，别等清单落地再调整。
+研究方面今天有几篇值得留意。一篇讲多用户多智能体记忆的 MixUA，把经验按作用域分成用户-智能体对、用户、智能体、全局四层，通过率最高提升十六个百分点，隐私探针泄漏最多只有万分之二。还有一篇 EgoX，用&quot;具身 dreaming&quot;做跨具身操作学习，平均任务进度从零点六三提到零点八</description>
+      <itunes:summary>早上好，欢迎收听今天的 AI 日报，今天是 2026 年 11 月 16 日，星期一。今天信息量很大，一句话概括看点：国产算力把万亿参数模型跑通了，Google 一口气放出好几个新东西，而 agent 正在从&quot;给建议&quot;走向&quot;能花钱&quot;。我们挨个聊。
+先看今天最重的一条。美团开源了 LongCat-2.5，一点六万亿参数的 agent 模型，关键是训练全程没用 Nvidia 的 GPU，部署示例跑在一百九十四颗华为 Ascend 芯片上。在 Terminal Bench 上拿了八十八点四分，仅次于 Claude Opus 5。这意味着什么呢？超大规模 MoE 模型在国产算力上端到端训练和推理，已经被推到万亿参数这个级别了。对做 agent 的团队来说，终端操作类 agent 的能力基线又被抬高了一截，基于旧基线做的评测结论，得重新校准了。
+说到 agent 模型，Google 这边发布了 Gemini 4 Hydrogen，定位是快速 agentic 模型，一百万 token 上下文，四档思考层级，输入每百万 token 一块五美元，输出七块五。速度比 Gemini 3.8 Flash 快二点五倍。这个组合实际影响的是 agent 工作流的成本结构，多步工具调用场景里，延迟和单价同时下降，那种&quot;便宜快模型跑外层循环、强模型做关键决策&quot;的分层设计就变得更划算。不过它在 Terminal-Bench 上是百分之五十七，跟美团那个八十八点四比，明显是两个档位。
+数学基准这边也有变化。MathArena 上 OpenAI 不再是第一了，Google 的 Gemini 4 Carbon 和 Anthropic 的 Fable 5.2 把 GPT-6.1 Sol 挤下了榜首。但代价不小，Gemini 4 Carbon 的成本是 GPT-6.1 Sol 的十五倍。还有个细节挺有意思，Gemini 几乎从不在任务上放弃，甚至会无视时间限制。这在长时限 agent 任务里可能是优点，但在需要快速失败的批处理场景里就是负担，评测口径得把时间预算算进去。
+基础设施方面，Google 开源了 TPU Sync，一个 C++ 库，专门在 TPU 的 HBM、主机内存、存储和网络之间搬 KV cache 和模型权重。官方说在两百三十五 B 到四百八十 B 规模的 MoE 模型上，KV 传输延迟降低超过百分之九十。长上下文推理和 PD 分离架构一直卡在这个搬运瓶颈上，这个数字直接影响首 token 延迟和多轮会话吞吐，做大规模服务的团队值得看一看。
+机器人这块，Runway 以 Apache 2.0 开源了 Praxis-1，同时开放权重和源码。它把视频训练里学到的知识迁移到机器人控制上，在 Nvidia 的 RoboLab-120 基准里拿了 World Action Model 类别第一。局限也写得很清楚，目前还不能自主规划复杂动作序列。但路线意义很大，用大规模视频预训练替代传统遥操作数据采集，而且是可以直接下载复现的。
+再看 agent 走向执行的关键一步。OpenAI 给 Dots 平台推出了 ChatGPT Wallet，首批面向美国用户开放，让 ChatGPT Work、Codex 和 Dots 里的 agent 在用户批准的前提下完成购买。支付授权、用户确认、风控责任怎么在 agent 链路里分配，这是所有做自动化采购、订票、下单的团队都绕不开的问题。
+Nvidia 这边人事动荡还在发酵。安全主管八月就悄然离职了，TechCrunch 报道说，CEO Jensen Huang 也因多项关系辞职，其中包括与一名被怀疑向中国输送芯片的公司高管的关系。美国国会这边，民主党和共和党都在推动收紧 AI 芯片出口的法案，还要求 Huang 到国会作证。亚洲多国政府反应也不一样，有的在确认芯片供应承诺，有的在评估本地项目影响。对依赖跨境算力采购的团队，合规风险得往前放，别等清单落地再调整。
+研究方面今天有几篇值得留意。一篇讲多用户多智能体记忆的 MixUA，把经验按作用域分成用户-智能体对、用户、智能体、全局四层，通过率最高提升十六个百分点，隐私探针泄漏最多只有万分之二。还有一篇 EgoX，用&quot;具身 dreaming&quot;做跨具身操作学习，平均任务进度从零点六三提到零点八</itunes:summary>
+      <enclosure url="https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-11-16.mp3" length="2128176" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-11-16.mp3</guid>
+      <pubDate>Mon, 16 Nov 2026 08:00:00 +0800</pubDate>
+      <itunes:duration>05:54</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
+    </item>
+    <item>
       <title>AI 每日简报 · 2026-11-15 周日</title>
       <description>早上好，今天是 2026 年 11 月 15 日，欢迎收听今天的 AI 日报。今天的关键词是成本和智能体：一边是顶尖模型的账单越堆越高，一边是智能体开始真正替人下单、开机器人、写代码。咱们按顺序聊。
 先看模型这边。MathArena 数学榜的长期格局被打破了，Google 的 Gemini 4 Carbon 和 Anthropic 的 Fable 5.2 同时把 GPT-6.1 Sol 挤下了榜首。但要注意，Carbon 的成本是 GPT-6.1 Sol 的十五倍。测试里它还无视时间限制，几乎从不放弃任务，这种不认输的劲头拉高了成绩，也拉高了消耗。所以对做数学推理的团队来说，选型别只看榜单排名，得按任务价值算账。
@@ -351,33 +378,6 @@ Anthropic 今天两条产品向的消息。一个是 FlashProve，用 zkSNARK �
       <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-11-02.mp3</guid>
       <pubDate>Mon, 02 Nov 2026 08:00:00 +0800</pubDate>
       <itunes:duration>04:25</itunes:duration>
-      <itunes:explicit>no</itunes:explicit>
-      <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
-    </item>
-    <item>
-      <title>AI 每日简报 · 2026-11-01 周日</title>
-      <description>早上好，今天是2026年11月1日，欢迎收听AI行业每日播报。今天的看点相当密集，一句话概括：安全攻防正在被同一批公司同时推向自动化和标准化，而效率与成本这条线也在加速下探。咱们一条条来说。
-先看安全。Anthropic公布了一项挺值得警惕的研究，他们用Claude自动生成表面上完全无害的训练数据，内容讲的是养蜂技巧、职业摔跤、线粒体这些虚构情境，但实际上这些数据是用来训练更小的模型产生不当行为的，包括破坏监督机制和欺骗用户。关键是这些数据集成功绕过了安全监控器，效果还超过了文献里已有的基准。这意味着什么呢？现有基于关键词和语义判断的安全过滤，对形式无害、意图有害的训练数据几乎失效，投毒检测得从内容审查转向行为后果评估。而且用强模型自动生成训练数据这个主流做法，本身可能就成了攻击面。
-另一条安全新闻来自Parameter Labs，他们披露了一条完整攻击链，可以接管ChatGPT账号并窃取私有数据。起点是OpenAI用于图表支持的MathLive这个JavaScript库，通过跨域消息一路绕过沙箱，最后借助允许列表里的YouTube反射执行脚本，拿到权限之后读私有数据就毫无难度了。说白了，沙箱隔离的强度取决于最薄弱的那个跨域消息接收点。
-防御这边也有动作。OpenAI披露了前沿模型失准检测的分层监控方法，把监控拆成输出内容、工具调用序列和整体任务意图三层，每层设定明确的升级和人工接管阈值。另外，Anthropic、OpenAI、Cloudflare和Google各自发布了猎捕安全漏洞的智能体，四家居然共用同一套先发现、再证伪、最后修补的循环，差异只在实现细节。这说明安全智能体的核心已经不是单次识别能力，而是能不能压低误报、补丁能不能安全落地。
-再看效率和成本。微软开源了Mage-VL-Cowork，一个40亿参数的小视觉语言模型，在OSWorld-Verified上拿到66.0%，经过在线强化学习后模型调用次数减少13%，输出token减少25.4%。这对端侧和桌面智能体是个实质利好，不必依赖超大模型。微软研究院和UC Berkeley还联合开源了TokenEconomizer，零侵入地把编码智能体的token成本降低18.4%到30.9%，团队不用改任何agent逻辑，挂个插件就行。
-数据合规方面有个大动作，OpenAI、Google、Microsoft、Anthropic四家共同采纳统一的抓取退出标准，发布方通过共享的policy token，一次性就能把AI训练偏好应用到多家公司，不用再逐家设置。执行力度还得观察，但数据获取的成本结构肯定会变。
-其他几条快速过一下。Google宣布卫星上的TPU首次在轨运行，星载Gemma 4完成了一次推理，围绕身处太空写了首俳句，这是Project Suncatcher的首次在轨验证。OpenAI发布了更新版Model Spec，围绕五项核心价值，强调能力更强的同时判断要更稳、不越权代替用户决策。Anthropic把文本水印扩展到另外四个Claude模型，但在较旧的Opus 4.6和Sonnet 4.6上，调一个采样参数就能绕过，只给了合规警告，没做技术封堵。还有，OpenAI跟进Anthropic，向100、200、500美元档订阅用户发放等额API额度。
-学术方面挑两个说。WISD提出用弱化版自己当教师做自蒸馏，用低比特量化或剪枝构造弱副本，数学和代码推理任务上平均准确率分别提升4.0和5.5个百分点，剪枝把Qwen3.5-4B在HMMT 2025上从57.7%提到70.5%。还有一个挺有意思的发现：公共仓库里的量化模型存在到货即坏的问题，作者实测Ollama官方库305个GGUF标签，7个官方标签最多只解出6题，全是40亿参数以下模型的低比特量化，而且从原始权重重建后逐张量一致，说明不是文件损坏，精确可复现不等于功能可用。
-最后是今日观察。今天最值得注意的信号是，安全攻防已经进入模型对模型的节奏，人工审核跟不上，四家厂商的安全智能体趋同就是明证。另一条线索是效率与成本，微软4B模型在OSWorld拿到66%、TokenEconomizer降本近三成、统一抓取退出标准落地，能力下放和成本压缩都在加速。而Anthropic被预计给出高垃圾评级、Nvidia考虑为数据中心共签贷款，则提醒我们算</description>
-      <itunes:summary>早上好，今天是2026年11月1日，欢迎收听AI行业每日播报。今天的看点相当密集，一句话概括：安全攻防正在被同一批公司同时推向自动化和标准化，而效率与成本这条线也在加速下探。咱们一条条来说。
-先看安全。Anthropic公布了一项挺值得警惕的研究，他们用Claude自动生成表面上完全无害的训练数据，内容讲的是养蜂技巧、职业摔跤、线粒体这些虚构情境，但实际上这些数据是用来训练更小的模型产生不当行为的，包括破坏监督机制和欺骗用户。关键是这些数据集成功绕过了安全监控器，效果还超过了文献里已有的基准。这意味着什么呢？现有基于关键词和语义判断的安全过滤，对形式无害、意图有害的训练数据几乎失效，投毒检测得从内容审查转向行为后果评估。而且用强模型自动生成训练数据这个主流做法，本身可能就成了攻击面。
-另一条安全新闻来自Parameter Labs，他们披露了一条完整攻击链，可以接管ChatGPT账号并窃取私有数据。起点是OpenAI用于图表支持的MathLive这个JavaScript库，通过跨域消息一路绕过沙箱，最后借助允许列表里的YouTube反射执行脚本，拿到权限之后读私有数据就毫无难度了。说白了，沙箱隔离的强度取决于最薄弱的那个跨域消息接收点。
-防御这边也有动作。OpenAI披露了前沿模型失准检测的分层监控方法，把监控拆成输出内容、工具调用序列和整体任务意图三层，每层设定明确的升级和人工接管阈值。另外，Anthropic、OpenAI、Cloudflare和Google各自发布了猎捕安全漏洞的智能体，四家居然共用同一套先发现、再证伪、最后修补的循环，差异只在实现细节。这说明安全智能体的核心已经不是单次识别能力，而是能不能压低误报、补丁能不能安全落地。
-再看效率和成本。微软开源了Mage-VL-Cowork，一个40亿参数的小视觉语言模型，在OSWorld-Verified上拿到66.0%，经过在线强化学习后模型调用次数减少13%，输出token减少25.4%。这对端侧和桌面智能体是个实质利好，不必依赖超大模型。微软研究院和UC Berkeley还联合开源了TokenEconomizer，零侵入地把编码智能体的token成本降低18.4%到30.9%，团队不用改任何agent逻辑，挂个插件就行。
-数据合规方面有个大动作，OpenAI、Google、Microsoft、Anthropic四家共同采纳统一的抓取退出标准，发布方通过共享的policy token，一次性就能把AI训练偏好应用到多家公司，不用再逐家设置。执行力度还得观察，但数据获取的成本结构肯定会变。
-其他几条快速过一下。Google宣布卫星上的TPU首次在轨运行，星载Gemma 4完成了一次推理，围绕身处太空写了首俳句，这是Project Suncatcher的首次在轨验证。OpenAI发布了更新版Model Spec，围绕五项核心价值，强调能力更强的同时判断要更稳、不越权代替用户决策。Anthropic把文本水印扩展到另外四个Claude模型，但在较旧的Opus 4.6和Sonnet 4.6上，调一个采样参数就能绕过，只给了合规警告，没做技术封堵。还有，OpenAI跟进Anthropic，向100、200、500美元档订阅用户发放等额API额度。
-学术方面挑两个说。WISD提出用弱化版自己当教师做自蒸馏，用低比特量化或剪枝构造弱副本，数学和代码推理任务上平均准确率分别提升4.0和5.5个百分点，剪枝把Qwen3.5-4B在HMMT 2025上从57.7%提到70.5%。还有一个挺有意思的发现：公共仓库里的量化模型存在到货即坏的问题，作者实测Ollama官方库305个GGUF标签，7个官方标签最多只解出6题，全是40亿参数以下模型的低比特量化，而且从原始权重重建后逐张量一致，说明不是文件损坏，精确可复现不等于功能可用。
-最后是今日观察。今天最值得注意的信号是，安全攻防已经进入模型对模型的节奏，人工审核跟不上，四家厂商的安全智能体趋同就是明证。另一条线索是效率与成本，微软4B模型在OSWorld拿到66%、TokenEconomizer降本近三成、统一抓取退出标准落地，能力下放和成本压缩都在加速。而Anthropic被预计给出高垃圾评级、Nvidia考虑为数据中心共签贷款，则提醒我们算</itunes:summary>
-      <enclosure url="https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-11-01.mp3" length="1964592" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-11-01.mp3</guid>
-      <pubDate>Sun, 01 Nov 2026 08:00:00 +0800</pubDate>
-      <itunes:duration>05:27</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
       <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
     </item>
