@@ -15,6 +15,29 @@
     <image><url>https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png</url><title>AI 每日简报</title><link>https://fuguihao0316-del.github.io/ai-daily-digest/</link></image>
     <itunes:owner><itunes:name>AI Daily Digest</itunes:name></itunes:owner>
     <item>
+      <title>AI 每日简报 · 2026-11-19 周四</title>
+      <description>早上好，今天是 2026 年 11 月 19 日，欢迎收听 AI 日报。今天最抢眼的，是 OpenAI 一口气发了两款 GPT-6.2 新模型，Google 也紧接着推出 Gemini 4 Neon，模型发布的节奏依然快得让人喘不过气；与此同时，Nvidia 停止对华出货、OpenAI 首次开放外部审计，这几件事凑在一起，值得好好聊聊。
+先看 OpenAI。十一月十七号，他们发布了 GPT-6.2 的 Astra 和 Sol 两款模型。Astra 是前沿旗舰，专门啃最难的项目；Sol 走高效通用路线，面向日常工作。价格上有个好消息，Astra 降到了上一代的八成，每百万 token 输入八美元、输出四十美元，跟 Claude Fable 5.2 同价，缓存价格更是从一美元降到四毛，对长时间运行的 agent 会话是实打实的利好。Sol 则维持原价。不过 Simon Willison 拿同一道 Three.js 动画题做了对比测试，认为这两款模型在把 Yonkers 变形为大机甲这个环节上，还是不如 Claude Fable 5.2 和 Gemini 4 Carbon。
+说到 Google，他们推出了 Gemini 4 Neon，这是一个月内的第四款新 Gemini 模型。支持文本、图像、视频、音频和 PDF，上下文窗口达到一百万 token，定价每百万输入三美元、输出十五美元，比前代贵了，说明 Google 开始在能力分层上拉开价格梯度。再加上同期发布的 Genie 4 和 Gemini Decisions API，Google 显然在通用前沿模型、世界模型和专用决策模型三条线上同时下注。
+安全和算力方面有两条重磅消息。OpenAI 首次允许四家独立审计机构，包括 Apollo Research 和 METR，直接访问未发布的模型、源代码和训练数据，目的是在上线前发现隐藏的不当行为。但争议在于，OpenAI 保留了对报告的删改和延迟发布权，所以这套机制到底有多独立，还得再看。另一条是 Nvidia 已经停止向中国出货先进 AI 芯片，尽管白宫去年十二月就批准了出口。临时 CEO Colette Kress 在财报电话会上宣布了这个消息，这意味着高端卡的获取渠道进一步收窄，短期内会推高存量算力租赁价格，也会加速国产替代。
+再看 agent 这条线。Simon Willison 和 Prime Radiant 合作提出了外部沙箱方案，让 agent 执行的代码跑在专用沙箱里，agent 本身留在外面，还开源了三个实现。OpenAI 也发了一份研究，说编码 agent 确实在加速 AI 研究，但表现参差不齐，有些环节提速明显，有些还很乏力。另外，印度公司 Sarvam 推出了 Token Factory，用本地 GPU 集群托管八个开源模型的推理，走 OpenAI 兼容接口，现有应用换个地址就能迁移。
+学术方面，今天有几篇值得留意。AnisoFlow 把流模型的预测目标变成可学习的各向异性权重，在 ImageNet 256 上把 FID 从 1.90 降到 1.55。DWD 让扩散 Transformer 跳过解码器直接输出像素，视频生成的 warping error 降低了百分之二十三。还有一篇审计研究挺扎眼，统计了四十份开放权重模型的技术报告，七十三项新颖性声明里只有十九项配有受控对照实验，说明能力宣称和可验证性之间的落差正在扩大。
+最后是今日观察。今天最值得注意的，不是又发了几个模型，而是竞争重心正从模型能力转向可信度与可控性。OpenAI 一边连发两款新模型，一边首次向独立机构开放源码，可学界同期却在审计中发现多数技术报告缺少消融支撑。另一条线索是 agent 正从工具变成基础设施，而 Nvidia 停止对华出货则提醒我们，算力仍然是硬约束。好，今天就聊到这，我们明天见。</description>
+      <itunes:summary>早上好，今天是 2026 年 11 月 19 日，欢迎收听 AI 日报。今天最抢眼的，是 OpenAI 一口气发了两款 GPT-6.2 新模型，Google 也紧接着推出 Gemini 4 Neon，模型发布的节奏依然快得让人喘不过气；与此同时，Nvidia 停止对华出货、OpenAI 首次开放外部审计，这几件事凑在一起，值得好好聊聊。
+先看 OpenAI。十一月十七号，他们发布了 GPT-6.2 的 Astra 和 Sol 两款模型。Astra 是前沿旗舰，专门啃最难的项目；Sol 走高效通用路线，面向日常工作。价格上有个好消息，Astra 降到了上一代的八成，每百万 token 输入八美元、输出四十美元，跟 Claude Fable 5.2 同价，缓存价格更是从一美元降到四毛，对长时间运行的 agent 会话是实打实的利好。Sol 则维持原价。不过 Simon Willison 拿同一道 Three.js 动画题做了对比测试，认为这两款模型在把 Yonkers 变形为大机甲这个环节上，还是不如 Claude Fable 5.2 和 Gemini 4 Carbon。
+说到 Google，他们推出了 Gemini 4 Neon，这是一个月内的第四款新 Gemini 模型。支持文本、图像、视频、音频和 PDF，上下文窗口达到一百万 token，定价每百万输入三美元、输出十五美元，比前代贵了，说明 Google 开始在能力分层上拉开价格梯度。再加上同期发布的 Genie 4 和 Gemini Decisions API，Google 显然在通用前沿模型、世界模型和专用决策模型三条线上同时下注。
+安全和算力方面有两条重磅消息。OpenAI 首次允许四家独立审计机构，包括 Apollo Research 和 METR，直接访问未发布的模型、源代码和训练数据，目的是在上线前发现隐藏的不当行为。但争议在于，OpenAI 保留了对报告的删改和延迟发布权，所以这套机制到底有多独立，还得再看。另一条是 Nvidia 已经停止向中国出货先进 AI 芯片，尽管白宫去年十二月就批准了出口。临时 CEO Colette Kress 在财报电话会上宣布了这个消息，这意味着高端卡的获取渠道进一步收窄，短期内会推高存量算力租赁价格，也会加速国产替代。
+再看 agent 这条线。Simon Willison 和 Prime Radiant 合作提出了外部沙箱方案，让 agent 执行的代码跑在专用沙箱里，agent 本身留在外面，还开源了三个实现。OpenAI 也发了一份研究，说编码 agent 确实在加速 AI 研究，但表现参差不齐，有些环节提速明显，有些还很乏力。另外，印度公司 Sarvam 推出了 Token Factory，用本地 GPU 集群托管八个开源模型的推理，走 OpenAI 兼容接口，现有应用换个地址就能迁移。
+学术方面，今天有几篇值得留意。AnisoFlow 把流模型的预测目标变成可学习的各向异性权重，在 ImageNet 256 上把 FID 从 1.90 降到 1.55。DWD 让扩散 Transformer 跳过解码器直接输出像素，视频生成的 warping error 降低了百分之二十三。还有一篇审计研究挺扎眼，统计了四十份开放权重模型的技术报告，七十三项新颖性声明里只有十九项配有受控对照实验，说明能力宣称和可验证性之间的落差正在扩大。
+最后是今日观察。今天最值得注意的，不是又发了几个模型，而是竞争重心正从模型能力转向可信度与可控性。OpenAI 一边连发两款新模型，一边首次向独立机构开放源码，可学界同期却在审计中发现多数技术报告缺少消融支撑。另一条线索是 agent 正从工具变成基础设施，而 Nvidia 停止对华出货则提醒我们，算力仍然是硬约束。好，今天就聊到这，我们明天见。</itunes:summary>
+      <enclosure url="https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-11-19.mp3" length="1560384" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-11-19.mp3</guid>
+      <pubDate>Thu, 19 Nov 2026 08:00:00 +0800</pubDate>
+      <itunes:duration>04:20</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
+    </item>
+    <item>
       <title>AI 每日简报 · 2026-11-18 周三</title>
       <description>早上好，今天是 2026 年 11 月 18 日，欢迎收听今天的 AI 日报。今天最值得关注的，是模型能力与治理能力正在同一天朝相反方向拉开：OpenAI 一边发新模型、扩大免费开放，一边被加州总检察长起诉；英伟达在黄仁勋离职后仍推进收购 Hugging Face；而芯片管制与模型蒸馏，正在把全球 AI 供应链切成两条平行轨道。
 先看 OpenAI。它在 11 月 17 日推出两款新模型，GPT-6.2 Astra 和 GPT-6.2 Sol。Astra 面向前沿高难度任务，Sol 主打日常高效工作。价格上，Astra 每百万 token 输入 8 美元、输出 40 美元，比上一代便宜两成，和 Claude Fable 5.2 同价；缓存价格降到每百万 0.40 美元，对长时间运行的 agent 会话来说，成本改善非常明显。Sol 维持 2 美元和 10 美元不变。在独立评测 Artificial Analysis Intelligence Index 上，Astra 排第二，仅次于 Claude Fable 5.2；它也是首个在 OpenAI 自有的 AI 自我改进量表上达到 High 阈值的已发布模型，而 OpenAI 自己把这个级别归类为风险。另外，OpenAI 还把面向学术研究者的计划扩大到全球 20 万名科研人员，免费提供前沿模型访问权限。
@@ -357,29 +380,6 @@ Google这边，Gemini Omni 1.2 Flash正式开放普遍可用，原生支持最�
       <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-11-05.mp3</guid>
       <pubDate>Thu, 05 Nov 2026 08:00:00 +0800</pubDate>
       <itunes:duration>04:56</itunes:duration>
-      <itunes:explicit>no</itunes:explicit>
-      <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
-    </item>
-    <item>
-      <title>AI 每日简报 · 2026-11-04 周三</title>
-      <description>早上好，今天是2026年11月4日，欢迎收听AI行业每日播客。今天的关键词是“动手改东西”——从直接编辑模型权重，到让模型设计硬件，再到智能体自我演化暴露出的遗忘问题，我们一条条聊。
-先看一条挺硬核的进展。MIT CSAIL 让 GPT-6 Astra 在不做梯度训练的情况下，直接编辑 Qwen3.5-0.8B 的原始权重，只改动了百分之零点零一六的参数，就把这个模型在 MATH-500 上的成绩从百分之七点九拉到了百分之四十八点一，IFEval 也提升了大约三倍。研究者公开了权重 diff，可以精确复现。更有意思的是，有开发者用 Anthropic 的 Jacobian lens 去看模型内部，发现模型准备再次输出“Wait”的那个 token 上，从大约六成深度开始，lens 读出的是“Wrong”、“Nope”、“Hmm”这类怀疑信号，而这时候答案其实已经写完了。编辑之后，同一位置的读数变成了“Verification”、“Completion”、“Result”。编辑后的权重还能干净转成 GGUF，在 Q4KM 量化下依然有效，四十次里只剩一次循环。样本量不大，但它把“权重空间编程”从论文演示变成了可下载复现的工程产物。顺带一提，Simon Willison 也复现了类似示例，确认本地二十七B的模型同样能读取并修改神经网络原始权重。
-OpenAI 这边也放了个大消息：GPT-6 Astra 一周内从零设计出一台硬件设备，外壳、电路板、固件全部由模型完成。量产前经历了几轮修改，原因是模型不太考虑制造公差这类工程约束。关键不在“一周”这个数字，而在于模型开始承担跨多个专业领域的端到端设计，失败模式集中在可以被流程补上的环节。对硬件团队来说，原型阶段的迭代成本结构可能要变了，但量产前的工程校验还是省不了。
-安全方面今天有一对值得放在一起听的消息。Parameter Labs 披露了一条针对 ChatGPT HTML 预览沙箱的完整攻击链，从 MathLive 库的 postMessage 入口，到父页面用了 innerHTML，再到利用 YouTube oEmbed 端点反射执行 JavaScript，最终可以读取私有数据并外传。说白了，沙箱边界往往败在父页面的一行 innerHTML 上。而同一时间窗口内，OpenAI 把漏洞赏金提高到原来的四倍，单个漏洞最高十七点二万美元，还启动了内部安全冲刺。这背后的信号很清楚：agent 产品攻击面在扩大，外部研究者的价值被认真定价了。
-Anthropic 今天两条产品向的消息。一个是 FlashProve，用 zkSNARK 在不暴露权重的前提下证明某条回复确实来自某个已承诺的模型，单张 H100 上验证 Llama 4 Maverick 达到每秒一百一十个 token，证明体积十九 MB。短期内更适合合规审计和模型授权，而不是每次对话都附带证明。另一个是 Messages API 的 Message Threads，长对话只传变化的部分，在五十万到一百万 token 的请求区间，首 token 时间下降约百分之三十五。开发者需要在客户端维护线程状态，已有全量重发的实现要改造。
-企业侧，NVIDIA 开源了 Auto Ontology，从企业元数据自动生成语义层，让 agent 生成的 SQL 锚定在认证过的业务定义上，通过 MCP、CLI 和 API 三种方式提供上下文，解决的是“语法正确但口径错误”这个老问题。另外 NVIDIA 还展示了在单台 DGX Spark 上对 124B 的 Ling-3.0-flash 做 MoE 推理三重优化，GSM8K 解码吞吐提升百分之四十二点五，没有检测到精度变化，中小规模私有部署的可行性边界在移动。
-学术方面挑几条说。IdeaTaste 基准发现，LLM 的科研品味只达到人类的大约百分之十八，引用匹配约百分之二十六，瓶颈不在找方向，而在把方向转成具体方法。编码智能体这边，CrossSWE 显示最强模型 GPT-6.1 Sol 跨仓库任务也只有百分之五十八点四八的 Pass@1，跨仓库不一致是最常见失败。还有一项研究挺扎心：编码智能体持续演化会遗忘，SWE-Bench 成绩从百分之九十四一路跌到百分之三十二。协作智能基准里，最强模型作为队友也只拿到八</description>
-      <itunes:summary>早上好，今天是2026年11月4日，欢迎收听AI行业每日播客。今天的关键词是“动手改东西”——从直接编辑模型权重，到让模型设计硬件，再到智能体自我演化暴露出的遗忘问题，我们一条条聊。
-先看一条挺硬核的进展。MIT CSAIL 让 GPT-6 Astra 在不做梯度训练的情况下，直接编辑 Qwen3.5-0.8B 的原始权重，只改动了百分之零点零一六的参数，就把这个模型在 MATH-500 上的成绩从百分之七点九拉到了百分之四十八点一，IFEval 也提升了大约三倍。研究者公开了权重 diff，可以精确复现。更有意思的是，有开发者用 Anthropic 的 Jacobian lens 去看模型内部，发现模型准备再次输出“Wait”的那个 token 上，从大约六成深度开始，lens 读出的是“Wrong”、“Nope”、“Hmm”这类怀疑信号，而这时候答案其实已经写完了。编辑之后，同一位置的读数变成了“Verification”、“Completion”、“Result”。编辑后的权重还能干净转成 GGUF，在 Q4KM 量化下依然有效，四十次里只剩一次循环。样本量不大，但它把“权重空间编程”从论文演示变成了可下载复现的工程产物。顺带一提，Simon Willison 也复现了类似示例，确认本地二十七B的模型同样能读取并修改神经网络原始权重。
-OpenAI 这边也放了个大消息：GPT-6 Astra 一周内从零设计出一台硬件设备，外壳、电路板、固件全部由模型完成。量产前经历了几轮修改，原因是模型不太考虑制造公差这类工程约束。关键不在“一周”这个数字，而在于模型开始承担跨多个专业领域的端到端设计，失败模式集中在可以被流程补上的环节。对硬件团队来说，原型阶段的迭代成本结构可能要变了，但量产前的工程校验还是省不了。
-安全方面今天有一对值得放在一起听的消息。Parameter Labs 披露了一条针对 ChatGPT HTML 预览沙箱的完整攻击链，从 MathLive 库的 postMessage 入口，到父页面用了 innerHTML，再到利用 YouTube oEmbed 端点反射执行 JavaScript，最终可以读取私有数据并外传。说白了，沙箱边界往往败在父页面的一行 innerHTML 上。而同一时间窗口内，OpenAI 把漏洞赏金提高到原来的四倍，单个漏洞最高十七点二万美元，还启动了内部安全冲刺。这背后的信号很清楚：agent 产品攻击面在扩大，外部研究者的价值被认真定价了。
-Anthropic 今天两条产品向的消息。一个是 FlashProve，用 zkSNARK 在不暴露权重的前提下证明某条回复确实来自某个已承诺的模型，单张 H100 上验证 Llama 4 Maverick 达到每秒一百一十个 token，证明体积十九 MB。短期内更适合合规审计和模型授权，而不是每次对话都附带证明。另一个是 Messages API 的 Message Threads，长对话只传变化的部分，在五十万到一百万 token 的请求区间，首 token 时间下降约百分之三十五。开发者需要在客户端维护线程状态，已有全量重发的实现要改造。
-企业侧，NVIDIA 开源了 Auto Ontology，从企业元数据自动生成语义层，让 agent 生成的 SQL 锚定在认证过的业务定义上，通过 MCP、CLI 和 API 三种方式提供上下文，解决的是“语法正确但口径错误”这个老问题。另外 NVIDIA 还展示了在单台 DGX Spark 上对 124B 的 Ling-3.0-flash 做 MoE 推理三重优化，GSM8K 解码吞吐提升百分之四十二点五，没有检测到精度变化，中小规模私有部署的可行性边界在移动。
-学术方面挑几条说。IdeaTaste 基准发现，LLM 的科研品味只达到人类的大约百分之十八，引用匹配约百分之二十六，瓶颈不在找方向，而在把方向转成具体方法。编码智能体这边，CrossSWE 显示最强模型 GPT-6.1 Sol 跨仓库任务也只有百分之五十八点四八的 Pass@1，跨仓库不一致是最常见失败。还有一项研究挺扎心：编码智能体持续演化会遗忘，SWE-Bench 成绩从百分之九十四一路跌到百分之三十二。协作智能基准里，最强模型作为队友也只拿到八</itunes:summary>
-      <enclosure url="https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-11-04.mp3" length="1969632" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-11-04.mp3</guid>
-      <pubDate>Wed, 04 Nov 2026 08:00:00 +0800</pubDate>
-      <itunes:duration>05:28</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
       <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
     </item>
