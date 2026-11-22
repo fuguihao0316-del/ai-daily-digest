@@ -36,6 +36,90 @@
 
 <div class="ep">
   <div class="ep-h">
+    <span class="ep-title" id="t-2026-11-22">AI 每日简报 · 2026-11-22 周日</span>
+    <button class="cbtn" data-copy="t-2026-11-22">📋 复制标题</button>
+  </div>
+  <audio controls preload="none" src="audio/2026-11-22.mp3"></audio>
+  <div class="acts">
+    <a class="cbtn" href="audio/2026-11-22.mp3" download="2026-11-22.mp3">⬇️ 下载音频</a>
+    <button class="cbtn" data-copy="n-2026-11-22">📋 复制 Show Notes</button>
+  </div>
+  <details><summary>预览 Show Notes</summary><pre class="notes" id="n-2026-11-22">AI 每日简报 · 2026-11-22 周日
+
+🎧 每天 5 分钟，用耳朵掌握 AI 领域最新动态。全自动采集 · DeepSeek 智能筛选。
+
+🗞 AI 行业动态
+· Bytedance 发布 Axion 1.0，主张多数训练阶段并非必要：Bytedance 联合多所美国高校推出 AI agent 模型 Axion 1.0，在基准测试上对标 OpenAI 与 Anthropic 的顶级商用模型，而…
+  来源：https://the-decoder.com/bytedance-argues-most-ai-training-phases-are-unnecessary-and-backs-it-up-with-a-competitive-open-model/
+· OpenAI 强化推理防提取，攻击成功率从 54% 降至 0.2%：OpenAI 针对 GPT-6.2 Astra 与 GPT-6.2 Sol 大幅加强了内部推理内容的防提取保护。
+  来源：https://the-decoder.com/openai-makes-it-much-harder-for-attackers-to-extract-how-its-latest-ai-models-think/
+· OpenAI 发布 GPT-6.2 Astra 与 Sol 提示词新模板：OpenAI 公布了一批新的提示词模板，专门针对 GPT-6.2 Astra 和 Sol 的几类常见行为问题：回答过于简短、动不动就反问用户、以及在写代码时进行…
+  来源：https://the-decoder.com/openai-shares-new-prompting-tips-for-gpt-6-2-astra-and-sol-to-fix-brief-answers-and-unnecessary-questions/
+· OpenAI 上线 GPT-Live-1.1，语音 agent 空闲成本降至每分钟 0.02 美元：OpenAI 在 API 中发布 GPT-Live-1.1，这是一款全双工语音模型，改进了多语言口音处理与转写质量。
+  来源：https://www.marktechpost.com/2026/11/21/openai-gpt-live-1-1-api-standby-mode/
+· Perplexity 推出 Orchestrator API，统一路由与故障转移：Perplexity 发布 Orchestrator API，通过单一端点接入 OpenAI、Anthropic、Google、xAI 以及开放权重模型，并提供…
+  来源：https://www.marktechpost.com/2026/11/19/perplexity-orchestrator-api-failover-model-routing/
+· NVIDIA 开源 Nemotron-Labs-Sigma 连续扩散语言模型：NVIDIA 发布 Nemotron-Labs-Sigma，共 14 个开放的 3B 与 8B 连续扩散语言模型 checkpoint。
+  来源：https://www.marktechpost.com/2026/11/20/nvidia-nemotron-labs-sigma-continuous-diffusion-language-model/
+· OpenAI 推出 MedChemBench，评测 AI 在早期药物发现中的能力：OpenAI 发布 MedChemBench，用于评估 AI 模型在早期药物发现中的三项核心能力：解读分子结构、从实验证据进行推理、以及筛选化合物。
+  来源：https://openai.com/index/introducing-medchembench
+· Northeastern 与 Stanford 提出 Shepherd 元 agent 框架：Northeastern University 的 Weiyan Shi 与 Stanford University 的同事提出 Shepherd 框架，为运行…
+  来源：https://spectrum.ieee.org/ai-agent-manager
+· Anthropic 登陆纳斯达克，安全优先路线面临资本拷问：The Verge 播客与高级 AI 记者 Hayden Field 讨论 Anthropic 的 IPO，这是其「AI 与真实生活」系列的第三集也是最后一集。
+  来源：https://www.theverge.com/podcast/1038701/anthropic-ipo-ai-safety-openai-nvidia-structure
+· Meta Muse Charm 或定价 300 美元，年底假日季出货：据 The Information 报道，Meta 计划将 Muse Charm 定价为 300 美元。
+  来源：https://www.theverge.com/tech/1038087/meta-muse-charm-ai-price
+· firecrawl 单日涨星超 1000：为 agent 提供搜索、抓取与 550+ 数据源统一 API 的知识基础设施。
+  来源：https://github.com/firecrawl/firecrawl
+· superpowers 单日涨星 883：一套可落地的 agentic skills 框架与软件开发方法论。
+  来源：https://github.com/obra/superpowers
+· Claude-BugHunter 单日涨星 1803：Claude Code 漏洞挖掘技能包，含 82 项技能、681 条披露报告模式。
+  来源：https://github.com/elementalsouls/Claude-BugHunter
+· Apple 或在自研可操控 Mac 的 AI agent：TechCrunch 称其对手包括 Meta Muse、Claude 与 OpenAI Dots。
+  来源：https://techcrunch.com/2026/11/19/apple-may-be-developing-its-own-ai-agent-that-runs-your-mac/
+· Token 欺诈泛滥，ChatPRD 关停免费试用：Claire Vo 披露免费额度被批量套取转售，甚至被用于探测底层模型身份。
+  来源：https://simonwillison.net/2026/Nov/20/token-fraud-is-here-and-its-bad/
+
+📄 学术论文研究动态
+· 语言模型可零梯度改写自身权重：论文提出 self-rewriting，让模型在无梯度、无训练的情况下诊断自身失败并直接编辑自己的权重。
+  来源：https://huggingface.co/papers/2611.21885
+· 扩散 Transformer 的 RL 后训练本质是激活引导：论文检验一个假设：RL 后训练带来的视觉质量、文字渲染与组合准确率提升，有多少能由一个与输入无关的固定偏移解释。
+  来源：https://huggingface.co/papers/2611.26627
+· 用编码智能体在硬件上原位训练光学神经网络：光学神经网络速度快、能耗低，但每个器件都偏离设计，必须结合硬件训练。
+  来源：https://huggingface.co/papers/2611.23875
+· 模拟操作基准的成功检测器存在大量误判：模拟操作基准用手写 success checker 判定每个 episode 成败，但通过专家演示只能证明检测器接受一种完成方式。
+  来源：https://huggingface.co/papers/2611.25179
+· 时序因果结构学习的局部父节点发现方法：多变量时序上的因果发现问题受自相关、分布漂移和维数灾难困扰，通用算法计算与样本复杂度都高。
+  来源：https://huggingface.co/papers/2611.26232
+· 流式说话人头像实现单卡实时生成：现有音频驱动视频扩散模型能合成逼真说话头，但需对多秒视频块做数十步去噪，难以用于语音助手和虚拟形象等要求低延迟、在线因果生成的流式场景。
+  来源：https://huggingface.co/papers/2611.26540
+· 原生体素域的无潜空间 3D 扩散 Transformer：原生 3D 生成长期围绕潜空间扩散展开，改进集中在更强的 VAE 与更精细的潜表示（vecset、triplane、结构化稀疏体素），但都预设几何先被压缩进潜空…
+  来源：https://huggingface.co/papers/2611.26511
+· 零梯度把精确电路编译进预训练权重：预训练语言模型在多位数精确算术上仍不可靠，除非做梯度微调或调用外部解释器。
+  来源：https://huggingface.co/papers/2611.26450
+· System 1 智能体：不生成文本的本地工具调用：临床等敏感数据分析需要智能体自动化，但云端 LLM 会暴露患者数据，本地 LLM 又会幻觉，工具调用中编造的值会沿后续每一步传播。
+  来源：https://huggingface.co/papers/2611.21053
+· 视频世界模型的动作效果匹配训练目标：世界模型旨在预测动作下的环境动态，但当前模型虽能生成越来越逼真的视频，却常捕捉不到微小动作变化如何影响未来观测，限制了其在机器人策略评估与基于模型的规划中的使用…
+  来源：https://huggingface.co/papers/2611.25980
+· Squoosh Bench 用模拟购物者预测 A/B 测试结果：筛选 412 个历史网站 A/B 测试，在运行超过 21 天的 318 个上评测四个系统，预测原版胜、变体胜或不确定。
+  来源：https://huggingface.co/papers/2611.25200
+· TwinD 把深伪检测从换脸推广到整脸合成：在 19 个 2019-2026 年数据集上，此前最佳人脸深伪检测器在 10 个 blending 数据集上平均 AUROC 为 96.2%，但在 5 个整脸合…
+  来源：https://huggingface.co/papers/2611.25935
+· 零导航域 SFT 的视觉语言导航框架：ZeroVLN 不给 VLM 大脑做任何导航域监督微调，改用语义工具调用接口把移动决策以自然语言传给动作专家，再用闭环 RL 联合优化慢快两个策略，在 VLN-…
+  来源：https://huggingface.co/papers/2611.26414
+· 探测与引导并不偏好同一方向：在三个指令微调模型上研究真值与情感概念，发现最佳 probe 方向并非最佳 steering 方向，steering 一致偏好更接近均值差的方向，该分离在 60…
+  来源：https://huggingface.co/papers/2611.19499
+· 后验匹配蒸馏兼顾模式覆盖与任意步采样：PMD 结合模式覆盖的后验采样与任意步生成，在零种群损失下恢复教师各噪声水平的完整后验，其随机学生支持训练时间步网格内的任意采样预算而无需再训练；在 SDXL…
+  来源：https://huggingface.co/papers/2611.26629
+
+💡 今日观察
+今天最值得注意的，是模型能力提升正从“加大训练”转向“改结构、改接口”。字节 Axion 1.0 质疑多数训练阶段的必要性，两篇论文更直接提出零梯度改写自身权重、把精确电路编译进预训练权重，说明后训练与权重编辑正在绕开传统梯度路线。与此同时，Perplexity 统一路由、OpenAI 压低语音 agent 空闲成本、Apple 传出可操控 Mac 的 agent，竞争焦点明显移向编排层与调用成本。但 Token 欺诈导致 ChatPRD 关停免费试用、模拟操作基准的成功检测器被曝大量误判，提醒我们：能力叙事跑得越快，计量与评测这两块地基就越显得薄弱。
+
+———
+完整图文与往期：https://fuguihao0316-del.github.io/ai-daily-digest/</pre></details>
+</div>
+<div class="ep">
+  <div class="ep-h">
     <span class="ep-title" id="t-2026-11-21">AI 每日简报 · 2026-11-21 周六</span>
     <button class="cbtn" data-copy="t-2026-11-21">📋 复制标题</button>
   </div>
@@ -1195,90 +1279,6 @@
 
 💡 今日观察
 今天最值得注意的不是某个模型发布，而是「AI 造 AI」的闭环正在被量化：METR 测出 Anthropic 的模型改进速度约为一年前的两倍，同期 OpenAI 以 1.25 万亿美元估值拿到 110 亿美元首笔交割。资本和递归自我改进同时加速，而治理侧的进展明显落后——Anthropic 自己的研究显示 AI 审计员虽能抓出多数越界行为，却被误报淹没；IEEE Spectrum 也指出水印技术恐怕撑不起欧盟合规要求。能力、算力与审查工具之间的剪刀差，是今天所有条目的共同底色。
-
-———
-完整图文与往期：https://fuguihao0316-del.github.io/ai-daily-digest/</pre></details>
-</div>
-<div class="ep">
-  <div class="ep-h">
-    <span class="ep-title" id="t-2026-11-07">AI 每日简报 · 2026-11-07 周六</span>
-    <button class="cbtn" data-copy="t-2026-11-07">📋 复制标题</button>
-  </div>
-  <audio controls preload="none" src="audio/2026-11-07.mp3"></audio>
-  <div class="acts">
-    <a class="cbtn" href="audio/2026-11-07.mp3" download="2026-11-07.mp3">⬇️ 下载音频</a>
-    <button class="cbtn" data-copy="n-2026-11-07">📋 复制 Show Notes</button>
-  </div>
-  <details><summary>预览 Show Notes</summary><pre class="notes" id="n-2026-11-07">AI 每日简报 · 2026-11-07 周六
-
-🎧 每天 5 分钟，用耳朵掌握 AI 领域最新动态。全自动采集 · DeepSeek 智能筛选。
-
-🗞 AI 行业动态
-· OpenAI 发布 GPT-Image-2.6 Flare 与 Sunburst：OpenAI 推出 Images 2.6 以及配套的 GPT-Image-2.6 Flare、Sunburst 两个 API 模型。
-  来源：https://www.marktechpost.com/2026/11/04/openai-gpt-image-2-6-flare-sunburst/
-· OpenAI 估值达 1.25 万亿美元，新一轮融资再募 110 亿美元：据 Bloomberg 报道，OpenAI 在新一轮融资中再募得 110 亿美元，估值达到 1.25 万亿美元，跻身全球市值最高公司之列。
-  来源：https://www.theverge.com/ai-artificial-intelligence/1029380/openai-1-25-trillion-investment-valuation
-· Thinking Machines 发布 Inkling 2 Small，称西方最强开源权重模型：由前 OpenAI CTO Mira Murati 创办的 Thinking Machines 发布 Inkling 2 Small，这是一个采用混合专家（Mo…
-  来源：https://the-decoder.com/thinking-machines-inkling-2-small-claims-top-spot-among-western-open-weight-models/
-· OpenAI 推出 GPT-6 Cyber，面向授权范围内的漏洞挖掘与修复：OpenAI 发布 GPT-6 Cyber，这是一款面向网络安全的专用模型，用于发现可被利用的漏洞并开发修复方案。
-  来源：https://openai.com/index/introducing-gpt-6-cyber
-· Google 发布 Gemini Omni 1.2 Flash：原生 15 秒视频，720p 每秒 0.07 美元：Google 推出视频生成与编辑模型 Gemini Omni 1.2 Flash，支持原生 15 秒片段、多轮对话式编辑，并将 720p 视频价格下调 30%…
-  来源：https://www.marktechpost.com/2026/11/05/google-gemini-omni-1-2-flash-15-second-video/
-· Perplexity 推出常驻 AI Agent「Teammates」，需 200 美元/月 Max 套餐：Perplexity 上线 Teammates，这是一类常驻在线的 Agent，在各自独立的虚拟机上持续推进长期项目。
-  来源：https://the-decoder.com/perplexity-now-has-its-own-always-on-ai-agent/
-· 报道称中国情报机构招募 AI 高管刺探 Nvidia 黄仁勋：据《纽约时报》报道，中国情报机构招募了 Megaspeed 高管 Alice Huang，对 Nvidia CEO 黄仁勋进行刺探。
-  来源：https://www.theverge.com/tech/1029338/nvidia-ceo-jensen-huang-china-spy
-· OpenAI 发布 BioBasicsBench，用 100 项任务评测 Agent 的湿实验能力：OpenAI 推出 BioBasicsBench，这是一个包含 100 项任务的基准，用于衡量 AI Agent 解读原始实验数据、处理日常湿实验（wet-la…
-  来源：https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science
-· Google Research 发布 Agile Deliberation，灰区图像分类 F1 提升 10.5 分：Google Research 发布 Agile Deliberation，这是一个 human-in-the-loop 框架，让用户通过边界样本（border…
-  来源：https://www.marktechpost.com/2026/11/04/google-agile-deliberation-subjective-image-classifiers/
-· Wired 实验：免费中国模型 DeepSeek、GLM 的黑客能力逼近 OpenAI 未公开模型：Wired 报道了一项实验，让多个 AI 模型尝试入侵模拟网络，结果显示 DeepSeek 与 GLM 的黑客技能并不落后于 OpenAI 最先进的网络安全模型…
-  来源：https://www.wired.com/story/free-chinese-ai-models-are-getting-scary-good-at-hacking/
-· cloudflare/security-audit-skill 单日涨 2548 star：这是一个给编码 Agent 用的技能，做多阶段安全审计，产出可独立验证、机器可读的发现结果。
-  来源：https://github.com/cloudflare/security-audit-skill
-· mattpocock/skills 单日涨 2070 star：面向工程师的 Agent 技能集合，直接取自作者的 .agents 目录。
-  来源：https://github.com/mattpocock/skills
-· NVIDIA/auto-ontology 单日涨 2015 star：Python 框架，在数据之上构建语义图推理层，支持确定性查询生成与可解释的 Agent 工作流。
-  来源：https://github.com/NVIDIA/auto-ontology
-· Meta 推出 Spaces，改变与 Muse Agent 的协作方式：Muse Agent 再添新功能与集成，Spaces 提供与 AI 助手交互的新入口。
-  来源：https://techcrunch.com/2026/11/06/meta-introduces-spaces-a-new-way-to-collaborate-with-your-muse-agent/
-· Google DeepMind 用 Antigravity 做 Agent 化化学信息学：结合 Cheminformatics Skills 加速药物发现流程，检索化合物并设计刚性大环分子。
-  来源：https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/
-
-📄 学术论文研究动态
-· Tools Need Not Speak in Text：用隐空间压缩工具观测，Agent token 消耗降 70%-89%：清华团队提出 Coca-Cola，把 Agent 的工具返回结果从原始文本 token 压缩成隐空间 token，直接嵌入模型输入嵌入空间，避免多步交互中冗长噪…
-  来源：https://huggingface.co/papers/2611.06500
-· SwarmEvolve：数百个低成本 Agent 在隐空间成群进化，3-8 分钟追平他人 60 分钟成绩：LLM 引导的进化搜索每轮都要生成冗长文本思维链，速度慢且需重复生成以维持种群多样性。
-  来源：https://huggingface.co/papers/2611.08483
-· OpenFrontiers：12,151 条开放研究问题 + 200 题回溯基准，闭卷重发现最多仅 7/40：现有 LLM 研究级问题求解缺少系统化题目集合与可靠评测。
-  来源：https://huggingface.co/papers/2610.37739
-· Scientist World：把每篇论文变成可执行环境，前沿 AI-Scientist 74% 超越原作者：AI-Scientist 已出现，但缺少可供其成长的世界。
-  来源：https://arxiv.org/abs/2611.08478v1
-· StepX-OPD：合并多教师蒸馏与步数蒸馏，四步扩散模型反超四十步 Flow-OPD：可部署的文生图扩散模型需同时具备指令跟随、文字渲染、人类偏好等能力并少步采样，但现有流程分两阶段串行：先多教师 on-policy 蒸馏整合能力，再以固定教师做…
-  来源：https://huggingface.co/papers/2611.04386
-· Identically Trained Language Models Break on Different Jailbreaks：越狱脆弱性主要由预训练随机种子决定：越狱基准通常只测一个 checkpoint，并把哪些越狱能攻破它当作预训练数据与安全训练的属性。
-  来源：https://huggingface.co/papers/2610.34074
-· Open-HumanScale：5 万小时第一视角人类视频开放配方，发现数据量与成功率的对数线性缩放律：第一视角人类视频是机器人操作先验的可扩展来源，但从原始数据规模到可泛化策略需要严格的数据整理与训练配方。
-  来源：https://huggingface.co/papers/2611.06817
-· Muir：按敏感度分配门控的线性注意力，困惑度较 GDN-2 降 1.8-2.0%：线性注意力把上下文压进固定大小的 KV 状态以换取线性时间训练与常数内存推理。
-  来源：https://huggingface.co/papers/2611.08376
-· TB-MathModel：首个 Agent 化、可验证的终端数学建模基准，最强多模态模型仅 64.58%：数学建模要把开放现实问题转化为假设、模型、求解与可辩护建议，答案需既接近可信参考又物理可行，而现有基准或只评求解片段、或用 LLM 裁判评报告。
-  来源：https://huggingface.co/papers/2611.08237
-· VisSearch-Bench：204 道长程视觉搜索任务，16 个多模态模型最高仅完整解出 26.47%：现有多模态搜索任务常只用图像识别初始实体、随后依赖文本检索，难以反映 Agent 如何在图像、物体与搜索步骤间串联信息。
-  来源：https://huggingface.co/papers/2611.04894
-· NPCBench：鼻咽癌临床学徒基准，21 个多模态模型严格 CarePath 成功率最高 23%：含 4,777 个组件与问诊条目、100 患者 CarePath 队列与 417 个计分诊疗任务，评测模型能否在诊疗路径内同时答对诊断与照护。
-  来源：https://huggingface.co/papers/2611.08369
-· SAE Interprets MoE：用 SAE 分解 MoE 层输出，专家呈现细粒度可解释分工：在 Qwen3-30B-A3B 第 4、30、46 层，贡献远比门控集中，多数 latent 只有一两个主导专家，出现 Java 与前端代码、几何与算术多项式等…
-  来源：https://huggingface.co/papers/2611.08089
-· WeLM-Image：微信单卡部署统一图像模型，1536 分辨率在三个基准居开源首位：MoT 骨干结合 MoE，存储 31.7B 参数、每个目标 latent token 激活约 5.4B 生成参数；MeanFlow 少步蒸馏版 4 步生成 10…
-  来源：https://huggingface.co/papers/2611.07392
-· Decode Before You Hear：全双工语音模型用静音预投机，响应延迟降 73%：下一音频块在 95.3% 情况下不改变输出，据此在空闲算力预解码并在音频到达时验证，说话块加速 2.6-2.8 倍、工具调用块最高 23.4 倍。
-  来源：https://huggingface.co/papers/2611.06982
-· User Embeddings are Superpositions of Interpretable Behavioral Modes：SAE 可分解用户嵌入为可命名行为模式：把用户嵌入视为稀疏可解释行为模式的叠加，用稀疏自编码器恢复并自然语言命名，支持零样本受众检索，方法事后、模型无关。
-  来源：https://arxiv.org/abs/2611.08487v1
-
-💡 今日观察
-今天最值得注意的不是模型能力的单点提升，而是资本与评测两条线同时加速。OpenAI 一轮再募 110 亿美元、估值 1.25 万亿美元，而多个新基准给出的成绩单却相当克制：闭卷重发现最多 7/40，视觉搜索完整解出率最高 26.47%，鼻咽癌诊疗路径成功率最高 23%。能力叙事与可验证能力之间的落差正在扩大，谁先把评测做实，谁才握有定价权。另一条信号是 Agent 开始啃硬骨头——漏洞挖掘、湿实验、化学信息学，同时工具结果隐空间压缩把 token 消耗砍掉七到九成，成本下降会让这类专用 Agent 更快铺开，安全与监管压力也会随之而来。
 
 ———
 完整图文与往期：https://fuguihao0316-del.github.io/ai-daily-digest/</pre></details>
