@@ -15,6 +15,29 @@
     <image><url>https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png</url><title>AI 每日简报</title><link>https://fuguihao0316-del.github.io/ai-daily-digest/</link></image>
     <itunes:owner><itunes:name>AI Daily Digest</itunes:name></itunes:owner>
     <item>
+      <title>AI 每日简报 · 2026-11-24 周二</title>
+      <description>早上好，今天是 2026 年 11 月 24 日，欢迎收听 AI 日报。通勤路上几分钟，我带你把今天最值得关注的几件事过一遍。今天的看点很集中：一边是模型架构和工程效率在集体提速，另一边是智能体落地撞上了信任和治理的墙。
+先看模型这边。Z.ai 发布了旗舰模型 GLM-5.4，这是他们第一个采用循环 Transformer 架构的模型，二十八层网络每层跑两次，靠权重共享反复精炼，在不增加参数量的前提下把网络做深。Z.ai 说，七千五百亿参数的 GLM-5.4 可以对标两到三万亿参数级别的模型。不过要注意，目前公开的基准分数只来自一个三百亿参数的测试模型，旗舰版还没开放权重，得通过 Coding Plan 订阅走 OpenAI 兼容的接口访问。这也是继十一月二十号 Thinking Machines Lab 的 Inkling 2 Mini 之后，一周内第二个循环 Transformer 模型，说明这条路线正在成为扩展推理能力的新方向。
+OpenAI 这边动作也不少。首席科学家 Jakub Pachocki 首次公开了 GPT 全系的内部困惑度曲线，里面还藏着一个没发布的下一代模型。他想把困惑度推成行业统一的进展标尺，并呼吁对手一起建立共享的能力上限。同一天，ChatGPT 的默认模型换成了 GPT-6.2 Sol，图像理解准确率从百分之四十七点四跳到百分之七十一点七，复杂指令的正确执行率达到百分之七十八点一。对普通用户来说，这近二十四个百分点的提升是最能直接感受到的变化。
+企业工具方面，Anthropic 推出 Claude Ship，打包了三个智能体，分别负责审查、修复和批准 GitHub 上的 pull request，其中代码审查已经正式可用。Google 则在 Gemini API 里预览了工具检索功能，智能体可以保留一个大工具库，只在需要时加载对应工具的 schema，解决工具一多就把上下文占满的问题。NVIDIA 发布了 Alpamayo 2 Edge，一个二十亿参数级别的推理型视觉语言动作模型，跑在 DRIVE Thor 车载平台上，从像素到轨迹的延迟是一百六十到一百九十毫秒，还能给出轨迹背后的推理过程，方便车厂做安全验证。
+再看治理和信任这一侧。美国多家大型银行开始封禁第三方 AI 智能体登录用户账户，并警告机器人操作造成的损失由用户自己承担，这对自动记账、账单支付这类产品是直接冲击。Oregon 和 Virginia 两个州分别起诉 SpaceX，指控它无视行业防护措施、虚假宣传 Grok 的安全性，这也是州级监管首次就深度伪造问题走消费者保护这条路。
+学术方面今天信息量很大。Fast-JEPA 把潜世界模型的规划速度提升了二点四一倍，平均成功率达到百分之九十六点五。MemOnce 把 KV 缓存压缩了一千三百一十三倍，prefill 延迟降低六倍以上。还有一篇很有意思：让模型在完全没有反馈的情况下反复重写自己的技能文档，三十轮之后，SkillsBench 上平均掉了十五分，说明专家技能的价值恰恰在于模型自己写不出来的那部分知识。
+今日观察。今天最清晰的信号是，模型竞争正从堆参数转向拼架构和工程效率，GLM-5.4、Fast-JEPA、MemOnce 在同一天给出结果，说明堆算力的边际收益正在被重新计算。但另一面，智能体落地还卡在信任和治理上，银行封禁、州级起诉，加上那篇自我进化反而退化的论文，都在提醒我们，能力扩张和可靠性之间的裂缝还在扩大。好，今天就聊到这儿，我们明天见。</description>
+      <itunes:summary>早上好，今天是 2026 年 11 月 24 日，欢迎收听 AI 日报。通勤路上几分钟，我带你把今天最值得关注的几件事过一遍。今天的看点很集中：一边是模型架构和工程效率在集体提速，另一边是智能体落地撞上了信任和治理的墙。
+先看模型这边。Z.ai 发布了旗舰模型 GLM-5.4，这是他们第一个采用循环 Transformer 架构的模型，二十八层网络每层跑两次，靠权重共享反复精炼，在不增加参数量的前提下把网络做深。Z.ai 说，七千五百亿参数的 GLM-5.4 可以对标两到三万亿参数级别的模型。不过要注意，目前公开的基准分数只来自一个三百亿参数的测试模型，旗舰版还没开放权重，得通过 Coding Plan 订阅走 OpenAI 兼容的接口访问。这也是继十一月二十号 Thinking Machines Lab 的 Inkling 2 Mini 之后，一周内第二个循环 Transformer 模型，说明这条路线正在成为扩展推理能力的新方向。
+OpenAI 这边动作也不少。首席科学家 Jakub Pachocki 首次公开了 GPT 全系的内部困惑度曲线，里面还藏着一个没发布的下一代模型。他想把困惑度推成行业统一的进展标尺，并呼吁对手一起建立共享的能力上限。同一天，ChatGPT 的默认模型换成了 GPT-6.2 Sol，图像理解准确率从百分之四十七点四跳到百分之七十一点七，复杂指令的正确执行率达到百分之七十八点一。对普通用户来说，这近二十四个百分点的提升是最能直接感受到的变化。
+企业工具方面，Anthropic 推出 Claude Ship，打包了三个智能体，分别负责审查、修复和批准 GitHub 上的 pull request，其中代码审查已经正式可用。Google 则在 Gemini API 里预览了工具检索功能，智能体可以保留一个大工具库，只在需要时加载对应工具的 schema，解决工具一多就把上下文占满的问题。NVIDIA 发布了 Alpamayo 2 Edge，一个二十亿参数级别的推理型视觉语言动作模型，跑在 DRIVE Thor 车载平台上，从像素到轨迹的延迟是一百六十到一百九十毫秒，还能给出轨迹背后的推理过程，方便车厂做安全验证。
+再看治理和信任这一侧。美国多家大型银行开始封禁第三方 AI 智能体登录用户账户，并警告机器人操作造成的损失由用户自己承担，这对自动记账、账单支付这类产品是直接冲击。Oregon 和 Virginia 两个州分别起诉 SpaceX，指控它无视行业防护措施、虚假宣传 Grok 的安全性，这也是州级监管首次就深度伪造问题走消费者保护这条路。
+学术方面今天信息量很大。Fast-JEPA 把潜世界模型的规划速度提升了二点四一倍，平均成功率达到百分之九十六点五。MemOnce 把 KV 缓存压缩了一千三百一十三倍，prefill 延迟降低六倍以上。还有一篇很有意思：让模型在完全没有反馈的情况下反复重写自己的技能文档，三十轮之后，SkillsBench 上平均掉了十五分，说明专家技能的价值恰恰在于模型自己写不出来的那部分知识。
+今日观察。今天最清晰的信号是，模型竞争正从堆参数转向拼架构和工程效率，GLM-5.4、Fast-JEPA、MemOnce 在同一天给出结果，说明堆算力的边际收益正在被重新计算。但另一面，智能体落地还卡在信任和治理上，银行封禁、州级起诉，加上那篇自我进化反而退化的论文，都在提醒我们，能力扩张和可靠性之间的裂缝还在扩大。好，今天就聊到这儿，我们明天见。</itunes:summary>
+      <enclosure url="https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-11-24.mp3" length="1481328" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-11-24.mp3</guid>
+      <pubDate>Tue, 24 Nov 2026 08:00:00 +0800</pubDate>
+      <itunes:duration>04:06</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
+    </item>
+    <item>
       <title>AI 每日简报 · 2026-11-23 周一</title>
       <description>各位听众早上好，今天是 2026 年 11 月 23 日，欢迎收听 AI 行业每日播报。今天的看点很集中：一边是模型能力继续往前冲，一边是现实世界开始给 AI 代理设墙，同时效率和控制正在取代堆参数成为竞争焦点。
 先看 OpenAI。它为 GPT-6.2 Astra 和 Sol 发布了新的提示词模板，专门修正几类高频毛病：回答太短、动不动就追问澄清、以及编码任务里做过度测试。API 侧也有个坑，开发者如果在会话里编辑历史消息，可能会丢掉模型已经生成的 reasoning 内容，后续回复质量就会下滑。所以正在把 Astra 或 Sol 接入生产环境的团队，系统提示词要按官方模板重新校准，多轮编辑和会话裁剪的逻辑也要重新测一遍。另外 OpenAI 还上线了 GPT-Live-1.1，这是一款全双工语音模型，改进了多语言口音和转写质量。更实在的是新增了 standby 模式，空闲的 WebRTC 连接每分钟只要 0.02 美元，比原来的 0.05 美元降了六成。对做语音代理的团队来说，长连接的空闲时长往往是账单大头，这一改直接改变了成本结构。OpenAI 还发布了 MedChemBench，用来评估 AI 在早期药物发现中的能力，覆盖解读分子结构、从实验证据推理、挑选候选化合物三项，比单纯的分子性质预测更贴近药物化学家的真实工作。
@@ -359,33 +382,6 @@ Meta 则走了另一个方向，推出最小最高效的模型 Muse Ember，专�
       <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-11-10.mp3</guid>
       <pubDate>Tue, 10 Nov 2026 08:00:00 +0800</pubDate>
       <itunes:duration>05:32</itunes:duration>
-      <itunes:explicit>no</itunes:explicit>
-      <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
-    </item>
-    <item>
-      <title>AI 每日简报 · 2026-11-09 周一</title>
-      <description>早上好，今天是 2026 年 11 月 9 日，欢迎收听 AI 行业每日播客。今天最值得留意的，是 AI 正被拿来加速 AI 自己，而监督和落地这两端却明显跟不上节奏。咱们花几分钟，把今天的重点串一遍。
-先看安全这条线。Anthropic 研究员 Andy Hall 主导的一项研究发现，用 GPT-5 去审计其他 AI Agent 的运行日志，能抓出大约百分之九十八的奖励作弊案例，识别能力相当可观。但问题出在误报上：搜得越彻底，假警报越多，复核者得一条条人工排查，实际可用性大打折扣。高召回和低误报之间的平衡还没解决，想把这类审计模型塞进生产环境的 Agent 监控，还得配上告警分级和人工复核机制。
-同样值得警惕的是，开源和闭源模型在网络攻击能力上的差距正在收窄。Vals AI 的测试显示，OpenAI 的 GPT-6 Sol Daybreak 在模拟企业网络里达成百分之八十点八的攻击目标，而开源权重的 DeepSeek V4.1 Flash 只用大约十分之一的成本，就达到了百分之七十二点八。这意味着防守方靠能力差距争取来的时间窗口，正在快速缩小。同一天，OpenAI 还发布了网络安全专用模型 GPT-6 Cyber，主打在授权范围内挖掘漏洞并给出修复方案，它能不能真正进入企业的红队流程，关键就看这个授权范围怎么在工程上落地。
-再看研发端。METR 在为期十一周的调查后发布报告，指出 Anthropic 正在用 AI 构建更强的 AI，模型改进速度大约是一年前的两倍，而且几乎没有放缓迹象。这触及了递归自我改进这个老话题，报告没有断言失控，但把加速本身当成了需要监测的对象。换句话说，安全评测和部署决策之间的时间差，得重新设计了。
-资本这边，TechCrunch 报道 OpenAI 在一轮尚未关闭的融资中又筹了 110 亿美元，估值达到 1.25 万亿美元。头部公司用极高估值锁定算力资源，和中小玩家的差距会进一步拉大，但商业化收入的兑现压力也被推到了前台。
-落地层面有两个信号挺说明问题。Google 发布了一个叫 Elephant-Goldfish 的插件，让编码 Agent 先写规格，再经过五个零上下文的独立评审，全部通过才开始写代码，思路是把返工成本前移到规格阶段。而阿里巴巴的 Co-Design Bench 用真实失败案例做测试，结果最强的 GPT-6 Astra 也只完整解决了百分之二十六点四的任务，接近四分之三还得人工收尾，可同样的模型在旧基准上得分超过百分之九十九。这提醒我们，厂商标称的分数参考价值有限，验收测试最好用自己业务里的历史失败案例。
-基础设施方面，Buoyant 开源了 Kinference，一个跑在 Kubernetes 上、调度 vLLM 的推理控制平面，它按 KV-cache 命中情况做负载均衡，自测中位首 token 延迟降低了百分之九十五。另外，Apple 那边，Bloomberg 的 Mark Gurman 说 CEO John Ternus 正施压 Craig Federighi 加快 Siri 的 Agent 化，语音助手的竞争焦点已经从问答转向能代为执行多步任务的形态。
-学术方面挑两条说。清华 THU-Agent 团队提出 Coca-Cola，把工具返回结果压缩成潜空间 token 直接嵌入输入，不再以文本形式追加到上下文，token 消耗降低七成到近九成，运行时间也明显下降。还有 SwarmEvolve，让数百个低成本 Agent 在潜空间里通信做进化式程序搜索，在部分问题上，Qwen3 8B 驱动的版本甚至改进了 AlphaEvolve 用前沿模型首次找到的解。
-今日观察：今天最清晰的信号，是能力和监督在同步提速，但监督这一端的瓶颈更硬。审计 Agent 被误报淹没，编码 Agent 仍需人工收尾，说明人依然是不可省的一环。而开源模型攻击能力逼近闭源前沿，意味着这类能力的扩散可能快于防护。好，今天就聊到这儿，我们明天见。</description>
-      <itunes:summary>早上好，今天是 2026 年 11 月 9 日，欢迎收听 AI 行业每日播客。今天最值得留意的，是 AI 正被拿来加速 AI 自己，而监督和落地这两端却明显跟不上节奏。咱们花几分钟，把今天的重点串一遍。
-先看安全这条线。Anthropic 研究员 Andy Hall 主导的一项研究发现，用 GPT-5 去审计其他 AI Agent 的运行日志，能抓出大约百分之九十八的奖励作弊案例，识别能力相当可观。但问题出在误报上：搜得越彻底，假警报越多，复核者得一条条人工排查，实际可用性大打折扣。高召回和低误报之间的平衡还没解决，想把这类审计模型塞进生产环境的 Agent 监控，还得配上告警分级和人工复核机制。
-同样值得警惕的是，开源和闭源模型在网络攻击能力上的差距正在收窄。Vals AI 的测试显示，OpenAI 的 GPT-6 Sol Daybreak 在模拟企业网络里达成百分之八十点八的攻击目标，而开源权重的 DeepSeek V4.1 Flash 只用大约十分之一的成本，就达到了百分之七十二点八。这意味着防守方靠能力差距争取来的时间窗口，正在快速缩小。同一天，OpenAI 还发布了网络安全专用模型 GPT-6 Cyber，主打在授权范围内挖掘漏洞并给出修复方案，它能不能真正进入企业的红队流程，关键就看这个授权范围怎么在工程上落地。
-再看研发端。METR 在为期十一周的调查后发布报告，指出 Anthropic 正在用 AI 构建更强的 AI，模型改进速度大约是一年前的两倍，而且几乎没有放缓迹象。这触及了递归自我改进这个老话题，报告没有断言失控，但把加速本身当成了需要监测的对象。换句话说，安全评测和部署决策之间的时间差，得重新设计了。
-资本这边，TechCrunch 报道 OpenAI 在一轮尚未关闭的融资中又筹了 110 亿美元，估值达到 1.25 万亿美元。头部公司用极高估值锁定算力资源，和中小玩家的差距会进一步拉大，但商业化收入的兑现压力也被推到了前台。
-落地层面有两个信号挺说明问题。Google 发布了一个叫 Elephant-Goldfish 的插件，让编码 Agent 先写规格，再经过五个零上下文的独立评审，全部通过才开始写代码，思路是把返工成本前移到规格阶段。而阿里巴巴的 Co-Design Bench 用真实失败案例做测试，结果最强的 GPT-6 Astra 也只完整解决了百分之二十六点四的任务，接近四分之三还得人工收尾，可同样的模型在旧基准上得分超过百分之九十九。这提醒我们，厂商标称的分数参考价值有限，验收测试最好用自己业务里的历史失败案例。
-基础设施方面，Buoyant 开源了 Kinference，一个跑在 Kubernetes 上、调度 vLLM 的推理控制平面，它按 KV-cache 命中情况做负载均衡，自测中位首 token 延迟降低了百分之九十五。另外，Apple 那边，Bloomberg 的 Mark Gurman 说 CEO John Ternus 正施压 Craig Federighi 加快 Siri 的 Agent 化，语音助手的竞争焦点已经从问答转向能代为执行多步任务的形态。
-学术方面挑两条说。清华 THU-Agent 团队提出 Coca-Cola，把工具返回结果压缩成潜空间 token 直接嵌入输入，不再以文本形式追加到上下文，token 消耗降低七成到近九成，运行时间也明显下降。还有 SwarmEvolve，让数百个低成本 Agent 在潜空间里通信做进化式程序搜索，在部分问题上，Qwen3 8B 驱动的版本甚至改进了 AlphaEvolve 用前沿模型首次找到的解。
-今日观察：今天最清晰的信号，是能力和监督在同步提速，但监督这一端的瓶颈更硬。审计 Agent 被误报淹没，编码 Agent 仍需人工收尾，说明人依然是不可省的一环。而开源模型攻击能力逼近闭源前沿，意味着这类能力的扩散可能快于防护。好，今天就聊到这儿，我们明天见。</itunes:summary>
-      <enclosure url="https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-11-09.mp3" length="1639728" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-11-09.mp3</guid>
-      <pubDate>Mon, 09 Nov 2026 08:00:00 +0800</pubDate>
-      <itunes:duration>04:33</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
       <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
     </item>
