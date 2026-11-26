@@ -586,7 +586,7 @@ html[data-lang="zh"] [data-lang-content="en"] { display: none; }
         <h1>AI Daily Digest</h1>
         <p><span data-lang-content="zh">每天 5 分钟 · 掌握 AI 领域最新动态 · 全自动采集 · 智能筛选</span><span data-lang-content="en">5 minutes a day · stay on top of AI · auto-collected · smartly curated</span></p>
         <div class="stats">
-          <div class="stat"><div class="num">221</div><div class="lbl"><span data-lang-content="zh">期日报</span><span data-lang-content="en">issues</span></div></div>
+          <div class="stat"><div class="num">222</div><div class="lbl"><span data-lang-content="zh">期日报</span><span data-lang-content="en">issues</span></div></div>
           <div class="stat"><div class="num">12+</div><div class="lbl"><span data-lang-content="zh">数据源</span><span data-lang-content="en">sources</span></div></div>
           <div class="stat"><div class="num"><span data-lang-content="zh">每日</span><span data-lang-content="en">Daily</span></div><div class="lbl"><span data-lang-content="zh">自动更新</span><span data-lang-content="en">auto-updated</span></div></div>
         </div>
@@ -608,14 +608,14 @@ html[data-lang="zh"] [data-lang-content="en"] { display: none; }
     </div>
       </div>
       
-      <div class="section-title"><span data-lang-content="zh">📅 最新一期 · 2026-11-25 周三</span><span data-lang-content="en">📅 Latest · 2026-11-25 Wednesday</span></div>
+      <div class="section-title"><span data-lang-content="zh">📅 最新一期 · 2026-11-26 周四</span><span data-lang-content="en">📅 Latest · 2026-11-26 Thursday</span></div>
       
     <div class="audio-player">
       <div class="ap-text">
         <span class="ap-label">🎧 <span data-lang-content="zh">语音播报</span><span data-lang-content="en">Listen</span></span>
         <span class="ap-sub"><span data-lang-content="zh">通勤路上用耳朵看简报</span><span data-lang-content="en">Catch the digest on your commute</span></span>
       </div>
-      <audio controls preload="none" src="audio/2026-11-25.mp3" data-date="2026-11-25"></audio>
+      <audio controls preload="none" src="audio/2026-11-26.mp3" data-date="2026-11-26"></audio>
     </div>
       
     <div class="digest-scope">
@@ -632,8 +632,8 @@ html[data-lang="zh"] [data-lang-content="en"] { display: none; }
           </div>
           
     <div class="item-card" data-stars="5">
-      <div class="item-title">GLM-5.4 发布：Z.ai 首个 Loop Transformer 架构模型</div>
-      <div class='item-desc'>中国 AI 实验室 Z.ai 发布 GLM-5.4，这是其首个采用 looped transformer 架构的模型。标准 Transformer 中每层在前向传播中只运行一次，而 Loop Transformer 让一组权重共享层多次迭代、反复精炼上一轮的隐藏状态，从而在不增加参数量的前提下获得更深的网络。这已是本周内第二次出现循环 Transformer 的消息，此前 Thinking Machines Lab 于 11 月 20 日发布的 Inkling 2 Mini 同样采用该架构，其中间层对每个 token 运行三次，以更少 token 完成推理，尤其针对依赖推理质量的 agentic coding 任务。GLM-5.4 暂未开放权重，Z.ai 表示将在完成必要的安全加固后负责任地开源。目前该模型无法通过常规 API 访问，需订阅 Coding Plan；两者共用同一套 OpenAI 兼容的 Responses API（https://api.z.ai/api/v1），Coding Plan 的密钥可直接调用新模型。</div>
+      <div class="item-title">GLM-5.4 采用首个 Loop Transformer 架构</div>
+      <div class='item-desc'>中国 AI 实验室 Z.ai 发布 GLM-5.4，这是其首个采用 looped transformer 架构的模型。与传统 Transformer 每层在前向传播中只运行一次不同，Loop Transformer 让一组权重共享的层多次迭代运行，从而在不增加参数量的前提下加深网络、精炼隐藏状态。这已是本周内第二次出现 looped transformer 动向——11 月 20 日 Thinking Machines Lab 的 Inkling 2 Mini 同样采用该架构，其中间层对每个 token 运行三次，以更少 token 完成推理密集型任务如 agentic coding。GLM-5.4 目前尚未开放权重，Z.ai 表示将在完成必要的安全加固后负责任地开源。该模型暂不能通过常规 API 访问，需订阅 Coding Plan；两者共用 OpenAI 兼容的 Responses API（https://api.z.ai/api/v1 ），Coding Plan 的 API key 可直接调用新模型。Simon Willison 为此构建了 llm-glm 插件进行实测。</div>
       <div class="item-meta">
         <span class="stars">★★★★★</span>
         
@@ -641,71 +641,17 @@ html[data-lang="zh"] [data-lang-content="en"] { display: none; }
       </div>
     </div>
     <div class="item-card" data-stars="5">
-      <div class="item-title">OpenAI 内部人士称未发布的前沿模型已超出安全措施可控范围</div>
-      <div class='item-desc'>据 Axios 报道，OpenAI 与 Anthropic 的数十名员工认为，两家公司自家尚未发布的前沿模型已无法被安全控制。两家公司内部正在讨论是否暂停发布、甚至是否停止训练，同时员工对管理层的信任正在瓦解。这条消息把前沿实验室的内部张力摆上台面：一方面是能力迭代速度，另一方面是安全护栏与治理流程是否跟得上。对从业者而言，它直接影响未来数月新模型的可用节奏与合规预期，也意味着企业用户在选型时需要更谨慎地评估供应商的发布稳定性与安全承诺。</div>
+      <div class="item-title">AI agent 已接管 DeepMind 部分 Gemini 实验算力</div>
+      <div class='item-desc'>Google DeepMind 正使用 AI agent 自主为即将推出的 Gemini 模型运行实验，研究主管 Koray Kavukcuoglu 确认 agent 已控制部分算力，但强调实验室距离递归自我改进仍很遥远。在监督机制上，DeepMind 有意不对 agent 的内部思维链进行训练，使其保持可被人工审查的状态，从而保留外部核查的抓手。Kavukcuoglu 还提出以日常用户信任度而非基准分数来衡量 AGI，这一标准把评估重心从跑分转向真实使用体验。对从业者而言，这条消息的价值在于两点：一是前沿实验室已把 agent 嵌入自身模型研发闭环，自动化研究不再是设想；二是「不训练思维链以便审查」提供了一种可借鉴的安全工程做法，说明能力提升与可监督性可以并行设计。</div>
       <div class="item-meta">
         <span class="stars">★★★★★</span>
         
-        <div class="item-sources"><a href="https://the-decoder.com/dozens-of-insiders-say-openai-and-anthropics-unreleased-models-have-outgrown-their-safety-measures/" target="_blank">The Decoder</a></div>
+        <div class="item-sources"><a href="https://the-decoder.com/ai-agents-now-control-part-of-deepminds-compute-for-gemini-experiments-but-recursive-self-improvement-remains-distant/" target="_blank">The Decoder</a></div>
       </div>
     </div>
     <div class="item-card" data-stars="5">
-      <div class="item-title">Anthropic 推出 Claude Ship，让 Claude 自主评审并修复 GitHub PR</div>
-      <div class='item-desc'>Anthropic 发布 Claude Ship 产品，打包了 Code Review、PR Steward 与 Claude Approvals 三个组件，可对 GitHub pull request 进行评审、修复与批准。其中 Code Review 已正式 GA，另外两个 agent 面向 Team 和 Enterprise 客户处于公开测试阶段。这意味着 Claude 从「给建议的助手」进一步走向「能直接改动并放行代码的流水线角色」，把代码评审这一环节纳入 agent 自主执行范围。对工程团队来说，价值在于压缩 PR 周转时间，但同时也把权限边界、审批留痕与回滚机制推到必须提前设计的位置。</div>
-      <div class="item-meta">
-        <span class="stars">★★★★★</span>
-        
-        <div class="item-sources"><a href="https://www.marktechpost.com/2026/11/23/anthropic-claude-ship-pull-request-agents/" target="_blank">MarkTechPost</a></div>
-      </div>
-    </div>
-    <div class="item-card" data-stars="5">
-      <div class="item-title">OpenAI 将 GPT-6.2 Sol 设为 ChatGPT 默认模型并全球推送</div>
-      <div class='item-desc'>OpenAI 把 GPT-6.2 Sol 设为 ChatGPT 聊天标签页的新默认模型并全球铺开。内部测试显示，图像理解准确率从 47.4% 提升到 71.7%，对困难指令的正确执行率达到 78.1%，同时在遵循安全策略方面更加一致。这组数字指向的是日常复杂问题的处理可靠性，而非单纯的基准分数：图像理解近 24 个百分点的跃升，会直接改变带图提问、截图排障、文档识别等高频场景的可用性。对开发者而言，默认模型切换意味着既有 prompt 与工具调用链路需要重新验证，尤其是依赖旧模型输出格式的下游系统。</div>
-      <div class="item-meta">
-        <span class="stars">★★★★★</span>
-        
-        <div class="item-sources"><a href="https://the-decoder.com/openai-updates-chatgpt-to-handle-complex-everyday-questions-web-searches-and-images-more-reliably/" target="_blank">The Decoder</a></div>
-      </div>
-    </div>
-    <div class="item-card" data-stars="5">
-      <div class="item-title">GPT-6 模型展现内生的蛋白质设计能力</div>
-      <div class='item-desc'>OpenAI 发布研究称，GPT-6 系列模型能够通过推理与编写代码来设计蛋白质结构与序列，实验室测试在五个靶点上发现了结合证据。这条工作的关键在于「内生」二字：模型并非专门为结构生物学微调，而是把通用推理与代码生成能力迁移到蛋白质设计任务上。若结果可复现，它意味着通用模型开始进入湿实验驱动的发现流程，对计算生物学与药物早期研发的工具链选择会产生实际影响，也对实验验证与结果披露的规范提出更高要求。</div>
-      <div class="item-meta">
-        <span class="stars">★★★★★</span>
-        
-        <div class="item-sources"><a href="https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities" target="_blank">Hacker News, OpenAI</a></div>
-      </div>
-    </div>
-    <div class="item-card" data-stars="5">
-      <div class="item-title">Anthropic MCP SDK 月下载量突破 7 亿，协议扩展支持更自主的 agent</div>
-      <div class='item-desc'>MCP 接口标准发布两年后，Anthropic 报告其 SDK 月下载量已超过 7 亿次。此次协议扩展新增后台任务、向用户追问以及文件上传等能力，目标是让 Claude 能更独立地工作。7 亿次的量级说明 MCP 已从实验性协议变成事实上的工具接入层，而新增的后台任务与追问机制，补的正是长流程任务中「中途需要人确认」和「异步执行」这两块短板。对构建 agent 的团队来说，协议层面的这些变化会直接影响任务编排设计与错误恢复策略。</div>
-      <div class="item-meta">
-        <span class="stars">★★★★★</span>
-        
-        <div class="item-sources"><a href="https://the-decoder.com/anthropic-tops-700-million-monthly-mcp-sdk-downloads-and-expands-the-protocol-for-more-autonomous-ai-agents/" target="_blank">The Decoder</a></div>
-      </div>
-    </div>
-    <div class="item-card" data-stars="5">
-      <div class="item-title">Google 在 Gemini API 中预览 Tool Retrieval，面向大规模工具库</div>
-      <div class='item-desc'>Google 在 Gemini API 中推出 Tool Retrieval 预览功能。当 agent 需要常备一个庞大的工具库时，该能力只在需要时才加载每个工具的参数 schema，并且全部在单次 Interactions API 请求内完成。这解决的是工具数量膨胀后 prompt 体积与上下文占用失控的问题：以往把上百个工具的完整 schema 塞进上下文既昂贵又稀释注意力，按需检索则把成本压回到实际调用范围。对构建企业级 agent 平台的团队，这是降低 token 开销与提升工具选择准确率的直接手段。</div>
-      <div class="item-meta">
-        <span class="stars">★★★★★</span>
-        
-        <div class="item-sources"><a href="https://www.marktechpost.com/2026/11/22/google-gemini-api-tool-retrieval/" target="_blank">MarkTechPost</a></div>
-      </div>
-    </div>
-    <div class="item-card" data-stars="5">
-      <div class="item-title">NVIDIA 发布 Alpamayo 2 Edge：面向 DRIVE Thor 的 2B 推理 VLA</div>
-      <div class='item-desc'>NVIDIA 发布 Alpamayo 2 Edge，这是一个 2B 级别的推理型视觉-语言-动作模型，可在 DRIVE AGX Thor 上规划驾驶轨迹并对轨迹给出解释，像素到轨迹的延迟为 160 至 190 毫秒。把推理与可解释性同时压进车端 2B 规模模型，是这条发布的核心：延迟区间落在实时驾驶决策可接受的范围，而「解释轨迹」的能力对功能安全论证与事故复盘有直接价值。对自动驾驶与边缘推理方向的团队，这提供了一个可参照的端侧 VLA 尺寸与延迟基线。</div>
-      <div class="item-meta">
-        <span class="stars">★★★★★</span>
-        
-        <div class="item-sources"><a href="https://www.marktechpost.com/2026/11/22/nvidia-alpamayo-2-edge-2b-reasoning-vla-drive-thor/" target="_blank">MarkTechPost</a></div>
-      </div>
-    </div>
-    <div class="item-card" data-stars="5">
-      <div class="item-title">Simon Willison 复盘十二个月内 LLM 的三个拐点</div>
-      <div class='item-desc'>Simon Willison 在 AI Engineer Code Summit 的主题演讲后发文，围绕「过去十二个月 LLM 与编码 agent 能力出现三个重要拐点」这一判断展开。他把 2026 年 11 月 24 日标记为 Claude Opus 4.5 发布一周年：Anthropic 当时称测试者发现 Opus 4.5 能处理歧义、权衡取舍而无需手把手引导，面对复杂的多系统 bug 能自行找出修复方案。Willison 表示，Opus 4.5 是他第一个在 Claude Code 中默认结果基本正确的模型，此前 Claude Code 虽已发布 9 个月（2025 年 2 月 24 日随 Claude 3.7 Sonnet 推出），但可靠性不足让他难以作为日常主力。这一判断对评估编码 agent 的实际生产力提升具有参考价值。</div>
+      <div class="item-title">Simon Willison 复盘十二个月内三个 LLM 拐点</div>
+      <div class='item-desc'>Simon Willison 在 AI Engineer Code Summit 的主题演讲后撰文，提出过去十二个月 LLM 与 coding agent 能力出现三个重要拐点。他以 2026 年 11 月 24 日为 Claude Opus 4.5 发布一周年为切入点，回顾 Anthropic 当时的表述：测试者称 Opus 4.5 能在无需手把手指导的情况下处理歧义、权衡取舍，面对复杂的多系统 bug 能自行找出修复方案，几周前 Sonnet 4.5 几乎不可能完成的任务如今已可触及。Willison 认为这一判断经得起时间检验：Claude Code 当时仅 9 个月大（2025 年 2 月 24 日随 Claude 3.7 Sonnet 推出），而 Opus 4.5 是他第一个默认输出基本正确的模型，此前他因需频繁纠错而未将其作为日常主力。他还提到 OpenAI 同月在 November 的发布动作。</div>
       <div class="item-meta">
         <span class="stars">★★★★★</span>
         
@@ -713,60 +659,114 @@ html[data-lang="zh"] [data-lang-content="en"] { display: none; }
       </div>
     </div>
     <div class="item-card" data-stars="5">
-      <div class="item-title">HKUDS/CLI-Anything：让所有软件原生支持 agent</div>
-      <div class='item-desc'>港大数据智能实验室（HKUDS）的 CLI-Anything 项目登上 GitHub Trending，单日新增 1,074 star，口号是「Making ALL Software Agent-Native」，并配套 CLI-Hub（https://clianything.cc/）。项目的思路是把命令行界面作为 agent 操作软件的通用接口层，绕开为每个应用单独写集成的成本。对 agent 工具链开发者来说，这提供了一条低成本扩大可操作软件范围的路径，但 CLI 的权限粒度与副作用控制仍需自行设计。</div>
+      <div class="item-title">芯片管制与反蒸馏措施据报已拖慢中国 AI 实验室</div>
+      <div class='item-desc'>据 The Decoder 报道，芯片出口限制、反蒸馏措施以及海外获取 Nvidia 硬件的渠道收窄，正对 DeepSeek、Moonshot AI 和阿里巴巴形成日益增大的压力。报道称 DeepSeek 研究人员在内部估计，其模型已落后美国模型最多九个月，且差距仍在扩大。这一说法若成立，意味着算力与数据两条管道的收紧正在转化为可测量的能力代差，而不仅是短期训练成本上升。对国内团队的直接影响是：依赖蒸馏追赶的路径边际收益下降，需要在数据合成、架构效率（如 looped transformer 等参数复用思路）和推理侧优化上寻找替代杠杆；对海外观察者而言，则是评估开源权重模型能力来源与可持续性的重要背景。</div>
       <div class="item-meta">
         <span class="stars">★★★★★</span>
         
-        <div class="item-sources"><a href="https://github.com/HKUDS/CLI-Anything" target="_blank">GitHub Trending</a></div>
+        <div class="item-sources"><a href="https://the-decoder.com/us-chip-access-curbs-and-anti-distillation-measures-are-reportedly-already-slowing-chinese-ai-labs/" target="_blank">The Decoder</a></div>
+      </div>
+    </div>
+    <div class="item-card" data-stars="5">
+      <div class="item-title">OpenAI 测试 Private Inference，承诺不查看企业数据</div>
+      <div class='item-desc'>OpenAI 正在测试一项名为 Private Inference 的新功能，允许企业在使用其最强模型执行查询时，OpenAI 自身无法访问相关数据。这一举措直指企业采用大模型时最核心的顾虑——敏感业务数据是否会流入模型厂商侧。从产品逻辑看，Private Inference 是把「数据不被查看」从合同承诺推进到技术保证层面，与金融、医疗、法务等对数据隔离有硬性要求的行业采购流程直接相关。对开发者而言，需要关注该功能在哪些模型上可用、是否影响延迟与吞吐、以及与传统零数据保留条款的区别；对企业采购方而言，这类能力正在成为模型供应商之间继价格与能力之后的第三条竞争轴。</div>
+      <div class="item-meta">
+        <span class="stars">★★★★★</span>
+        
+        <div class="item-sources"><a href="https://the-decoder.com/openai-wants-companies-to-trust-it-with-sensitive-work-by-promising-not-to-look-at-their-data/" target="_blank">The Decoder</a></div>
+      </div>
+    </div>
+    <div class="item-card" data-stars="5">
+      <div class="item-title">Anthropic 推出 Claude Ship 接管 GitHub PR 流程</div>
+      <div class='item-desc'>Anthropic 发布 Claude Ship，将 Code Review、PR Steward 和 Claude Approvals 三个组件打包，覆盖 GitHub pull request 的审查、修复与批准环节。其中 Code Review 已正式可用（GA），另外两个 agent 处于公开测试阶段，面向 Team 和 Enterprise 客户。这一组合的意义在于把 coding agent 的作用范围从「写代码」延伸到「代码合入流程」——审查意见生成、PR 状态维护与审批动作都被 agent 接管，人类角色向最终决策收窄。对已在使用 Claude Code 的团队，这意味着可以把 CI 之外的协作环节也纳入自动化；对平台方而言，PR 工作流正成为 agent 厂商争夺的新入口，与 GitHub 原生能力和第三方 review 工具的边界将重新划分。</div>
+      <div class="item-meta">
+        <span class="stars">★★★★★</span>
+        
+        <div class="item-sources"><a href="https://www.marktechpost.com/2026/11/23/anthropic-claude-ship-pull-request-agents/" target="_blank">MarkTechPost</a></div>
+      </div>
+    </div>
+    <div class="item-card" data-stars="5">
+      <div class="item-title">OpenAI 与 Cisco 开源 Shirudo：让 agent 在运行中防御系统</div>
+      <div class='item-desc'>OpenAI 与 Cisco 联合发布 Shirudo，这是一个预发布、BSD 许可的 Linux eBPF 运行时。其核心机制是让 AI agent 生成带签名的「shields」，在运行中的系统上阻断漏洞利用路径，为团队争取测试和推送正式补丁的时间窗口，从而实现不打补丁也不停机。这一设计把 agent 的输出从文本建议变成可执行、可签名、可审计的内核级防护策略，是 agent 进入安全运维场景的一次具体落地。对安全团队而言，值得关注的是 shield 的签名与信任链如何管理、误阻断如何回滚，以及 eBPF 运行时本身的攻击面；对 agent 开发者而言，这是「agent 产出物需具备可验证性与最小权限」的又一实例。</div>
+      <div class="item-meta">
+        <span class="stars">★★★★★</span>
+        
+        <div class="item-sources"><a href="https://www.marktechpost.com/2026/11/24/openai-cisco-shirudo-ebpf-linux-runtime/" target="_blank">MarkTechPost</a></div>
+      </div>
+    </div>
+    <div class="item-card" data-stars="5">
+      <div class="item-title">GPT-6 展现内生的蛋白质设计能力</div>
+      <div class='item-desc'>OpenAI 发布研究称，GPT-6 模型能够利用推理和代码完成蛋白质结构与序列设计，展现出内生的 protein-design 能力。实验室测试在五个靶点上发现了结合的迹象。这条消息的关键不在于模型「会写生物代码」，而在于通用推理模型未经专门生物训练即可进入结构设计这一专业领域，说明推理能力向科学任务的迁移正在发生。对计算生物学团队，这意味着可以把蛋白设计流程中的部分环节交给通用模型做探索性生成，再用湿实验筛选；对模型评估而言，则提出了如何界定「内生能力」与「工具调用放大」的方法学问题。结合近期 Codex 在科研场景的应用案例，通用模型进入实验室工作流的趋势已相当明确。</div>
+      <div class="item-meta">
+        <span class="stars">★★★★★</span>
+        
+        <div class="item-sources"><a href="https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities" target="_blank">OpenAI</a></div>
+      </div>
+    </div>
+    <div class="item-card" data-stars="5">
+      <div class="item-title">Yale 的 Sonnenfeld 称 Nvidia 是美国工业实力的拖累</div>
+      <div class='item-desc'>耶鲁大学的 Jeffrey Sonnenfeld 警告，市场周一所欢呼的事件——Jensen Huang 在白宫支持下回归担任 Nvidia CEO 兼董事会成员——可能被证明是一个巨大错误。他指出，董事们正因不断累积的诉讼而面临「历史性」的个人责任风险，并提出一个更尖锐的问题：美国是否在为一个曾帮助把先进芯片送入对手之手的公司庆祝。这一表态把 Nvidia 的公司治理、出口管制合规与地缘政治风险捆绑在一起讨论，对投资者和供应链相关方具有直接参考价值。需要留意的是，这是个人观点而非监管结论，但它出现在 CEO 回归这一敏感时点，可能放大外界对董事会独立性与合规审查的关注。</div>
+      <div class="item-meta">
+        <span class="stars">★★★★★</span>
+        
+        <div class="item-sources"><a href="https://techcrunch.com/2026/11/24/yales-sonnenfeld-nvidia-is-a-detriment-to-u-s-industrial-might-not-a-champion/" target="_blank">TechCrunch AI</a></div>
+      </div>
+    </div>
+    <div class="item-card" data-stars="5">
+      <div class="item-title">Amazon 据报洽谈解除对 Meta Muse AI 购物的封锁</div>
+      <div class='item-desc'>据 Fortune 报道，Amazon 已就允许 Meta 的 Muse AI agent 在其电商平台上购物举行会谈，讨论可能终结 Amazon 对 Muse 的封锁。谈判焦点集中在两方面：AI agent 推荐哪些商品，以及这对这家电商巨头广告收入的潜在影响。这一事件揭示了 agent 商业化的核心矛盾——当 AI 代替用户做购买决策，平台既有的广告竞价与商品排序体系会被绕过，推荐权从平台转移到 agent 一方。对开发者而言，agent 能否访问主流电商平台将直接决定购物类 agent 的可用性；对平台而言，如何在开放 agent 接入与保护广告收入之间设条件，将成为接下来一段时间的谈判模板。</div>
+      <div class="item-meta">
+        <span class="stars">★★★★★</span>
+        
+        <div class="item-sources"><a href="https://www.theverge.com/tech/1042071/meta-amazon-muse-ai-shopping-discussions" target="_blank">The Verge AI</a></div>
       </div>
     </div>
           <details class="alternates">
             <summary>📌 备选 5 条</summary>
             <div class="alternates-body">
     <div class="item-card" data-stars="5">
-      <div class="item-title">obra/superpowers：可落地的 agentic skills 框架与方法论</div>
-      <div class='item-desc'>该项目单日新增 1,003 star，定位为 agentic skills 框架与软件开发方法论。核心是把技能组织方式与开发流程一并固化，而非只提供零散 prompt。</div>
+      <div class="item-title">FCC 批准 SpaceX 部署最多 100 万颗 AI 数据中心卫星</div>
+      <div class='item-desc'>FCC 周三宣布授权 SpaceX 部署最多 100 万颗搭载 AI 芯片的卫星，属于 Musk 旗下公司「Starmind」计划的一部分，这是该机构对此类申请的首个批准。</div>
       <div class="item-meta">
         <span class="stars">★★★★★</span>
         
-        <div class="item-sources"><a href="https://github.com/obra/superpowers" target="_blank">GitHub Trending</a></div>
+        <div class="item-sources"><a href="https://www.theverge.com/science/1042278/spacex-fcc-starmind-ai-space-data-centers" target="_blank">The Verge AI</a></div>
       </div>
     </div>
-    <div class="item-card" data-stars="4">
-      <div class="item-title">Claude-BugHunter：84 项技能的漏洞挖掘技能包</div>
-      <div class='item-desc'>单日新增 1,826 star，含 84 项技能、15 个 slash 命令、681 条已披露报告模式，覆盖 24 类核心漏洞。</div>
+    <div class="item-card" data-stars="5">
+      <div class="item-title">Meta 详解 Facebook「Your Algorithm」排序机制</div>
+      <div class='item-desc'>Meta 工程团队说明 Facebook 的 Your Algorithm 如何把自然语言兴趣转化为 Feed 与 Reels 的排序信号，流程包含 LLM 校验、4 个检索源、分层过滤和微调后的 LLM reranker。</div>
       <div class="item-meta">
-        <span class="stars">★★★★☆</span>
+        <span class="stars">★★★★★</span>
         
-        <div class="item-sources"><a href="https://github.com/elementalsouls/Claude-BugHunter" target="_blank">GitHub Trending</a></div>
+        <div class="item-sources"><a href="https://www.marktechpost.com/2026/11/24/meta-facebook-your-algorithm-llm-recommendations/" target="_blank">MarkTechPost</a></div>
       </div>
     </div>
-    <div class="item-card" data-stars="4">
-      <div class="item-title">新基准显示顶级 AI agent 仍难可靠完成日常任务</div>
-      <div class='item-desc'>随着个人 AI 助手普及，新基准发现即使最先进模型在完成日常任务时也难以可靠、安全地推进，且可能引入新问题。</div>
+    <div class="item-card" data-stars="5">
+      <div class="item-title">Dario Amodei 称「向 AI 交出人类控制权」的指控荒谬</div>
+      <div class='item-desc'>Anthropic CEO Dario Amodei 反驳竞争对手关于他主张把人类能动性交给 AI 的指控，称其荒谬；与此同时，领先 AI 公司正日益自动化自身的研究与模型开发。</div>
       <div class="item-meta">
-        <span class="stars">★★★★☆</span>
+        <span class="stars">★★★★★</span>
         
-        <div class="item-sources"><a href="https://techcrunch.com/2026/11/24/even-the-best-ai-agents-struggle-with-everyday-life/" target="_blank">TechCrunch AI</a></div>
+        <div class="item-sources"><a href="https://techcrunch.com/2026/11/25/anthropics-dario-amodei-calls-accusations-of-surrendering-human-control-to-ai-absurd/" target="_blank">TechCrunch AI</a></div>
       </div>
     </div>
-    <div class="item-card" data-stars="4">
-      <div class="item-title">Meta 将 Muse AI 助手直接接入 Instagram 私信</div>
-      <div class='item-desc'>新集成让用户无需在 Instagram 与 Muse 应用间切换即可与 AI agent 交互。</div>
+    <div class="item-card" data-stars="5">
+      <div class="item-title">Nvidia 就 Megaspeed 仍须回答的问题</div>
+      <div class='item-desc'>调查核心在于 Nvidia 是否知晓芯片最终流向，以及 Huang 与一名 Megaspeed 高管的关系是否让公司有理由质疑 Megaspeed 的保证。</div>
       <div class="item-meta">
-        <span class="stars">★★★★☆</span>
+        <span class="stars">★★★★★</span>
         
-        <div class="item-sources"><a href="https://techcrunch.com/2026/11/24/meta-brings-its-muse-ai-assistant-directly-into-instagram-dms/" target="_blank">TechCrunch AI</a></div>
+        <div class="item-sources"><a href="https://techcrunch.com/2026/11/25/the-questions-jensen-huang-and-nvidia-will-still-have-to-answer-about-megaspeed/" target="_blank">TechCrunch AI</a></div>
       </div>
     </div>
-    <div class="item-card" data-stars="4">
-      <div class="item-title">AI 攻破黎曼猜想，1700 万行证明人类难以理解</div>
-      <div class='item-desc'>Anthropic 一名研究员产出 1700 万行的「异类」解法，数学家预计需数月才能读懂。</div>
+    <div class="item-card" data-stars="5">
+      <div class="item-title">firecrawl 单日新增 1,135 star</div>
+      <div class='item-desc'>定位为让 agent 更聪明的知识基础设施，通过一个 API 搜索、抓取并接入 550 多个数据提供方。</div>
       <div class="item-meta">
-        <span class="stars">★★★★☆</span>
+        <span class="stars">★★★★★</span>
         
-        <div class="item-sources"><a href="https://www.wired.com/story/ai-solved-maths-most-famous-problem/" target="_blank">Wired AI</a></div>
+        <div class="item-sources"><a href="https://github.com/firecrawl/firecrawl" target="_blank">GitHub Trending</a></div>
       </div>
     </div></div>
           </details>
@@ -778,141 +778,141 @@ html[data-lang="zh"] [data-lang-content="en"] { display: none; }
           </div>
           
     <div class="item-card" data-stars="5">
-      <div class="item-title">PINE 单步扩散同时输出点图、法线与实例图</div>
-      <div class='item-desc'>PINE 是一个单步 Omni Diffusion Transformer，一次前向同时预测点图、表面法线和实例图，把每张图当作一条 token 流并用流掩码控制哪些流交互；用相机感知的射线编码按相机射线而非像素定位 token，并把预训练 DINOv3 特征的亲和度加入注意力 logits。几何部分仅用 13.9 万张合成图像训练，在有或无内参条件下均取得 SOTA 点图，表面法线平均排名最佳；在大物体上以不足 SAM 百分之一的训练图像超过 SAM，且预测三张图比 MoGe-3 加 SAM 快 5.7 倍。</div>
+      <div class="item-title">CONCOR：把对比解码的纠错能力本身单独拿出来评测</div>
+      <div class='item-desc'>现有多模态大模型的对比解码（CD）评测几乎都只看最终任务分数，而候选过滤、生成轨迹漂移和回答偏好会混淆分数，使底层对比调整的真实效果无法被单独观测。为此作者提出 CONCOR（Contrastive Correction Evaluation）受控基准，用 Contrastive Grounding Margin（CGM）直接度量真实答案与各类幻觉候选之间的竞争关系，并进一步分析对比修正的方向一致性、构成与可靠性。评测显示现有 CD 方法行为明显分化：一部分稳定偏向真实候选，另一部分修正力度强但同时引入更多错误；这恰好解释了为何增大对比强度会让某些方法变好、另一些反而退化。对做幻觉缓解的研究者而言，这意味着调参时应评估修正机制本身而非只看最终输出，CONCOR 提供了可解释的对照框架。</div>
       <div class="item-meta">
         <span class="stars">★★★★★</span>
         
-        <div class="item-sources"><a href="https://huggingface.co/papers/2611.29389" target="_blank">HuggingFace Papers</a></div>
+        <div class="item-sources"><a href="https://huggingface.co/papers/2611.30460" target="_blank">HuggingFace Papers</a></div>
       </div>
     </div>
     <div class="item-card" data-stars="5">
-      <div class="item-title">LoomFormer 用织机注意力在每 token 重接电路</div>
-      <div class='item-desc'>论文提出 loom attention，把每个 head 对前序 head 输出的垂直注意力（用于得到 query、key、value）与对 token 的水平注意力交织，使 Transformer 能在每个 token 上动态重接电路；垂直注意力用逐 token 矩阵记忆上的归一化门控线性注意力高效实现，该记忆充当第二条残差流，形成控制与内容分离的双流架构 LoomFormer。在多种模型规模与训练 token 预算下，它匹配用 3 倍以上算力训练的 Transformer，以及用约 1.7-2.8 倍算力训练的 HC/mHC、MUDDFormer、AttnRes 等残差流基线；同样 300B token、仅多 2% FLOPs 的 LoomPythia-2.8B，下游平均增益约为 mHC-Pythia-2.8B 的 1.6 倍，并追平 0-shot 的 Pythia-12B。</div>
+      <div class="item-title">OWE-Bench：26 个长周期工程任务，暴露 18 分的部署落差</div>
+      <div class='item-desc'>作者发布 OWE-Bench（OpenWorldEngineer-Bench），由软件工程、物理工程、机器学习和科学计算领域的专家撰写 26 个长周期任务，涵盖内核优化、飞机设计到地震断层归因，单任务平均消耗数亿 token。评分同时看速度、成本、准确率，并区分智能体可自测的给定用例与任务描述隐含的隐藏用例。当前最强模型 Claude Fable 5.2 得分 54.6%，单任务平均 211M token。两个发现值得注意：给更多时间时模型会用更多测试时算力并提分，但扩展方式不同，GPT-6 Astra 在更短时限与同等 token 下得分更高，Claude Fable 5.2 靠更长时限消耗更多 token 拿到最高总分；所有模型在隐藏用例上平均低 18 分，即部署落差，且模型普遍高估自己在隐藏用例上的表现约 21 分。</div>
       <div class="item-meta">
         <span class="stars">★★★★★</span>
         
-        <div class="item-sources"><a href="https://huggingface.co/papers/2611.30634" target="_blank">HuggingFace Papers</a></div>
+        <div class="item-sources"><a href="https://huggingface.co/papers/2611.30017" target="_blank">HuggingFace Papers</a></div>
       </div>
     </div>
     <div class="item-card" data-stars="5">
-      <div class="item-title">前沿模型仅凭一段文本即可指认作者身份</div>
-      <div class='item-desc'>研究显示，给定单段文本和简单零样本提示（无联网、无工具、无候选列表、无写作样本），前沿模型能在三个层级回答「这是谁写的」：判断 AI 还是人类、若为 AI 判断出自哪家实验室、若为人类常能精确指认作者。Claude Fable 5.2、GPT-6.1 Sol、Gemini 4 Carbon 达到 Pangram 等训练型检测器的水平并能用自然语言解释判断，Opus 5.5 对 Anthropic、OpenAI、Google 模型生成的文本有 98% 说对实验室；Fable 5.2 对 1.5 万条从未公开的 ICML 2020 匿名评审正确指认 55% 的作者，并识别出 69% 活跃 Reddit 用户（近一年发帖超 500 条）的用户名。准确率取决于预训练数据中对该作者写作的曝光与推理投入，直接询问模型对某人的熟悉程度可预测其能否识别该人写作。</div>
+      <div class="item-title">SpatialArena：52 个几何基础模型在同一把尺子上重排</div>
+      <div class='item-desc'>3D 感知正从任务专用流水线转向几何基础模型，但已发表数字不可比——每篇论文的采样帧、分辨率、测试划分都不同；也不稳健——对尺度不定预测所需的对齐误差可能超过模型间差距，深度在错误空间拟合会让误差接近三倍，标准轨迹对齐会把失败方法的误差低估最多 2.6 倍；且很少覆盖长录制、动态场景与航拍视角。SpatialArena 用统一指标与规则、稳健确定性对齐来评分，覆盖从单目深度到 SLAM 的五类任务、23 个公开数据集共 418,929 张图像，外加自采的 Spatial Arena 数据。评测 52 个模型后发现：单图深度在公开基准上接近饱和但在大规模非受控场景并非如此，进展已转向跨帧跨视角一致性，前馈 3D/4D 模型在此追平甚至超过单目专家并反超视频深度模型。</div>
       <div class="item-meta">
         <span class="stars">★★★★★</span>
         
-        <div class="item-sources"><a href="https://huggingface.co/papers/2611.26216" target="_blank">HuggingFace Papers</a></div>
+        <div class="item-sources"><a href="https://huggingface.co/papers/2611.32816" target="_blank">HuggingFace Papers</a></div>
       </div>
     </div>
     <div class="item-card" data-stars="5">
-      <div class="item-title">KMed-31B 面向本地部署的医疗大模型</div>
-      <div class='item-desc'>KMed-31B 由开放权重模型后训练而来，面向硬件受限的本地部署；作者指出医疗任务难以同时提升，因为不同任务在期望输出与可用反馈上存在差异——医疗问答与诊断预测有参考答案，临床问询没有唯一正确答案、需按评分量表评判。为此把医疗训练任务按这两条性质分为四类，每类训练一个专家并使用该反馈支持的奖励，再用多教师同策略增量蒸馏（MOPD^2）整合为单一学生模型；针对临床问询构建了模拟普通用户与临床医生问诊的 Synthetic Health Dialogue 语料。相对基座模型，非思考模式下 HealthBench Hard 从 22.95 升至 41.87、HealthBench Professional 从 37.92 升至 50.20，思考模式下分别从 23.80 升至 51.48、从 41.97 升至 59.18，四个多选题医疗基准持平或小幅提升。</div>
+      <div class="item-title">Model Carving：让训练过程自己削出 Transformer 拓扑</div>
+      <div class='item-desc'>传统 Transformer 在每一层都训练固定顺序的注意力与 MLP 子层，这种齐整性只是惯例而非原则性设计。Model Carving 给每个子层加可学习标量门，让训练损失在单次训练中自行移除组件，从而在内部释放出一个更小的异构网络。作者预训练 140M 到 2.7B 的标准 Transformer 以及 140M 到 1.3B 的循环 Transformer：同等训练算力下，carved 模型验证损失低于用最多 1.7 倍算力训练的稠密模型，且优于同尺寸的剪枝或蒸馏产物。作者据此主张，为边缘设备获得小模型的最佳方式是在训练中直接削出，而非事后压缩大模型；该优势随规模增大而扩大，并延续到 few-shot 评测与生成等下游任务。</div>
       <div class="item-meta">
         <span class="stars">★★★★★</span>
         
-        <div class="item-sources"><a href="https://huggingface.co/papers/2611.28719" target="_blank">HuggingFace Papers</a></div>
+        <div class="item-sources"><a href="https://huggingface.co/papers/2611.27962" target="_blank">HuggingFace Papers</a></div>
       </div>
     </div>
     <div class="item-card" data-stars="5">
-      <div class="item-title">PartAgent 免训练智能体做 3D 部件分割</div>
-      <div class='item-desc'>PartAgent 是免训练的智能体式 3D 部件分割框架，包含两个互补模块：结构-语义专家集成把 3D 专家预测的区域与 2D 专家提供的多视图语义证据通过图像到表面映射结合，构建多粒度的组合式部件划分；观测驱动的闭环划分精炼则观察当前划分及其支撑证据，选择针对性检查、证据修复、组合或重选动作，验证所提改动并用更新后的状态与动作结果指导后续决策。在 PartObjaverse-Tiny-WT 上达到 68.41 mIoU，超出最强对比方法 8.53 点；在 3DCoMPaT200、PartNeXt、PartNetE、PartObjaverse-Tiny 上均取得最高 mIoU，四数据集平均 69.36，比对比方法中最高均值高 7.28 点。</div>
+      <div class="item-title">PyRUA-Dex：用编码智能体学双臂灵巧操作，无需示教</div>
+      <div class='item-desc'>灵巧操作受限于高质量示教稀缺：从人类视频重定向不精确、遥操作无力的反馈、外骨骼采集难扩展。PyRUA-Dex 让编码智能体通过程序化策略学习，完全不需要示教。流程分两段：探索阶段多个智能体并行搜索任务技能与组合方式，一个蒸馏智能体把成功尝试压缩成任务库和单一程序；精炼阶段用随机化布局提升鲁棒性与执行效率。仿真中 PyRUA-Dex 在 Bench2Dex 上取得 72.9 的 SOTA 分数，在完全随机化的 DexJoCo 上成功率 81.0%，均领先所有已训练策略。真实双臂平台配两只 22 自由度手，能弹钢琴、写书法，从乐谱学一首新曲最快只需 30 分钟。</div>
       <div class="item-meta">
         <span class="stars">★★★★★</span>
         
-        <div class="item-sources"><a href="https://huggingface.co/papers/2611.32554" target="_blank">HuggingFace Papers</a></div>
+        <div class="item-sources"><a href="https://huggingface.co/papers/2611.33144" target="_blank">HuggingFace Papers</a></div>
       </div>
     </div>
     <div class="item-card" data-stars="5">
-      <div class="item-title">S-Mind 把多视图几何内化进多模态大模型</div>
-      <div class='item-desc'>论文的空间探测显示，多模态大模型普遍缺乏两项能力：把多视图融合成一致的 3D 场景，以及在推理过程中对新视角做心理变换，即使经过空间微调也是如此。S-Mind 用一小组空间 token 把多视图几何内化进 MLLM：监督这些 token 承载融合后的 3D 场景，并在推理切换到任一视角时重新发射它们以重述该场景。在四个空间基准上，S-Mind 使其 Qwen3.5 主干最高提升 22.26 点，平均准确率超过 GPT-6-Astra（+0.45）、Kimi-K3.1-Pro（+1.97）与 GLM-5.3-Flash（+7.80）；探测显示其融合与变换准确率分别达 65.11% 与 82.17%，基线最高仅 16.02% 与 37.28%，推理时比同主干的工具型智能体快约 100 倍。</div>
+      <div class="item-title">DyLoMo-DiT：复用参数而非堆参数，FID 最多降 56%</div>
+      <div class='item-desc'>扩散 Transformer 靠同时增加参数量与计算量扩容，MoE 变体虽扩大参数容量但每 token 计算近似固定，仍需大量参数存储。DyLoMo-DiT 选择复用参数：权重共享的循环反复施加中间层，稀疏专家按 token 分配参数容量，从而在不加参数的情况下加深网络，把参数预算让给更多专家或更多独立层，并按噪声水平动态分配计算遍数。实验显示它更有效地利用参数与计算预算，把更多遍数分给低噪声步还能再涨。ImageNet 256×256 上，在匹配参数与计算预算时，相对 DiT 降低 FID 11-24%，相对 DiT-MoE 降低 36-56%。文生图方面，放大的 DyLoMo-DiT 在 GenEval 上得 0.714，高于 FLUX.1 的 0.673，而激活参数不到其十分之一（1.05B 对 12B）。</div>
       <div class="item-meta">
         <span class="stars">★★★★★</span>
         
-        <div class="item-sources"><a href="https://huggingface.co/papers/2611.28649" target="_blank">HuggingFace Papers</a></div>
+        <div class="item-sources"><a href="https://huggingface.co/papers/2611.30844" target="_blank">HuggingFace Papers</a></div>
       </div>
     </div>
     <div class="item-card" data-stars="5">
-      <div class="item-title">NightWatch 为计算机使用智能体补上实时感知</div>
-      <div class='item-desc'>当前基于视觉语言模型的计算机使用智能体只通过离散快照感知环境，VLM 推理延迟叠加高度动态的界面，使观察到的状态在执行动作前就常常过期，形成感知-动作间隙。NightWatch 是可插拔框架，不改动智能体的模型、提示或动作空间，将 VLM 智能体与 0.8B 的轻量 System-1 模型 NightWatch-0.8B 配对，对界面状态做流式监控，以低算力与低延迟让智能体与变化中的环境保持同步。在 OSWorld-Verified 与 DynaCU-Bench 上，仅 0.8B 的 watcher 使 OSWorld 非推理实际耗时降低 33%、浪费时间降低 53% 且任务成功率持平，并在大 VLM 智能体下把 DynaCU-Bench 成功率从 39.5% 提升到 44.2%。</div>
+      <div class="item-title">FATCAT：电磁故障注入即可让对齐模型放弃拒答</div>
+      <div class='item-desc'>现有对抗评测默认硬件完整，FATCAT 提出首个能消除现代大语言与视觉语言模型拒答行为的物理故障注入攻击。它针对有物理接触的 GPU 加速 SoC，用非侵入式电磁故障注入，不需要软件执行权限也不需要模型层访问；借助自主射频侧信道触发器把电磁故障同步到 prompt 的 prefill 阶段，在不使系统崩溃、保持模型连贯性的前提下破坏片外 LPDDR5 DRAM 与片上 LPDDR 物理接口上的安全关键内存事务。在运行 Llama 3.2 1B 与 Gemma 3 1B 的 NVIDIA Jetson Orin Nano 与 AGX Thor 上，局部物理故障可稳定迫使模型执行受限请求。作者还在由 SmolVLA 视觉-语言-动作策略控制的 6 自由度机械臂上展示了现实后果：攻击静默篡改模型，使机械臂突然危险前冲，其中两次尝试发生实际动作。</div>
       <div class="item-meta">
         <span class="stars">★★★★★</span>
         
-        <div class="item-sources"><a href="https://huggingface.co/papers/2611.28947" target="_blank">HuggingFace Papers</a></div>
+        <div class="item-sources"><a href="https://huggingface.co/papers/2611.31129" target="_blank">HuggingFace Papers</a></div>
       </div>
     </div>
     <div class="item-card" data-stars="5">
-      <div class="item-title">VideoJSON 用极简记忆框架做超长视频理解</div>
-      <div class='item-desc'>超长视频问答需要在长时间线上搜寻零散线索，现有视频智能体依赖复杂记忆图与固定检索流程，限制了搜索方式。VideoJSON 保持记忆简单、让编码智能体自己写检索程序：索引阶段由视觉语言模型把每分钟视频转成一条 JSON 记录，包含密集描述以及事件、实体、地点、语音转写等结构化字段；查询阶段智能体在沙箱容器中编写 Python 或 Bash 程序，多步过滤、链接和读取这些记录，无需任务特定训练，也不接触原始视频。在四个超长视频基准上，VideoJSON 搭配 DeepSeek V4.1 Flash 在 EgoLifeQA、Ego-R1-Bench、MM-Lifelong Week 上分别超出 MAGIC-Video 7.0、20.0、24.75 点，并比此前最佳 EgoMemReason 高 12.6 点；消融显示智能体式代码搜索与结构化 JSON 记录共同带来增益，而加入小时级摘要、额外工具或视频访问对平均分影响不足 1.5 点。</div>
+      <div class="item-title">ICLWorld：前沿智能体在电脑上能做 82%，在机器人上只有 27%</div>
+      <div class='item-desc'>上下文学习让智能体在推理时从上下文获取新规则，但现有基准多为离线、依赖文本或静态图像、有训练数据污染风险，机器人评测又只停留在方法级消融。ICLWorld 是在线基准，覆盖电脑使用与机器人使用，配套 UIverse 统一测试框架把每个环境变成用户界面。作者构建 30 个环境、录制 630 段演示视频（10 小时以上）、设计 160 个带定制且常反直觉规则的任务，每个任务配三个规则版本（文本或视频），并在回放演示、新实例、未见环境三个层级测泛化。六个前沿模型中，Claude Opus 5.5 与 GPT-6 Astra 在电脑使用上成功率 82% 与 76%，机器人使用上仅 27% 与 26%；去掉规则对照后成功率最高只剩 8%。</div>
       <div class="item-meta">
         <span class="stars">★★★★★</span>
         
-        <div class="item-sources"><a href="https://huggingface.co/papers/2611.28167" target="_blank">HuggingFace Papers</a></div>
+        <div class="item-sources"><a href="https://huggingface.co/papers/2611.32649" target="_blank">HuggingFace Papers</a></div>
       </div>
     </div>
     <div class="item-card" data-stars="5">
-      <div class="item-title">Antom 3-in-1 支付基础模型上线降损 37.88%</div>
-      <div class='item-desc'>Antom 3-in-1 Transformer 是支付基础模型，融合序列、表格与图三种表示用于支付风险检测，总参数约 70 亿，每个任务路由约激活 17 亿，主要在 Ant International 内部支付数据上预训练以学习可复用的行为与关系表示。跨业务迁移实验中，预训练使目标业务指标比同架构从零训练提升 34.5%；仅用 25% 训练标签时，预训练模型在不同商户域上的 Average Precision 与 Recall@0.5% 已超过全标签从零训练基线。在 Ant International 十亿级支付平台上为期四个月的在线实验中，模型相对 XGB-Online 将整体损失率降低 37.88%。</div>
+      <div class="item-title">InstructReplay：事实微调让通用能力掉 35 分，回放自身回答可救回</div>
+      <div class='item-desc'>作者发现，在指令微调模型上学习新事实会侵蚀通用能力：标准微调使指令遵循、推理与编码基准平均下降 35 分，且这些损失与回答长度塌缩同步——微调后回答至少减半，回答长度偏离初始模型越远越容易失败。InstructReplay 的做法是让初始模型先对一组通用指令作答一次，微调时约束模型在这些回答上贴近初始模型。跨三个模型家族、两个领域，该方法把五项通用基准的平均跌幅从 28.1 分降到 2.4 分，回答长度保持接近初始模型，同时学新事实的效果与标准微调相当；在全部六种设置下，其学习与保持的平衡优于七种适配方法。对照实验表明收益来自回放模型自身对通用指令的回答，而非损失函数形式。</div>
       <div class="item-meta">
         <span class="stars">★★★★★</span>
         
-        <div class="item-sources"><a href="https://huggingface.co/papers/2611.25403" target="_blank">HuggingFace Papers</a></div>
+        <div class="item-sources"><a href="https://huggingface.co/papers/2611.32918" target="_blank">HuggingFace Papers</a></div>
       </div>
     </div>
     <div class="item-card" data-stars="5">
-      <div class="item-title">Clinical3D-Bench 揭示医疗场景空间推理短板</div>
-      <div class='item-desc'>医院环境中的空间推理需要辨认外观相似的设备、理解以患者为参照的方向、判断通道宽度，现有基准覆盖有限。Clinical3D-Bench 是模拟基准，基于 373 个医院病房布局的第一人称漫游提出 3368 个问题、共八种类型，布局遵循医院设计规范，答案由 3D 场景计算，配对场景状态用于检验模型在相关证据变化时是否改变答案，视频为照片级真实感并由十位医生审阅。35 个多模态大模型中，最佳开源与闭源模型宏平均准确率仅 45.7% 与 53.6%，答案先验为 40.8%，医生子集为 79.0%；32 个开源模型中有 27 个在双向患者相对方向上低于 40%。在 44750 题的 Clinical3D-45K 上微调可使两个 MLLM 超出最佳闭源模型 16-20 点，但微调模型几乎不用输入的 3D 地图；GeoJeV 让模型真正用 3D 计算，取得全部评测模型中的最高准确率。</div>
+      <div class="item-title">RECAP：把上下文压缩当作可学习策略，BrowseComp-plus 涨 4.6 分</div>
+      <div class='item-desc'>上下文压缩让大模型智能体在有限上下文预算内处理长周期任务，用压缩摘要替代交互历史，但摘要会影响后续许多轮交互，与策略联合学习很困难。RECAP 基于一个原则：摘要应保留原始交互历史所诱导的行为。作者用行为失真目标形式化该原则，度量压缩上下文与原上下文下智能体后续行为的分歧，并证明该目标的梯度可分解为两个互补学习信号：用于摘要生成的失真奖励，以及用于后续动作的自蒸馏。在 Qwen3.5-4B 上，RECAP 在两个环境中都稳定优于仅用任务奖励的强化学习基线，在 BrowseComp-plus 与 SWE-bench Verified 上分别取得 4.6% 与 4.3% 的绝对提升。消融进一步说明联合监督摘要生成与压缩后行为是收益来源。</div>
       <div class="item-meta">
         <span class="stars">★★★★★</span>
         
-        <div class="item-sources"><a href="https://huggingface.co/papers/2611.32094" target="_blank">HuggingFace Papers</a></div>
+        <div class="item-sources"><a href="https://huggingface.co/papers/2611.31258" target="_blank">HuggingFace Papers</a></div>
       </div>
     </div>
           <details class="alternates">
             <summary>📌 备选 5 条</summary>
             <div class="alternates-body">
     <div class="item-card" data-stars="5">
-      <div class="item-title">PixelOne 单次前向完成原生分辨率 GUI 定位</div>
-      <div class='item-desc'>从搜索教师向学生迁移空间知识，学生直接从原生分辨率截图预测点击，单次前向完成。</div>
+      <div class="item-title">CoT-Proxy：教师思维链不可见也能蒸馏长周期策略</div>
+      <div class='item-desc'>把学生推理块留空、仅用教师动作轨迹训练，策略仍能迁移到开启思考的推理模式，作者称之为跨格式迁移；蒸馏 Qwen3.6-27B 动作使 Qwen3-4B 在 AppWorld 上从 7% 升到 18%。</div>
       <div class="item-meta">
         <span class="stars">★★★★★</span>
         
-        <div class="item-sources"><a href="https://huggingface.co/papers/2611.30235" target="_blank">HuggingFace Papers</a></div>
+        <div class="item-sources"><a href="https://huggingface.co/papers/2611.33148" target="_blank">HuggingFace Papers</a></div>
       </div>
     </div>
     <div class="item-card" data-stars="5">
-      <div class="item-title">GlanceNav 以流式记忆做高效视觉语言导航</div>
-      <div class='item-desc'>Gated DeltaNet 层携带整段情节的循环状态，注意力层只保留近期窗口与关键帧库，每步成本恒定。</div>
+      <div class="item-title">Steerable by Design：预训练阶段就分离指令与数据通道</div>
+      <div class='item-desc'>作者提出新预训练方法与架构，从一开始分开两条通道，产出 Mancelle-3B；在可比开放模型上其引导强度超过基于 prompt 与激活的方法，并能抵御击败这些基线的黑盒与软提示反引导。</div>
       <div class="item-meta">
         <span class="stars">★★★★★</span>
         
-        <div class="item-sources"><a href="https://huggingface.co/papers/2611.30900" target="_blank">HuggingFace Papers</a></div>
+        <div class="item-sources"><a href="https://huggingface.co/papers/2611.32199" target="_blank">HuggingFace Papers</a></div>
       </div>
     </div>
     <div class="item-card" data-stars="5">
-      <div class="item-title">DriveAnswer 区分证据充分性与答案正确性</div>
-      <div class='item-desc'>基准含 20151 题、七类推理，用强弱证据配对，弱证据下应弃答；最强零样本基线强证据准确率 67.31%，但仅 21.55% 同时满足弃答与完整定位。</div>
+      <div class="item-title">LookAnything：统一注视跟随的基础模型与 HoliGaze 语料</div>
+      <div class='item-desc'>模型用可学习注视先验查询替代头部裁剪、深度图等辅助输入，构建含 31.1 万问答对、5 个能力维度、9 类任务的 HoliGaze，在整体注视跟随上优于 33 个视觉语言模型。</div>
       <div class="item-meta">
         <span class="stars">★★★★★</span>
         
-        <div class="item-sources"><a href="https://arxiv.org/abs/2611.32964v1" target="_blank">arXiv</a></div>
+        <div class="item-sources"><a href="https://huggingface.co/papers/2611.32351" target="_blank">HuggingFace Papers</a></div>
       </div>
     </div>
     <div class="item-card" data-stars="5">
-      <div class="item-title">线性注意力召回能力可通过训练激发</div>
-      <div class='item-desc'>线性注意力在联想召回上远逊 softmax；上下文句子重复与上下文敏感损失重加权可缩小长距离召回差距，代价是通用语言建模略降。</div>
+      <div class="item-title">Point Dynamics：以 3D 点动力学作机器人世界模型代理</div>
+      <div class='item-desc'>把首帧提升为 3D 点、用学习到的点动力学模型模拟其对机器人运动的响应再渲染回像素，在 DROID 上物体运动误差降低 8.6% 与 6.2%，真实双臂机器人上降低 8.1%。</div>
       <div class="item-meta">
         <span class="stars">★★★★★</span>
         
-        <div class="item-sources"><a href="https://arxiv.org/abs/2611.32969v1" target="_blank">arXiv</a></div>
+        <div class="item-sources"><a href="https://huggingface.co/papers/2611.25946" target="_blank">HuggingFace Papers</a></div>
       </div>
     </div>
     <div class="item-card" data-stars="5">
-      <div class="item-title">ZoomTrace 验证全切片图像跨放大倍率来源</div>
-      <div class='item-desc'>提出跨放大倍率来源验证任务与 PyraFault 基准（306 万样本、2200 例、五个 TCGA 队列）；ZoomTrace 在 50.3 万测试样本上达 0.969 AUPRC。</div>
+      <div class="item-title">RAP：双曲表示的首个随机投影压缩原语</div>
+      <div class='item-desc'>保持径向坐标不变、仅对角度方向做欧氏随机投影再映回目标双曲空间，构造成本为一次高斯矩阵-向量乘，并给出带显式条件的有限集保证，填补双曲表示缺少 JL 类压缩原语的空白。</div>
       <div class="item-meta">
         <span class="stars">★★★★★</span>
         
-        <div class="item-sources"><a href="https://huggingface.co/papers/2611.29150" target="_blank">HuggingFace Papers</a></div>
+        <div class="item-sources"><a href="https://arxiv.org/abs/2611.34298v1" target="_blank">arXiv</a></div>
       </div>
     </div></div>
           </details>
@@ -921,16 +921,21 @@ html[data-lang="zh"] [data-lang-content="en"] { display: none; }
       
         <div class="observation">
           <h2>💡 今日观察</h2>
-          <p>今天最值得警惕的信号来自 OpenAI 与 Anthropic 内部：数十名员工认为自家未发布的前沿模型已超出安全措施可控范围。同一天，Anthropic 研究员的 AI 产出 1700 万行黎曼猜想证明、数学家需数月才能读懂，GPT-6 又展现出内生的蛋白质设计能力——能力跃升与可解释性、可控性的缺口正在同步拉大。另一条线是 agent 基础设施的加速铺开：MCP SDK 月下载破 7 亿、Claude Ship 自主评审并修复 PR、CLI-Anything 让软件原生支持 agent，但新基准显示顶级 agent 仍难可靠完成日常任务。扩张速度与可靠性之间的落差，是接下来最该盯住的地方。</p>
-          <button class="speak-btn" data-label="🔊 朗读今日观察" data-stop="⏹ 停止" data-speak-lang="zh-CN" data-text="今天最值得警惕的信号来自 OpenAI 与 Anthropic 内部：数十名员工认为自家未发布的前沿模型已超出安全措施可控范围。同一天，Anthropic 研究员的 AI 产出 1700 万行黎曼猜想证明、数学家需数月才能读懂，GPT-6 又展现出内生的蛋白质设计能力——能力跃升与可解释性、可控性的缺口正在同步拉大。另一条线是 agent 基础设施的加速铺开：MCP SDK 月下载破 7 亿、Claude Ship 自主评审并修复 PR、CLI-Anything 让软件原生支持 agent，但新基准显示顶级 agent 仍难可靠完成日常任务。扩张速度与可靠性之间的落差，是接下来最该盯住的地方。">🔊 朗读今日观察</button>
+          <p>今天最清晰的信号是：AI 的能力扩张正从模型层转移到运行层。DeepMind 让 agent 自主跑 Gemini 实验、Anthropic 用 Claude Ship 接管 PR 流程、OpenAI 与 Cisco 为 agent 做运行时防御，三件事指向同一个转向——竞争焦点变成了谁能把 agent 安全地放进生产回路。与此同时，芯片管制与反蒸馏据报已拖慢中国实验室，而 Z.ai 的 GLM-5.4 改用 looped transformer 架构，说明受限一方正从架构效率而非算力规模上找出路，这条分叉会决定明年模型格局。学术界则在补另一块短板：OWE-Bench 暴露 18 分部署落差、ICLWorld 显示机器人任务只有 27%，能力在真实环境中的折损远大于榜单所示，这比任何单点突破都更值得警惕。</p>
+          <button class="speak-btn" data-label="🔊 朗读今日观察" data-stop="⏹ 停止" data-speak-lang="zh-CN" data-text="今天最清晰的信号是：AI 的能力扩张正从模型层转移到运行层。DeepMind 让 agent 自主跑 Gemini 实验、Anthropic 用 Claude Ship 接管 PR 流程、OpenAI 与 Cisco 为 agent 做运行时防御，三件事指向同一个转向——竞争焦点变成了谁能把 agent 安全地放进生产回路。与此同时，芯片管制与反蒸馏据报已拖慢中国实验室，而 Z.ai 的 GLM-5.4 改用 looped transformer 架构，说明受限一方正从架构效率而非算力规模上找出路，这条分叉会决定明年模型格局。学术界则在补另一块短板：OWE-Bench 暴露 18 分部署落差、ICLWorld 显示机器人任务只有 27%，能力在真实环境中的折损远大于榜单所示，这比任何单点突破都更值得警惕。">🔊 朗读今日观察</button>
         </div>
     </div>
       <div class="section-title"><span data-lang-content="zh">🗂 历史归档</span><span data-lang-content="en">🗂 Archive</span></div>
       <div class="date-grid">
+        <a class="date-card" href="daily/2026-11-26.html">
+          <div class="date-label">2026-11-26<span class="audio-badge" title="有语音播报">🎧</span></div>
+          <div class="weekday"><span data-lang-content="zh">周四</span><span data-lang-content="en">Thursday</span></div>
+          <div class="latest-badge"><span data-lang-content="zh">最新</span><span data-lang-content="en">Latest</span></div>
+        </a>
         <a class="date-card" href="daily/2026-11-25.html">
           <div class="date-label">2026-11-25<span class="audio-badge" title="有语音播报">🎧</span></div>
           <div class="weekday"><span data-lang-content="zh">周三</span><span data-lang-content="en">Wednesday</span></div>
-          <div class="latest-badge"><span data-lang-content="zh">最新</span><span data-lang-content="en">Latest</span></div>
+          
         </a>
         <a class="date-card" href="daily/2026-11-24.html">
           <div class="date-label">2026-11-24<span class="audio-badge" title="有语音播报">🎧</span></div>
@@ -998,7 +1003,7 @@ html[data-lang="zh"] [data-lang-content="en"] { display: none; }
           
         </a>
         <a class="date-card" href="daily/2026-11-11.html">
-          <div class="date-label">2026-11-11<span class="audio-badge" title="有语音播报">🎧</span></div>
+          <div class="date-label">2026-11-11</div>
           <div class="weekday"><span data-lang-content="zh">周三</span><span data-lang-content="en">Wednesday</span></div>
           
         </a>
@@ -2038,7 +2043,7 @@ html[data-lang="zh"] [data-lang-content="en"] { display: none; }
           <h2><span data-lang-content="zh">🔥 近 7 天热点</span><span data-lang-content="en">🔥 Hot picks · last 7 days</span></h2>
           <span class="sub"><span data-lang-content="zh">近期高频出现的模型 / 产品 / 项目 · 点击搜索</span><span data-lang-content="en">Models / products mentioned most · click to search</span></span>
         </div>
-        <div class="trend-tags"><span class="trend-tag s3" data-term="GPT-6.2">GPT-6.2<span class="cnt">10</span></span><span class="trend-tag s1" data-term="Gemini 4">Gemini 4<span class="cnt">3</span></span><span class="trend-tag s1" data-term="Alpamayo 2">Alpamayo 2<span class="cnt">3</span></span><span class="trend-tag s1" data-term="Simon Willison">Simon Willison<span class="cnt">2</span></span><span class="trend-tag s1" data-term="Claude Code">Claude Code<span class="cnt">2</span></span><span class="trend-tag s1" data-term="Squoosh Bench">Squoosh Bench<span class="cnt">2</span></span><span class="trend-tag s1" data-term="GPT-Live-1.1">GPT-Live-1.1<span class="cnt">2</span></span><span class="trend-tag s1" data-term="Tool Retrieval">Tool Retrieval<span class="cnt">2</span></span><span class="trend-tag s1" data-term="GLM-5.4">GLM-5.4<span class="cnt">2</span></span><span class="trend-tag s1" data-term="Claude Ship">Claude Ship<span class="cnt">2</span></span><span class="trend-tag s1" data-term="Genie 4">Genie 4<span class="cnt">1</span></span><span class="trend-tag s1" data-term="Xing 4">Xing 4<span class="cnt">1</span></span></div>
+        <div class="trend-tags"><span class="trend-tag s3" data-term="GPT-6.2">GPT-6.2<span class="cnt">10</span></span><span class="trend-tag s1" data-term="Alpamayo 2">Alpamayo 2<span class="cnt">3</span></span><span class="trend-tag s1" data-term="GLM-5.4">GLM-5.4<span class="cnt">3</span></span><span class="trend-tag s1" data-term="Claude Ship">Claude Ship<span class="cnt">3</span></span><span class="trend-tag s1" data-term="Gemini 4">Gemini 4<span class="cnt">2</span></span><span class="trend-tag s1" data-term="Claude Code">Claude Code<span class="cnt">2</span></span><span class="trend-tag s1" data-term="Squoosh Bench">Squoosh Bench<span class="cnt">2</span></span><span class="trend-tag s1" data-term="GPT-Live-1.1">GPT-Live-1.1<span class="cnt">2</span></span><span class="trend-tag s1" data-term="Meta Muse">Meta Muse<span class="cnt">2</span></span><span class="trend-tag s1" data-term="Tool Retrieval">Tool Retrieval<span class="cnt">2</span></span><span class="trend-tag s1" data-term="Loop Transformer">Loop Transformer<span class="cnt">2</span></span><span class="trend-tag s1" data-term="Simon Willison">Simon Willison<span class="cnt">2</span></span></div>
       </div>
     </div>
   
@@ -2048,7 +2053,7 @@ html[data-lang="zh"] [data-lang-content="en"] { display: none; }
   <span data-lang-content="en">© AI Daily Digest · Auto-collected · Curated by DeepSeek · Updated daily</span>
 </footer>
 
-  <script>window.SITE_BASE="";window.AVAILABLE_DATES=["2026-04-14", "2026-04-15", "2026-04-16", "2026-04-17", "2026-04-18", "2026-04-19", "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-25", "2026-04-26", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-09", "2026-05-10", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-14", "2026-05-15", "2026-05-16", "2026-05-17", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-21", "2026-05-22", "2026-05-23", "2026-05-26", "2026-05-27", "2026-05-28", "2026-05-29", "2026-05-31", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-06", "2026-06-07", "2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-13", "2026-06-14", "2026-06-15", "2026-06-16", "2026-06-17", "2026-06-18", "2026-06-19", "2026-06-20", "2026-06-21", "2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-27", "2026-06-28", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10", "2026-07-11", "2026-07-12", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-18", "2026-07-19", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-01", "2026-08-02", "2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07", "2026-08-08", "2026-08-09", "2026-08-10", "2026-08-11", "2026-08-12", "2026-08-13", "2026-08-14", "2026-08-15", "2026-08-16", "2026-08-17", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21", "2026-08-22", "2026-08-23", "2026-08-24", "2026-08-25", "2026-08-26", "2026-08-27", "2026-08-28", "2026-08-29", "2026-08-30", "2026-08-31", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-05", "2026-09-06", "2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11", "2026-09-12", "2026-09-13", "2026-09-14", "2026-09-15", "2026-09-16", "2026-09-17", "2026-09-18", "2026-09-19", "2026-09-20", "2026-09-21", "2026-09-22", "2026-09-23", "2026-09-24", "2026-09-25", "2026-09-26", "2026-09-27", "2026-09-28", "2026-09-29", "2026-09-30", "2026-10-01", "2026-10-02", "2026-10-03", "2026-10-04", "2026-10-05", "2026-10-06", "2026-10-07", "2026-10-08", "2026-10-09", "2026-10-10", "2026-10-11", "2026-10-12", "2026-10-13", "2026-10-14", "2026-10-15", "2026-10-16", "2026-10-17", "2026-10-18", "2026-10-19", "2026-10-20", "2026-10-21", "2026-10-22", "2026-10-23", "2026-10-24", "2026-10-25", "2026-10-26", "2026-10-27", "2026-10-28", "2026-10-29", "2026-10-30", "2026-10-31", "2026-11-01", "2026-11-02", "2026-11-03", "2026-11-04", "2026-11-05", "2026-11-06", "2026-11-07", "2026-11-08", "2026-11-09", "2026-11-10", "2026-11-11", "2026-11-12", "2026-11-13", "2026-11-14", "2026-11-15", "2026-11-16", "2026-11-17", "2026-11-18", "2026-11-19", "2026-11-20", "2026-11-21", "2026-11-22", "2026-11-23", "2026-11-24", "2026-11-25"];window.CURRENT_DATE="2026-11-25";</script>
+  <script>window.SITE_BASE="";window.AVAILABLE_DATES=["2026-04-14", "2026-04-15", "2026-04-16", "2026-04-17", "2026-04-18", "2026-04-19", "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-25", "2026-04-26", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-09", "2026-05-10", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-14", "2026-05-15", "2026-05-16", "2026-05-17", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-21", "2026-05-22", "2026-05-23", "2026-05-26", "2026-05-27", "2026-05-28", "2026-05-29", "2026-05-31", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-06", "2026-06-07", "2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-13", "2026-06-14", "2026-06-15", "2026-06-16", "2026-06-17", "2026-06-18", "2026-06-19", "2026-06-20", "2026-06-21", "2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-27", "2026-06-28", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10", "2026-07-11", "2026-07-12", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-18", "2026-07-19", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-01", "2026-08-02", "2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07", "2026-08-08", "2026-08-09", "2026-08-10", "2026-08-11", "2026-08-12", "2026-08-13", "2026-08-14", "2026-08-15", "2026-08-16", "2026-08-17", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21", "2026-08-22", "2026-08-23", "2026-08-24", "2026-08-25", "2026-08-26", "2026-08-27", "2026-08-28", "2026-08-29", "2026-08-30", "2026-08-31", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-05", "2026-09-06", "2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11", "2026-09-12", "2026-09-13", "2026-09-14", "2026-09-15", "2026-09-16", "2026-09-17", "2026-09-18", "2026-09-19", "2026-09-20", "2026-09-21", "2026-09-22", "2026-09-23", "2026-09-24", "2026-09-25", "2026-09-26", "2026-09-27", "2026-09-28", "2026-09-29", "2026-09-30", "2026-10-01", "2026-10-02", "2026-10-03", "2026-10-04", "2026-10-05", "2026-10-06", "2026-10-07", "2026-10-08", "2026-10-09", "2026-10-10", "2026-10-11", "2026-10-12", "2026-10-13", "2026-10-14", "2026-10-15", "2026-10-16", "2026-10-17", "2026-10-18", "2026-10-19", "2026-10-20", "2026-10-21", "2026-10-22", "2026-10-23", "2026-10-24", "2026-10-25", "2026-10-26", "2026-10-27", "2026-10-28", "2026-10-29", "2026-10-30", "2026-10-31", "2026-11-01", "2026-11-02", "2026-11-03", "2026-11-04", "2026-11-05", "2026-11-06", "2026-11-07", "2026-11-08", "2026-11-09", "2026-11-10", "2026-11-11", "2026-11-12", "2026-11-13", "2026-11-14", "2026-11-15", "2026-11-16", "2026-11-17", "2026-11-18", "2026-11-19", "2026-11-20", "2026-11-21", "2026-11-22", "2026-11-23", "2026-11-24", "2026-11-25", "2026-11-26"];window.CURRENT_DATE="2026-11-26";</script>
   <script>
 (function () {
   var BASE = window.SITE_BASE || "";
