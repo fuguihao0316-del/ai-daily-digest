@@ -15,6 +15,31 @@
     <image><url>https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png</url><title>AI 每日简报</title><link>https://fuguihao0316-del.github.io/ai-daily-digest/</link></image>
     <itunes:owner><itunes:name>AI Daily Digest</itunes:name></itunes:owner>
     <item>
+      <title>AI 每日简报 · 2026-11-27 周五</title>
+      <description>早上好，今天是 2026 年 11 月 27 日，欢迎收听今天的 AI 日报。今天最值得留意的，是算力和数据的流动正在同时收紧，一边是芯片管制外溢到东南亚，一边是 agent 开始自己管上下文、自己改进。咱们一条条聊。
+先看模型这边。Sakana AI 在 11 月 26 日发布了 Namazu Small，一个 30B 的 MoE 推理模型，激活参数只有大约 3B，基于 NVIDIA 的 Nemotron 3 Nano 二次训练。官方说它在 25 项基准上平均得分 60.1，压过了参数量四倍的 Nemotron 3 Super 的 56.2。小模型反超大模型，关键不在那 4 分的差距，而在于它延续了今年一个很清晰的趋势：用开放基座做二次训练，用更少的激活参数换推理成本优势。对做部署的团队来说，30B-A3B 意味着单卡双卡就能扛，每 token 成本更低，是替代 100B 级稠密模型的现实选项。不过也要提醒一句，基准集合怎么选会显著影响排名，真实业务表现还得自己验。
+再看算力这条线，消息就比较紧了。The Decoder 报道，美国的芯片管制和反蒸馏措施正在给 DeepSeek、Moonshot AI 和阿里巴巴持续施压，最有信息量的是 DeepSeek 内部估算，说自己的模型已经落后美国模型至多九个月，而且差距还在扩大。这和 2025 年大家普遍认为中国实验室靠算法效率把差距压到几个月的判断，形成了明显反差。同一天，TechCrunch 报道 Nvidia 已经通知制造伙伴，暂停向马来西亚、新加坡、泰国和印度尼西亚发运服务器，管制从芯片原厂传导到了整机和服务器集成环节。对做跨境算力布局的团队来说，合规审查正在从看芯片型号，扩展到看最终部署地。
+有意思的是，地面上在收紧，天上却在放开。FCC 在 11 月 25 日批准 SpaceX 部署至多 100 万颗搭载 AI 芯片的卫星，作为 Starmind 计划的一部分，目标是 2027 年首批发射，2040 年前完整组网。当然，短期内太空算力的成本还是明显高于地面数据中心，但这件事的意义在于，轨道数据中心已经从概念走进了频谱和许可的实质流程。
+企业侧也有几条值得关注。OpenAI 正在测试一个叫 Private Inference 的功能，承诺企业用最强模型跑查询时，OpenAI 自己看不到数据。如果正式开放，原本因为合规只能私有化部署的高价值场景，可能会重新回到闭源前沿模型的候选列表。另外，OpenAI 和 Cisco 在 11 月 24 日开源了 Shirudo，一个 BSD 许可的 eBPF 运行时，让 agent 自己写带签名的防护策略，在运行中的系统上先挡住漏洞利用路径，给打补丁争取时间窗口。还有一条，OpenAI 说 GPT-6 系列模型展现出了内在的蛋白质设计能力，在五个靶点上拿到了实验结合证据，不过官方没给亲和力和阴性对照，离可成药还远，别过度外推。
+agent 商业化这边，Amazon 据报正在和 Meta 谈，讨论解除对 Meta 的 Muse AI 购物 agent 的封锁，焦点是 agent 推荐哪些商品，以及这对 Amazon 广告收入的冲击。而英国金融行为监管局则在抱怨 Meta 拒绝在 Muse 上线前做联合测试，警告 agent 可能带来另一股攻击力量。监管和平台的摩擦，正在成为 agent 落地比模型能力更硬的约束。
+学术方面今天信息量很大，我挑两个说。一个是 OS-Omni 基准，覆盖 Windows、Ubuntu、macOS、iOS、Android 和 Web，任务平均需要 67 步交互，远超越 OSWorld 的 15 步，最强的 Claude Opus 5.5 成功率 68.5%，还落后人类参考 8.8 个百分点。另一个是 Solve Vision with Code，在相同评估器下，编码 agent 写程序渲染答案视频，三个闭源 agent 得分都在 0.89 以上，比最强视频模型高出 0.22 以上，说明编码 agent 是比视频模型更强的视觉推理器。
+今日观察。今天最值得注意的信号不在模型榜单，而在算力与数据的流动被同时收紧：管制外溢到东南亚服务器转运，DeepSeek 自估落后至多九个月，而 SpaceX 获准部署百万颗 AI 芯片卫星</description>
+      <itunes:summary>早上好，今天是 2026 年 11 月 27 日，欢迎收听今天的 AI 日报。今天最值得留意的，是算力和数据的流动正在同时收紧，一边是芯片管制外溢到东南亚，一边是 agent 开始自己管上下文、自己改进。咱们一条条聊。
+先看模型这边。Sakana AI 在 11 月 26 日发布了 Namazu Small，一个 30B 的 MoE 推理模型，激活参数只有大约 3B，基于 NVIDIA 的 Nemotron 3 Nano 二次训练。官方说它在 25 项基准上平均得分 60.1，压过了参数量四倍的 Nemotron 3 Super 的 56.2。小模型反超大模型，关键不在那 4 分的差距，而在于它延续了今年一个很清晰的趋势：用开放基座做二次训练，用更少的激活参数换推理成本优势。对做部署的团队来说，30B-A3B 意味着单卡双卡就能扛，每 token 成本更低，是替代 100B 级稠密模型的现实选项。不过也要提醒一句，基准集合怎么选会显著影响排名，真实业务表现还得自己验。
+再看算力这条线，消息就比较紧了。The Decoder 报道，美国的芯片管制和反蒸馏措施正在给 DeepSeek、Moonshot AI 和阿里巴巴持续施压，最有信息量的是 DeepSeek 内部估算，说自己的模型已经落后美国模型至多九个月，而且差距还在扩大。这和 2025 年大家普遍认为中国实验室靠算法效率把差距压到几个月的判断，形成了明显反差。同一天，TechCrunch 报道 Nvidia 已经通知制造伙伴，暂停向马来西亚、新加坡、泰国和印度尼西亚发运服务器，管制从芯片原厂传导到了整机和服务器集成环节。对做跨境算力布局的团队来说，合规审查正在从看芯片型号，扩展到看最终部署地。
+有意思的是，地面上在收紧，天上却在放开。FCC 在 11 月 25 日批准 SpaceX 部署至多 100 万颗搭载 AI 芯片的卫星，作为 Starmind 计划的一部分，目标是 2027 年首批发射，2040 年前完整组网。当然，短期内太空算力的成本还是明显高于地面数据中心，但这件事的意义在于，轨道数据中心已经从概念走进了频谱和许可的实质流程。
+企业侧也有几条值得关注。OpenAI 正在测试一个叫 Private Inference 的功能，承诺企业用最强模型跑查询时，OpenAI 自己看不到数据。如果正式开放，原本因为合规只能私有化部署的高价值场景，可能会重新回到闭源前沿模型的候选列表。另外，OpenAI 和 Cisco 在 11 月 24 日开源了 Shirudo，一个 BSD 许可的 eBPF 运行时，让 agent 自己写带签名的防护策略，在运行中的系统上先挡住漏洞利用路径，给打补丁争取时间窗口。还有一条，OpenAI 说 GPT-6 系列模型展现出了内在的蛋白质设计能力，在五个靶点上拿到了实验结合证据，不过官方没给亲和力和阴性对照，离可成药还远，别过度外推。
+agent 商业化这边，Amazon 据报正在和 Meta 谈，讨论解除对 Meta 的 Muse AI 购物 agent 的封锁，焦点是 agent 推荐哪些商品，以及这对 Amazon 广告收入的冲击。而英国金融行为监管局则在抱怨 Meta 拒绝在 Muse 上线前做联合测试，警告 agent 可能带来另一股攻击力量。监管和平台的摩擦，正在成为 agent 落地比模型能力更硬的约束。
+学术方面今天信息量很大，我挑两个说。一个是 OS-Omni 基准，覆盖 Windows、Ubuntu、macOS、iOS、Android 和 Web，任务平均需要 67 步交互，远超越 OSWorld 的 15 步，最强的 Claude Opus 5.5 成功率 68.5%，还落后人类参考 8.8 个百分点。另一个是 Solve Vision with Code，在相同评估器下，编码 agent 写程序渲染答案视频，三个闭源 agent 得分都在 0.89 以上，比最强视频模型高出 0.22 以上，说明编码 agent 是比视频模型更强的视觉推理器。
+今日观察。今天最值得注意的信号不在模型榜单，而在算力与数据的流动被同时收紧：管制外溢到东南亚服务器转运，DeepSeek 自估落后至多九个月，而 SpaceX 获准部署百万颗 AI 芯片卫星</itunes:summary>
+      <enclosure url="https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-11-27.mp3" length="1898352" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-11-27.mp3</guid>
+      <pubDate>Fri, 27 Nov 2026 08:00:00 +0800</pubDate>
+      <itunes:duration>05:16</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
+    </item>
+    <item>
       <title>AI 每日简报 · 2026-11-26 周四</title>
       <description>早上好，欢迎收听今天的 AI 日报，今天是 2026 年 11 月 26 日，星期四。今天最值得留意的，是 AI 的竞争焦点正在从模型本身，悄悄转移到运行层，也就是谁能把 agent 安全地放进生产回路里。另外，架构效率这条新路线也开始浮出水面。我们一条条来说。
 先看模型这边。中国的 Z.ai 发布了 GLM-5.4，这是它第一个采用 looped transformer 架构的模型。简单说，传统 Transformer 每一层在前向传播里只跑一次，而 looped transformer 让一组共享权重的层反复迭代运行，参数量不增加，网络却更深、隐藏状态也被反复精炼。有意思的是，这已经是本周第二次出现这个动向了，十一月二十号 Thinking Machines Lab 的 Inkling 2 Mini 也用了类似思路。GLM-5.4 目前还没开放权重，Z.ai 说会在完成安全加固后负责任地开源，暂时也不能通过常规 API 访问，需要订阅 Coding Plan。
@@ -349,31 +374,6 @@ Anthropic 的 IPO 路演也放出了猛料。联合创始人 Tom Brown 透露，
       <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-11-13.mp3</guid>
       <pubDate>Fri, 13 Nov 2026 08:00:00 +0800</pubDate>
       <itunes:duration>05:11</itunes:duration>
-      <itunes:explicit>no</itunes:explicit>
-      <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
-    </item>
-    <item>
-      <title>AI 每日简报 · 2026-11-12 周四</title>
-      <description>早上好，欢迎收听今天的 AI 行业日报，今天是 2026 年 11 月 12 日，星期四。今天信息量很大，一句话概括看点：模型厂商开始按“安全等级”和“部署形态”把能力切成不同产品，而 agent 真正走进现实世界之后，摩擦和短板也集中暴露出来。咱们分几条线来说。
-先看 Anthropic。昨天他们启动 IPO 路演，联合创始人 Tom Brown 第一次公开了多芯片战略的细节：Claude 的训练和推理，现在同时跑在 AWS Trainium、Google TPU、NVIDIA GPU 和 AMD GPU 四个芯片家族上。最让人意外的是接入 AMD 的过程，他们让内部模型 Mythos 自己去尝试，三天就完成了移植，几乎没人工干预，Claude 几乎百分之百的 kernel 都是模型自己移植或编写的。而过去引入一个新芯片平台，要几十名工程师干好几个月。这件事的含义很直接：模型厂商正在把“用自家模型优化异构硬件”变成压低成本、削弱 CUDA 依赖的常规手段。
-同一天，Anthropic 还发布了 Claude Fable 5.2 和 Claude Mythos 5.2，其实是同一个模型，只是安全防护级别不同。Fable 5.2 在 FrontierCode 2.0 上得分 49.1%，定价是每百万 token 输入 8 美元、输出 40 美元，配 100 万 token 上下文。这个价格是同日 Meta 新模型的 80 倍。双版本策略的意思是，客户可以按风险场景选防护强度，不用在能力和合规之间二选一，安全分级本身开始变成采购维度。
-说到 Meta，他们推出了最小、最高效的模型 Muse Ember，主打 agent 全天重复干的活：工具调用、编码子任务、路由、抽取、长文档解析，支持最多 100 万输入 token。短 prompt 定价每百万输入 0.10 美元、输出 0.50 美元，超过 200k 之后涨到 0.30 和 1.50。在 Intelligence Index 上和 Claude Haiku 5.5 持平，但每任务成本大约是它的三分之一。对小模型选型的人来说，缓存输入 0.004 美元加上百万上下文，是这轮低价竞争的新基准。
-Google 这边动作也不少。DeepMind 发布了 Gemini Decisions API 和 Gemini Decision 1，正式加入决策模型赛道，支持是非题、多选和评分量表，覆盖文本、图像、音频、视频和 PDF，单次最多能评估 1000 个封闭式问题，返回只要 150 到 250 毫秒，成本约为 Gemini 3.5 Flash-Lite 的五分之一。另外，Gemini 4 Carbon 今天向全体用户开放，发布价是每百万输入 2 美元、输出 10 美元，但 12 月 1 日要翻倍到 4 和 20 美元，也就是说，涨价前的窗口期不到三周。还有一个挺震撼的：AlphaProof Code 四周完成了 Signal 加密核心的形式化验证，通常这类工作以年计，AI agent 写了超过六百万行证明代码，只有大约百分之一需要人工复核。DeepMind 还发布了 AlphaGenome 2，能按细胞类型预测变异效应，通过 API 向非商业研究开放。
-硬件和机器人这条线，NVIDIA 发布了开源自动驾驶模型 Alpamayo 2 Edge，输入是 6 路摄像头加近期运动信息，用强化学习循环训练，优化版本在 AGX Thor 这类边缘硬件上比 PyTorch 快十倍以上。这意味着开源栈开始在车端算力约束下真正可用了。
-然后是 agent 撞上现实世界的几条摩擦。eBay 疑似封堵了包括 Meta Muse 在内的第三方 AI agent 浏览平台，有用户说连续几周让 Muse 整理每日手表在售摘要，现在流程被打断了。这和 ChatGPT 同期推出已验证 Business Agent 形成对照：一边封堵，一边开放官方通道。做 agent 产品的团队要留意，抓取式浏览的商业可持续性正在下降。
-学术方面今天有几个值得记住的结论。一篇叫 Deletion Tuning 的论文发现，只把不到 0.05% 的权重置零，就能在三种后训练范式下媲美全量微调，灾难性遗忘还明显减轻。具身智能评测 Embodied Fi</description>
-      <itunes:summary>早上好，欢迎收听今天的 AI 行业日报，今天是 2026 年 11 月 12 日，星期四。今天信息量很大，一句话概括看点：模型厂商开始按“安全等级”和“部署形态”把能力切成不同产品，而 agent 真正走进现实世界之后，摩擦和短板也集中暴露出来。咱们分几条线来说。
-先看 Anthropic。昨天他们启动 IPO 路演，联合创始人 Tom Brown 第一次公开了多芯片战略的细节：Claude 的训练和推理，现在同时跑在 AWS Trainium、Google TPU、NVIDIA GPU 和 AMD GPU 四个芯片家族上。最让人意外的是接入 AMD 的过程，他们让内部模型 Mythos 自己去尝试，三天就完成了移植，几乎没人工干预，Claude 几乎百分之百的 kernel 都是模型自己移植或编写的。而过去引入一个新芯片平台，要几十名工程师干好几个月。这件事的含义很直接：模型厂商正在把“用自家模型优化异构硬件”变成压低成本、削弱 CUDA 依赖的常规手段。
-同一天，Anthropic 还发布了 Claude Fable 5.2 和 Claude Mythos 5.2，其实是同一个模型，只是安全防护级别不同。Fable 5.2 在 FrontierCode 2.0 上得分 49.1%，定价是每百万 token 输入 8 美元、输出 40 美元，配 100 万 token 上下文。这个价格是同日 Meta 新模型的 80 倍。双版本策略的意思是，客户可以按风险场景选防护强度，不用在能力和合规之间二选一，安全分级本身开始变成采购维度。
-说到 Meta，他们推出了最小、最高效的模型 Muse Ember，主打 agent 全天重复干的活：工具调用、编码子任务、路由、抽取、长文档解析，支持最多 100 万输入 token。短 prompt 定价每百万输入 0.10 美元、输出 0.50 美元，超过 200k 之后涨到 0.30 和 1.50。在 Intelligence Index 上和 Claude Haiku 5.5 持平，但每任务成本大约是它的三分之一。对小模型选型的人来说，缓存输入 0.004 美元加上百万上下文，是这轮低价竞争的新基准。
-Google 这边动作也不少。DeepMind 发布了 Gemini Decisions API 和 Gemini Decision 1，正式加入决策模型赛道，支持是非题、多选和评分量表，覆盖文本、图像、音频、视频和 PDF，单次最多能评估 1000 个封闭式问题，返回只要 150 到 250 毫秒，成本约为 Gemini 3.5 Flash-Lite 的五分之一。另外，Gemini 4 Carbon 今天向全体用户开放，发布价是每百万输入 2 美元、输出 10 美元，但 12 月 1 日要翻倍到 4 和 20 美元，也就是说，涨价前的窗口期不到三周。还有一个挺震撼的：AlphaProof Code 四周完成了 Signal 加密核心的形式化验证，通常这类工作以年计，AI agent 写了超过六百万行证明代码，只有大约百分之一需要人工复核。DeepMind 还发布了 AlphaGenome 2，能按细胞类型预测变异效应，通过 API 向非商业研究开放。
-硬件和机器人这条线，NVIDIA 发布了开源自动驾驶模型 Alpamayo 2 Edge，输入是 6 路摄像头加近期运动信息，用强化学习循环训练，优化版本在 AGX Thor 这类边缘硬件上比 PyTorch 快十倍以上。这意味着开源栈开始在车端算力约束下真正可用了。
-然后是 agent 撞上现实世界的几条摩擦。eBay 疑似封堵了包括 Meta Muse 在内的第三方 AI agent 浏览平台，有用户说连续几周让 Muse 整理每日手表在售摘要，现在流程被打断了。这和 ChatGPT 同期推出已验证 Business Agent 形成对照：一边封堵，一边开放官方通道。做 agent 产品的团队要留意，抓取式浏览的商业可持续性正在下降。
-学术方面今天有几个值得记住的结论。一篇叫 Deletion Tuning 的论文发现，只把不到 0.05% 的权重置零，就能在三种后训练范式下媲美全量微调，灾难性遗忘还明显减轻。具身智能评测 Embodied Fi</itunes:summary>
-      <enclosure url="https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-11-12.mp3" length="2096352" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://fuguihao0316-del.github.io/ai-daily-digest/audio/2026-11-12.mp3</guid>
-      <pubDate>Thu, 12 Nov 2026 08:00:00 +0800</pubDate>
-      <itunes:duration>05:49</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
       <itunes:image href="https://fuguihao0316-del.github.io/ai-daily-digest/podcast-cover.png"/>
     </item>
